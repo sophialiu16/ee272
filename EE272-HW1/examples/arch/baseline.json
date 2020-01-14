@@ -8,8 +8,5 @@
     "parallel_mode": [1, 0, 0],
     "parallel_cost":[2],
     "precision":16,
-    "utilization_threshold":0.5,
-    "capacity_scale":[2,2],
-    "access_cost_scale":[2,1.25],
-    "explore_points":[5,4]
+    "utilization_threshold":0.75
 }
