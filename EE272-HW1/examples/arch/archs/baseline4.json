@@ -11,5 +11,5 @@
     "replication":false,
     "capacity_scale":[2,2],
     "access_cost_scale":[2,1.25],
-    "explore_points":[3,3]
+    "explore_points":[4,4]
 }
