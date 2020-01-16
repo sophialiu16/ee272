@@ -9,9 +9,8 @@
         "OC": {
            "level0":{
                "order":4,
-               "partitioning_size":8
+               "partitioning_size":2
            }
         }
-    },
-    "partition_loops":["OX", "ON"]
+    }
 }
