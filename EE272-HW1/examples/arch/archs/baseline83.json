@@ -10,6 +10,6 @@
     "precision":16,
     "replication":false,
     "capacity_scale":[2,2],
-    "access_cost_scale":[2,1.25],
+    "access_cost_scale":[2,1.5],
     "explore_points":[3,3]
 }
