@@ -3,7 +3,7 @@
         "IC": {
            "level0":{
                "order":3,
-               "partitioning_size":3
+               "partitioning_size":2
            }
         },
         "OC": {
@@ -12,5 +12,6 @@
                "partitioning_size":2
            }
         }
-    }
+    },
+    "partition_loops": ["OX", "ON"]
 }
