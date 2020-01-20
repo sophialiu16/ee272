@@ -10,18 +10,6 @@ extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap,
                     input bit [3:0] stride);
 module conv_tb;
     // START CODE HERE
-    `include "layer_params.svh"
-extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap,
-                    input reg [15:0] array [9408-1:0] weights,
-                    output reg [31:0] array [802816-1:0] ofmap,
-                    input bit [7:0] ofmap_width,
-                    input bit [7:0] ofmap_height,
-                    input bit [15:0] ifmap_channels,
-                    input bit [15:0] ofmap_channels,
-                    input bit [3:0] filter_size,
-                    input bit [3:0] stride);
-module conv_tb;
-    // START CODE HERE
     // sets the layer parameters for the convolution
   	// sends input and weight arrays into the accelerator
   	// gets the output array and checks it using the gold model
