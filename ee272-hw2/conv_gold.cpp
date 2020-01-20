@@ -14,6 +14,18 @@ void conv_gold( int16_t ifmap[(OFMAP_HEIGHT*STRIDE+FILTER_SIZE-1)][(OFMAP_WIDTH*
                int32_t ofmap[OFMAP_HEIGHT][OFMAP_WIDTH][OFMAP_CHANNELS]){
 
   // START CODE HERE
-  
+  for (int k; k < OFMAP_CHANNELS - 1; k++) {
+    for (int c; c < IFMAP_CHANNELS - 1; c++) {
+      for (int y; y < OFMAP_HEIGHT - 1; y++) {
+        for (int x; x < OFMAP_WIDTH - 1; x++) {
+          for (int fy; fy < FILTER_SIZE - 1; fy++) {
+            for (int fx; fx < FILTER_SIZE - 1; fx++) {
+              ofmap[y][x][k] += ifmap[y * STRIDE + fy][x * STRIDE + fx][c] * weights[fy][fx][c][k];
+            }
+          }
+        }
+      }
+    }
+  } 
   // END CODE HERE
 }
