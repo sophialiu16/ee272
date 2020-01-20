@@ -37,14 +37,14 @@ void run_conv_gold( vc_handle ifmap,
   assert(vc_toInteger(params_filter_size) == FILTER_SIZE);
   assert(vc_toInteger(params_stride) == STRIDE);
 
-  int16_t ifmap_arr[OFMAP_HEIGHT*STRIDE+FILTER_SIZE-1][OFMAP_WIDTH*STRIDE+FILTER_SIZE-1][IFMAP_CHANNELS];
+  int16_t ifmap_arr[(OFMAP_HEIGHT-1)*STRIDE+FILTER_SIZE][(OFMAP_WIDTH-1)*STRIDE+FILTER_SIZE][IFMAP_CHANNELS];
   int16_t weight_arr[FILTER_SIZE][FILTER_SIZE][IFMAP_CHANNELS][OFMAP_CHANNELS];
   int32_t ofmap_arr[OFMAP_HEIGHT][OFMAP_WIDTH][OFMAP_CHANNELS];
 
-  for(int i = 0; i < OFMAP_HEIGHT*STRIDE+FILTER_SIZE-1; i++){
-    for(int j = 0; j < OFMAP_WIDTH*STRIDE+FILTER_SIZE-1; j++){
+  for(int i = 0; i < (OFMAP_HEIGHT-1)*STRIDE+FILTER_SIZE; i++){
+    for(int j = 0; j < (OFMAP_WIDTH-1)*STRIDE+FILTER_SIZE; j++){
       for(int k = 0; k < IFMAP_CHANNELS; k++){
-        int idx = i*(OFMAP_WIDTH*STRIDE+FILTER_SIZE-1)*IFMAP_CHANNELS + j*IFMAP_CHANNELS + k;
+        int idx = i*((OFMAP_WIDTH-1)*STRIDE+FILTER_SIZE)*IFMAP_CHANNELS + j*IFMAP_CHANNELS + k;
         ifmap_arr[i][j][k] = (int16_t) vc_getMemoryInteger(ifmap, idx);
       }
     }

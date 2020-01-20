@@ -18,9 +18,9 @@ void run_layer(string layer_name){
     std::ifstream ifmap_file;
     ifmap_file.open("data/" + layer_name + "_ifmap.txt");
 
-    int16_t ifmap[OFMAP_HEIGHT*STRIDE+FILTER_SIZE-1][OFMAP_WIDTH*STRIDE+FILTER_SIZE-1][IFMAP_CHANNELS];
-    for(int i = 0; i < OFMAP_HEIGHT*STRIDE+FILTER_SIZE-1; i++){
-        for(int j = 0; j < OFMAP_WIDTH*STRIDE+FILTER_SIZE-1; j++){
+    int16_t ifmap[(OFMAP_HEIGHT-1)*STRIDE+FILTER_SIZE][(OFMAP_WIDTH-1)*STRIDE+FILTER_SIZE][IFMAP_CHANNELS];
+    for(int i = 0; i < (OFMAP_HEIGHT-1)*STRIDE+FILTER_SIZE; i++){
+        for(int j = 0; j < (OFMAP_WIDTH-1)*STRIDE+FILTER_SIZE; j++){
             for(int k = 0; k < IFMAP_CHANNELS; k++){
                 ifmap_file >> ifmap[i][j][k];
             }

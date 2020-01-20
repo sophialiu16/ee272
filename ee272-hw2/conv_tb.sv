@@ -1,5 +1,5 @@
 `include "layer_params.svh"
-extern void run_conv_gold ( input reg [15:0] array  [158700-1:0] ifmap, 
+extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap, 
                     input reg [15:0] array [9408-1:0] weights,
                     output reg [31:0] array [802816-1:0] ofmap,
                     input bit [7:0] ofmap_width,
