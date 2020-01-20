@@ -306,9 +306,6 @@ module tb;
   end
 endmodule
 
-    // END CODE HERE
-endmodule
-
 
         // INTERFACE
   interface conv_if (input bit clk);
