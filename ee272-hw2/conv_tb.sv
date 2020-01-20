@@ -56,17 +56,15 @@ module conv_tb;
   
   	// DRIVER
     class driver; 
-      virtual conv_if vif;
-      event drv_done;
-      mailbox drv_mbx;
-
-      task run();
-        $display ("T=%0t [Driver] starting ...", $time);
-        @ (posedge vif.clk);
-
-        forever begin
-          conv_item item;
-
+      virtual conv_if vif;
+      event drv_done;
+      mailbox drv_mbx;
+      task run();
+        $display ("T=%0t [Driver] starting ...", $time);
+        @ (posedge vif.clk);
+    
+        forever begin
+          conv_item item;
           $display ("T=%0t [Driver] waiting for item ...", $time);
           drv_mbx.get(item);      
           item.print("Driver");
