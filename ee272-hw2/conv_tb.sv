@@ -207,7 +207,7 @@ module conv_tb;
     endclass
               
     // SCOREBOARD
-    run_conv_gold(ifmap, 
+   /* run_conv_gold(ifmap, 
                   weights, 
                   ofmap, 
                   params_ofmap_width, 
@@ -216,7 +216,7 @@ module conv_tb;
                   params_ofmap_channels, 
                   params_filter_size, 
                   params_stride);
-  
+  */
     class scoreboard;
       mailbox scb_mbx;
       conv_item refq[256];
