@@ -179,39 +179,39 @@ module conv_tb;
                   params_filter_size, 
                   params_stride);
   */
-    class scoreboard;
-      mailbox scb_mbx;
-      conv_item refq[256];
+    class scoreboard;
+      mailbox scb_mbx;
+      conv_item refq[256];
 
       initial begin
-				$readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
-    	end
-      
-      task run();
-        forever begin
-          conv_item item;
-          scb_mbx.get(item);
-          item.print("Scoreboard");
-          
-          if (!item.ifmap_vld) begin
-            if (refq[item.ifmap_dat] == null) begin
-              refq[item.ifmap_dat] = new
-            end
+        $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
+      end
+  
+      task run();
+      forever begin
+      conv_item item;
+      scb_mbx.get(item);
+      item.print("Scoreboard");
+ 
+      if (!item.ifmap_vld) begin
+        if (regq[item.ifmap_dat] == null) begin
+          refq[item.ifmap_dat] = new
+        end
 
-            refq[item.ifmap_dat] = item;
-            $display ("T=%0t [Scoreboard] Store addr=0x%0h wr=0x%0h data=0x%0h", $time, item.addr, item.wr, item.wdata);
-          end
-
-          if (item.ifmap_vld) begin
-            if (item.ofmap_data != gold_ofmap_mem) begin
-                    $display ("T=%0t [Scoreboard] ERROR! First time read, addr=0x%0h exp=1234 act=0x%0h", $time, item.addr, item.rdata);
-            end
-          	else begin
-                  $display ("T=%0t [Scoreboard] PASS! First time read, addr=0x%0h exp=1234 act=0x%0h", $time, item.addr, item.rdata);
-            end
-          end
-      endtask
-    endclass
+        refq[item.ifmap_dat] = item;
+        $display ("T=%0t [Scoreboard])")
+      end
+ 
+      if (item.ifmap_vld) begin
+        if (item.ofmap_data != gold_ofmap_mem) begin
+          $display ("T=%0t [Scoreboard] ERROR!");
+        end
+        else begin
+          $display ("T=%0t [Scoreboard] PASS!");
+        end
+      end
+    endtask
+  endclass
 
     // ENVIRONMENT
     class env; 
