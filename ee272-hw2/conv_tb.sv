@@ -319,7 +319,8 @@ endmodule
     logic ofmap_vld;
 
     // params
-    logic layer_params_t layer_params_dat;
+
+    logic [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
     logic layer_params_rdy;
     logic layer_params_vld;
   endinterface
