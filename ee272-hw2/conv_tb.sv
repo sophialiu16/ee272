@@ -175,11 +175,10 @@ module conv_tb;
   */
     class scoreboard;
       mailbox scb_mbx;
-      conv_item refq[256];
-
-      initial begin
+      conv_item refq; 
+      /*initial begin
         $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
-      end
+      end*/
   
       task run();
       forever begin
@@ -189,11 +188,11 @@ module conv_tb;
  
       if (!item.ifmap_vld) begin
         if (regq[item.ifmap_dat] == null) begin
-          refq[item.ifmap_dat] = new
+          refq[item.ifmap_dat] = new;
         end
 
         refq[item.ifmap_dat] = item;
-        $display ("T=%0t [Scoreboard])")
+        $display ("T=%0t [Scoreboard])");
       end
  
       if (item.ifmap_vld) begin
@@ -204,6 +203,7 @@ module conv_tb;
           $display ("T=%0t [Scoreboard] PASS!");
         end
       end
+      end 
     endtask
   endclass
 
@@ -222,7 +222,7 @@ module conv_tb;
         scb_mbx = new(); 
       endfunction 
       
-      vitrual task run(); 
+      virtual task run(); 
         d0.vif = vif; 
         m0.vif = vif; 
         m0.scb_mbx = scb_mbx; 
