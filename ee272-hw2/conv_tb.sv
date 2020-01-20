@@ -66,7 +66,6 @@ module conv_tb;
           conv_item item;
           $display ("T=%0t [Driver] waiting for item ...", $time);
           drv_mbx.get(item);
-          item.print("Driver");
 
           // ifmap
           if (vif.ifmap_rdy) begin
@@ -273,21 +272,16 @@ module conv_tb;
     endtask
     
   endclass
-    
-    // END CODE HERE
-endmodule
-
-
+   
 // TOP
-module tb;
+
   reg clk;
   
   always #10 clk = ~clk;
   conv_if _if (clk);
 
   initial begin
-    new_test t0;
-    
+    test t0; 
     clk <= 0;
     _if.rstn <= 0;
     #20 _if.rstn <= 1;
@@ -305,8 +299,6 @@ module tb;
     $vcdpluson(0, testbench);
   end
 endmodule
-
-
         // INTERFACE
   interface conv_if (input bit clk);
     logic rst_n;
@@ -331,4 +323,3 @@ endmodule
     logic layer_params_rdy;
     logic layer_params_vld;
   endinterface
-
