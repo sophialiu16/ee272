@@ -161,7 +161,13 @@ module conv_tb;
         end
       endtask
     endclass
-              
+      
+ initial begin
+        $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
+        $readmemh("data/layer1_ifmap.mem", ifmap_mem);
+        $readmemh("data/layer1_weights.mem", weights_mem);
+    end
+        
     // SCOREBOARD
    /* run_conv_gold(ifmap, 
                   weights, 
@@ -176,9 +182,6 @@ module conv_tb;
     class scoreboard;
       mailbox scb_mbx;
       conv_item refq; 
-      /*initial begin
-        $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
-      end*/
   
       task run();
       forever begin
@@ -263,11 +266,6 @@ module conv_tb;
       item = new; 
       // get layer 1 input 
       
-      initial begin
-        $readmemh("data/layer1_ifmap.mem", ifmap_mem);
-        $readmemh("data/layer1_weights.mem", weights_mem);
-    	end
-      
       item.ifmap_dat; 
       item.weights_dat; 
       
@@ -281,30 +279,30 @@ endmodule
 
 
 // TOP
-module tb;
-  reg clk;
+module tb;
+  reg clk;
+  
+  always #10 clk = ~clk;
+  conv_if _if (clk);
 
-  always #10 clk = ~clk;
-  conv_if _if (clk);
+  initial begin
+    new_test t0;
+    
+    clk <= 0;
+    _if.rstn <= 0;
+    #20 _if.rstn <= 1;
 
-  initial begin
-    new_test t0;
-
-    clk <= 0;
-    _if.rstn <= 0;
-    #20 _if.rstn <= 1;
-
-    t0 = new;
-    t0.e0.vif = _if;
+    t0 = new;
+    t0.e0.vif = _if;
     t0.run();
 
-    #200 $finish;
+    #200 $finish;
   end
 
-  initial begin
+  initial begin
     $vcdplusfile("dump.vcd");
     $vcdplusmemon();
-    $vcdpluson(0, testbench);
+    $vcdpluson(0, testbench);
   end
 endmodule
 
