@@ -107,11 +107,11 @@ module conv_tb;
             vif.layer_params_vld <= 0;
           end
 
-          @ (posedge vif.clk);
+         /* @ (posedge vif.clk);
           while (!vif.ready) begin
             $display ("T=%0t [Driver] wait until ready is high", $time);
             @(posedge vif.clk);
-          end
+          end*/
 
           // When transfer is over, raise the done event
           ->drv_done;
@@ -133,28 +133,28 @@ module conv_tb;
             conv_item item = new; 
             item.ifmap_dat = vif.ifmap_dat; 
             item.ifmap_rdy = vif.ifmap_rdy;
-            item.print("Monitor, ifmap");
+            item.printifmap("Monitor, ifmap");
             scb_mbx.put(item);
           end 
           if (vif.weights_vld) begin 
             conv_item item = new; 
             item.weights_dat = vif.weights_dat; 
             item.weights_rdy = vif.weights_rdy; 
-            item.print("Monitor, weights");
+            item.printweights("Monitor, weights");
             scb_mbx.put(item);
           end 
           if (vif.ofmap_rdy) begin 
             conv_item item = new; 
             item.ofmap_dat = vif.ofmap_dat; 
             item.ofmap_vld = vif.ofmap_vld;
-            item.print("Monitor, ofmap");
+            item.printofmap("Monitor, ofmap");
             scb_mbx.put(item);
           end 
           if (vif.layer_params_vld) begin 
             conv_item item = new; 
             item.layer_params_dat = vif.layer_params_dat; 
             item.layer_params_rdy = vif.layer_params_rdy;
-            item.print("Monitor, layer param");
+            //item.print("Monitor, layer param");
             scb_mbx.put(item);
           end 
         end
@@ -186,7 +186,7 @@ module conv_tb;
       forever begin
       conv_item item;
       scb_mbx.get(item);
-      item.print("Scoreboard");
+      //item.print("Scoreboard");
  
       if (!item.ifmap_vld) begin
         if (regq[item.ifmap_dat] == null) begin
@@ -321,6 +321,11 @@ endmodule
     // params
 
     logic [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+    //layer_params_t layer_params_;
+    //logic [$bits(layer_params_t)-1:0] layer_params_dat;
+    //assign layer_params_dat = layer_params_; 
+
+    //logic [$bits(layer_params_t)-1:0] layer_params_t layer_params_dat;
     logic layer_params_rdy;
     logic layer_params_vld;
   endinterface
