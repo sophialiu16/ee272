@@ -55,20 +55,19 @@ module conv_tb;
     endclass
   
   	// DRIVER
-    class driver; 
-      virtual conv_if vif;
-      event drv_done;
-      mailbox drv_mbx;
-      task run();
+    class driver;
+        virtual conv_if vif;
+        event drv_done;
+        mailbox drv_mbx;
+        task run();
         $display ("T=%0t [Driver] starting ...", $time);
         @ (posedge vif.clk);
-    
-        forever begin
+          forever begin
           conv_item item;
-          $display ("T=%0t [Driver] waiting for item ...", $time);
-          drv_mbx.get(item);      
+          $display ("T=%0t [Driver] waiting for item ...", $time);
+          drv_mbx.get(item);
           item.print("Driver");
-          
+
           // ifmap
           if (vif.ifmap_rdy) begin
             vif.ifmap_dat <= item.ifmap_dat;
@@ -109,15 +108,15 @@ module conv_tb;
             vif.layer_params_vld <= 0;
           end
 
-          @ (posedge vif.clk);
-          while (!vif.ready)  begin
-            $display ("T=%0t [Driver] wait until ready is high", $time);
-            @(posedge vif.clk);
+          @ (posedge vif.clk);
+          while (!vif.ready) begin
+            $display ("T=%0t [Driver] wait until ready is high", $time);
+            @(posedge vif.clk);
           end
 
           // When transfer is over, raise the done event
           ->drv_done;
-        end   
+        end
       endtask
   	endclass
 
@@ -127,15 +126,10 @@ module conv_tb;
       mailbox scb_mbx; 
       
       task run(); 
-        $display("T=%0t [Monitor] starting ..." time);
+        $display("T=%0t [Monitor] starting ...", $time);
         
         forever begin 
           @ (posedge vif.clk);
-          conv_item item
-          
-          else if begin 
-        end else begin 
-        end 
           if (vif.ifmap_vld) begin 
             conv_item item = new; 
             item.ifmap_dat = vif.ifmap_dat; 
