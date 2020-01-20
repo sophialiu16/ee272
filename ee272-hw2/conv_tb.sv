@@ -14,30 +14,6 @@ module conv_tb;
   	// sends input and weight arrays into the accelerator
   	// gets the output array and checks it using the gold model
   
-  	// INTERFACE	
-  interface conv_if (input bit clk);
-    logic rst_n;
-
-    // ifmap
-    logic [15:0] ifmap_dat;
-    logic ifmap_rdy;
-    logic ifmap_vld;
-
-    // weights
-    logic [15:0] weights_dat;
-    logic weights_rdy;
-    logic weights_vld;
-
-    // ofmap
-    logic [31:0] ofmap_dat;
-    logic ofmap_rdy;
-    logic ofmap_vld;
-
-    // params
-    logic layer_params_t layer_params_dat;
-    logic layer_params_rdy;
-    logic layer_params_vld;
-  endinterface
 
   	// TRANSACTION
     class conv_item; 
@@ -58,8 +34,8 @@ module conv_tb;
       rand bit ofmap_vld;
 
       // params
-      rand bit layer_params_t layer_params_dat;
-      rand bit bit layer_params_rdy;
+      rand layer_params_t layer_params_dat;
+      rand bit layer_params_rdy;
       rand bit layer_params_vld;
       
       function void printifmap(string tag="");
@@ -79,7 +55,7 @@ module conv_tb;
     endclass
   
   	// DRIVER
-    class driver;
+    class driver; 
       virtual conv_if vif;
       event drv_done;
       mailbox drv_mbx;
@@ -342,3 +318,30 @@ endmodule
 
     // END CODE HERE
 endmodule
+
+
+        // INTERFACE
+  interface conv_if (input bit clk);
+    logic rst_n;
+
+    // ifmap
+    logic [15:0] ifmap_dat;
+    logic ifmap_rdy;
+    logic ifmap_vld;
+
+    // weights
+    logic [15:0] weights_dat;
+    logic weights_rdy;
+    logic weights_vld;
+
+    // ofmap
+    logic [31:0] ofmap_dat;
+    logic ofmap_rdy;
+    logic ofmap_vld;
+
+    // params
+    logic layer_params_t layer_params_dat;
+    logic layer_params_rdy;
+    logic layer_params_vld;
+  endinterface
+
