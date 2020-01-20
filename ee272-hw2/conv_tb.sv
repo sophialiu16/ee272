@@ -273,8 +273,8 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
       item = new; 
       // get layer 1 input 
       
-      item.ifmap_dat; 
-      item.weights_dat; 
+      item.ifmap_dat = ifmap_mem; 
+      item.weights_dat = weights_mem; 
       
       drv_mbx.put(item); 
     endtask
