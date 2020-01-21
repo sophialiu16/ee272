@@ -22,6 +22,9 @@ module conv_tb
  reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
 reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
 reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
+reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
+reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
+reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
  initial begin
         $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
         $readmemh("data/layer1_ifmap.mem", ifmap_mem);
@@ -273,15 +276,13 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
       item = new; 
       // get layer 1 input 
       
-      //item.ifmap_dat = ifmap_mem; 
-      //item.weights_dat = weights_mem; 
+      item.ifmap_dat = ifmap_mem[ifmap_idx]; 
+      item.weights_dat = weights_mem[weights_idx]; 
       
       drv_mbx.put(item); 
     endtask
-    
   endclass
    
-// TOP
 
   reg clk;
   
@@ -308,6 +309,18 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
     #220000;
     $finish(2);
   end
+
+always_ff @(posedge clk, negedge _if.rst_n) begin
+      if (~_if.rst_n) begin
+        ifmap_idx <= 1'b0;
+        weights_idx <= 1'b0;
+      end
+      else begin
+        ifmap_idx <= ifmap_idx + 1'b1;
+        weights_idx <= weights_idx + 1'b1;
+      end
+    end
+
 endmodule
         // INTERFACE
   interface conv_if (input bit clk);
