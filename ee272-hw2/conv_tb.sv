@@ -202,15 +202,15 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
         end
 
         refq[item.ifmap_dat] = item;
-        $display ("T=%0t [Scoreboard])");
+        $display ("T=%0t [Scoreboard]", $time);
       end
  
       if (item.ifmap_vld) begin
         if (item.ofmap_dat != gold_ofmap_mem) begin
-          $display ("T=%0t [Scoreboard] ERROR!");
+          $display ("T=%0t [Scoreboard] ERROR!", $time);
         end
         else begin
-          $display ("T=%0t [Scoreboard] PASS!");
+          $display ("T=%0t [Scoreboard] PASS!", $time);
         end
       end
       end 
