@@ -53,17 +53,17 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
       rand bit layer_params_vld;
       
       function void printifmap(string tag="");
-        $display ("T=%0t[%s], ifmap data = %0d, ifmap rdy = 0x%0h, ifmap valid = 0x%0h",
+        $display ("T=%0t, ifmap data = %0d, ifmap rdy = 0x%0h, ifmap valid = 0x%0h",
                   $time, ifmap_dat, ifmap_rdy, ifmap_vld);
       endfunction
       
       function void printofmap(string tag="");
-        $display ("T=%0t[%s], ofmap data = %0d, ofmap rdy = 0x%0h, ofmap valid = 0x%0h",
+        $display ("T=%0t, ofmap data = %0d, ofmap rdy = 0x%0h, ofmap valid = 0x%0h",
                   $time, ofmap_dat, ofmap_rdy, ofmap_vld);
       endfunction
        
       function void printweights(string tag="");
-        $display ("T=%0t[%s], weights data = %0d, weights rdy = 0x%0h, weights valid = 0x%0h",
+        $display ("T=%0t, weights data = %0d, weights rdy = 0x%0h, weights valid = 0x%0h",
                   $time, weights_dat, weights_rdy, weights_vld);
       endfunction      
     endclass
@@ -291,8 +291,8 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
   initial begin
     test t0; 
     clk <= 0;
-    _if.rstn <= 0;
-    #20 _if.rstn <= 1;
+    _if.rst_n <= 0;
+    #20 _if.rst_n <= 1;
 
     t0 = new;
     t0.e0.vif = _if;
