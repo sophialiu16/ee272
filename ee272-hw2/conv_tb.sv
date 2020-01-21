@@ -316,8 +316,13 @@ always_ff @(posedge clk, negedge _if.rst_n) begin
         weights_idx <= 1'b0;
       end
       else begin
-        ifmap_idx <= ifmap_idx + 1'b1;
-        weights_idx <= weights_idx + 1'b1;
+	if (_if.ifmap_rdy) begin
+	        ifmap_idx <= ifmap_idx + 1'b1;
+	end
+
+	if (_if.weights_rdy) begin
+	        weights_idx <= weights_idx + 1'b1;
+	end
       end
     end
 
