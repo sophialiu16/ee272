@@ -197,7 +197,7 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
       //item.print("Scoreboard");
  
       if (!item.ifmap_vld) begin
-        if (regq[item.ifmap_dat] == null) begin
+        if (refq[item.ifmap_dat] == null) begin
           refq[item.ifmap_dat] = new;
         end
 
