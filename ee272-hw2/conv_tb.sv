@@ -206,12 +206,12 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
       end
  
       if (item.ifmap_vld) begin
-        if (item.ofmap_dat != gold_ofmap_mem) begin
+        //if (item.ofmap_dat != gold_ofmap_mem) begin
           $display ("T=%0t [Scoreboard] ERROR!", $time);
-        end
-        else begin
-          $display ("T=%0t [Scoreboard] PASS!", $time);
-        end
+        //end
+        //else begin
+        //  $display ("T=%0t [Scoreboard] PASS!", $time);
+        //end
       end
       end 
     endtask
@@ -273,8 +273,8 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
       item = new; 
       // get layer 1 input 
       
-      item.ifmap_dat = ifmap_mem; 
-      item.weights_dat = weights_mem; 
+      //item.ifmap_dat = ifmap_mem; 
+      //item.weights_dat = weights_mem; 
       
       drv_mbx.put(item); 
     endtask
