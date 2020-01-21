@@ -188,7 +188,7 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
   */
     class scoreboard;
       mailbox scb_mbx;
-      conv_item refq; 
+      conv_item refq[256]; 
   
       task run();
       forever begin
