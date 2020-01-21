@@ -304,7 +304,6 @@ reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
   initial begin
     $vcdplusfile("dump.vcd");
     $vcdplusmemon();
-    $vcdpluson(0, testbench);
   end
 endmodule
         // INTERFACE
