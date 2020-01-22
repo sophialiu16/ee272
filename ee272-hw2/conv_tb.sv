@@ -329,6 +329,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
 
 always_ff @(posedge clk, negedge _if.rst_n) begin
       if (~_if.rst_n) begin
+        ofmap_idx <= 1'b0;
         ifmap_idx <= 1'b0;
         weights_idx <= 1'b0;
       end
@@ -340,6 +341,10 @@ always_ff @(posedge clk, negedge _if.rst_n) begin
 	if (_if.weights_rdy) begin
 	        weights_idx <= weights_idx + 1'b1;
 	end
+
+	if (_if.ofmap_vld) begin
+		ofmap_idx <= ofmap_idx + 1'b1;
+        end
       end
     end
 
