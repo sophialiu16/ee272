@@ -54,7 +54,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       rand bit weights_vld;
 
       // ofmap
-      rand [31:0] ofmap_dat;
+      rand bit [31:0] ofmap_dat;
       bit ofmap_vld;
       rand bit ofmap_rdy;
 
@@ -255,7 +255,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     endclass
   
   	// TEST
-  class test; :
+  class test;
     env e0; 
     mailbox drv_mbx; 
     
