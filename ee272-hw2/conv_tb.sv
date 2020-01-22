@@ -118,10 +118,14 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           if (vif.ofmap_vld) begin
             vif.ofmap_dat <= item.ofmap_dat;
             vif.ofmap_rdy <= 1;
+            $display ("T=%0t [Driver] set ready high", $time);
+            
           end
           else begin
             vif.ofmap_dat <= vif.ofmap_dat;
             vif.ofmap_rdy <= 0;
+            $display ("T=%0t [Driver] set ready low", $time);
+            
           end
 
       		// params
@@ -301,7 +305,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
   conv_if _if (clk);
   
   conv u0 (.clk (clk),
-           //.rst_n (_if.rst_n),
+           .rst_n (_if.rst_n),
            .ifmap_dat (_if.ifmap_dat),
            .ifmap_rdy(_if.ifmap_rdy),
            .ifmap_vld(_if.ifmap_vld),
