@@ -12,14 +12,19 @@ module conv_tb
 #(
     parameter IFMAP_SIZE = 4,
     parameter WEIGHTS_SIZE = 4,
-    parameter OFMAP_SIZE = 4
+    parameter OFMAP_SIZE = 4,
+    parameter NUMBER_OUTPUT_CHANNELS = 64,
+    parameter NUMBER_INPUT_CHANNELS = 3,
+    parameter STRIDE = 2
+
 );
     // START CODE HERE
     // sets the layer parameters for the convolution
   	// sends input and weight arrays into the accelerator
   	// gets the output array and checks it using the gold model
   
- reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
+reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
+reg [31:0] generated_ofmap_mem [OFMAP_SIZE-1:0];
 reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
 reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
 reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
@@ -183,20 +188,28 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     endclass
       
     // SCOREBOARD
-   /* run_conv_gold(ifmap, 
-                  weights, 
-                  ofmap, 
-                  params_ofmap_width, 
-                  params_ofmap_height, 
-                  params_ifmap_channels, 
-                  params_ofmap_channels, 
-                  params_filter_size, 
-                  params_stride);
-  */
     class scoreboard;
       mailbox scb_mbx;
-      conv_item refq[256]; 
-  
+      
+      initial begin
+   	 run_conv_gold(ifmap_mem,
+                  weights_mem,
+                  generated_ofmap_mem,
+                  OFMAP_SIZE,
+                  OFMAP_SIZE,
+                  NUMBER_OUTPUT_CHANNELS,
+                  NUMBER_INPUT_CHANNELS,
+                  WEIGHTS_SIZE,
+                  STRIDE);
+      end
+
+      always_ff @(posedge clk, negedge rst_n) begin
+        if (~rst_n) begin
+          
+        end
+        else 
+      end
+
       task run();
       forever begin
       conv_item item;
