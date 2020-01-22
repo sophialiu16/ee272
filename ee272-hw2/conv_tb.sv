@@ -26,8 +26,8 @@ module conv_tb
   
 reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
 reg [31:0] generated_ofmap_mem [OFMAP_SIZE-1:0];
-reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
-reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
+reg [15:0] ifmap_mem [IFMAP_SIZE-1:0];
+reg [15:0] weights_mem [WEIGHTS_SIZE-1:0];
 reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
 reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
 reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
@@ -188,12 +188,8 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       endtask
     endclass
       
-    // SCOREBOARD
-    class scoreboard;
-      mailbox scb_mbx;
-      
       initial begin
-   	 run_conv_gold(ifmap_mem,
+         run_conv_gold(ifmap_mem,
                   weights_mem,
                   generated_ofmap_mem,
                   OFMAP_SIZE,
@@ -204,27 +200,15 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
                   STRIDE);
       end
 
-      always_ff @(posedge clk, negedge rst_n) begin
-        if (~rst_n) begin
-          
-        end
-        else 
-      end
-
+    // SCOREBOARD
+    class scoreboard;
+      mailbox scb_mbx;
+      
       task run();
       forever begin
       conv_item item;
       scb_mbx.get(item);
       //item.print("Scoreboard");
- 
-      if (!item.ifmap_vld) begin
-        if (refq[item.ifmap_dat] == null) begin
-          refq[item.ifmap_dat] = new;
-        end
-
-        refq[item.ifmap_dat] = item;
-        $display ("T=%0t [Scoreboard]", $time);
-      end
  
       if (item.ifmap_vld) begin
         if (generated_ofmap_mem[ofmap_idx] != gold_ofmap_mem[ofmap_idx]) begin
