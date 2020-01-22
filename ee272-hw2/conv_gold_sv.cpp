@@ -3,12 +3,12 @@
 #include "conv_gold.cpp"
 
 // Change these values to match the SystemVerilog parameters
-#define OFMAP_HEIGHT 112
-#define OFMAP_WIDTH 112
+#define OFMAP_HEIGHT 64
+#define OFMAP_WIDTH 64
 #define OFMAP_CHANNELS 64
-#define IFMAP_CHANNELS 3
-#define FILTER_SIZE 7
-#define STRIDE 2
+#define IFMAP_CHANNELS 64
+#define FILTER_SIZE 3
+#define STRIDE 1
 
 extern "C" void run_conv_gold(vc_handle ifmap, 
                       vc_handle weights, 

@@ -1,7 +1,7 @@
 `include "layer_params.svh"
-extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap, 
-                    input reg [15:0] array [9408-1:0] weights,
-                    output reg [31:0] array [802816-1:0] ofmap,
+extern void run_conv_gold ( input reg [15:0] array  [215296-1:0] ifmap, 
+                    input reg [15:0] array [36864-1:0] weights,
+                    output reg [31:0] array [200704-1:0] ofmap,
                     input bit [7:0] ofmap_width,
                     input bit [7:0] ofmap_height,
                     input bit [15:0] ifmap_channels,
@@ -10,15 +10,15 @@ extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap,
                     input bit [3:0] stride);
 module conv_tb
 #(
-    parameter IFMAP_SIZE = 157323, // ((OFMAP_HEIGHT - 1) * STRIDE + FILTER_SIZE)^2 * IFMAP_CHANNELS
-    parameter WEIGHTS_SIZE = 9408, // FILTER_SIZE * FILTER_SIZE * IFMAP_CHANNELS * OFMAP_CHANNELS
-    parameter OFMAP_SIZE = 802816, //112*112*64 = OFMAP_HEIGHT * OFMAP_WIDTH * OFMAP_CHANNELS
-    parameter OFMAP_WIDTH = 112,
-    parameter OFMAP_HEIGHT = 112,
+    parameter IFMAP_SIZE = 215296,//157323, // ((OFMAP_HEIGHT - 1) * STRIDE + FILTER_SIZE)^2 * IFMAP_CHANNELS
+    parameter WEIGHTS_SIZE = 36864,//9408, // FILTER_SIZE * FILTER_SIZE * IFMAP_CHANNELS * OFMAP_CHANNELS
+    parameter OFMAP_SIZE = 200704,//802816, //112*112*64 = OFMAP_HEIGHT * OFMAP_WIDTH * OFMAP_CHANNELS
+    parameter OFMAP_WIDTH = 64,
+    parameter OFMAP_HEIGHT = 64,
     parameter OFMAP_CHANNELS = 64,
-    parameter IFMAP_CHANNELS = 3,
-    parameter STRIDE = 2,
-    parameter FILTER_SIZE = 7
+    parameter IFMAP_CHANNELS = 64,
+    parameter STRIDE = 1,
+    parameter FILTER_SIZE = 3
 
 );
     // START CODE HERE
@@ -34,9 +34,9 @@ reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
 reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
 reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
  initial begin
-        $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
-        $readmemh("data/layer1_ifmap.mem", ifmap_mem);
-        $readmemh("data/layer1_weights.mem", weights_mem);
+        $readmemh("data/layer2_gold_ofmap.mem", gold_ofmap_mem);
+        $readmemh("data/layer2_ifmap.mem", ifmap_mem);
+        $readmemh("data/layer2_weights.mem", weights_mem);
     end
 
 
@@ -271,13 +271,13 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
         e0.run(); 
       join_none 
       
-      test_layer1(); 
+      test_layer(); 
     endtask 
     
-    virtual task test_layer1(); 
+    virtual task test_layer(); 
       conv_item item; 
       
-      $display("T=%0t [Test] Testing layer 1 input ...", $time);
+      $display("T=%0t [Test] Testing layer input ...", $time);
       
       item = new; 
       // get layer 1 input 
