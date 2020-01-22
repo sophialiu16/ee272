@@ -1,8 +1,8 @@
 module conv  
 #(
-    parameter IFMAP_SIZE = 4,
-    parameter WEIGHTS_SIZE = 4,
-    parameter OFMAP_SIZE = 4
+    parameter IFMAP_SIZE = 157323,
+    parameter WEIGHTS_SIZE = 9408,
+    parameter OFMAP_SIZE = 802816
 ) 
 (
     input clk,
