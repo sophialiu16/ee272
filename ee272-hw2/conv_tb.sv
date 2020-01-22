@@ -13,20 +13,24 @@ module conv_tb
     parameter IFMAP_SIZE = 157323,
     parameter WEIGHTS_SIZE = 9408,
     parameter OFMAP_SIZE = 802816 //112*112*64
+    parameter NUMBER_OUTPUT_CHANNELS = 64,
+    parameter NUMBER_INPUT_CHANNELS = 3,
+    parameter STRIDE = 2
+
 );
     // START CODE HERE
     // sets the layer parameters for the convolution
   	// sends input and weight arrays into the accelerator
   	// gets the output array and checks it using the gold model
   
-    reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
-    reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
-    reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
-    reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
-    reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
-    reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
-    
-    initial begin
+reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
+reg [31:0] generated_ofmap_mem [OFMAP_SIZE-1:0];
+reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
+reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
+reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
+reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
+reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
+ initial begin
         $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
         $readmemh("data/layer1_ifmap.mem", ifmap_mem);
         $readmemh("data/layer1_weights.mem", weights_mem);
@@ -125,13 +129,17 @@ module conv_tb
             vif.layer_params_vld <= 0;
           end
 
-         /* @ (posedge vif.clk);
-          while (!vif.ready) begin
+          @ (posedge vif.clk);
+          while (!vif.ifmap_vld & !vif.weights_vld & !vif.ofmap_rdy & !vif.layer_params_rdy) begin
             $display ("T=%0t [Driver] wait until ready is high", $time);
             @(posedge vif.clk);
-          end*/
+          end
 
           // When transfer is over, raise the done event
+	  vif.ifmap_vld <= 0;
+	  vif.weights_vld <= 0;
+	  vif.ofmap_rdy <= 0;
+	  vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
@@ -180,20 +188,28 @@ module conv_tb
     endclass
       
     // SCOREBOARD
-   /* run_conv_gold(ifmap, 
-                  weights, 
-                  ofmap, 
-                  params_ofmap_width, 
-                  params_ofmap_height, 
-                  params_ifmap_channels, 
-                  params_ofmap_channels, 
-                  params_filter_size, 
-                  params_stride);
-  */
     class scoreboard;
       mailbox scb_mbx;
-      conv_item refq[256]; 
-  
+      
+      initial begin
+   	 run_conv_gold(ifmap_mem,
+                  weights_mem,
+                  generated_ofmap_mem,
+                  OFMAP_SIZE,
+                  OFMAP_SIZE,
+                  NUMBER_OUTPUT_CHANNELS,
+                  NUMBER_INPUT_CHANNELS,
+                  WEIGHTS_SIZE,
+                  STRIDE);
+      end
+
+      always_ff @(posedge clk, negedge rst_n) begin
+        if (~rst_n) begin
+          
+        end
+        else 
+      end
+
       task run();
       forever begin
       conv_item item;
