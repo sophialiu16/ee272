@@ -4,7 +4,7 @@
 
 // Change these values to match the SystemVerilog parameters
 #define OFMAP_HEIGHT 28
-#define OFMAP_WIDTH 18
+#define OFMAP_WIDTH 28
 #define OFMAP_CHANNELS 128
 #define IFMAP_CHANNELS 128
 #define FILTER_SIZE 3
