@@ -84,7 +84,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
         virtual conv_if vif;
         event drv_done;
         mailbox drv_mbx;
-
+	//
 	task run();
         $display ("T=%0t [Driver] starting ...", $time);
         @ (posedge vif.clk);
