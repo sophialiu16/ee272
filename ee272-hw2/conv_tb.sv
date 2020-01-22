@@ -215,7 +215,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       
       if (item.ofmap_vld) begin
         if (generated_ofmap_mem[ofmap_idx] != gold_ofmap_mem[ofmap_idx]) begin
-          $display ("T=%0t [Scoreboard] ERROR!", $time);
+          $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], gold_ofmap_mem[ofmap_idx]);
         end
         else begin
           $display ("T=%0t [Scoreboard] PASS!", $time);
