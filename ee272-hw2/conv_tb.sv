@@ -194,7 +194,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
          run_conv_gold(ifmap_mem,
                   weights_mem,
                   generated_ofmap_mem,
-                  OFMAP_HEIGHT.
+                  OFMAP_HEIGHT,
                   OFMAP_WIDTH,
                   IFMAP_CHANNELS,
                   OFMAP_CHANNELS,
