@@ -13,6 +13,8 @@ module conv_tb
     parameter IFMAP_SIZE = 157323, // ((OFMAP_HEIGHT - 1) * STRIDE + FILTER_SIZE)^2 * IFMAP_CHANNELS
     parameter WEIGHTS_SIZE = 9408, // FILTER_SIZE * FILTER_SIZE * IFMAP_CHANNELS * OFMAP_CHANNELS
     parameter OFMAP_SIZE = 802816, //112*112*64 = OFMAP_HEIGHT * OFMAP_WIDTH * OFMAP_CHANNELS
+    parameter OFMAP_WIDTH = 112,
+    parameter OFMAP_HEIGHT = 112,
     parameter OFMAP_CHANNELS = 64,
     parameter IFMAP_CHANNELS = 3,
     parameter STRIDE = 2,
@@ -192,8 +194,8 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
          run_conv_gold(ifmap_mem,
                   weights_mem,
                   generated_ofmap_mem,
-                  OFMAP_SIZE,
-                  OFMAP_SIZE,
+                  OFMAP_HEIGHT.
+                  OFMAP_WIDTH,
                   IFMAP_CHANNELS,
                   OFMAP_CHANNELS,
                   FILTER_SIZE,
