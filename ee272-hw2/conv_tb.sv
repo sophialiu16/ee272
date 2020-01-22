@@ -271,13 +271,13 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
         e0.run(); 
       join_none 
       
-      test_layer1(); 
+      test_layer(); 
     endtask 
     
-    virtual task test_layer1(); 
+    virtual task test_layer(); 
       conv_item item; 
       
-      $display("T=%0t [Test] Testing layer 1 input ...", $time);
+      $display("T=%0t [Test] Testing layer input ...", $time);
       
       item = new; 
       // get layer 1 input 
