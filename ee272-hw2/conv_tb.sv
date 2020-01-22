@@ -139,10 +139,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           end
 
           // When transfer is over, raise the done event
-	  vif.ifmap_vld <= 1;
-	  vif.weights_vld <= 1;
-	  vif.ofmap_rdy <= 1;
-	  vif.layer_params_vld <= 1;
+	  vif.ifmap_vld <= 0;
+	  vif.weights_vld <= 0;
+	  vif.ofmap_rdy <= 0;
+	  vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
@@ -212,7 +212,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       scb_mbx.get(item);
       //item.print("Scoreboard");
       
-      if (item.ifmap_vld) begin
+      if (item.ofmap_vld) begin
         if (generated_ofmap_mem[ofmap_idx] != gold_ofmap_mem[ofmap_idx]) begin
           $display ("T=%0t [Scoreboard] ERROR!", $time);
         end
@@ -254,7 +254,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     endclass
   
   	// TEST
-  class test; 
+  class test; :
     env e0; 
     mailbox drv_mbx; 
     
@@ -277,12 +277,13 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       conv_item item; 
       
       $display("T=%0t [Test] Testing layer 1 input ...", $time);
+      
       item = new; 
       // get layer 1 input 
       
       item.ifmap_dat = ifmap_mem[ifmap_idx]; 
-      item.weights_dat = weights_mem[weights_idx]; 
-      
+      item.weights_dat = weights_mem[weights_idx];
+
       drv_mbx.put(item); 
     endtask
   endclass
@@ -292,13 +293,31 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
   
   always #10 clk = ~clk;
   conv_if _if (clk);
-
+  
+  conv u0 (.clk (clk),
+           .ifmap_dat (_if.ifmap_dat),
+           .ifmap_rdy(_if.ifmap_rdy),
+           .ifmap_vld(_if.ifmap_vld),
+           .weights_dat(_if.weights_dat),
+           .weights_rdy(_if.weights_rdy),
+           .weights_vld(_if.weights_vld), 
+           .ofmap_dat (_if.ofmap_dat),
+           .ofmap_rdy(_if.ofmap_rdy),
+           .ofmap_vld(_if.ofmap_vld),
+           .layer_params_dat (_if.layer_params_dat),
+           .ifmap_rdy(_if.layer_params_rdy),
+           .layer_params_vld(_if.layer_params_vld));
+  
   initial begin
     test t0; 
     clk <= 0;
     _if.rst_n <= 0;
+    
     #20 _if.rst_n <= 1;
-
+    _if.ifmap_vld <= 1; 
+    _if.weights_vld <= 1;
+    _if.ofmap_rdy <= 1; 
+    
     t0 = new;
     t0.e0.vif = _if;
     t0.run();
