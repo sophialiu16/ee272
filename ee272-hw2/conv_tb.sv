@@ -54,13 +54,13 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       rand bit weights_vld;
 
       // ofmap
-      rand bit [31:0] ofmap_dat;
-      bit ofmap_rdy;
-      rand bit ofmap_vld;
+      rand [31:0] ofmap_dat;
+      bit ofmap_vld;
+      rand bit ofmap_rdy;
 
       // params
-      rand layer_params_t layer_params_dat;
-      rand bit layer_params_rdy;
+      rand bit [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+      bit layer_params_rdy;
       rand bit layer_params_vld;
       
       function void printifmap(string tag="");
@@ -84,7 +84,8 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
         virtual conv_if vif;
         event drv_done;
         mailbox drv_mbx;
-        task run();
+
+	task run();
         $display ("T=%0t [Driver] starting ...", $time);
         @ (posedge vif.clk);
           forever begin
@@ -282,8 +283,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       // get layer 1 input 
       
       item.ifmap_dat = ifmap_mem[ifmap_idx]; 
-      item.weights_dat = weights_mem[weights_idx];
-
+      item.ifmap_vld = 1;
+      item.weights_dat = weights_mem[weights_idx]; 
+      item.weights_vld = 1;
+      
       drv_mbx.put(item); 
     endtask
   endclass
@@ -312,11 +315,12 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     test t0; 
     clk <= 0;
     _if.rst_n <= 0;
+    _if.ifmap_vld <= 0;
+    _if.weights_vld <= 0;
+    _if.ofmap_rdy <= 0;
+    _if.layer_params_vld <= 0;
     
     #20 _if.rst_n <= 1;
-    _if.ifmap_vld <= 1; 
-    _if.weights_vld <= 1;
-    _if.ofmap_rdy <= 1; 
     
     t0 = new;
     t0.e0.vif = _if;
