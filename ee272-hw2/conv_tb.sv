@@ -308,7 +308,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
            .ofmap_rdy(_if.ofmap_rdy),
            .ofmap_vld(_if.ofmap_vld),
            .layer_params_dat (_if.layer_params_dat),
-           .ifmap_rdy(_if.layer_params_rdy),
+           .layer_params_rdy(_if.layer_params_rdy),
            .layer_params_vld(_if.layer_params_vld));
   
   initial begin
