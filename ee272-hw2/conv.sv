@@ -1,8 +1,8 @@
 module conv  
 #(
-    parameter IFMAP_SIZE = 157323,
-    parameter WEIGHTS_SIZE = 9408,
-    parameter OFMAP_SIZE = 802816
+    parameter IFMAP_SIZE = 100352,
+    parameter WEIGHTS_SIZE = 147456,
+    parameter OFMAP_SIZE = 100352
 ) 
 (
     input clk,
@@ -32,7 +32,7 @@ module conv
     reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
     
     initial begin
-        $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
+        $readmemh("data/layer3_gold_ofmap.mem", gold_ofmap_mem);
     end
 
     assign ofmap_dat = gold_ofmap_mem[ofmap_idx];

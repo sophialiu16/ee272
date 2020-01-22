@@ -1,7 +1,7 @@
 `include "layer_params.svh"
-extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap, 
-                    input reg [15:0] array [9408-1:0] weights,
-                    output reg [31:0] array [802816-1:0] ofmap,
+extern void run_conv_gold ( input reg [15:0] array  [100352-1:0] ifmap, 
+                    input reg [15:0] array [147456-1:0] weights,
+                    output reg [31:0] array [100352-1:0] ofmap,
                     input bit [7:0] ofmap_width,
                     input bit [7:0] ofmap_height,
                     input bit [15:0] ifmap_channels,
@@ -10,15 +10,15 @@ extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap,
                     input bit [3:0] stride);
 module conv_tb
 #(
-    parameter IFMAP_SIZE = 157323, // ((OFMAP_HEIGHT - 1) * STRIDE + FILTER_SIZE)^2 * IFMAP_CHANNELS
-    parameter WEIGHTS_SIZE = 9408, // FILTER_SIZE * FILTER_SIZE * IFMAP_CHANNELS * OFMAP_CHANNELS
-    parameter OFMAP_SIZE = 802816, //112*112*64 = OFMAP_HEIGHT * OFMAP_WIDTH * OFMAP_CHANNELS
-    parameter OFMAP_WIDTH = 112,
-    parameter OFMAP_HEIGHT = 112,
-    parameter OFMAP_CHANNELS = 64,
-    parameter IFMAP_CHANNELS = 3,
-    parameter STRIDE = 2,
-    parameter FILTER_SIZE = 7
+    parameter IFMAP_SIZE = 100352, // ((OFMAP_HEIGHT - 1) * STRIDE + FILTER_SIZE)^2 * IFMAP_CHANNELS
+    parameter WEIGHTS_SIZE = 147456, // FILTER_SIZE * FILTER_SIZE * IFMAP_CHANNELS * OFMAP_CHANNELS
+    parameter OFMAP_SIZE = 100352, //112*112*64 = OFMAP_HEIGHT * OFMAP_WIDTH * OFMAP_CHANNELS
+    parameter OFMAP_WIDTH = 28,
+    parameter OFMAP_HEIGHT = 28,
+    parameter OFMAP_CHANNELS = 128,
+    parameter IFMAP_CHANNELS = 128,
+    parameter STRIDE = 1,
+    parameter FILTER_SIZE = 3
 
 );
     // START CODE HERE
@@ -34,9 +34,9 @@ reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
 reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
 reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
  initial begin
-        $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
-        $readmemh("data/layer1_ifmap.mem", ifmap_mem);
-        $readmemh("data/layer1_weights.mem", weights_mem);
+        $readmemh("data/layer3_gold_ofmap.mem", gold_ofmap_mem);
+        $readmemh("data/layer3_ifmap.mem", ifmap_mem);
+        $readmemh("data/layer3_weights.mem", weights_mem);
     end
 
 
