@@ -59,7 +59,8 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       rand bit ofmap_rdy;
 
       // params
-      rand bit [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+      //rand bit [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+      layer_params_t layer_params_dat;
       bit layer_params_rdy;
       rand bit layer_params_vld;
       
@@ -298,6 +299,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
   conv_if _if (clk);
   
   conv u0 (.clk (clk),
+           .rst_n (_if.rst_n),
            .ifmap_dat (_if.ifmap_dat),
            .ifmap_rdy(_if.ifmap_rdy),
            .ifmap_vld(_if.ifmap_vld),
@@ -380,8 +382,8 @@ endmodule
 
     // params
 
-    logic [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
-    //layer_params_t layer_params_;
+    //logic [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+    layer_params_t layer_params_dat;
     //logic [$bits(layer_params_t)-1:0] layer_params_dat;
     //assign layer_params_dat = layer_params_; 
 

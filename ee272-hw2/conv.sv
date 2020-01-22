@@ -38,7 +38,7 @@ module conv
     assign ofmap_dat = gold_ofmap_mem[ofmap_idx];
 
     always_ff @(posedge clk, negedge rst_n) begin
-        if(~rst_n) begin
+        if(rst_n) begin
             ofmap_idx <= 1'b0;
             ifmap_rdy <= 1'b0;
             weights_rdy <= 1'b0;
