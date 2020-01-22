@@ -141,10 +141,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           end
 
           // When transfer is over, raise the done event
-	  vif.ifmap_vld <= 0;
-	  vif.weights_vld <= 0;
-	  vif.ofmap_rdy <= 0;
-	  vif.layer_params_vld <= 0;
+	  //vif.ifmap_vld <= 0;
+	  //vif.weights_vld <= 0;
+	  //vif.ofmap_rdy <= 0;
+	  //vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
@@ -207,8 +207,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     // SCOREBOARD
     class scoreboard;
       mailbox scb_mbx;
-      
+ 
       task run();
+      $display ("T=%0t [Scoreboard] starting ...", $time);
+        
       forever begin
       conv_item item;
       scb_mbx.get(item);
@@ -299,7 +301,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
   conv_if _if (clk);
   
   conv u0 (.clk (clk),
-           .rst_n (_if.rst_n),
+           //.rst_n (_if.rst_n),
            .ifmap_dat (_if.ifmap_dat),
            .ifmap_rdy(_if.ifmap_rdy),
            .ifmap_vld(_if.ifmap_vld),
