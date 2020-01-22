@@ -139,10 +139,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           end
 
           // When transfer is over, raise the done event
-	  vif.ifmap_vld <= 0;
-	  vif.weights_vld <= 0;
-	  vif.ofmap_rdy <= 0;
-	  vif.layer_params_vld <= 0;
+	  vif.ifmap_vld <= 1;
+	  vif.weights_vld <= 1;
+	  vif.ofmap_rdy <= 1;
+	  vif.layer_params_vld <= 1;
           ->drv_done;
         end
       endtask
@@ -211,7 +211,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       conv_item item;
       scb_mbx.get(item);
       //item.print("Scoreboard");
- 
+      
       if (item.ifmap_vld) begin
         if (generated_ofmap_mem[ofmap_idx] != gold_ofmap_mem[ofmap_idx]) begin
           $display ("T=%0t [Scoreboard] ERROR!", $time);
@@ -310,7 +310,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     $vcdplusfile("dump.vcd");
     $vcdplusmemon();
     $vcdpluson(0, conv_tb);
-    #220000;
+    #2200000;
     $finish(2);
   end
 
