@@ -124,13 +124,17 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
             vif.layer_params_vld <= 0;
           end
 
-         /* @ (posedge vif.clk);
-          while (!vif.ready) begin
+          @ (posedge vif.clk);
+          while (!vif.ifmap_vld & !vif.weights_vld & !vif.ofmap_rdy & !vif.layer_params_rdy) begin
             $display ("T=%0t [Driver] wait until ready is high", $time);
             @(posedge vif.clk);
-          end*/
+          end
 
           // When transfer is over, raise the done event
+	  vif.ifmap_vld <= 0;
+	  vif.weights_vld <= 0;
+	  vif.ofmap_rdy <= 0;
+	  vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
