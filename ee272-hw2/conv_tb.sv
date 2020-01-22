@@ -10,22 +10,23 @@ extern void run_conv_gold ( input reg [15:0] array  [157323-1:0] ifmap,
                     input bit [3:0] stride);
 module conv_tb
 #(
-    parameter IFMAP_SIZE = 4,
-    parameter WEIGHTS_SIZE = 4,
-    parameter OFMAP_SIZE = 4
+    parameter IFMAP_SIZE = 157323,
+    parameter WEIGHTS_SIZE = 9408,
+    parameter OFMAP_SIZE = 802816 //112*112*64
 );
     // START CODE HERE
     // sets the layer parameters for the convolution
   	// sends input and weight arrays into the accelerator
   	// gets the output array and checks it using the gold model
   
- reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
-reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
-reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
-reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
-reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
-reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
- initial begin
+    reg [31:0] gold_ofmap_mem [OFMAP_SIZE-1:0];
+    reg [31:0] ifmap_mem [IFMAP_SIZE-1:0];
+    reg [31:0] weights_mem [WEIGHTS_SIZE-1:0];
+    reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
+    reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
+    reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
+    
+    initial begin
         $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
         $readmemh("data/layer1_ifmap.mem", ifmap_mem);
         $readmemh("data/layer1_weights.mem", weights_mem);
@@ -209,12 +210,12 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       end
  
       if (item.ifmap_vld) begin
-        //if (item.ofmap_dat != gold_ofmap_mem) begin
+        if (item.ofmap_dat != gold_ofmap_mem[ofmap_idx]) begin
           $display ("T=%0t [Scoreboard] ERROR!", $time);
-        //end
-        //else begin
-        //  $display ("T=%0t [Scoreboard] PASS!", $time);
-        //end
+        end
+        else begin
+          $display ("T=%0t [Scoreboard] PASS!", $time);
+        end
       end
       end 
     endtask
