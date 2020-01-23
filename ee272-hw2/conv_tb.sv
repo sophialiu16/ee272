@@ -64,18 +64,18 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       rand bit layer_params_vld;
       
       function void printifmap(string tag="");
-        $display ("T=%0t, ifmap data = %0d, ifmap rdy = 0x%0h, ifmap valid = 0x%0h",
-                  $time, ifmap_dat, ifmap_rdy, ifmap_vld);
+        //$display ("T=%0t, ifmap data = %0d, ifmap rdy = 0x%0h, ifmap valid = 0x%0h",
+        //          $time, ifmap_dat, ifmap_rdy, ifmap_vld);
       endfunction
       
       function void printofmap(string tag="");
-        $display ("T=%0t, ofmap data = %0d, ofmap rdy = 0x%0h, ofmap valid = 0x%0h",
-                  $time, ofmap_dat, ofmap_rdy, ofmap_vld);
+        //$display ("T=%0t, ofmap data = %0d, ofmap rdy = 0x%0h, ofmap valid = 0x%0h",
+        //          $time, ofmap_dat, ofmap_rdy, ofmap_vld);
       endfunction
        
       function void printweights(string tag="");
-        $display ("T=%0t, weights data = %0d, weights rdy = 0x%0h, weights valid = 0x%0h",
-                  $time, weights_dat, weights_rdy, weights_vld);
+       // $display ("T=%0t, weights data = %0d, weights rdy = 0x%0h, weights valid = 0x%0h",
+        //          $time, weights_dat, weights_rdy, weights_vld);
       endfunction      
     endclass
   
@@ -86,11 +86,11 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
         mailbox drv_mbx;
 	//
 	task run();
-        $display ("T=%0t [Driver] starting ...", $time);
+        //$display ("T=%0t [Driver] starting ...", $time);
         @ (posedge vif.clk);
           forever begin
           conv_item item;
-          $display ("T=%0t [Driver] waiting for item ...", $time);
+          //$display ("T=%0t [Driver] waiting for item ...", $time);
           drv_mbx.get(item);
 
           // ifmap
@@ -117,10 +117,14 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           if (vif.ofmap_vld) begin
             vif.ofmap_dat <= item.ofmap_dat;
             vif.ofmap_rdy <= 1;
+            //$display ("T=%0t [Driver] set ready high", $time);
+            
           end
           else begin
             vif.ofmap_dat <= vif.ofmap_dat;
             vif.ofmap_rdy <= 0;
+            //$display ("T=%0t [Driver] set ready low", $time);
+            
           end
 
       		// params
@@ -135,15 +139,15 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
 
           @ (posedge vif.clk);
           while (!vif.ifmap_vld & !vif.weights_vld & !vif.ofmap_rdy & !vif.layer_params_rdy) begin
-            $display ("T=%0t [Driver] wait until ready is high", $time);
+            //$display ("T=%0t [Driver] wait until ready is high", $time);
             @(posedge vif.clk);
           end
 
           // When transfer is over, raise the done event
-	  vif.ifmap_vld <= 0;
-	  vif.weights_vld <= 0;
-	  vif.ofmap_rdy <= 0;
-	  vif.layer_params_vld <= 0;
+	  //vif.ifmap_vld <= 0;
+	  //vif.weights_vld <= 0;
+	  //vif.ofmap_rdy <= 0;
+	  //vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
@@ -155,7 +159,6 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       mailbox scb_mbx; 
       
       task run(); 
-        $display("T=%0t [Monitor] starting ...", $time);
         
         forever begin 
           @ (posedge vif.clk);
@@ -206,8 +209,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     // SCOREBOARD
     class scoreboard;
       mailbox scb_mbx;
-      
+ 
       task run();
+      //$display ("T=%0t [Scoreboard] starting ...", $time);
+        
       forever begin
       conv_item item;
       scb_mbx.get(item);
@@ -218,7 +223,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], gold_ofmap_mem[ofmap_idx]);
         end
         else begin
-          $display ("T=%0t [Scoreboard] PASS!", $time);
+          //$display ("T=%0t [Scoreboard] PASS!", $time);
         end
       end
       end 
@@ -273,21 +278,25 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       
       test_layer(); 
     endtask 
-    
+    integer i;
     virtual task test_layer(); 
       conv_item item; 
       
-      $display("T=%0t [Test] Testing layer input ...", $time);
+     // $display("T=%0t [Test] Testing layer input ...", $time);
       
       item = new; 
       // get layer 1 input 
-      
-      item.ifmap_dat = ifmap_mem[ifmap_idx]; 
-      item.ifmap_vld = 1;
-      item.weights_dat = weights_mem[weights_idx]; 
-      item.weights_vld = 1;
-      
-      drv_mbx.put(item); 
+      for (i = 0; i < IFMAP_SIZE; i = i + 1) begin
+        item.ifmap_dat = ifmap_mem[i];
+        item.ifmap_vld = 1;
+        if (i < WEIGHTS_SIZE) begin
+          item.weights_dat = weights_mem[i];
+          item.weights_vld = 1;
+        end else begin
+          item.weights_vld = 0;
+        end
+        drv_mbx.put(item);
+      end     
     endtask
   endclass
    
@@ -298,6 +307,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
   conv_if _if (clk);
   
   conv u0 (.clk (clk),
+           .rst_n (_if.rst_n),
            .ifmap_dat (_if.ifmap_dat),
            .ifmap_rdy(_if.ifmap_rdy),
            .ifmap_vld(_if.ifmap_vld),
@@ -321,19 +331,22 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     _if.layer_params_vld <= 0;
     
     #20 _if.rst_n <= 1;
-    
-    t0 = new;
-    t0.e0.vif = _if;
-    t0.run();
-
-    #200 $finish;
+   
+    forever begin
+      t0 = new;
+      t0.e0.vif = _if;
+      t0.run();
+      #200;
+    end
+#200 $finish;
+ 
   end
 
   initial begin
     $vcdplusfile("dump.vcd");
     $vcdplusmemon();
     $vcdpluson(0, conv_tb);
-    #2200000;
+    #220000000;
     $finish(2);
   end
 
@@ -344,13 +357,6 @@ always_ff @(posedge clk, negedge _if.rst_n) begin
         weights_idx <= 1'b0;
       end
       else begin
-	if (_if.ifmap_rdy) begin
-	        ifmap_idx <= ifmap_idx + 1'b1;
-	end
-
-	if (_if.weights_rdy) begin
-	        weights_idx <= weights_idx + 1'b1;
-	end
 
 	if (_if.ofmap_vld) begin
 		ofmap_idx <= ofmap_idx + 1'b1;
@@ -380,8 +386,7 @@ endmodule
 
     // params
 
-    layer_params_t layer_params_dat;//[7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
-    //layer_params_t layer_params_;
+    layer_params_t layer_params_dat;
     //logic [$bits(layer_params_t)-1:0] layer_params_dat;
     //assign layer_params_dat = layer_params_; 
 
