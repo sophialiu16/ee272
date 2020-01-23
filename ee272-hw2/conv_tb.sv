@@ -92,7 +92,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           conv_item item;
           //$display ("T=%0t [Driver] waiting for item ...", $time);
           drv_mbx.get(item);
-
+	
           // ifmap
           if (vif.ifmap_rdy) begin
             vif.ifmap_dat <= item.ifmap_dat;
@@ -144,10 +144,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           end
 
           // When transfer is over, raise the done event
-	  //vif.ifmap_vld <= 0;
-	  //vif.weights_vld <= 0;
-	  //vif.ofmap_rdy <= 0;
-	  //vif.layer_params_vld <= 0;
+	  vif.ifmap_vld <= 0;
+	  vif.weights_vld <= 0;
+	  vif.ofmap_rdy <= 0;
+	  vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
@@ -219,10 +219,11 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       //item.print("Scoreboard");
       
       if (item.ofmap_vld) begin
-        if (generated_ofmap_mem[ofmap_idx] != gold_ofmap_mem[ofmap_idx]) begin
-          $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], gold_ofmap_mem[ofmap_idx]);
+        if (generated_ofmap_mem[ofmap_idx] != item.ofmap_dat) begin //gold_ofmap_mem[ofmap_idx]) begin
+          $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], item.ofmap_dat);
         end
         else begin
+	  $display ("%0h", item.ofmap_dat);
           //$display ("T=%0t [Scoreboard] PASS!", $time);
         end
       end
@@ -274,9 +275,13 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       
       fork 
         e0.run(); 
-      join_none 
-      
-      test_layer(); 
+      join_none
+        //test_layer();  
+        forever begin 
+          @(posedge e0.vif.clk) begin//@(e0.d0.drv_done) begin 
+          test_layer();
+          end 
+        end 
     endtask 
     integer i;
     virtual task test_layer(); 
@@ -357,8 +362,7 @@ always_ff @(posedge clk, negedge _if.rst_n) begin
         weights_idx <= 1'b0;
       end
       else begin
-
-	if (_if.ofmap_vld) begin
+	if (_if.ofmap_rdy &_if.ofmap_vld) begin
 		ofmap_idx <= ofmap_idx + 1'b1;
         end
       end
