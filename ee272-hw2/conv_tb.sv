@@ -31,8 +31,6 @@ reg [31:0] generated_ofmap_mem [OFMAP_SIZE-1:0];
 reg [15:0] ifmap_mem [IFMAP_SIZE-1:0];
 reg [15:0] weights_mem [WEIGHTS_SIZE-1:0];
 reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
-reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
-reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
  initial begin
         $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
         $readmemh("data/layer1_ifmap.mem", ifmap_mem);
@@ -138,7 +136,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           end
 
           @ (posedge vif.clk);
-          while (!vif.ifmap_vld & !vif.weights_vld & !vif.ofmap_rdy & !vif.layer_params_rdy) begin
+          while (!vif.ifmap_rdy & !vif.weights_rdy & !vif.ofmap_vld & !vif.layer_params_rdy) begin
             //$display ("T=%0t [Driver] wait until ready is high", $time);
             @(posedge vif.clk);
           end
@@ -358,11 +356,9 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
 always_ff @(posedge clk, negedge _if.rst_n) begin
       if (~_if.rst_n) begin
         ofmap_idx <= 1'b0;
-        ifmap_idx <= 1'b0;
-        weights_idx <= 1'b0;
       end
       else begin
-	if (_if.ofmap_rdy &_if.ofmap_vld) begin
+	if (_if.ofmap_vld & _if.ofmap_rdy) begin
 		ofmap_idx <= ofmap_idx + 1'b1;
         end
       end
