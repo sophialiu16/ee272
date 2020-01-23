@@ -307,7 +307,8 @@ initial begin
   always #10 clk = ~clk;
   conv_if _if (clk);
   
-  conv u0 (.clk (clk),
+  conv #(.IFMAP_SIZE(IFMAP_SIZE), .WEIGHTS_SIZE(WEIGHTS_SIZE), .OFMAP_SIZE(OFMAP_SIZE)) 
+    u0 (.clk (clk),
            .rst_n (_if.rst_n),
            .ifmap_dat (_if.ifmap_dat),
            .ifmap_rdy(_if.ifmap_rdy),
