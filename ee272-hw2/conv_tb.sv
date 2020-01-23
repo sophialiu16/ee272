@@ -222,7 +222,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       
       if (item.ofmap_vld) begin
         if (generated_ofmap_mem[ofmap_idx] != item.ofmap_dat) begin //gold_ofmap_mem[ofmap_idx]) begin
-          $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], gold_ofmap_mem[ofmap_idx]);
+          $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], item.ofmap_dat);
         end
         else begin
           $display ("T=%0t [Scoreboard] PASS!", $time);
@@ -276,20 +276,23 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       
       fork 
         e0.run(); 
-      join_none 
-      
-      test_layer(); 
+      join_none
+        //test_layer();  
+        forever begin 
+          @(posedge e0.vif.clk) begin//@(e0.d0.drv_done) begin 
+          test_layer();
+          end 
+        end 
     endtask 
     
     virtual task test_layer(); 
-      conv_item item; 
-      
+      conv_item item;
+  
       $display("T=%0t [Test] Testing layer input ...", $time);
-      
       item = new; 
       // get layer 1 input 
       
-      item.ifmap_dat = ifmap_mem[ifmap_idx]; 
+      item.ifmap_dat = ifmap_mem[ifmap_idx];
      // item.ifmap_vld = 1;
       item.weights_dat = weights_mem[weights_idx]; 
      // item.weights_vld = 1;
@@ -342,7 +345,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
     $vcdplusfile("dump.vcd");
     $vcdplusmemon();
     $vcdpluson(0, conv_tb);
-    #2200000;
+    #220000;
     $finish(2);
   end
 
@@ -353,15 +356,15 @@ always_ff @(posedge clk, negedge _if.rst_n) begin
         weights_idx <= 1'b0;
       end
       else begin
-	if (_if.ifmap_rdy) begin
+	if (_if.ifmap_rdy & _if.ifmap_rdy) begin
 	        ifmap_idx <= ifmap_idx + 1'b1;
 	end
 
-	if (_if.weights_rdy) begin
+	if (_if.weights_rdy & _if.weights_rdy) begin
 	        weights_idx <= weights_idx + 1'b1;
 	end
 
-	if (_if.ofmap_vld) begin
+	if (_if.ofmap_rdy &_if.ofmap_vld) begin
 		ofmap_idx <= ofmap_idx + 1'b1;
         end
       end
