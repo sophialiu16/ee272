@@ -59,7 +59,7 @@ initial begin
       rand bit ofmap_rdy;
 
       // params
-      layer_params_t layer_params_dat;//rand bit [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+      layer_params_t layer_params_dat;
       bit layer_params_rdy;
       rand bit layer_params_vld;
       
@@ -278,7 +278,7 @@ initial begin
       join_none
         //test_layer();  
         forever begin 
-          @(posedge e0.vif.clk) begin//@(e0.d0.drv_done) begin 
+          @(posedge e0.vif.clk) begin 
           test_layer();
           end 
         end 
@@ -296,19 +296,7 @@ initial begin
      // item.weights_vld = 1;
       item.ofmap_dat = gold_ofmap_mem[ofmap_idx];
 
-      /*
-      item = new; 
-      // get layer 1 input 
-      for (i = 0; i < IFMAP_SIZE; i = i + 1) begin
-        item.ifmap_dat = ifmap_mem[i];
-        item.ifmap_vld = 1;
-        if (i < WEIGHTS_SIZE) begin
-          item.weights_dat = weights_mem[i];
-          item.weights_vld = 1;
-        end else begin
-          item.weights_vld = 0;
-        end*/
-        drv_mbx.put(item);
+      drv_mbx.put(item);
       //end     
     endtask
   endclass
@@ -407,10 +395,6 @@ endmodule
     // params
 
     layer_params_t layer_params_dat;
-    //logic [$bits(layer_params_t)-1:0] layer_params_dat;
-    //assign layer_params_dat = layer_params_; 
-
-    //logic [$bits(layer_params_t)-1:0] layer_params_t layer_params_dat;
     logic layer_params_rdy;
     logic layer_params_vld;
   endinterface
