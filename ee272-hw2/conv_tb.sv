@@ -59,7 +59,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       rand bit ofmap_rdy;
 
       // params
-      rand bit [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+      layer_params_t layer_params_dat;//rand bit [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
       bit layer_params_rdy;
       rand bit layer_params_vld;
       
@@ -380,7 +380,7 @@ endmodule
 
     // params
 
-    logic [7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
+    layer_params_t layer_params_dat;//[7:0][7:0][15:0][15:0][3:0][3:0] layer_params_dat;
     //layer_params_t layer_params_;
     //logic [$bits(layer_params_t)-1:0] layer_params_dat;
     //assign layer_params_dat = layer_params_; 
