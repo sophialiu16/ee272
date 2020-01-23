@@ -31,7 +31,9 @@ reg [31:0] generated_ofmap_mem [OFMAP_SIZE-1:0];
 reg [15:0] ifmap_mem [IFMAP_SIZE-1:0];
 reg [15:0] weights_mem [WEIGHTS_SIZE-1:0];
 reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
- initial begin
+reg [$clog2(IFMAP_SIZE)-1:0] ifmap_idx;
+reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
+initial begin
         $readmemh("data/layer1_gold_ofmap.mem", gold_ofmap_mem);
         $readmemh("data/layer1_ifmap.mem", ifmap_mem);
         $readmemh("data/layer1_weights.mem", weights_mem);
@@ -285,8 +287,16 @@ reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
     virtual task test_layer(); 
       conv_item item; 
       
-     // $display("T=%0t [Test] Testing layer input ...", $time);
-      
+     //$display("T=%0t [Test] Testing layer input ...", $time);
+     
+     item = new; 
+     item.ifmap_dat = ifmap_mem[ifmap_idx];
+     // item.ifmap_vld = 1;
+      item.weights_dat = weights_mem[weights_idx]; 
+     // item.weights_vld = 1;
+      item.ofmap_dat = gold_ofmap_mem[ofmap_idx];
+
+      /*
       item = new; 
       // get layer 1 input 
       for (i = 0; i < IFMAP_SIZE; i = i + 1) begin
@@ -297,9 +307,9 @@ reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
           item.weights_vld = 1;
         end else begin
           item.weights_vld = 0;
-        end
+        end*/
         drv_mbx.put(item);
-      end     
+      //end     
     endtask
   endclass
    
@@ -356,8 +366,18 @@ reg [$clog2(OFMAP_SIZE)-1:0] ofmap_idx;
 always_ff @(posedge clk, negedge _if.rst_n) begin
       if (~_if.rst_n) begin
         ofmap_idx <= 1'b0;
+        ifmap_idx <= 1'b0;
+        weights_idx <= 1'b0;
       end
       else begin
+	if (_if.ifmap_rdy & _if.ifmap_rdy) begin
+	        ifmap_idx <= ifmap_idx + 1'b1;
+	end
+
+	if (_if.weights_rdy & _if.weights_rdy) begin
+	        weights_idx <= weights_idx + 1'b1;
+	end
+
 	if (_if.ofmap_vld & _if.ofmap_rdy) begin
 		ofmap_idx <= ofmap_idx + 1'b1;
         end
