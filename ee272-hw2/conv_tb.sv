@@ -93,7 +93,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           conv_item item;
           $display ("T=%0t [Driver] waiting for item ...", $time);
           drv_mbx.get(item);
-
+	
           // ifmap
           if (vif.ifmap_rdy) begin
             vif.ifmap_dat <= item.ifmap_dat;
@@ -145,10 +145,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
           end
 
           // When transfer is over, raise the done event
-	  //vif.ifmap_vld <= 0;
-	  //vif.weights_vld <= 0;
-	  //vif.ofmap_rdy <= 0;
-	  //vif.layer_params_vld <= 0;
+	  vif.ifmap_vld <= 0;
+	  vif.weights_vld <= 0;
+	  vif.ofmap_rdy <= 0;
+	  vif.layer_params_vld <= 0;
           ->drv_done;
         end
       endtask
@@ -221,7 +221,7 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       //item.print("Scoreboard");
       
       if (item.ofmap_vld) begin
-        if (generated_ofmap_mem[ofmap_idx] != gold_ofmap_mem[ofmap_idx]) begin
+        if (generated_ofmap_mem[ofmap_idx] != item.ofmap_dat) begin //gold_ofmap_mem[ofmap_idx]) begin
           $display ("T=%0t [Scoreboard] ERROR!, generated=%0h, gold=%0h", $time, generated_ofmap_mem[ofmap_idx], gold_ofmap_mem[ofmap_idx]);
         end
         else begin
@@ -290,9 +290,10 @@ reg [$clog2(WEIGHTS_SIZE)-1:0] weights_idx;
       // get layer 1 input 
       
       item.ifmap_dat = ifmap_mem[ifmap_idx]; 
-      item.ifmap_vld = 1;
+     // item.ifmap_vld = 1;
       item.weights_dat = weights_mem[weights_idx]; 
-      item.weights_vld = 1;
+     // item.weights_vld = 1;
+      item.ofmap_dat = gold_ofmap_mem[ofmap_idx];
       
       drv_mbx.put(item); 
     endtask
