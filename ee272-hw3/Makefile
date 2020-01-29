@@ -7,7 +7,7 @@ compile_c: conv_gold.cpp conv_gold_test.cpp
 run_tb: compile_tb
 	./simv
 
-compile_tb: conv_tb.sv verilog/conv.sv conv_gold.cpp
+compile_tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
 	vcs -full64 \
 		-sverilog \
 		-timescale=1ns/1ps \
@@ -15,7 +15,7 @@ compile_tb: conv_tb.sv verilog/conv.sv conv_gold.cpp
 		-lca \
 		-cflags "-std=c++11" \
 		+vc+abstract \
-		conv_tb.sv \
+		tests/conv_tb.sv \
 		verilog/conv.sv \
 		conv_gold_sv.cpp \
 		| tee output.log
@@ -28,8 +28,9 @@ clean:
 	rm -rf ./conv_gold
 	rm -rf ./simv
 	rm -rf simv.daidir/ 
-	rm -rf dump.vcd
+	rm -rf *.vcd
 	rm -rf csrc
 	rm -rf ucli.key
 	rm -rf output.log
 	rm -rf vc_hdrs.h
+	rm -rf DVEfiles
