@@ -21,7 +21,11 @@ module mac
   // always blocks, etc.
   
   always_ff @(posedge clk, negedge rst_n) begin 
-    if (rst_n & enable) begin
+    if(!rst_n) begin 
+    //ofmap_out_reg = 0
+    //input_weight_product0
+    end 
+    else if (enable) begin
       input_weight_product = ifmap_in * weight_in;
       ofmap_out_reg = ofmap_in + input_weight_product;
     end
