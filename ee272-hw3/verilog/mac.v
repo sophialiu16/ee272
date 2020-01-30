@@ -26,14 +26,14 @@ module mac
     //input_weight_product0
     end 
     else if (enable) begin
-      input_weight_product = ifmap_in * weight_in;
-      ofmap_out_reg = ofmap_in + input_weight_product;
+      input_weight_product <= ifmap_in * weight_in;
+      ofmap_out_reg <= ofmap_in + input_weight_product;
     end
   end 
   
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n & enable) begin
-    	ifmap_out_reg = ifmap_in;
+    	ifmap_out_reg <= ifmap_in;
     end
   end
   
