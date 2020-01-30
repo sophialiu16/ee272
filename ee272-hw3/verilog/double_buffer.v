@@ -19,29 +19,70 @@ module double_buffer
   logic read_bank;
   logic [DATA_WIDTH - 1 : 0] buffers [1 : 0][BANK_ADDR_WIDTH - 1 : 0]
   
-  always_ff @(posedge clk) begin 
-    if (~rst_n) begin 
-      integer i, j;
-      for(i=0; i < BANK_ADDR_WIDTH; i=i+1) begin
-        buffers[0][i] <= 0;
-        buffers[1][i] <= 0;
-      end
-      read_bank <= 0;
-    end 
-    else if begin 
+  logic wen0, ren0, wen1, ren1;
   
-    	if (ren) begin
-      	rdata <= buffers[read_bank][radr];
-    	end 
-    
+  ram_sync_1r1w #(
+    .DATA_WIDTH(DATA_WIDTH),
+    .ADDR_WIDTH(BANK_ADDR_WIDTH),
+    .DEPTH(128) //todo
+  ) 
+  ram0 (
+    .clk(clk),
+    .wen(wen0),
+    .wadr(wadr),
+    .wdata(wdata),
+    .ren(ren0),
+    .radr(radr),
+    .rdata(rdata0)
+  );
+  
+   ram_sync_1r1w #(
+    .DATA_WIDTH(DATA_WIDTH),
+    .ADDR_WIDTH(BANK_ADDR_WIDTH),
+    .DEPTH(128) //todo
+  ) 
+  ram1 (
+    .clk(clk),
+    .wen(wen0),
+    .wadr(wadr),
+    .wdata(rdata0),
+    .ren(ren1),
+    .radr(radr),
+    .rdata(rdata1)
+  );
+  
+  always_ff @(posedge clk) begin
+    if (~rst_n) begin
+      read_bank <= 0;
+    end
+    else if begin
+
+        if (ren) begin
+          ren0 <= ~read_bank;
+          ren1 <= read_bank;
+          if (read_bank) begin
+            ren0 <= 0;
+            ren1 <= 1;
+            rdata <= rdata1;
+          end else begin 
+            rdata <= rdata0;
+          end
+    		end
+
       if (wen) begin
+        if (~read_bank) begin
+          wen0 <= 0;
+        	wen1 <= 1;
+        end
         buffers[~read_bank][wadr] <= wdata;
       end
-      
-      if (switch_banks) begin 
+
+      if (switch_banks) begin
         read_bank <= ~read_bank;
       end
     end // end reset
   end // end always_ff
 
 endmodule
+~
+
