@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 
-#include "conv_gold.cpp"
+//#include "conv_gold.cpp"
+#include "conv_gold_tiled.cpp"
 
 using namespace std;
 
@@ -63,8 +64,8 @@ void run_layer(string layer_name){
                 gold_ofmap_file >> tmp;
 
                 if(tmp != ofmap[i][j][k]){
-                    std::cout << "Error! Output does not match gold" << std::endl;
-                    return;
+                    std::cout << "Error! Output does not match gold at i = " << i << " j = " << j << " k = " << k << " gold = " << tmp << " output = "  << ofmap[i][j][k] << std::endl;
+                    //return;
                 }
             }
         }
@@ -74,7 +75,7 @@ void run_layer(string layer_name){
 }
 
 int main(){
-  run_layer<112, 112, 64, 3, 7, 2>("layer1");
+  //run_layer<112, 112, 64, 3, 7, 2>("layer1");
   run_layer<56, 56, 64, 64, 3, 1>("layer2");
   run_layer<28, 28, 128, 128, 3, 1>("layer3");
 }
