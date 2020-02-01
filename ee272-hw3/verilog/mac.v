@@ -27,8 +27,7 @@ module mac
       ofmap_out_reg <= 0;
     end 
     else if (enable) begin
-      input_weight_product <= ifmap_in * weight_in_reg;
-      ofmap_out_reg <= ofmap_in + input_weight_product;
+      ofmap_out_reg <= ofmap_in + ifmap_in * weight_in_reg;
     end
   end 
   

@@ -42,7 +42,7 @@ module mac_tb;
     weight_in <= 0;
     ofmap_in <= 0;
     weight_write_enable <= 0;
-
+    #10
     #20 rst_n <= 0;
     #20 rst_n <= 1;
     weight_write_enable <= 1;   
@@ -56,10 +56,18 @@ module mac_tb;
     ofmap_in <= 1;
     
     #20
+    assert(ofmap_out == 4*ifmap_in + ofmap_in);
+    assert(ifmap_out == ifmap_in);
+    $display("of map out: %0d, ifmap_in: %0d, ofmap_in: %0d", ofmap_out, ifmap_in, ofmap_in);
     enable <= 1;
     ifmap_in <= 3;
-    weight_in <= 4;
+    weight_in <= 5;
     ofmap_in <= 2;
+    #20
+    assert(ofmap_out == 3*ifmap_in + ofmap_in);
+    assert(ifmap_out == ifmap_in);
+    $display("of map out: %0d, ifmap_in: %0d, ofmap_in: %0d", ofmap_out, ifmap_in, ofmap_in);
+
   end
 
   initial begin
