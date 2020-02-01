@@ -43,9 +43,9 @@ module double_buffer
   ) 
   ram1 (
     .clk(clk),
-    .wen(wen0),
+    .wen(wen1),
     .wadr(wadr),
-    .wdata(rdata0),
+    .wdata(wdata),
     .ren(ren1),
     .radr(radr),
     .rdata(rdata1)
@@ -57,22 +57,20 @@ module double_buffer
     end
     else if begin
 
-        if (ren) begin
-          ren0 <= ~read_bank;
-          ren1 <= read_bank;
-          if (read_bank) begin
-            ren0 <= 0;
-            ren1 <= 1;
-            rdata <= rdata1;
-          end else begin 
-            rdata <= rdata0;
-          end
-    		end
+      if (ren) begin
+        ren0 <= ~read_bank;
+        ren1 <= read_bank;
+        if (read_bank) begin
+          rdata <= rdata1;
+        end else begin 
+          rdata <= rdata0;
+        end
+     end
 
       if (wen) begin
         if (~read_bank) begin
           wen0 <= 0;
-        	wen1 <= 1;
+          wen1 <= 1;
         end
         buffers[~read_bank][wadr] <= wdata;
       end
