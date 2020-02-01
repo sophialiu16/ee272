@@ -5,7 +5,7 @@ module top
   input clk,
   input rst_n
 );
-  NUM_STATES = 3
+  localparam NUM_STATES = 3;
   logic [$clog2(NUM_STATES) : 0] curr_state;
   logic [$clog2(NUM_STATES) : 0] next_state;
   
@@ -18,13 +18,16 @@ module top
   // currstate case statement
 
   // transition process - determines next state
-  always @ (curr_state, ...) begin 
+  always @ (curr_state) begin 
   end
 
   
-  systolic_array sys {
-    
-  }
+  //systolic_array sys {
+  //  
+  //}
+
+endmodule 
+/*
   module systolic_array
 #(
   parameter IFMAP_WIDTH = 16,
@@ -43,3 +46,4 @@ module top
 );
 
 endmodule
+*/

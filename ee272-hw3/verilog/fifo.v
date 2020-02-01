@@ -1,3 +1,4 @@
+`include "SizedFIFO.v"
 `define BSV_ASSIGNMENT_DELAY #0
 
 module fifo

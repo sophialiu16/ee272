@@ -12,7 +12,7 @@ module weight_read_addr_gen
   input [COUNTER_WIDTH*NUM_PARAMS - 1 : 0] config_data
 );
 
-  reg [COUNTER_WIDTH - 1 : 0] config_FX, config_FY, config_IC0, config_IC1;
+  reg [COUNTER_WIDTH - 1 : 0] config_FX, config_FY, config_IC1, config_OC1;
 
   always @ (posedge clk) begin
     if (rst_n) begin
@@ -32,7 +32,7 @@ module weight_read_addr_gen
       if (addr_enable) begin
         fx <=  (fx == config_FX - 1) ?
           0 : fx + 1;
-        fy <=  (FX == config_FX - 1) ?
+        fy <=  (fx == config_FX - 1) ?
         ((fy == config_FY - 1) ? 0 :fy + 1) : fy;
         ic1  <= ((fx == config_FX - 1) && (fy == config_FY - 1)) ?
         ((ic1 == config_IC1 - 1) ? 0 : ic1 + 1) : ic1;
@@ -47,7 +47,7 @@ module weight_read_addr_gen
     end
   end
 
-  assign addrc = (oc1 * config_IC1 * config_FY * config_FX) + (ic1 * config_FY * config_FX) + (fy * config_FX) + fx
+  assign addrc = (oc1 * config_IC1 * config_FY * config_FX) + (ic1 * config_FY * config_FX) + (fy * config_FX) + fx;
   assign addr = addrc[BANK_ADDR_WIDTH - 1 : 0];
 
 endmodule
