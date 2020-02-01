@@ -58,6 +58,7 @@ module sys_arr_tb;
     #20
 
     for (i = 0; i < 20; i = i + 1) begin
+    #20
       weight_write_enable <= 1;
       enable <= 1;
       for (j = 0; j < 4; j = j + 1) begin
