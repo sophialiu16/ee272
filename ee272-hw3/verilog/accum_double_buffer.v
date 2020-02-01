@@ -1,7 +1,8 @@
 module accum_double_buffer
 #(
   parameter DATA_WIDTH = 64,
-  parameter BANK_ADDR_WIDTH = 32 // There are two banks
+  parameter BANK_ADDR_WIDTH = 32, // There are two banks
+  parameter NUM_OC = 4
 )(
   input clk,
   input rst_n,
@@ -32,7 +33,7 @@ module accum_double_buffer
   ram_sync_1r1w #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(BANK_ADDR_WIDTH),
-    .DEPTH(128) //todo
+    .DEPTH(BANK_ADDR_WIDTH)
   )
   ram0 (
     .clk(clk),
@@ -47,8 +48,8 @@ module accum_double_buffer
    ram_sync_1r1w #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(BANK_ADDR_WIDTH),
-    .DEPTH(128) //todo
-  )
+     .DEPTH(BANK_ADDR_WIDTH)
+ )
   ram1 (
     .clk(clk),
     .wen(wen1),
@@ -62,11 +63,12 @@ module accum_double_buffer
   assign rdata_sys_arr = rdata_sys_arr_reg;
   assign rdata_out = rdata_out_reg;
 
-  integer i;
+  integer i; 
+  integer out_pixel;
   always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
       systolic_bank <= 0;
-      
+      out_pixel <= 0; 
       for (i = 0; i < DATA_WIDTH; i = i + 1) begin 
           rdata_sys_arr_reg[i] <= 0; // DATA_WIDTH'b0;
       end 
@@ -88,11 +90,17 @@ module accum_double_buffer
       
       if (ren_out) begin 
         radr <= radr_out; 
+        if (out_pixel < NUM_OC - 1) begin
+            out_pixel <= out_pixel + 1;
+        end else begin 
+            out_pixel <= 0;
+        end 
+        
         if (systolic_bank) begin
-          rdata_out_reg <= rdata0;
+          rdata_out_reg <= rdata0[out_pixel * DATA_WIDTH/NUM_OC +: DATA_WIDTH/NUM_OC];
           ren0 <= systolic_bank;
         end else begin
-          rdata_out_reg <= rdata1;
+          rdata_out_reg <= rdata1[DATA_WIDTH/NUM_OC * out_pixel +: DATA_WIDTH/NUM_OC];
           ren1 <= ~systolic_bank;
         end
       end
