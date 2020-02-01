@@ -15,7 +15,7 @@ module weight_write_addr_gen
   // of the convolution which sets the layer and schedule parameters in
   // registers inside it.
 
-  reg [BANK_ADDR_WIDTH - 1 : 0] config_OC1_IC1_FY_FX//config_IC1_IY0_IX0;
+  reg [BANK_ADDR_WIDTH - 1 : 0] config_OC1_IC1_FY_FX; //config_IC1_IY0_IX0;
 
   always @ (posedge clk) begin
     if (rst_n) begin

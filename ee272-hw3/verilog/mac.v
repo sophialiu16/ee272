@@ -10,8 +10,8 @@ module mac
   input [IFMAP_WIDTH - 1 : 0] ifmap_in,
   input [WEIGHT_WIDTH - 1 : 0] weight_in,
   input [OFMAP_WIDTH - 1 : 0] ofmap_in,
-  output [IFMAP_WIDTH - 1 : 0] ifmap_out,
-  output [OFMAP_WIDTH - 1 : 0] ofmap_out
+  output reg [IFMAP_WIDTH - 1 : 0] ifmap_out,
+  output reg [OFMAP_WIDTH - 1 : 0] ofmap_out
 );
 
 // logic stuff
