@@ -55,7 +55,7 @@ module mac_tb;
     weight_in <= 3;
     ofmap_in <= 1;
     
-    #20
+    #25
     assert(ofmap_out == 4*ifmap_in + ofmap_in);
     assert(ifmap_out == ifmap_in);
     $display("of map out: %0d, ifmap_in: %0d, ofmap_in: %0d", ofmap_out, ifmap_in, ofmap_in);

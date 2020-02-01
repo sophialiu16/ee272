@@ -16,7 +16,6 @@ module mac
 );
 
 // logic stuff
-  logic [2*IFMAP_WIDTH - 1 : 0] input_weight_product;
   logic [OFMAP_WIDTH - 1 : 0] ofmap_out_reg;
   logic [IFMAP_WIDTH - 1 : 0] ifmap_out_reg;
   reg [WEIGHT_WIDTH - 1 : 0] weight_in_reg;
