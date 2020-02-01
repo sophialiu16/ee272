@@ -1,4 +1,4 @@
-`include "mac.v"
+//`include "mac.v"
 
 module systolic_array
 #(
@@ -11,6 +11,7 @@ module systolic_array
   input clk,
   input rst_n,
   input enable,
+  input weight_write_enable,
   input [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0],
   input [WEIGHT_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0],
   input [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0],
@@ -22,15 +23,16 @@ module systolic_array
   logic [OFMAP_WIDTH - 1 : 0] mac_ofmap_in [ARRAY_HEIGHT - 1 : 0][ARRAY_WIDTH - 1 : 0];
   logic [IFMAP_WIDTH - 1 : 0] mac_ifmap_out [ARRAY_HEIGHT - 1 : 0][ARRAY_WIDTH - 1 : 0];
   logic [OFMAP_WIDTH - 1 : 0] mac_ofmap_out [ARRAY_HEIGHT - 1 : 0][ARRAY_WIDTH - 1 : 0];
-
+  logic mac_weight_write_enable [ARRAY_HEIGHT - 1 : 0];
+  
   genvar i, j;
-
   for (i= 0; i < ARRAY_HEIGHT; i = i + 1) begin
     for (j = 0; j < ARRAY_WIDTH; j = j + 1) begin
       mac mac_arr (
         .clk(clk),
         .rst_n(rst_n),
         .enable(enable),
+        .weight_write_enable(mac_weight_write_enable[i]),
         .ifmap_in(mac_ifmap_in[i][j]),
         .weight_in(mac_weight_in[i][j]),
         .ofmap_in(mac_ofmap_in[i][j]),
@@ -39,11 +41,23 @@ module systolic_array
       );
     end
   end
+  
+  logic [$clog2(ARRAY_HEIGHT) - 1: 0] counter;
+  always_ff @(posedge clk, negedge rst_n) begin 
+    if (rst_n & weight_write_enable) begin 
+      if (counter < ARRAY_HEIGHT - 1) begin 
+      counter <= counter + 1'b1; 
+      end else begin 
+        counter <= 0;
+      end 
+    end
+  end
 
   always_ff @(posedge clk, negedge rst_n) begin
-  // Using generate statements, instantiate MACs and connect them up
+  // instantiate MACs and connect them up
   integer i, j;
 
+    if (rst_n) begin 
   for (i = 0; i < ARRAY_HEIGHT; i = i + 1) begin
     for (j = 0; j < ARRAY_WIDTH; j = j + 1) begin
       if (~rst_n) begin
@@ -87,6 +101,7 @@ module systolic_array
       end
       end
     end
+    end
   end
       
       
@@ -97,4 +112,3 @@ module systolic_array
       
   end
 endmodule
-
