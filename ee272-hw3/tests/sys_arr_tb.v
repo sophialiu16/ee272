@@ -39,9 +39,11 @@ module sys_arr_tb;
     clk <= 0;
     rst_n <= 1;
     enable <= 0;
-    ifmap_in <= 0;
-    weight_in <= 0;
-    ofmap_in <= 0;
+    for (i = 0; i < 4; i = i + 1) begin
+       ifmap_in[i] <= 0;
+       weight_in[i] <= 0;
+       ofmap_in[i] <= 0;
+    end
     weight_write_enable <= 0;
     #10
     #20 rst_n <= 0;
@@ -49,7 +51,7 @@ module sys_arr_tb;
     
     weight_write_enable <= 1;
 
-    for (i = 0; i < 4; i++) begin 
+    for (i = 0; i < 4; i = i + 1) begin 
       weight_in[i] <= i;
     end
     

@@ -28,7 +28,11 @@ module systolic_array
   genvar i, j;
   for (i= 0; i < ARRAY_HEIGHT; i = i + 1) begin
     for (j = 0; j < ARRAY_WIDTH; j = j + 1) begin
-      mac mac_arr (
+     mac #(
+       .IFMAP_WIDTH(4),
+       .WEIGHT_WIDTH(4),
+       .OFMAP_WIDTH(8)
+     ) mac_arr (
         .clk(clk),
         .rst_n(rst_n),
         .enable(enable),
