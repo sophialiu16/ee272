@@ -17,7 +17,6 @@ module double_buffer
   // Internally keeps track of which bank is being used for reading and which
   // for writing using some state
   logic read_bank;
-  logic [DATA_WIDTH - 1 : 0] buffers [1 : 0][BANK_ADDR_WIDTH - 1 : 0]
   
   logic wen0, ren0, wen1, ren1;
   
@@ -68,11 +67,8 @@ module double_buffer
      end
 
       if (wen) begin
-        if (~read_bank) begin
-          wen0 <= 0;
-          wen1 <= 1;
-        end
-        buffers[~read_bank][wadr] <= wdata;
+        wen0 <= read_bank;
+        wen1 <= ~read_bank;
       end
 
       if (switch_banks) begin
