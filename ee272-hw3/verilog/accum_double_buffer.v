@@ -19,10 +19,16 @@ module accum_double_buffer
 
   // Internally keeps track of which bank is being used for reading and which
   // for writing using some state
-  logic systolic_bank;
+  reg systolic_bank;
 
-  logic wen0, ren0, wen1, ren1;
+  reg wen0, ren0, wen1, ren1;
 
+  reg [BANK_ADDR_WIDTH - 1 : 0] radr; 
+  
+  reg [DATA_WIDTH - 1 : 0] rdata_sys_arr_reg; 
+  reg [DATA_WIDTH - 1 : 0] rdata_out_reg; 
+  reg [DATA_WIDTH - 1 : 0] rdata0, rdata1; 
+  
   ram_sync_1r1w #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(BANK_ADDR_WIDTH),
@@ -52,32 +58,41 @@ module accum_double_buffer
     .radr(radr),
     .rdata(rdata1)
   );
+  
+  assign rdata_sys_arr = rdata_sys_arr_reg;
+  assign rdata_out = rdata_out_reg;
 
-  always_ff @(posedge clk) begin
+  integer i;
+  always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
       systolic_bank <= 0;
-      rdata_sys_arr <= 0;
-    end
-    else if begin
-
+      
+      for (i = 0; i < DATA_WIDTH; i = i + 1) begin 
+          rdata_sys_arr_reg[i] <= 0; // DATA_WIDTH'b0;
+      end 
+    end else begin 
       if (ren_sys_arr) begin
+        radr <= radr_sys_arr;
         if (systolic_bank) begin
-          rdata_sys_arr <= rdata1;
+          rdata_sys_arr_reg <= rdata1;
           ren1 <= systolic_bank;
         end else begin
-          rdata_sys_arr <= rdata0;
+          rdata_sys_arr_reg <= rdata0;
           ren0 <= ~systolic_bank;
         end
      end else begin
-       rdata_sys_arr <= 0;
+      for (i = 0; i < DATA_WIDTH; i = i + 1) begin 
+          rdata_sys_arr_reg[i] <= 0;
+      end
      end
       
       if (ren_out) begin 
+        radr <= radr_out; 
         if (systolic_bank) begin
-          rdata_out <= rdata0;
+          rdata_out_reg <= rdata0;
           ren0 <= systolic_bank;
         end else begin
-          rdata_out <= rdata1;
+          rdata_out_reg <= rdata1;
           ren1 <= ~systolic_bank;
         end
       end

@@ -16,10 +16,15 @@ module double_buffer
 
   // Internally keeps track of which bank is being used for reading and which
   // for writing using some state
-  logic read_bank;
+  reg read_bank;
+  reg wen0, ren0, wen1, ren1;
+
+  reg [BANK_ADDR_WIDTH - 1 : 0] radr; 
   
-  logic wen0, ren0, wen1, ren1;
+  reg [DATA_WIDTH - 1 : 0] rdata; 
+  reg [DATA_WIDTH - 1 : 0] rdata0, rdata1; 
   
+
   ram_sync_1r1w #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(BANK_ADDR_WIDTH),
@@ -50,12 +55,13 @@ module double_buffer
     .rdata(rdata1)
   );
   
+  assign rdata = rdata_reg;
+ 
   always_ff @(posedge clk) begin
     if (~rst_n) begin
       read_bank <= 0;
     end
-    else if begin
-
+    else begin
       if (ren) begin
         ren0 <= ~read_bank;
         ren1 <= read_bank;
@@ -78,5 +84,5 @@ module double_buffer
   end // end always_ff
 
 endmodule
-~
+
 
