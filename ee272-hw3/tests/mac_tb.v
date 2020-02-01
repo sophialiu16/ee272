@@ -41,13 +41,15 @@ module mac_tb;
     ifmap_in <= 0;
     weight_in <= 0;
     ofmap_in <= 0;
-    
+    weight_write_enable <= 0;
+
     #20 rst_n <= 0;
     #20 rst_n <= 1;
-    
+    weight_write_enable <= 1;   
     weight_in <= 4;
     #20 
-    
+
+    weight_write_enable <= 1;    
     enable <= 1;
     ifmap_in <= 2;
     weight_in <= 3;
