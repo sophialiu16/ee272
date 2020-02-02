@@ -59,8 +59,8 @@ module conv
     input layer_params_vld
 );
 
-  logic [15:0] input_accumulator [ARRAY_HEIGHT];
-  logic [16*ARRAY_WIDTH - 1:0] weights_flattened;
+  logic [WEIGHTS_WIDTH*ARRAY_HEIGHT - 1:0] input_flattened;
+  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
   
@@ -84,12 +84,14 @@ logic weight_switch_banks;
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       if (~rst_n) begin
-				input_cnt <= 0;
+	input_cnt <= 0;
+	input_writes_cnt <= 0;
       end else begin
         if (ifmap_vld) begin
-          input_accumulator[input_cnt] <= ifmap_dat;
+          input_flattened[input_cnt*WEIGHTS_SIZE += WEIGHTS_SIZE] <= ifmap_dat;
           if (input_cnt == ARRAY_HEIGHT - 1) begin
             input_cnt <= 0;
+            input_writes_cnt <= input_writes_cnt + 1;
           end else begin
             input_cnt = input_cnt + 1;
           end
@@ -105,7 +107,7 @@ logic weight_switch_banks;
         weight_writes_cnt <= 0;
       end else begin
         if (weights_vld) begin
-          weights_flattened[weights_cnt*16 +: 16] <= weights_dat;
+          weights_flattened[weights_cnt*WEIGHTS_SIZE +: WEIGHTS_SIZE] <= weights_dat;
           if (weights_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
             weight_writes_cnt <= weight_writes_cnt + 1;
@@ -117,6 +119,7 @@ logic weight_switch_banks;
   end
   
   assign weight_write_data = weights_flattened;
+  assign input_write_data = inputs_flattened;
   // sets inputs to weight double buffer after accumulation
   always_comb begin
     if ((weights_cnt == 0) && (weights_vld)) begin
@@ -129,6 +132,14 @@ logic weight_switch_banks;
       weight_switch_banks <= 1;
     end else begin
       weight_switch_banks <= 0;
+    end
+  end
+
+  always_comb begin
+    if ((inputs_cnt == 0) && (inputs_vld)) begin
+      input_write_addr_enable <= 1;
+    end else begin
+      input_write_addr_enable <= 0;
     end
   end
   
