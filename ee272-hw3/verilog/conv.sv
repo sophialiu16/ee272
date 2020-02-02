@@ -1,5 +1,3 @@
-`include "../layer_params.svh"
-
 module conv
 #(
     parameter IFMAP_SIZE = 16,

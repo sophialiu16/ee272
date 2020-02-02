@@ -16,6 +16,14 @@ compile_tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
 		-cflags "-std=c++11" \
 		+vc+abstract \
 		tests/conv_tb.sv \
+		verilog/double_buffer.v \
+		verilog/input_read_addr_gen.v \
+                verilog/input_write_addr_gen.v \
+                verilog/mac.v \
+                verilog/ram_sync_1r1w.v \
+                verilog/systolic_array.v \
+                verilog/weight_read_addr_gen.v \
+                verilog/weight_write_addr_gen.v \
 		verilog/conv.sv \
 		conv_gold_sv.cpp \
 		| tee output.log
