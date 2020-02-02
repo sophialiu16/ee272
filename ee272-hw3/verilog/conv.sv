@@ -14,7 +14,7 @@ module conv
 
     // half of weights file length for now, change later
     // divide that by 4 since storing 4 pixels per address
-    parameter BANK_ADDR_WIDTH = 8,//1176,
+    parameter BANK_ADDR_WIDTH = 1176,
     parameter COUNTER_WIDTH = 32,
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
