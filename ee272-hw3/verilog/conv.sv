@@ -90,12 +90,13 @@ module conv
   
   // weights FIFO to weight double buffer
   always_ff @(posedge clk, negedge rst_n) begin
+      weights_rdy <= 1;
       if (~rst_n) begin
 	weights_cnt <= 0;
       end else begin
         if (weights_vld) begin
           weights_flattened[weights_cnt*16 +: 16] <= weights_dat;
-          if (input_cnt == ARRAY_WIDTH - 1) begin
+          if (weights_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
           end else begin
             weights_cnt = weights_cnt + 1;

@@ -133,7 +133,7 @@ class driver;
                     params = 1;
                 end
                 else begin
-                    vif.weights_vld = 0;
+                    vif.layer_params_vld = 0;
                 end
 
                 @ (posedge vif.clk);
