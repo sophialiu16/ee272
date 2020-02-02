@@ -26,7 +26,7 @@ module double_buffer
   ram_sync_1r1w #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(BANK_ADDR_WIDTH),
-    .DEPTH(128) //todo
+    .DEPTH(BANK_ADDR_WIDTH)
   ) 
   ram0 (
     .clk(clk),
@@ -41,7 +41,7 @@ module double_buffer
    ram_sync_1r1w #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(BANK_ADDR_WIDTH),
-    .DEPTH(128) //todo
+    .DEPTH(BANK_ADDR_WIDTH)
   ) 
   ram1 (
     .clk(clk),
