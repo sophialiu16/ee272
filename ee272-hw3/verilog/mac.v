@@ -11,13 +11,13 @@ module mac
   input [IFMAP_WIDTH - 1 : 0] ifmap_in,
   input [WEIGHT_WIDTH - 1 : 0] weight_in,
   input [OFMAP_WIDTH - 1 : 0] ofmap_in,
-  output reg [IFMAP_WIDTH - 1 : 0] ifmap_out,
-  output reg [OFMAP_WIDTH - 1 : 0] ofmap_out
+  output [IFMAP_WIDTH - 1 : 0] ifmap_out,
+  output [OFMAP_WIDTH - 1 : 0] ofmap_out
 );
 
 // logic stuff
-  logic [OFMAP_WIDTH - 1 : 0] ofmap_out_reg;
-  logic [IFMAP_WIDTH - 1 : 0] ifmap_out_reg;
+  reg [OFMAP_WIDTH - 1 : 0] ofmap_out_reg;
+  reg [IFMAP_WIDTH - 1 : 0] ifmap_out_reg;
   reg [WEIGHT_WIDTH - 1 : 0] weight_in_reg;
   // always blocks, etc.
   
@@ -47,10 +47,8 @@ module mac
     	weight_in_reg <= weight_in;
     end
   end
-  
-  always_comb begin
-    ifmap_out = ifmap_out_reg;
-    ofmap_out = ofmap_out_reg;
-  end 
+ 
+  assign ifmap_out = ifmap_out_reg;
+  assign ofmap_out = ofmap_out_reg; 
 
 endmodule
