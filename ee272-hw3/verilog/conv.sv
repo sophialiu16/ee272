@@ -4,9 +4,9 @@ module conv
     parameter WEIGHTS_SIZE = 16,
     parameter OFMAP_SIZE = 32,
 
-    parameter IFMAP_WIDTH = IFMAP_SIZE,
-    parameter WEIGHTS_WIDTH = WEIGHTS_SIZE,
-    parameter OFMAP_WIDTH = OFMAP_SIZE,
+    parameter IFMAP_WIDTH = 16,
+    parameter WEIGHTS_WIDTH = 16,
+    parameter OFMAP_WIDTH = 32,
   
     parameter ARRAY_HEIGHT = 4,
     parameter ARRAY_WIDTH = 4,
@@ -106,10 +106,12 @@ module conv
   end
   
   // sets inputs to weight double buffer after accumulation
-  always_ff @(posedge clk, negedge rst_n) begin
-    if ((input_cnt == ARRAY_WIDTH - 1) && (weights_vld)) begin
+  always_comb begin
+    if ((weights_cnt == ARRAY_WIDTH - 1) && (weights_vld)) begin
       weight_write_addr_enable <= 1;
       weight_write_data <= weights_flattened;
+    end else begin
+      weight_write_addr_enable <= 0;
     end
   end
   
@@ -165,15 +167,12 @@ module conv
       .wdata(weight_write_data)
     );
 
-
     logic sys_arr_enable;
-    logic [IFMAP_SIZE - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
-    logic [OFMAP_SIZE - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0]; 
-    logic [OFMAP_SIZE - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
-    logic [WEIGHTS_SIZE - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
+    logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
+    logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0]; 
+    logic [OFMAP_WIDTH - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
+    logic [WEIGHTS_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
     logic weight_write_enable_arr;
-
-
 
     systolic_array #(
       .IFMAP_WIDTH(IFMAP_WIDTH),
@@ -191,6 +190,5 @@ module conv
       .ofmap_in(ofmap_in),
       .ofmap_out(ofmap_out)
     ); 
-    // -------------------------------------------------------
 endmodule
 
