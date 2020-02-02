@@ -4,10 +4,10 @@ run_c: compile_c
 compile_c: conv_gold.cpp conv_gold_test.cpp
 	g++ -g -std=c++11 conv_gold_test.cpp -o conv_gold
 
-run_tb: compile_tb
+run_tb: tb
 	./simv
 
-compile_tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
+tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
 	vcs -full64 \
 		-sverilog \
 		-timescale=1ns/1ps \
@@ -28,7 +28,7 @@ compile_tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
 		conv_gold_sv.cpp \
 		| tee output.log
 
-debug: compile_tb
+debug: tb
 	./simv	
 	#dve -full64 -vpd dump.vcd &
 
