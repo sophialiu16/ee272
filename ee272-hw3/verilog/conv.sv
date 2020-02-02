@@ -68,7 +68,7 @@ module conv
     logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr;
     logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
 
-    logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_write_data;
+    logic [WEIGHTS_WIDTH - 1 : 0] weight_write_data;
 
     logic weight_write_addr_enable, weight_write_config_enable;
     logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
