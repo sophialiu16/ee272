@@ -8,21 +8,24 @@ module conv
     parameter IFMAP_WIDTH = 16,
     parameter WEIGHTS_WIDTH = 16,
     parameter OFMAP_WIDTH = 32,
-  
+
     parameter ARRAY_HEIGHT = 4,
     parameter ARRAY_WIDTH = 4,
 
     // half of weights file length for now, change later
     // divide that by 4 since storing 4 pixels per address
-    parameter BANK_ADDR_WIDTH = 1176,
+    parameter BANK_ADDR_WIDTH = 8,//1176,
     parameter COUNTER_WIDTH = 32,
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
-  
-    parameter CONFIG_OX = 12, 
-    parameter CONFIG_OY = 12, 
+    parameter INPUT_NUM_PARAMS = 3,
+
+    parameter CONFIG_OX = 12,
+    parameter CONFIG_OY = 12,
     parameter CONFIG_OX0 = 3,
     parameter CONFIG_OY0 = 3,
+    parameter CONFIG_IX0 = 64,
+    parameter CONFIG_IY0 = 64,
     parameter CONFIG_FX = 3,
     parameter CONFIG_FY = 3,
     parameter CONFIG_IC = 8,
@@ -59,36 +62,41 @@ module conv
     input layer_params_vld
 );
 
-  logic [WEIGHTS_WIDTH*ARRAY_HEIGHT - 1:0] input_flattened;
-  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
+  logic [IFMAP_WIDTH*ARRAY_HEIGHT - 1:0] input_flattened;
   logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
-  logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
+  logic input_read_addr_enable, input_read_config_enable;
+  logic [BANK_ADDR_WIDTH - 1 : 0] input_read_addr;
+  logic [COUNTER_WIDTH*INPUT_NUM_PARAMS - 1 : 0] input_read_config_data;
+  logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_write_data;
+  logic input_write_addr_enable, input_write_config_enable;
+  logic [BANK_ADDR_WIDTH - 1 : 0] input_write_addr;
+  logic [CONFIG_WIDTH - 1 : 0] input_write_config_data;
+  logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] input_writes_cnt;
+  logic input_switch_banks;
+  logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_read_data;
   
+  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
+  logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
   logic weight_read_addr_enable, weight_read_config_enable;
-    logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr;
-    logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
-
-    logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_write_data;
-
-    logic weight_write_addr_enable, weight_write_config_enable;
-    logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
-
-    logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
-
+  logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr;
+  logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
+  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_write_data;
+  logic weight_write_addr_enable, weight_write_config_enable;
+  logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
+  logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
   logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] weight_writes_cnt;
-
-logic weight_switch_banks;
-    logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
+  logic weight_switch_banks;
+  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
 
 
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       if (~rst_n) begin
-	input_cnt <= 0;
-	input_writes_cnt <= 0;
+        input_cnt <= 0;
+        input_writes_cnt <= 0;
       end else begin
         if (ifmap_vld) begin
-          input_flattened[input_cnt*WEIGHTS_SIZE += WEIGHTS_SIZE] <= ifmap_dat;
+          input_flattened[input_cnt*IFMAP_SIZE +: IFMAP_SIZE] <= ifmap_dat;
           if (input_cnt == ARRAY_HEIGHT - 1) begin
             input_cnt <= 0;
             input_writes_cnt <= input_writes_cnt + 1;
@@ -98,12 +106,12 @@ logic weight_switch_banks;
         end
       end
   end
-  
+
   // weights FIFO to weight double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       weights_rdy <= 1;
       if (~rst_n) begin
-	weights_cnt <= 0;
+        weights_cnt <= 0;
         weight_writes_cnt <= 0;
       end else begin
         if (weights_vld) begin
@@ -117,9 +125,9 @@ logic weight_switch_banks;
         end
       end
   end
-  
+
   assign weight_write_data = weights_flattened;
-  assign input_write_data = inputs_flattened;
+  assign input_write_data = input_flattened;
   // sets inputs to weight double buffer after accumulation
   always_comb begin
     if ((weights_cnt == 0) && (weights_vld)) begin
@@ -136,25 +144,41 @@ logic weight_switch_banks;
   end
 
   always_comb begin
-    if ((inputs_cnt == 0) && (inputs_vld)) begin
+    if ((input_cnt == 0) && (ifmap_vld)) begin
       input_write_addr_enable <= 1;
     end else begin
       input_write_addr_enable <= 0;
+    end
+    
+    if ((input_write_addr_enable == 1) && (input_writes_cnt == BANK_ADDR_WIDTH - 1)) begin
+      input_switch_banks <= 1;
+    end else begin
+      input_switch_banks <= 0;
+    end
+    
+  end
+
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+        weight_write_config_enable <= 1;
+        weight_write_config_data <= CONFIG_OC1 * CONFIG_IC1 * CONFIG_FY * CONFIG_FX;
+    end else begin
+        weight_write_config_enable <= 0;
     end
   end
   
   always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
-	weight_write_config_enable <= 1;
-    	weight_write_config_data <= CONFIG_OC1 * CONFIG_IC1 * CONFIG_FY * CONFIG_FX;
+        input_write_config_enable <= 1;
+        input_write_config_data <= CONFIG_IC1 * CONFIG_IY0 * CONFIG_IX0;
     end else begin
-    	weight_write_config_enable <= 0;
+        input_write_config_enable <= 0;
     end
-  end 
-  
+  end
+
     weight_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
-      .NUM_PARAMS(WEIGHTS_NUM_PARAMS), 
+      .NUM_PARAMS(WEIGHTS_NUM_PARAMS),
       .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
     ) weight_read_addr_gen_U(
       .clk(clk),
@@ -192,12 +216,53 @@ logic weight_switch_banks;
       .wdata(weight_write_data)
     );
 
+  	 input_read_addr_gen #(
+      .COUNTER_WIDTH(COUNTER_WIDTH),
+      .NUM_PARAMS(WEIGHTS_NUM_PARAMS),
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+     ) input_read_addr_gen_U(
+      .clk(clk),
+      .rst_n(rst_n),
+      .addr_enable(input_read_addr_enable),
+     .addr(input_read_addr),
+     .config_enable(input_read_config_enable),
+     .config_data(input_read_config_data)
+    );
+  
+  	input_write_addr_gen #(
+      .CONFIG_WIDTH(CONFIG_WIDTH),
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+    ) input_write_addr_gen_U (
+      .clk(clk),
+      .rst_n(rst_n),
+      .addr_enable(input_write_addr_enable),
+      .addr(input_write_addr),
+      .config_enable(input_write_config_enable),
+      .config_data(input_write_config_data) // config IC1 IY0 IX0
+    );
+  
+  	double_buffer #(
+      .DATA_WIDTH(IFMAP_WIDTH*ARRAY_WIDTH),
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+    ) input_double_buffer_U (
+      .clk(clk),
+      .rst_n(rst_n),
+      .switch_banks(input_switch_banks),
+      .ren(input_read_addr_enable),
+      .radr(input_read_addr),
+      .rdata(input_read_data),
+      .wen(input_write_addr_enable),
+      .wadr(input_write_addr),
+      .wdata(input_write_data)
+    );
+  	
+  
     logic sys_arr_enable;
     logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
-    logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0]; 
+    logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0];
     logic [OFMAP_WIDTH - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
     logic [WEIGHTS_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
-    logic weight_write_enable_arr;
+   logic weight_write_enable_arr;
 
     systolic_array #(
       .IFMAP_WIDTH(IFMAP_WIDTH),
@@ -214,6 +279,6 @@ logic weight_switch_banks;
       .weight_in(weight_in),
       .ofmap_in(ofmap_in),
       .ofmap_out(ofmap_out)
-    ); 
+    );
 endmodule
 
