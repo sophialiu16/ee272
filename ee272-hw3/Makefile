@@ -28,7 +28,7 @@ tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
 		conv_gold_sv.cpp \
 		| tee output.log
 
-debug: tb
+debug:  clean tb
 	./simv	
 	#dve -full64 -vpd dump.vcd &
 
