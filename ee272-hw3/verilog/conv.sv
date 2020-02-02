@@ -60,7 +60,7 @@ module conv
 
   logic [15:0] input_accumulator [ARRAY_HEIGHT];
   logic [15:0] weights_accumulator [ARRAY_WIDTH];  	
-  logic [15*ARRAY_WIDTH - 1:0] weights_flattened;
+  logic [16*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
   
@@ -97,7 +97,7 @@ module conv
 	weights_cnt <= 0;
       end else begin
         if (weights_vld) begin
-          weights_accumulator[weights_cnt] <= weights_dat;
+          weights_flattened[weights_cnt*ARRAY_WIDTH*16 +: ARRAY_WIDTH*16] <= weights_dat;
           if (input_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
           end else begin
@@ -105,14 +105,6 @@ module conv
           end
         end
       end
-  end
-
-  integer i;
-
-  always_comb begin
-    for (i = 0; i < ARRAY_WIDTH; i = i + 1) begin
-      weights_flattened[i * 16: (i + 1) * 16 - 1] = weights_accumulator[i];
-    end
   end
   
   // sets inputs to weight double buffer after accumulation
