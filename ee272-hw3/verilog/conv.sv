@@ -88,7 +88,8 @@ module conv
   logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] weight_writes_cnt;
   logic weight_switch_banks;
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
-  
+  logic [$clog2(ARRAY_HEIGHT) - 1: 0] weight_read_cnt;
+ 
   logic sys_arr_enable;
   logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
   logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0];
@@ -194,13 +195,20 @@ module conv
     end
   end
   
-  /*always_ff @(posedge clk, negedge rst_n) begin
+  always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
-    	  
+      weight_read_addr_enable <= 0;	  
+      weight_read_cnt <= 0;
     end else begin
-      
+      if (weight_read_cnt == ARRAY_HEIGHT - 1) begin
+        weight_read_addr_enable <= 1;
+        weight_read_cnt <= 0;
+      end else begin
+        weight_read_addr_enable <= 0;
+        weight_read_cnt <= weight_read_cnt + 1;
+      end
     end
-  end*/
+  end
 
     weight_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
