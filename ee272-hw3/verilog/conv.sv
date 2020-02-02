@@ -11,7 +11,9 @@ module conv
     parameter ARRAY_HEIGHT = 4,
     parameter ARRAY_WIDTH = 4,
 
-    parameter BANK_ADDR_WIDTH = 8,
+    // half of weights file length for now, change later
+    // divide that by 4 since storing 4 pixels per address
+    parameter BANK_ADDR_WIDTH = 8,//1176,
     parameter COUNTER_WIDTH = 32,
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
@@ -72,6 +74,12 @@ module conv
 
     logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
 
+  logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] weight_writes_cnt;
+
+logic weight_switch_banks;
+    logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
+
+
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       if (~rst_n) begin
@@ -93,11 +101,13 @@ module conv
       weights_rdy <= 1;
       if (~rst_n) begin
 	weights_cnt <= 0;
+        weight_writes_cnt <= 0;
       end else begin
         if (weights_vld) begin
           weights_flattened[weights_cnt*16 +: 16] <= weights_dat;
           if (weights_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
+            weight_writes_cnt <= weight_writes_cnt + 1;
           end else begin
             weights_cnt = weights_cnt + 1;
           end
@@ -105,13 +115,19 @@ module conv
       end
   end
   
+  assign weight_write_data = weights_flattened;
   // sets inputs to weight double buffer after accumulation
   always_comb begin
-    if ((weights_cnt == ARRAY_WIDTH - 1) && (weights_vld)) begin
+    if ((weights_cnt == 0) && (weights_vld)) begin
       weight_write_addr_enable <= 1;
-      weight_write_data <= weights_flattened;
     end else begin
       weight_write_addr_enable <= 0;
+    end
+
+    if ((weight_write_addr_enable == 1) && (weight_writes_cnt == BANK_ADDR_WIDTH - 1)) begin
+      weight_switch_banks <= 1;
+    end else begin
+      weight_switch_banks <= 0;
     end
   end
   
@@ -148,9 +164,6 @@ module conv
       .config_enable(weight_write_config_enable),
       .config_data(weight_write_config_data) // config_ic1_iy0_ix0
     );
-
-    logic weight_switch_banks;
-    logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;  
 
     double_buffer #(
       .DATA_WIDTH(WEIGHTS_WIDTH*ARRAY_WIDTH),

@@ -30,7 +30,7 @@ compile_tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
 
 debug: compile_tb
 	./simv	
-	dve -full64 -vpd dump.vcd &
+	#dve -full64 -vpd dump.vcd &
 
 clean:
 	rm -rf ./conv_gold
