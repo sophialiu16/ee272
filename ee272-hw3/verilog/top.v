@@ -9,7 +9,7 @@ module top
   parameter BANK_ADDR_WIDTH = 8,
   parameter COUNTER_WIDTH = 32,
   parameter CONFIG_WIDTH = 32,
-  parameter NUM_PARAMS = 3
+  parameter WEIGHTS_NUM_PARAMS = 4
 )(
   input clk,
   input rst_n,
@@ -21,7 +21,7 @@ module top
   
   logic weight_read_addr_enable, weight_read_config_enable; 
   logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr; 
-  logic [COUNTER_WIDTH*NUM_PARAMS - 1 : 0] weight_read_config_data;
+  logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
 
   logic weight_write_addr_enable, weight_write_config_enable; 
   logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr; 
@@ -29,7 +29,7 @@ module top
 
   weight_read_addr_gen #(
     .COUNTER_WIDTH(COUNTER_WIDTH),
-    .NUM_PARAMS(4), //fx,fy,ic1,oc1
+    .NUM_PARAMS(WEIGHTS_NUM_PARAMS), //fx,fy,ic1,oc1
     .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
   ) weight_read_addr_gen_U(
     .clk(clk),
@@ -48,7 +48,7 @@ module top
     .rst_n(rst_n),
     .addr_enable(weight_write_addr_enable),
     .addr(weight_write_addr),
-    .config_enable(weight_write_config_data),
+    .config_enable(weight_write_config_enable),
     .config_data(weight_write_config_data) // config_ic1_iy0_ix0
   );
  
