@@ -59,7 +59,8 @@ module conv
 );
 
   logic [15:0] input_accumulator [ARRAY_HEIGHT];
-	logic [15:0] weights_accumulator [ARRAY_WIDTH];  	
+  logic [15:0] weights_accumulator [ARRAY_WIDTH];  	
+  logic [15*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
   
@@ -93,7 +94,7 @@ module conv
   // weights FIFO to weight double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       if (~rst_n) begin
-				weights_cnt <= 0;
+	weights_cnt <= 0;
       end else begin
         if (weights_vld) begin
           weights_accumulator[weights_cnt] <= weights_dat;
@@ -105,12 +106,20 @@ module conv
         end
       end
   end
+
+  integer i;
+
+  always_comb begin
+    for (i = 0; i < ARRAY_WIDTH; i = i + 1) begin
+      weights_flattened[i * 16: (i + 1) * 16 - 1] = weights_accumulator[i];
+    end
+  end
   
   // sets inputs to weight double buffer after accumulation
   always_ff @(posedge clk, negedge rst_n) begin
     if ((input_cnt == ARRAY_WIDTH - 1) && (weights_vld)) begin
       weight_write_addr_enable <= 1;
-      weight_write_data <= weights_accumulator;
+      weight_write_data <= weights_flattened;
     end
   end
   
