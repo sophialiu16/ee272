@@ -14,30 +14,31 @@ module conv
 
     // half of weights file length for now, change later
     // divide that by 4 since storing 4 pixels per address
-    parameter BANK_ADDR_WIDTH = 8,//1176,
+    parameter BANK_ADDR_WIDTH = 1176,
     parameter COUNTER_WIDTH = 32,
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
     parameter INPUT_NUM_PARAMS = 3,
 
-    parameter CONFIG_OX = 12,
-    parameter CONFIG_OY = 12,
-    parameter CONFIG_OX0 = 3,
-    parameter CONFIG_OY0 = 3,
-    parameter CONFIG_IX0 = 64,
-    parameter CONFIG_IY0 = 64,
+    parameter CONFIG_OX = 56,
+    parameter CONFIG_OY = 56,
+    parameter CONFIG_OX0 = 8,
+    parameter CONFIG_OY0 = 8,
+    parameter CONFIG_OX1 = CONFIG_OX/CONFIG_OX0,
+    parameter CONFIG_OY1 = CONFIG_OY/CONFIG_OY0,
+    parameter CONFIG_IX0 = 112,
+    parameter CONFIG_IY0 = 112,
     parameter CONFIG_FX = 3,
     parameter CONFIG_FY = 3,
-    parameter CONFIG_IC = 8,
-    parameter CONFIG_OC = 16,
-    parameter CONFIG_OC0 = 4,
-    parameter CONFIG_IC0 = 4,
+    parameter CONFIG_IC = 64,
+    parameter CONFIG_OC = 64,
+    parameter CONFIG_OC0 = 16,
+    parameter CONFIG_IC0 = 16,
     parameter CONFIG_IC1 = CONFIG_IC/CONFIG_IC0,
     parameter CONFIG_OC1 = CONFIG_OC/CONFIG_OC0,
     parameter STRIDE = 1
  )
 (
-
     input clk,
     input rst_n,
 
@@ -87,6 +88,13 @@ module conv
   logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] weight_writes_cnt;
   logic weight_switch_banks;
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
+  
+  logic sys_arr_enable;
+  logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
+  logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0];
+  logic [OFMAP_WIDTH - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
+  logic [WEIGHTS_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
+  logic weight_write_enable_arr;
 
 
   // input FIFO to input double buffer
@@ -96,7 +104,7 @@ module conv
         input_writes_cnt <= 0;
       end else begin
         if (ifmap_vld) begin
-          input_flattened[input_cnt*IFMAP_SIZE +: IFMAP_SIZE] <= ifmap_dat;
+          input_flattened[input_cnt*IFMAP_WIDTH +: IFMAP_WIDTH] <= ifmap_dat;
           if (input_cnt == ARRAY_HEIGHT - 1) begin
             input_cnt <= 0;
             input_writes_cnt <= input_writes_cnt + 1;
@@ -115,7 +123,7 @@ module conv
         weight_writes_cnt <= 0;
       end else begin
         if (weights_vld) begin
-          weights_flattened[weights_cnt*WEIGHTS_SIZE +: WEIGHTS_SIZE] <= weights_dat;
+          weights_flattened[weights_cnt*WEIGHTS_WIDTH +: WEIGHTS_WIDTH] <= weights_dat;
           if (weights_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
             weight_writes_cnt <= weight_writes_cnt + 1;
@@ -175,6 +183,24 @@ module conv
         input_write_config_enable <= 0;
     end
   end
+  
+  // read in weight data to sys arr
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+      weight_read_config_enable <= 1;
+      weight_read_config_data <= {CONFIG_FX, CONFIG_FY, CONFIG_IC1, CONFIG_OC1};
+    end else begin
+      weight_read_config_enable <= 0;
+    end
+  end
+  
+  /*always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+    	  
+    end else begin
+      
+    end
+  end*/
 
     weight_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
@@ -216,9 +242,9 @@ module conv
       .wdata(weight_write_data)
     );
 
-  	 input_read_addr_gen #(
+    input_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
-      .NUM_PARAMS(WEIGHTS_NUM_PARAMS),
+      .NUM_PARAMS(INPUT_NUM_PARAMS),
       .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
      ) input_read_addr_gen_U(
       .clk(clk),
@@ -255,14 +281,6 @@ module conv
       .wadr(input_write_addr),
       .wdata(input_write_data)
     );
-  	
-  
-    logic sys_arr_enable;
-    logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
-    logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0];
-    logic [OFMAP_WIDTH - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
-    logic [WEIGHTS_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
-   logic weight_write_enable_arr;
 
     systolic_array #(
       .IFMAP_WIDTH(IFMAP_WIDTH),
