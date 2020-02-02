@@ -72,11 +72,15 @@ module top
   
 
   logic sys_arr_enable;
-  logic [IFMAP_WIDTH - 1 : 0] ifmap_in;
-  logic [OFMAP_WIDTH - 1 : 0] ofmap_in; 
-  logic [OFMAP_WIDTH - 1 : 0] ofmap_out;
+  logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
+  logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0]; 
+  logic [OFMAP_WIDTH - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
+  logic [WEIGHT_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
+  logic weight_write_enable_arr;
 
-  systolic_array #(
+    
+
+ systolic_array #(
     .IFMAP_WIDTH(IFMAP_WIDTH),
     .WEIGHT_WIDTH(WEIGHT_WIDTH),
     .OFMAP_WIDTH(OFMAP_WIDTH),
@@ -86,9 +90,9 @@ module top
     .clk(clk),
     .rst_n(rst_n),
     .enable(sys_arr_enable),
-    .weight_write_enable(weight_write_enable),
+    .weight_write_enable(weight_write_enable_arr),
     .ifmap_in(ifmap_in),
-    .weight_in(weight_read_data),
+    .weight_in(weight_in),
     .ofmap_in(ofmap_in),
     .ofmap_out(ofmap_out)
   );
