@@ -1,8 +1,14 @@
+`include "../layer_params.svh"
+
 module conv
 #(
     parameter IFMAP_SIZE = 16,
     parameter WEIGHTS_SIZE = 16,
-    parameter OFMAP_SIZE = 32
+    parameter OFMAP_SIZE = 32,
+
+    parameter IFMAP_WIDTH = IFMAP_SIZE,
+    parameter WEIGHTS_WIDTH = WEIGHTS_SIZE,
+    parameter OFMAP_WIDTH = OFMAP_SIZE,
   
     parameter ARRAY_HEIGHT = 4,
     parameter ARRAY_WIDTH = 4,
@@ -57,6 +63,17 @@ module conv
   logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
   
+  logic weight_read_addr_enable, weight_read_config_enable;
+    logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr;
+    logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
+
+    logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_write_data;
+
+    logic weight_write_addr_enable, weight_write_config_enable;
+    logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
+
+    logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
+
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       if (~rst_n) begin
@@ -106,16 +123,6 @@ module conv
     end
   end 
   
-    logic weight_read_addr_enable, weight_read_config_enable; 
-    logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr; 
-    logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
-
-    logic weight_write_addr_enable, weight_write_config_enable; 
-    logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr; 
-    
-    integer 
-    logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data = {} //fx, fy, ic1, oc1
-
     weight_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
       .NUM_PARAMS(WEIGHTS_NUM_PARAMS), 
@@ -142,10 +149,10 @@ module conv
     );
 
     logic weight_switch_banks;
-    logic [WEIGHT_WIDTH - 1 : 0] weight_read_data;  
+    logic [WEIGHTS_WIDTH - 1 : 0] weight_read_data;  
 
     double_buffer #(
-      .DATA_WIDTH(WEIGHT_WIDTH),
+      .DATA_WIDTH(WEIGHTS_WIDTH),
       .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
     ) weight_double_buffer_U (
       .clk(clk),
@@ -164,14 +171,14 @@ module conv
     logic [IFMAP_SIZE - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
     logic [OFMAP_SIZE - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0]; 
     logic [OFMAP_SIZE - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
-    logic [WEIGHT_SIZE - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
+    logic [WEIGHTS_SIZE - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
     logic weight_write_enable_arr;
 
 
 
     systolic_array #(
       .IFMAP_WIDTH(IFMAP_WIDTH),
-      .WEIGHT_WIDTH(WEIGHT_WIDTH),
+      .WEIGHTS_WIDTH(WEIGHTS_WIDTH),
       .OFMAP_WIDTH(OFMAP_WIDTH),
       .ARRAY_HEIGHT(ARRAY_HEIGHT),
       .ARRAY_WIDTH(ARRAY_WIDTH)
