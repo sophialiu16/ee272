@@ -9,12 +9,9 @@ module conv
     parameter WEIGHTS_WIDTH = 16,
     parameter OFMAP_WIDTH = 32,
 
-    parameter ARRAY_HEIGHT = 4,
-    parameter ARRAY_WIDTH = 4,
-
     // half of weights file length for now, change later
     // divide that by 4 since storing 4 pixels per address
-    parameter BANK_ADDR_WIDTH = 1176,
+    parameter BANK_ADDR_WIDTH = 16, 
     parameter COUNTER_WIDTH = 32,
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
@@ -36,7 +33,10 @@ module conv
     parameter CONFIG_IC0 = 16,
     parameter CONFIG_IC1 = CONFIG_IC/CONFIG_IC0,
     parameter CONFIG_OC1 = CONFIG_OC/CONFIG_OC0,
-    parameter STRIDE = 1
+    parameter STRIDE = 1,
+
+    parameter ARRAY_HEIGHT = CONFIG_OX0,
+    parameter ARRAY_WIDTH = CONFIG_OY0
  )
 (
     input clk,
