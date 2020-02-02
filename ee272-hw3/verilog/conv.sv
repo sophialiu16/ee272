@@ -1,5 +1,6 @@
 module conv
 #(
+    // size of files -> overwritten by testbench param values
     parameter IFMAP_SIZE = 16,
     parameter WEIGHTS_SIZE = 16,
     parameter OFMAP_SIZE = 32,
