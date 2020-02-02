@@ -59,7 +59,6 @@ module conv
 );
 
   logic [15:0] input_accumulator [ARRAY_HEIGHT];
-  logic [15:0] weights_accumulator [ARRAY_WIDTH];  	
   logic [16*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
@@ -97,7 +96,7 @@ module conv
 	weights_cnt <= 0;
       end else begin
         if (weights_vld) begin
-          weights_flattened[weights_cnt*ARRAY_WIDTH*16 +: ARRAY_WIDTH*16] <= weights_dat;
+          weights_flattened[weights_cnt*16 +: 16] <= weights_dat;
           if (input_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
           end else begin
@@ -117,7 +116,7 @@ module conv
   
   always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
-  		weight_write_config_enable <= 1;
+	weight_write_config_enable <= 1;
     	weight_write_config_data <= CONFIG_OC1 * CONFIG_IC1 * CONFIG_FY * CONFIG_FX;
     end else begin
     	weight_write_config_enable <= 0;
@@ -153,7 +152,7 @@ module conv
     logic [WEIGHTS_WIDTH - 1 : 0] weight_read_data;  
 
     double_buffer #(
-      .DATA_WIDTH(WEIGHTS_WIDTH),
+      .DATA_WIDTH(WEIGHTS_WIDTH*ARRAY_WIDTH),
       .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
     ) weight_double_buffer_U (
       .clk(clk),
@@ -179,7 +178,7 @@ module conv
 
     systolic_array #(
       .IFMAP_WIDTH(IFMAP_WIDTH),
-      .WEIGHTS_WIDTH(WEIGHTS_WIDTH),
+      .WEIGHT_WIDTH(WEIGHTS_WIDTH),
       .OFMAP_WIDTH(OFMAP_WIDTH),
       .ARRAY_HEIGHT(ARRAY_HEIGHT),
       .ARRAY_WIDTH(ARRAY_WIDTH)
