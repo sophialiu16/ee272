@@ -100,6 +100,7 @@ module conv
 
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
+      ifmap_rdy <= 1;
       if (~rst_n) begin
         input_cnt <= 0;
         input_writes_cnt <= 0;
