@@ -19,9 +19,7 @@ module double_buffer
   reg read_bank;
   reg wen0, ren0, wen1, ren1;
 
-  reg [BANK_ADDR_WIDTH - 1 : 0] radr; 
-  
-  reg [DATA_WIDTH - 1 : 0] rdata; 
+  reg [DATA_WIDTH - 1 : 0] rdata_reg; 
   reg [DATA_WIDTH - 1 : 0] rdata0, rdata1; 
   
 
@@ -66,9 +64,9 @@ module double_buffer
         ren0 <= ~read_bank;
         ren1 <= read_bank;
         if (read_bank) begin
-          rdata <= rdata1;
+          rdata_reg <= rdata1;
         end else begin 
-          rdata <= rdata0;
+          rdata_reg <= rdata0;
         end
      end
 

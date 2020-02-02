@@ -8,7 +8,8 @@ module top
 
   parameter BANK_ADDR_WIDTH = 8,
   parameter COUNTER_WIDTH = 32,
-  parameter CONFIG_WIDTH = 32
+  parameter CONFIG_WIDTH = 32,
+  parameter NUM_PARAMS = 3
 )(
   input clk,
   input rst_n,
