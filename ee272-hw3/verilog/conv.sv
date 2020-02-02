@@ -210,6 +210,31 @@ module conv
     end
   end
 
+always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+      input_read_config_enable <= 1;
+      input_read_config_data <= {config_OX0, config_OY0, config_FX, config_FY,
+          config_STRIDE, config_IX0, config_IY0, config_IC1};
+    end else begin
+      input_read_config_enable <= 0;
+    end
+  end
+
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+      input_read_addr_enable <= 0;
+      input_read_cnt <= 0;
+    end else begin
+      if (input_read_cnt == ARRAY_HEIGHT - 1) begin
+        input_read_addr_enable <= 1;
+        input_read_cnt <= 0;
+      end else begin
+        input_read_addr_enable <= 0;
+        input_read_cnt <= input_read_cnt + 1;
+      end
+    end
+  end
+
     weight_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
       .NUM_PARAMS(WEIGHTS_NUM_PARAMS),
