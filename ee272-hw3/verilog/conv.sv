@@ -35,8 +35,8 @@ module conv
     parameter CONFIG_OC1 = CONFIG_OC/CONFIG_OC0,
     parameter STRIDE = 1,
 
-    parameter ARRAY_HEIGHT = CONFIG_OX0,
-    parameter ARRAY_WIDTH = CONFIG_OY0
+    parameter ARRAY_HEIGHT = CONFIG_IC0,
+    parameter ARRAY_WIDTH = CONFIG_OC0
  )
 (
     input clk,
