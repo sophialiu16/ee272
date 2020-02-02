@@ -75,6 +75,7 @@ module conv
   logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] input_writes_cnt;
   logic input_switch_banks;
   logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_read_data;
+  logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;
   
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
@@ -89,7 +90,7 @@ module conv
   logic weight_switch_banks;
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
   logic [$clog2(ARRAY_HEIGHT) - 1: 0] weight_read_cnt;
- 
+  
   logic sys_arr_enable;
   logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
   logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0];
@@ -214,19 +215,19 @@ module conv
 always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
       input_read_config_enable <= 1;
-      input_read_config_data <= {config_OX0, config_OY0, config_FX, config_FY,
-          config_STRIDE, config_IX0, config_IY0, config_IC1};
+      input_read_config_data <= {CONFIG_OX0, CONFIG_OY0, CONFIG_FX, CONFIG_FY,
+          STRIDE, CONFIG_IX0, CONFIG_IY0, CONFIG_IC1};
     end else begin
       input_read_config_enable <= 0;
     end
   end
-
+ 
   always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
       input_read_addr_enable <= 0;
       input_read_cnt <= 0;
     end else begin
-      if (input_read_cnt == ARRAY_HEIGHT - 1) begin
+      if (input_read_cnt == ARRAY_WIDTH - 1) begin
         input_read_addr_enable <= 1;
         input_read_cnt <= 0;
       end else begin
