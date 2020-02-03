@@ -103,10 +103,10 @@ module conv
 
 
   assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
-  
+ 
   integer i, j;
   always_ff @(posedge clk, negedge rst_n) begin 
-    if (~rst_n) begin 
+    if (rst_n && input_read_cnt == 0) begin 
       for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
         for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
           if (j == 0) begin
