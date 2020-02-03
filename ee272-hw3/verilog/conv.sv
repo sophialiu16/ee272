@@ -76,7 +76,7 @@ module conv
   logic [BANK_ADDR_WIDTH - 1: 0] input_writes_cnt;
   logic input_switch_banks;
   logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_read_data;
-  logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;  
+  //logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;  
   
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
@@ -87,7 +87,7 @@ module conv
   logic weight_write_addr_enable, weight_write_config_enable;
   logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
   logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
-  logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] weight_writes_cnt;
+  logic [BANK_ADDR_WIDTH - 1: 0] weight_writes_cnt;
   logic weight_switch_banks;
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
   logic [$clog2(ARRAY_HEIGHT) - 1: 0] weight_read_cnt;
@@ -107,7 +107,7 @@ module conv
  
   integer i, j;
   always_ff @(posedge clk, negedge rst_n) begin 
-    if (rst_n && input_read_cnt == 0) begin 
+    if (rst_n) begin 
       for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
         for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
           if (j == 0) begin
