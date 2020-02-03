@@ -102,20 +102,20 @@ module conv
   logic [IFMAP_WIDTH - 1 : 0] input_read_data_skew [ARRAY_WIDTH - 1 : 0];
 
 
-  assign input_read_data_skew[0] = input_read_data[0 +: ARRAY_WIDTH]; 
+  assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
   
   integer i, j;
   always_ff @(posedge clk, negedge rst_n) begin 
     if (~rst_n) begin 
       for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
         for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
-          if (i == 0) begin
-            fifo_skew_input[i][j] <= input_read_data[(i+1)*IFMAP_WIDTH +: IFMAP_WIDTH];
-          end 
+          if (j == 0) begin
+            fifo_skew_input[j][i] <= input_read_data[(i+1)*IFMAP_WIDTH +: IFMAP_WIDTH];
+          end else begin 
+            fifo_skew_input[j][i] <= fifo_skew_input[j-1][i];
+          end  
           if (i == j) begin 
-            input_read_data_skew[i+1] <= fifo_skew_input[i][j];
-          end else if (j < i) begin 
-            fifo_skew_input[i][j] <= fifo_skew_input[i-1][j];
+            input_read_data_skew[i+1] <= fifo_skew_input[j][i];
           end
         end // for j 
       end // for i
