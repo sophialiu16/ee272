@@ -9,9 +9,6 @@ module conv
     parameter WEIGHTS_WIDTH = 16,
     parameter OFMAP_WIDTH = 32,
 
-    // half of weights file length for now, change later
-    // divide that by 4 since storing 4 pixels per address
-    parameter BANK_ADDR_WIDTH = 16, 
     parameter COUNTER_WIDTH = 32,
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
@@ -36,7 +33,9 @@ module conv
     parameter STRIDE = 1,
 
     parameter ARRAY_HEIGHT = CONFIG_IC0,
-    parameter ARRAY_WIDTH = CONFIG_OC0
+    parameter ARRAY_WIDTH = CONFIG_OC0,
+
+    parameter BANK_ADDR_WIDTH = CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0
  )
 (
     input clk,
@@ -313,7 +312,7 @@ always_ff @(posedge clk, negedge rst_n) begin
      .config_data(input_read_config_data)
     );
   
-  	input_write_addr_gen #(
+    input_write_addr_gen #(
       .CONFIG_WIDTH(CONFIG_WIDTH),
       .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
     ) input_write_addr_gen_U (
@@ -325,7 +324,7 @@ always_ff @(posedge clk, negedge rst_n) begin
       .config_data(input_write_config_data) // config IC1 IY0 IX0
     );
   
-  	double_buffer #(
+    double_buffer #(
       .DATA_WIDTH(IFMAP_WIDTH*ARRAY_WIDTH),
       .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
     ) input_double_buffer_U (

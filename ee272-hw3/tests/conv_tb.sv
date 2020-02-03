@@ -122,8 +122,8 @@ class driver;
             while(ifmap_idx < `LAYER_IFMAP_SIZE || weights_idx < `LAYER_WEIGHTS_SIZE || params == 0) begin
                 if (ifmap_idx < `LAYER_IFMAP_SIZE) begin
                   
-                    vif.write_ifmap(ifmap_idx);//transaction.ifmap_dat_full[ifmap_idx]);
-                     
+                    vif.write_ifmap(transaction.ifmap_dat_full[ifmap_idx]);
+                      
                     ifmap_idx = i + j*`CONFIG_IC1*`CONFIG_IY0*`CONFIG_IX0;
                     
                     if ((ifmap_idx == `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT - 1) || ((i == 0) && (j == 0))) begin
