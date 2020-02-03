@@ -252,15 +252,8 @@ always_ff @(posedge clk, negedge rst_n) begin
   always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
       input_read_addr_enable <= 0;
-      input_read_cnt <= 0;
     end else begin
-      if (input_read_cnt == ARRAY_WIDTH - 1) begin
         input_read_addr_enable <= 1;
-        input_read_cnt <= 0;
-      end else begin
-        input_read_addr_enable <= 0;
-        input_read_cnt <= input_read_cnt + 1;
-      end
     end
   end
 
