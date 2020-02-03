@@ -56,7 +56,7 @@ interface conv_if(input bit clk);
 
     task write_ifmap(logic [15:0] ifmap);
         ifmap_dat = ifmap;
-        ifmap_vld = 1;
+        //ifmap_vld = 1;
     endtask
 
     task write_weights(logic [15:0] weights);
@@ -113,6 +113,8 @@ class driver;
             weights_idx = 0;
             params = 0;
             vif.ofmap_rdy = 1;
+            i = 0;
+            j = 0;
 
             @ (posedge vif.clk);
             @ (posedge vif.clk);
@@ -120,13 +122,20 @@ class driver;
             while(ifmap_idx < `LAYER_IFMAP_SIZE || weights_idx < `LAYER_WEIGHTS_SIZE || params == 0) begin
                 if (ifmap_idx < `LAYER_IFMAP_SIZE) begin
                   
-                    vif.write_ifmap(transaction.ifmap_dat_full[ifmap_idx]);
-                  
-                  for (j = 0; j < `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT; j = j + 1) begin
-                    for (i = 0; i < `ARRAY_HEIGHT; i = i + 1) begin  
-                    	ifmap_idx = ifmap_idx + i*`CONFIG_IC1*`CONFIG_IY0*`CONFIG_IX0;
-                  	end
-                  end
+                    vif.write_ifmap(ifmap_idx);//transaction.ifmap_dat_full[ifmap_idx]);
+                     
+                    ifmap_idx = i + j*`CONFIG_IC1*`CONFIG_IY0*`CONFIG_IX0;
+                    
+                    if (i == `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT - 1) begin
+                      vif.ifmap_vld = 0;
+                    end else if (j == `ARRAY_HEIGHT - 1) begin
+                      i = i + 1;
+                      j = 0;
+                      vif.ifmap_vld = 1;
+                    end else begin
+                      j = j + 1;
+                      vif.ifmap_vld = 1;
+                    end
                 end
                 else begin
                     vif.ifmap_vld = 0;
