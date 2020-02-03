@@ -34,8 +34,10 @@ module conv
 
     parameter ARRAY_HEIGHT = CONFIG_IC0,
     parameter ARRAY_WIDTH = CONFIG_OC0,
+ 
 
-    parameter BANK_ADDR_WIDTH = $clog2(CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0)
+    parameter BANK_ADDR_WIDTH_VAL = CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0,
+    parameter BANK_ADDR_WIDTH = $clog2(BANK_ADDR_WIDTH_VAL)
  )
 (
     input clk,
@@ -174,7 +176,7 @@ module conv
       weight_write_addr_enable <= 0;
     end
 
-    if ((weight_write_addr_enable == 1) && (weight_writes_cnt == BANK_ADDR_WIDTH - 1)) begin
+    if ((weight_write_addr_enable == 1) && (weight_writes_cnt == BANK_ADDR_WIDTH_VAL - 1)) begin
       weight_switch_banks <= 1;
     end else begin
       weight_switch_banks <= 0;
@@ -188,7 +190,7 @@ module conv
       input_write_addr_enable <= 0;
     end
     
-    if ((input_write_addr_enable == 1) && (input_writes_cnt == BANK_ADDR_WIDTH - 1)) begin
+    if ((input_write_addr_enable == 1) && (input_writes_cnt == BANK_ADDR_WIDTH_VAL - 1)) begin
       input_switch_banks <= 1;
     end else begin
       input_switch_banks <= 0;
