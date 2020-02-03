@@ -35,7 +35,7 @@ module conv
     parameter ARRAY_HEIGHT = CONFIG_IC0,
     parameter ARRAY_WIDTH = CONFIG_OC0,
 
-    parameter BANK_ADDR_WIDTH = CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0
+    parameter BANK_ADDR_WIDTH = $clog2(CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0)
  )
 (
     input clk,
