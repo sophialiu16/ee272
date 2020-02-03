@@ -326,7 +326,7 @@ always_ff @(posedge clk, negedge rst_n) begin
   
     double_buffer #(
       .DATA_WIDTH(IFMAP_WIDTH*ARRAY_WIDTH),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH_VAL)
     ) input_double_buffer_U (
       .clk(clk),
       .rst_n(rst_n),
