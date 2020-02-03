@@ -5,8 +5,8 @@
 `define LAYER_OFMAP_WIDTH (112)
 `define LAYER_OFMAP_CHANNELS (64)
 `define LAYER_IFMAP_CHANNELS (64)
-`define LAYER_FILTER_SIZE (3)
-`define LAYER_STRIDE (1)
+`define LAYER_FILTER_SIZE (7)
+`define LAYER_STRIDE (2)
 `define ARRAY_HEIGHT (4)
 
 `define CONFIG_IC1 (2) //(`LAYER_IFMAP_SIZE / `ARRAY_HEIGHT)
@@ -126,15 +126,22 @@ class driver;
                      
                     ifmap_idx = i + j*`CONFIG_IC1*`CONFIG_IY0*`CONFIG_IX0;
                     
-                    if (i == `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT - 1) begin
+                    if ((ifmap_idx == `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT - 1) || ((i == 0) && (j == 0))) begin
                       vif.ifmap_vld = 0;
+                    end else if (j == `ARRAY_HEIGHT - 1) begin
+                      vif.ifmap_vld = 1;
+                    end else begin
+                      vif.ifmap_vld = 1;
+                    end
+
+                    if (ifmap_idx == `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT - 1) begin
+                      i = i;
+                      j = j;
                     end else if (j == `ARRAY_HEIGHT - 1) begin
                       i = i + 1;
                       j = 0;
-                      vif.ifmap_vld = 1;
                     end else begin
                       j = j + 1;
-                      vif.ifmap_vld = 1;
                     end
                 end
                 else begin
@@ -349,7 +356,7 @@ module conv_tb;
         $vcdplusfile("dump.vcd");
         $vcdplusmemon();
         $vcdpluson(0, conv_tb);
-        #20000000;
+        #200000000;
         $finish(2);
     end
 
