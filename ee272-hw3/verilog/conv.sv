@@ -75,7 +75,7 @@ module conv
   logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] input_writes_cnt;
   logic input_switch_banks;
   logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_read_data;
-  logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;
+  logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;  
   
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
   logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
@@ -98,6 +98,29 @@ module conv
   logic [WEIGHTS_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
   logic weight_write_enable_arr;
 
+  reg [IFMAP_WIDTH - 1 : 0] fifo_skew_input [ARRAY_WIDTH - 1][ARRAY_WIDTH - 1];
+  logic [IFMAP_WIDTH - 1 : 0] input_read_data_skew [ARRAY_WIDTH - 1 : 0];
+
+
+  assign input_read_data_skew[0] = input_read_data[0 +: ARRAY_WIDTH]; 
+  
+  integer i, j;
+  always_ff @(posedge clk, negedge rst_n) begin 
+    if (~rst_n) begin 
+      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
+        for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
+          if (i == 0) begin
+            fifo_skew_input[i][j] <= input_read_data[(i+1)*IFMAP_WIDTH +: IFMAP_WIDTH];
+          end 
+          if (i == j) begin 
+            input_read_data_skew[i+1] <= fifo_skew_input[i][j];
+          end else if (j < i) begin 
+            fifo_skew_input[i][j] <= fifo_skew_input[i-1][j];
+          end
+        end // for j 
+      end // for i
+    end // rst 
+  end //ff
 
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
@@ -328,7 +351,7 @@ always_ff @(posedge clk, negedge rst_n) begin
       .rst_n(rst_n),
       .enable(sys_arr_enable),
       .weight_write_enable(weight_write_enable_arr),
-      .ifmap_in(ifmap_in),
+      .ifmap_in(input_read_data_skew),
       .weight_in(weight_in),
       .ofmap_in(ofmap_in),
       .ofmap_out(ofmap_out)
