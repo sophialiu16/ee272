@@ -73,7 +73,7 @@ module conv
   logic input_write_addr_enable, input_write_config_enable;
   logic [BANK_ADDR_WIDTH - 1 : 0] input_write_addr;
   logic [CONFIG_WIDTH - 1 : 0] input_write_config_data;
-  logic [$clog2(BANK_ADDR_WIDTH) - 1: 0] input_writes_cnt;
+  logic [BANK_ADDR_WIDTH - 1: 0] input_writes_cnt;
   logic input_switch_banks;
   logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_read_data;
   logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;  
@@ -139,7 +139,11 @@ module conv
           input_flattened[input_cnt*IFMAP_WIDTH +: IFMAP_WIDTH] <= ifmap_dat;
           if (input_cnt == ARRAY_HEIGHT - 1) begin
             input_cnt <= 0;
-            input_writes_cnt <= input_writes_cnt + 1;
+            if (input_writes_cnt == BANK_ADDR_WIDTH_VAL - 1) begin
+              input_writes_cnt <= 0;
+            end else begin
+              input_writes_cnt <= input_writes_cnt + 1;
+            end
           end else begin
             input_cnt = input_cnt + 1;
           end
@@ -190,7 +194,7 @@ module conv
       input_write_addr_enable <= 0;
     end
     
-    if ((input_write_addr_enable == 1) && (input_writes_cnt == BANK_ADDR_WIDTH_VAL - 1)) begin
+    if ((input_write_addr_enable == 1) && (input_writes_cnt == 0)) begin
       input_switch_banks <= 1;
     end else begin
       input_switch_banks <= 0;

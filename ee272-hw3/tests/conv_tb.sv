@@ -356,7 +356,7 @@ module conv_tb;
         $vcdplusfile("dump.vcd");
         $vcdplusmemon();
         $vcdpluson(0, conv_tb);
-        #200000000;
+        #21000000;
         $finish(2);
     end
 
