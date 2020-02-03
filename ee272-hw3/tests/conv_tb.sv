@@ -7,6 +7,12 @@
 `define LAYER_IFMAP_CHANNELS (64)
 `define LAYER_FILTER_SIZE (3)
 `define LAYER_STRIDE (1)
+`define ARRAY_HEIGHT (4)
+
+`define CONFIG_IC1 (2) //(`LAYER_IFMAP_SIZE / `ARRAY_HEIGHT)
+`define CONFIG_IX0 (5) 
+`define CONFIG_IY0 (5) 
+
 
 // Don't modify these
 `define LAYER_IFMAP_HEIGHT ((`LAYER_OFMAP_HEIGHT-1)*`LAYER_STRIDE+`LAYER_FILTER_SIZE)
@@ -95,10 +101,10 @@ class driver;
     int ifmap_idx;
     int weights_idx;
     logic params;
+    int i, j;
 
     task run();
         $display ("T=%0t [Driver] Starting ...", $time);
-
         forever begin
             conv_item transaction;
             drv_mbx.get(transaction);
@@ -113,8 +119,14 @@ class driver;
 
             while(ifmap_idx < `LAYER_IFMAP_SIZE || weights_idx < `LAYER_WEIGHTS_SIZE || params == 0) begin
                 if (ifmap_idx < `LAYER_IFMAP_SIZE) begin
+                  
                     vif.write_ifmap(transaction.ifmap_dat_full[ifmap_idx]);
-                    ifmap_idx = ifmap_idx + 1;
+                  
+                  for (j = 0; j < `LAYER_IFMAP_SIZE / `ARRAY_HEIGHT; j = j + 1) begin
+                    for (i = 0; i < `ARRAY_HEIGHT; i = i + 1) begin  
+                    	ifmap_idx = ifmap_idx + i*`CONFIG_IC1*`CONFIG_IY0*`CONFIG_IX0;
+                  	end
+                  end
                 end
                 else begin
                     vif.ifmap_vld = 0;
