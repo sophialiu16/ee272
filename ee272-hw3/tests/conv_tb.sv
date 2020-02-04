@@ -9,9 +9,23 @@
 `define LAYER_STRIDE (2)
 `define ARRAY_HEIGHT (4)
 
-`define CONFIG_IC1 (2) //(`LAYER_IFMAP_SIZE / `ARRAY_HEIGHT)
-`define CONFIG_IX0 (5) 
-`define CONFIG_IY0 (5) 
+`define config_OX (12)//56,
+`define config_OY (12)//56,
+`define config_OX0 (3)//8,
+`define config_OY0 (3)//8,
+`define config_OX1 (config_OX/config_OX0)
+`define config_OY1 (config_OY/config_OY0)
+`define config_IX0 (5)//112,
+`define config_IY0 (5)//112,
+`define config_FX (3)
+`define config_FY (3)
+`define config_IC (8)//64,
+`define config_OC (16) //64,
+`define config_OC0 (4)//16,
+`define config_IC0 (4) //16,
+`define config_IC1 (config_IC/config_IC0)
+`define config_OC1 (config_OC/config_OC0)
+`define STRIDE (1)
 
 
 // Don't modify these
@@ -137,7 +151,7 @@ class driver;
                   ((ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1) ? 0 : ic1 + 1) : ic1;
                   ix1 <= ((ic0 == config_IC0 - 1) && (ix0 == config_IX0 - 1) && (iy0 == config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1)) ? 
                   ((ix1 == `LAYER_IFMAP_WIDTH/config_IX0 - 1) ? 0 : ix1 + 1) : ix1;
-                  iy1 <= ((ic0 == config_IC0 - 1) && (ix0 == config_IX0 - 1) && (iy0 == config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1)) ?
+                  iy1 <= ((ic0 == config_IC0 - 1) && (ix0 == config_IX0 - 1) && (iy0 == config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1))
                   && (ix11 == `LAYER_IFMAP_WIDTH/config_IX0 - 1)) ? ((iy1 == `LAYER_IFMAP_HEIGHT/config_IY1 - 1) ? 0 : iy1 + 1) : iy1;
                   
                   ifmap_idx <= iy1*(`LAYER_IFMAP_WIDTH/config_IX0)*(`LAYER_IFMAP_CHANNELS/config_IC0)*config_IY0*config_IX0*config_IC0 +
@@ -146,7 +160,7 @@ class driver;
                   						iy0*config_IX0*config_IC0 +
                               ix0*config_IC0 +
                   						ic0;
-                  $display ("ifmap_idx: %0d, iy1: %0d, ix1: %0d, ic1: %0d, iy0: %0d, ix0: %0d, ic0%0d", ifmap_idx, iy1, ix1, ic1, iy0, ix0, ic0);
+                  $display ("ifmap_idx: %0d, iy1: %0d, ix1: %0d, ic1: %0d, iy0: %0d, ix0: %0d, ic0: %0d", ifmap_idx, iy1, ix1, ic1, iy0, ix0, ic0);
                 end
                 else begin
                     vif.ifmap_vld = 0;
