@@ -151,7 +151,7 @@ class driver;
                   ((ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1) ? 0 : ic1 + 1) : ic1;
                   ix1 <= ((ic0 == config_IC0 - 1) && (ix0 == config_IX0 - 1) && (iy0 == config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1)) ? 
                   ((ix1 == `LAYER_IFMAP_WIDTH/config_IX0 - 1) ? 0 : ix1 + 1) : ix1;
-                  iy1 <= ((ic0 == config_IC0 - 1) && (ix0 == config_IX0 - 1) && (iy0 == config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1))
+                  iy1 <= ((ic0 == config_IC0 - 1) && (ix0 == config_IX0 - 1) && (iy0 == config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/config_IC0 - 1)
                   && (ix11 == `LAYER_IFMAP_WIDTH/config_IX0 - 1)) ? ((iy1 == `LAYER_IFMAP_HEIGHT/config_IY1 - 1) ? 0 : iy1 + 1) : iy1;
                   
                   ifmap_idx <= iy1*(`LAYER_IFMAP_WIDTH/config_IX0)*(`LAYER_IFMAP_CHANNELS/config_IC0)*config_IY0*config_IX0*config_IC0 +
