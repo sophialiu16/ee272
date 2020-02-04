@@ -152,12 +152,11 @@ class driver;
                   ((ix1 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1) ? 0 : ix1 + 1) : ix1;
                   iy1 <= ((ic0 == `config_IC0 - 1) && (ix0 == `config_IX0 - 1) && (iy0 == `config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)
                           && (ix11 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1)) ? ((iy1 == `LAYER_IFMAP_HEIGHT/`config_IY0 - 1) ? 0 : iy1 + 1) : iy1;
-                  
                   ifmap_idx <= iy1*(`LAYER_IFMAP_WIDTH/`config_IX0)*(`LAYER_IFMAP_CHANNELS/`config_IC0)*`config_IY0*`config_IX0*`config_IC0 +
                   						ix1*(`LAYER_IFMAP_CHANNELS/`config_IC0)*`config_IY0*`config_IX0*`config_IC0 +
                   						ic1*`config_IY0*`config_IX0*`config_IC0 +
                   						iy0*`config_IX0*`config_IC0 +
-                              ix0*`config_IC0 +
+                  				            ix0*`config_IC0 +
                   						ic0;  
                                     $display ("ifmap_idx: %0d, iy1: %0d, ix1: %0d, ic1: %0d, iy0: %0d, ix0: %0d, ic0: %0d", ifmap_idx, iy1, ix1, ic1, iy0, ix0, ic0);
                 end
