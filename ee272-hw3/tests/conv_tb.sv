@@ -115,7 +115,7 @@ class driver;
     int ifmap_idx;
     int weights_idx;
     logic params;
-    int ic0, ic1, ix0, ix1, iy0, iy1;
+    int c, x, y, c0, x0, y0;
 
     task run();
         $display ("T=%0t [Driver] Starting ...", $time);
@@ -127,12 +127,12 @@ class driver;
             weights_idx = 0;
             params = 0;
             vif.ofmap_rdy = 1;
-            ic1 = 0;
-            ix1 = 0;
-            iy1 = 0; 
-            ix0 = 0; 
-            iy0 = 0; 
-            ic0 = 0;
+          	c = 0;
+            x = 0;
+          	y = 0;
+          	c0 = 0;
+          	x0 = 0;
+          	y0 = 0;
 
             @ (posedge vif.clk);
             @ (posedge vif.clk);
@@ -140,25 +140,28 @@ class driver;
             while(ifmap_idx < `LAYER_IFMAP_SIZE || weights_idx < `LAYER_WEIGHTS_SIZE || params == 0) begin
                 if (ifmap_idx < `LAYER_IFMAP_SIZE) begin                  
                 	  vif.write_ifmap(transaction.ifmap_dat_full[ifmap_idx]);
-                  ic0 <=  (ic0 == `config_IC0 - 1) ? 
-                          0 : ic0 + 1;
-                  ix0 <=  (ic0 == `config_IC0 - 1) ? 
-                  ((ix0 == `config_IX0 - 1) ? 0 : ix0 + 1) : ix0;
-                  iy0 <= ((ic0 == `config_IC0 - 1) && (ix0 == `config_IX0 - 1)) ? 
-                  ((iy0 == `config_IY0 - 1) ? 0 : iy0 + 1) : iy0;
-                  ic1  <= ((ic0 == `config_IC0 - 1) && (ix0 == `config_IX0 - 1) && (iy0 == `config_IY0 - 1)) ? 
-                  ((ic1 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1) ? 0 : ic1 + 1) : ic1;
-                  ix1 <= ((ic0 == `config_IC0 - 1) && (ix0 == `config_IX0 - 1) && (iy0 == `config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)) ? 
-                  ((ix1 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1) ? 0 : ix1 + 1) : ix1;
-                  iy1 <= ((ic0 == `config_IC0 - 1) && (ix0 == `config_IX0 - 1) && (iy0 == `config_IY0 - 1) && (ic1 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)
-                          && (ix1 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1)) ? ((iy1 == `LAYER_IFMAP_HEIGHT/`config_IY0 - 1) ? 0 : iy1 + 1) : iy1;
-                  ifmap_idx <= iy1*(`LAYER_IFMAP_WIDTH/`config_IX0)*(`LAYER_IFMAP_CHANNELS/`config_IC0)*`config_IY0*`config_IX0*`config_IC0 +
-                  						ix1*(`LAYER_IFMAP_CHANNELS/`config_IC0)*`config_IY0*`config_IX0*`config_IC0 +
-                  						ic1*`config_IY0*`config_IX0*`config_IC0 +
-                  						iy0*`config_IX0*`config_IC0 +
-                  				            ix0*`config_IC0 +
-                  						ic0;  
-                                    $display ("ifmap_idx: %0d, iy1: %0d, ix1: %0d, ic1: %0d, iy0: %0d, ix0: %0d, ic0: %0d", ifmap_idx, iy1, ix1, ic1, iy0, ix0, ic0);
+                  c <=  (c == `config_IC0 - 1) ? 
+                          0 : c + 1;
+                  x <=  (c == `config_IC0 - 1) ? 
+                  ((x == `config_IX0 - 1) ? 0 : x + 1) : x;
+                  y <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1)) ? 
+                  ((y == `config_IY0 - 1) ? 0 : y + 1) : y;
+                  c0  <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1) && (y == `config_IY0 - 1)) ? 
+                  ((c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1) ? 0 : c0 + 1) : c0;
+                	x0  <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1) && (y == `config_IY0 - 1)
+                        && (c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)) ? 
+                  			((x0 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1) ? 0 : x0 + 1) : x0;
+                  y0  <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1) && (y == `config_IY0 - 1)
+                        && (c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1) && (x0 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1)) ? 
+                  			((y0 == `LAYER_IFMAP_HEIGHT/`config_IY0 - 1) ? 0 : y0 + 1) : y0;
+                  
+                  ifmap_idx <= 	y0*`config_IY0*`LAYER_IFMAP_WIDTH*`LAYER_IFMAP_CHANNELS +
+                  							x0*`LAYER_IFMAP_CHANNELS*`config_IX0 +
+                  							c0*`config_IC0 +
+                  							y*`LAYER_IFMAP_WIDTH*`LAYER_IFMAP_CHANNELS +
+                  				    	x*`LAYER_IFMAP_CHANNELS +
+                  							c;  
+                  $display ("ifmap_idx: %0d, c: %0d, x: %0d, y: %0d, c0: %0d, x0: %0d, y0: %0d", ifmap_idx, c, x, y, c0, x0, y0);
                 end
                 else begin
                     vif.ifmap_vld = 0;
