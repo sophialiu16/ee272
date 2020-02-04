@@ -115,9 +115,6 @@ module conv
           end else begin 
             fifo_skew_input[j][i] <= fifo_skew_input[j-1][i];
           end  
-          //if (i == j) begin 
-            //input_read_data_skew[j+1] <= fifo_skew_input[j][i];
-          //end
         end // for j 
       end // for i
     end // rst 
