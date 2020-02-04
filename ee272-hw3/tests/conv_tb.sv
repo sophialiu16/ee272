@@ -160,7 +160,14 @@ class driver;
                   							c0*`config_IC0 +
                   							y*`LAYER_IFMAP_WIDTH*`LAYER_IFMAP_CHANNELS +
                   				    	x*`LAYER_IFMAP_CHANNELS +
-                  							c;  
+                 						c;  
+
+		  if ((y0 == `LAYER_IFMAP_HEIGHT/`config_IY0 - 1) && (x0 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1) && (c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)
+                      && (y == `config_IY0 - 1) && (x == `config_IX0 - 1) && (c == `config_IC0 - 1)) begin
+			vif.ifmap_vld <= 0;
+                  end else begin
+                        vif.ifmap_vld <= 1;
+                  end
                   $display ("ifmap_idx: %0d, c: %0d, x: %0d, y: %0d, c0: %0d, x0: %0d, y0: %0d", ifmap_idx, c, x, y, c0, x0, y0);
                 end
                 else begin
