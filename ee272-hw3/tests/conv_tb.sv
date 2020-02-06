@@ -1,439 +1,389 @@
 `include "layer_params.svh"
-module conv
-#(
-    // size of files -> overwritten by testbench param values
-    parameter IFMAP_SIZE = 16,
-    parameter WEIGHTS_SIZE = 16,
-    parameter OFMAP_SIZE = 32,
 
-    parameter IFMAP_WIDTH = 16,
-    parameter WEIGHTS_WIDTH = 16,
-    parameter OFMAP_WIDTH = 32,
+// Change these depending on the layer:
+`define LAYER_OFMAP_HEIGHT (112)
+`define LAYER_OFMAP_WIDTH (112)
+`define LAYER_OFMAP_CHANNELS (64)
+`define LAYER_IFMAP_CHANNELS (64)
+`define LAYER_FILTER_SIZE (7)
+`define LAYER_STRIDE (2)
+`define ARRAY_HEIGHT (4)
 
-    parameter COUNTER_WIDTH = 32,
-    parameter CONFIG_WIDTH = 32,
-    parameter WEIGHTS_NUM_PARAMS = 4,
-    parameter INPUT_NUM_PARAMS = 8,
-  	parameter ACCUM_NUM_PARAMS_SYS = 2,
-  	parameter ACCUM_NUM_PARAMS_OUT = 3,
+`define config_OX (12)//56,
+`define config_OY (12)//56,
+`define config_OX0 (3)//8,
+`define config_OY0 (3)//8,
+`define config_OX1 (config_OX/config_OX0)
+`define config_OY1 (config_OY/config_OY0)
+`define config_IX0 (5)//112,
+`define config_IY0 (5)//112,
+`define config_FX (3)
+`define config_FY (3)
+`define config_IC (8)//64,
+`define config_OC (16) //64,
+`define config_OC0 (4)//16,
+`define config_IC0 (4) //16,
+`define config_IC1 (config_IC/config_IC0)
+`define config_OC1 (config_OC/config_OC0)
+`define STRIDE (1)
 
-    parameter CONFIG_OX = 12,//56,
-    parameter CONFIG_OY = 12,//56,
-    parameter CONFIG_OX0 = 3,//8,
-    parameter CONFIG_OY0 = 3,//8,
-    parameter CONFIG_OX1 = CONFIG_OX/CONFIG_OX0,
-    parameter CONFIG_OY1 = CONFIG_OY/CONFIG_OY0,
-    parameter CONFIG_IX0 = 5,//112,
-    parameter CONFIG_IY0 = 5,//112,
-    parameter CONFIG_FX = 3,
-    parameter CONFIG_FY = 3,
-    parameter CONFIG_IC = 8,//64,
-    parameter CONFIG_OC = 16, //64,
-    parameter CONFIG_OC0 = 4, //16,
-    parameter CONFIG_IC0 = 4, //16,
-    parameter CONFIG_IC1 = CONFIG_IC/CONFIG_IC0,
-    parameter CONFIG_OC1 = CONFIG_OC/CONFIG_OC0,
-    parameter STRIDE = 1,
 
-    parameter ARRAY_HEIGHT = CONFIG_IC0,
-    parameter ARRAY_WIDTH = CONFIG_OC0,
- 
-    parameter BANK_ADDR_WIDTH_VAL = CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0,
-    parameter BANK_ADDR_WIDTH = $clog2(BANK_ADDR_WIDTH_VAL),
-  
-  	parameter ACCUM_DATA_WIDTH = OFMAP_WIDTH * ARRAY_WIDTH
- )
-(
-    input clk,
-    input rst_n,
+// Don't modify these
+`define LAYER_IFMAP_HEIGHT ((`LAYER_OFMAP_HEIGHT-1)*`LAYER_STRIDE+`LAYER_FILTER_SIZE)
+`define LAYER_IFMAP_WIDTH ((`LAYER_OFMAP_WIDTH-1)*`LAYER_STRIDE+`LAYER_FILTER_SIZE)
+`define LAYER_IFMAP_SIZE (`LAYER_IFMAP_HEIGHT*`LAYER_IFMAP_WIDTH*`LAYER_IFMAP_CHANNELS)
+`define LAYER_OFMAP_SIZE (`LAYER_OFMAP_HEIGHT*`LAYER_OFMAP_WIDTH*`LAYER_OFMAP_CHANNELS)
+`define LAYER_WEIGHTS_SIZE (`LAYER_FILTER_SIZE*`LAYER_FILTER_SIZE*`LAYER_IFMAP_CHANNELS*`LAYER_OFMAP_CHANNELS)
 
+extern void run_conv_gold ( input reg [15:0] array [`LAYER_IFMAP_SIZE-1:0] ifmap, 
+                    input reg [15:0] array [`LAYER_WEIGHTS_SIZE-1:0] weights,
+                    output reg [31:0] array [`LAYER_OFMAP_SIZE-1:0] ofmap,
+                    input bit [7:0] ofmap_width,
+                    input bit [7:0] ofmap_height,
+                    input bit [15:0] ifmap_channels,
+                    input bit [15:0] ofmap_channels,
+                    input bit [3:0] filter_size,
+                    input bit [3:0] stride);
+
+interface conv_if(input bit clk);
+    logic rst_n;
+    
     // ifmap
-    input [15:0] ifmap_dat,
-    output reg ifmap_rdy,
-    input ifmap_vld,
+    logic [15:0] ifmap_dat;
+    logic ifmap_rdy;
+    logic ifmap_vld;
 
     // weights
-    input [15:0] weights_dat,
-    output reg weights_rdy,
-    input weights_vld,
+    logic [15:0] weights_dat;
+    logic weights_rdy;
+    logic weights_vld;
 
     // ofmap
-    output [31:0] ofmap_dat,
-    input ofmap_rdy,
-    output reg ofmap_vld,
+    logic [31:0] ofmap_dat;
+    logic ofmap_rdy;
+    logic ofmap_vld;
 
     // params
-    input layer_params_t layer_params_dat,
-    output reg layer_params_rdy,
-    input layer_params_vld
-);
+    layer_params_t layer_params_dat;
+    logic layer_params_rdy;
+    logic layer_params_vld;
 
-  logic [IFMAP_WIDTH*ARRAY_HEIGHT - 1:0] input_flattened;
-  logic [$clog2(ARRAY_HEIGHT) - 1:0] input_cnt;
-  logic input_read_addr_enable, input_read_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] input_read_addr;
-  logic [COUNTER_WIDTH*INPUT_NUM_PARAMS - 1 : 0] input_read_config_data;
-  logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_write_data;
-  logic input_write_addr_enable, input_write_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] input_write_addr;
-  logic [CONFIG_WIDTH - 1 : 0] input_write_config_data;
-  logic [BANK_ADDR_WIDTH - 1: 0] input_writes_cnt;
-  logic input_switch_banks;
-  logic [IFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] input_read_data;
-  //logic [$clog2(ARRAY_WIDTH) - 1: 0] input_read_cnt;  
-  
-  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1:0] weights_flattened;
-  logic [$clog2(ARRAY_WIDTH) - 1:0] weights_cnt;
-  logic weight_read_addr_enable, weight_read_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr;
-  logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
-  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_write_data;
-  logic weight_write_addr_enable, weight_write_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
-  logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
-  logic [BANK_ADDR_WIDTH - 1: 0] weight_writes_cnt;
-  logic weight_switch_banks;
-  logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_read_data;
-  logic [$clog2(ARRAY_HEIGHT) - 1: 0] weight_read_cnt;
-  
-  logic sys_arr_enable;
-  logic [IFMAP_WIDTH - 1 : 0] ifmap_in [ARRAY_HEIGHT - 1 : 0];
-  logic [OFMAP_WIDTH - 1 : 0] ofmap_in [ARRAY_WIDTH - 1 : 0];
-  logic [OFMAP_WIDTH - 1 : 0] ofmap_out[ARRAY_WIDTH - 1 : 0];
-  logic [WEIGHTS_WIDTH - 1 : 0] weight_in [ARRAY_WIDTH - 1 : 0];
-  logic weight_write_enable_arr;
+    task write_ifmap(logic [15:0] ifmap);
+        ifmap_dat = ifmap;
+        //ifmap_vld = 1;
+    endtask
 
-  reg [IFMAP_WIDTH - 1 : 0] fifo_skew_input [ARRAY_WIDTH - 1][ARRAY_WIDTH - 1];
-  logic [IFMAP_WIDTH - 1 : 0] input_read_data_skew [ARRAY_WIDTH - 1 : 0];
-	
-  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_out_read_data;
-  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data; 
-  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data;
-  
-  logic accum_write_addr_enable, accum_write_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] accum_write_addr;
-  logic [CONFIG_WIDTH - 1 : 0] accum_write_config_data;
-  
-  logic accum_sys_arr_read_addr_enable, accum_sys_arr_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] accum_sys_arr_read_addr;
-  logic [COUNTER_WIDTH*ACCUM_NUM_PARAMS_SYS] accum_sys_arr_config_data;
-  
-  logic accum_out_read_addr_enable, accum_out_read_config_enable;
-  logic [BANK_ADDR_WIDTH - 1 : 0] accum_out_read_addr;
-  logic [COUNTER_WIDTH*ACCUM_NUM_PARAMS_OUT] accum_out_read_config_data;
+    task write_weights(logic [15:0] weights);
+        weights_dat = weights; 
+        weights_vld = 1;
+    endtask
 
-  
-  assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
- 
-  integer i, j;
-  always_ff @(posedge clk, negedge rst_n) begin 
-    if (rst_n) begin 
-      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
-        for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
-          if (j == 0) begin
-            fifo_skew_input[j][i] <= input_read_data[(i+1)*IFMAP_WIDTH +: IFMAP_WIDTH];
-          end else begin 
-            fifo_skew_input[j][i] <= fifo_skew_input[j-1][i];
-          end  
-        end // for j 
-      end // for i
-    end // rst 
-  end //ff
-  
-  genvar k;
-  for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
-    assign input_read_data_skew[k+1] = fifo_skew_input[k][k]; 
-  end 
+    task write_layer_params(layer_params_t params);
+        layer_params_dat = params;
+        layer_params_vld = 1;
+    endtask
 
-  // input FIFO to input double buffer
-  always_ff @(posedge clk, negedge rst_n) begin
-      ifmap_rdy <= 1;
-      if (~rst_n) begin
-        input_cnt <= 0;
-        input_writes_cnt <= 0;
-      end else begin
-        if (ifmap_vld) begin
-          input_flattened[input_cnt*IFMAP_WIDTH +: IFMAP_WIDTH] <= ifmap_dat;
-          if (input_cnt == ARRAY_HEIGHT - 1) begin
-            input_cnt <= 0;
-            if (input_writes_cnt == BANK_ADDR_WIDTH_VAL - 1) begin
-              input_writes_cnt <= 0;
-            end else begin
-              input_writes_cnt <= input_writes_cnt + 1;
+    task read_ofmap(output logic [31:0] ofmap);
+        ofmap = ofmap_dat;
+    endtask
+
+    task read_ifmap(output logic [15:0] ifmap);
+        ifmap = ifmap_dat;
+    endtask
+    
+    task read_weights(output logic [15:0] weights);
+        weights = weights_dat;
+    endtask
+
+    task read_layer_params(output layer_params_t params);
+        params = layer_params_dat;
+    endtask
+endinterface
+
+class conv_item;
+    layer_params_t layer_params;
+
+    reg [15:0] ifmap_dat_full [`LAYER_IFMAP_SIZE-1:0];
+    reg [15:0] weights_dat_full [`LAYER_WEIGHTS_SIZE-1:0];
+    reg [31:0] ofmap_dat_full [`LAYER_OFMAP_SIZE-1:0];
+endclass;
+
+class driver;
+    virtual conv_if vif;
+    mailbox drv_mbx;
+    
+    int ifmap_idx;
+    int weights_idx;
+    logic params;
+    int c, x, y, c0, x0, y0;
+
+    task run();
+        $display ("T=%0t [Driver] Starting ...", $time);
+        forever begin
+            conv_item transaction;
+            drv_mbx.get(transaction);
+
+            ifmap_idx = 0;
+            weights_idx = 0;
+            params = 0;
+            vif.ofmap_rdy = 1;
+          	c = 0;
+            x = 0;
+          	y = 0;
+          	c0 = 0;
+          	x0 = 0;
+          	y0 = 0;
+
+            @ (posedge vif.clk);
+            @ (posedge vif.clk);
+
+            while(ifmap_idx < `LAYER_IFMAP_SIZE || weights_idx < `LAYER_WEIGHTS_SIZE || params == 0) begin
+                if (ifmap_idx < `LAYER_IFMAP_SIZE) begin                  
+                	  vif.write_ifmap(transaction.ifmap_dat_full[ifmap_idx]);
+                  c <=  (c == `config_IC0 - 1) ? 
+                          0 : c + 1;
+                  x <=  (c == `config_IC0 - 1) ? 
+                  ((x == `config_IX0 - 1) ? 0 : x + 1) : x;
+                  y <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1)) ? 
+                  ((y == `config_IY0 - 1) ? 0 : y + 1) : y;
+                  c0  <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1) && (y == `config_IY0 - 1)) ? 
+                  ((c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1) ? 0 : c0 + 1) : c0;
+                	x0  <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1) && (y == `config_IY0 - 1)
+                        && (c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)) ? 
+                  			((x0 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1) ? 0 : x0 + 1) : x0;
+                  y0  <= ((c == `config_IC0 - 1) && (x == `config_IX0 - 1) && (y == `config_IY0 - 1)
+                        && (c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1) && (x0 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1)) ? 
+                  			((y0 == `LAYER_IFMAP_HEIGHT/`config_IY0 - 1) ? 0 : y0 + 1) : y0;
+                  
+                  ifmap_idx <= 	y0*`config_IY0*`LAYER_IFMAP_WIDTH*`LAYER_IFMAP_CHANNELS +
+                  							x0*`LAYER_IFMAP_CHANNELS*`config_IX0 +
+                  							c0*`config_IC0 +
+                  							y*`LAYER_IFMAP_WIDTH*`LAYER_IFMAP_CHANNELS +
+                  				    	x*`LAYER_IFMAP_CHANNELS +
+                 						c;  
+
+		  if ((y0 == `LAYER_IFMAP_HEIGHT/`config_IY0 - 1) && (x0 == `LAYER_IFMAP_WIDTH/`config_IX0 - 1) && (c0 == `LAYER_IFMAP_CHANNELS/`config_IC0 - 1)
+                      && (y == `config_IY0 - 1) && (x == `config_IX0 - 1) && (c == `config_IC0 - 1)) begin
+			vif.ifmap_vld <= 0;
+                  end else begin
+                        vif.ifmap_vld <= 1;
+                  end
+                  $display ("ifmap_idx: %0d, c: %0d, x: %0d, y: %0d, c0: %0d, x0: %0d, y0: %0d", ifmap_idx, c, x, y, c0, x0, y0);
+                end
+                else begin
+                    vif.ifmap_vld = 0;
+                end
+                
+                if (weights_idx < `LAYER_WEIGHTS_SIZE) begin
+                    vif.write_weights(transaction.weights_dat_full[weights_idx]);
+                    weights_idx = weights_idx + 1;
+                end
+                else begin
+                    vif.weights_vld = 0;
+                end
+
+                if(params == 0) begin
+                    vif.write_layer_params(transaction.layer_params);
+                    params = 1;
+                end
+                else begin
+                    vif.layer_params_vld = 0;
+                end
+
+                @ (posedge vif.clk);
             end
-          end else begin
-            input_cnt = input_cnt + 1;
-          end
         end
-      end
-  end
+        
+    endtask
+endclass
 
-  // weights FIFO to weight double buffer
-  always_ff @(posedge clk, negedge rst_n) begin
-      weights_rdy <= 1;
-      if (~rst_n) begin
-        weights_cnt <= 0;
-        weight_writes_cnt <= 0;
-      end else begin
-        if (weights_vld) begin
-          weights_flattened[weights_cnt*WEIGHTS_WIDTH +: WEIGHTS_WIDTH] <= weights_dat;
-          if (weights_cnt == ARRAY_WIDTH - 1) begin
-            weights_cnt <= 0;
-            weight_writes_cnt <= weight_writes_cnt + 1;
-          end else begin
-            weights_cnt = weights_cnt + 1;
-          end
+class monitor; 
+    virtual conv_if vif;
+    mailbox scb_mbx; // mailbox connected to scoreboard
+
+    int ifmap_idx;
+    int weights_idx;
+    logic params_read;
+    int ofmap_idx;
+
+    task run();
+     $display("T=%0t [Monitor] Starting ...", $time);
+        forever begin
+            conv_item transaction = new;
+
+            ifmap_idx = 0;
+            weights_idx = 0;
+            params_read = 0;
+            ofmap_idx = 0;
+
+            @ (posedge vif.clk);
+            @ (posedge vif.clk);
+
+            while(ifmap_idx < `LAYER_IFMAP_SIZE || weights_idx < `LAYER_WEIGHTS_SIZE || params_read == 0 || ofmap_idx < `LAYER_OFMAP_SIZE) begin
+                if (ifmap_idx < `LAYER_IFMAP_SIZE) begin
+                    vif.read_ifmap(transaction.ifmap_dat_full[ifmap_idx]);
+                    ifmap_idx += 1;
+                end
+                
+                if (weights_idx < `LAYER_WEIGHTS_SIZE) begin
+                    vif.read_weights(transaction.weights_dat_full[weights_idx]);
+                    weights_idx += 1;
+                end
+
+                if(params_read == 0 && vif.layer_params_vld == 1) begin
+                    vif.read_layer_params(transaction.layer_params);
+                    params_read = 1;
+                end
+
+                if(ofmap_idx < `LAYER_OFMAP_SIZE && vif.ofmap_vld == 1) begin
+                    vif.read_ofmap(transaction.ofmap_dat_full[ofmap_idx]);
+                    ofmap_idx += 1;
+                end
+
+                @ (posedge vif.clk);
+            end
+            
+            scb_mbx.put(transaction);
         end
-      end
-  end
+    endtask
+endclass
 
-  assign weight_write_data = weights_flattened;
-  assign input_write_data = input_flattened;
-  // sets inputs to weight double buffer after accumulation
-  always_comb begin
-    if ((weights_cnt == 0) && (weights_vld)) begin
-      weight_write_addr_enable <= 1;
-    end else begin
-      weight_write_addr_enable <= 0;
-    end
+class scoreboard;
+    mailbox scb_mbx;
 
-    if ((weight_write_addr_enable == 1) && (weight_writes_cnt == BANK_ADDR_WIDTH_VAL - 1)) begin
-      weight_switch_banks <= 1;
-    end else begin
-      weight_switch_banks <= 0;
-    end
-  end
+    reg [31:0] gold_ofmap_dat [`LAYER_OFMAP_SIZE-1:0];
 
-  always_comb begin
-    if ((input_cnt == 0) && (ifmap_vld)) begin
-      input_write_addr_enable <= 1;
-    end else begin
-      input_write_addr_enable <= 0;
-    end
+    task run();
+        forever begin
+            conv_item transaction;
+            scb_mbx.get(transaction);
+            $display("[Scoreboard] Checking transaction...");
+            
+            run_conv_gold(transaction.ifmap_dat_full, transaction.weights_dat_full, gold_ofmap_dat, transaction.layer_params.ofmap_width, transaction.layer_params.ofmap_height, transaction.layer_params.ifmap_channels, transaction.layer_params.ofmap_channels, transaction.layer_params.filter_size, transaction.layer_params.stride);
+            
+            for(int i = 0; i < `LAYER_OFMAP_SIZE; i+=1) begin
+                if(transaction.ofmap_dat_full[i] != gold_ofmap_dat[i]) begin
+                    $display("[%0t] Scoreboard Error!", $time);
+                    $display ("idx: 0x%h dut: 0x%h gold: 0x%h", i, transaction.ofmap_dat_full[i], gold_ofmap_dat[i]);
+                    $finish;
+                end
+            end
+            $display("[%0t] Scoreboard Success!", $time);
+            $finish;
+        end
+    endtask
+endclass
+
+class env;
+    driver d0;
+    monitor m0;
+    scoreboard s0;
+    mailbox scb_mbx;
+    virtual conv_if vif;
+
+    function new();
+        d0 = new; 
+        m0 = new;
+        s0 = new;
+        scb_mbx = new();
+    endfunction
+
+    virtual task run();
+        d0.vif = vif;
+        m0.vif = vif;
+        m0.scb_mbx = scb_mbx;
+        s0.scb_mbx = scb_mbx;
+
+        fork
+            s0.run();
+            d0.run();
+            m0.run();    
+        join_any 
+    endtask   
+endclass    
+
+class test;
+    env e0;
+    mailbox drv_mbx;
+
+    function new();
+        drv_mbx = new();
+        e0 = new();
+    endfunction
+
+    virtual task run();
+        e0.d0.drv_mbx = drv_mbx;
+
+        fork 
+            e0.run();
+        join_none
+
+        apply_stim();
+    endtask
+
+    virtual task apply_stim();
+        conv_item transaction;
+        $display ("T=%0t [Test] Starting stimulus ...", $time);
+
+        transaction = new;
+        $readmemh("data/layer1_ifmap.mem", transaction.ifmap_dat_full);
+        $readmemh("data/layer1_weights.mem", transaction.weights_dat_full);
+        
+        transaction.layer_params.ofmap_width = `LAYER_OFMAP_WIDTH;
+        transaction.layer_params.ofmap_height = `LAYER_OFMAP_HEIGHT;
+        transaction.layer_params.ifmap_channels = `LAYER_IFMAP_CHANNELS;
+        transaction.layer_params.ofmap_channels = `LAYER_OFMAP_CHANNELS;
+        transaction.layer_params.filter_size = `LAYER_FILTER_SIZE;
+        transaction.layer_params.stride = `LAYER_STRIDE;
+        
+        drv_mbx.put(transaction);
+    endtask
+endclass
+
+
+module conv_tb;
+
+    reg clk;
+
+    always #10 clk =~clk;
     
-    if ((input_write_addr_enable == 1) && (input_writes_cnt == 0)) begin
-      input_switch_banks <= 1;
-    end else begin
-      input_switch_banks <= 0;
-    end
-    
-  end
+    conv_if _if (clk);
 
-  always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-        weight_write_config_enable <= 1;
-        weight_write_config_data <= CONFIG_OC1 * CONFIG_IC1 * CONFIG_FY * CONFIG_FX;
-    end else begin
-        weight_write_config_enable <= 0;
-    end
-  end
-  
-  always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-        input_write_config_enable <= 1;
-        input_write_config_data <= CONFIG_IC1 * CONFIG_IY0 * CONFIG_IX0;
-    end else begin
-        input_write_config_enable <= 0;
-    end
-  end
-  
-  // read in weight data to sys arr
-  always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-      weight_read_config_enable <= 1;
-      weight_read_config_data <= {CONFIG_FX, CONFIG_FY, CONFIG_IC1, CONFIG_OC1};
-    end else begin
-      weight_read_config_enable <= 0;
-    end
-  end
-  
-  always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-      weight_read_addr_enable <= 0;	  
-      weight_read_cnt <= 0;
-    end else begin
-      if (weight_read_cnt == ARRAY_HEIGHT - 1) begin
-        weight_read_addr_enable <= 1;
-        weight_read_cnt <= 0;
-      end else begin
-        weight_read_addr_enable <= 0;
-        weight_read_cnt <= weight_read_cnt + 1;
-      end
-    end
-  end
-
-always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-      input_read_config_enable <= 1;
-      input_read_config_data <= {CONFIG_OX0, CONFIG_OY0, CONFIG_FX, CONFIG_FY,
-          STRIDE, CONFIG_IX0, CONFIG_IY0, CONFIG_IC1};
-    end else begin
-      input_read_config_enable <= 0;
-    end
-  end
- 
-  always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-      input_read_addr_enable <= 0;
-    end else begin
-        input_read_addr_enable <= 1;
-    end
-  end
-
-    weight_read_addr_gen #(
-      .COUNTER_WIDTH(COUNTER_WIDTH),
-      .NUM_PARAMS(WEIGHTS_NUM_PARAMS),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    ) weight_read_addr_gen_U(
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(weight_read_addr_enable),
-      .addr(weight_read_addr),
-      .config_enable(weight_read_config_enable),
-      .config_data(weight_read_config_data)
+    conv #(.IFMAP_SIZE(`LAYER_IFMAP_SIZE), .WEIGHTS_SIZE(`LAYER_WEIGHTS_SIZE), .OFMAP_SIZE(`LAYER_OFMAP_SIZE))
+        dut (
+            .clk(_if.clk),
+            .rst_n(_if.rst_n), 
+            .ifmap_dat(_if.ifmap_dat), 
+            .ifmap_rdy(_if.ifmap_rdy), 
+            .ifmap_vld(_if.ifmap_vld), 
+            .weights_dat(_if.weights_dat), 
+            .weights_rdy(_if.weights_rdy), 
+            .weights_vld(_if.weights_vld), 
+            .ofmap_dat(_if.ofmap_dat), 
+            .ofmap_rdy(_if.ofmap_rdy), 
+            .ofmap_vld(_if.ofmap_vld), 
+            .layer_params_dat(_if.layer_params_dat),
+            .layer_params_rdy(_if.layer_params_rdy), 
+            .layer_params_vld(_if.layer_params_vld)
     );
 
-    weight_write_addr_gen #(
-      .CONFIG_WIDTH(CONFIG_WIDTH),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    ) weight_write_addr_gen_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(weight_write_addr_enable),
-      .addr(weight_write_addr),
-      .config_enable(weight_write_config_enable),
-      .config_data(weight_write_config_data) // config_ic1_iy0_ix0
-    );
+    initial begin
+        test t0;
 
-    double_buffer #(
-      .DATA_WIDTH(WEIGHTS_WIDTH*ARRAY_WIDTH),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    ) weight_double_buffer_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .switch_banks(weight_switch_banks),
-      .ren(weight_read_addr_enable),
-      .radr(weight_read_addr),
-      .rdata(weight_read_data),
-      .wen(weight_write_addr_enable),
-      .wadr(weight_write_addr),
-      .wdata(weight_write_data)
-    );
+        clk <= 0;
+        _if.rst_n <= 0;
+        #20 _if.rst_n <= 1;
 
-    input_read_addr_gen #(
-      .COUNTER_WIDTH(COUNTER_WIDTH),
-      .NUM_PARAMS(INPUT_NUM_PARAMS),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-     ) input_read_addr_gen_U(
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(input_read_addr_enable),
-     .addr(input_read_addr),
-     .config_enable(input_read_config_enable),
-     .config_data(input_read_config_data)
-    );
-  
-    input_write_addr_gen #(
-      .CONFIG_WIDTH(CONFIG_WIDTH),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    ) input_write_addr_gen_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(input_write_addr_enable),
-      .addr(input_write_addr),
-      .config_enable(input_write_config_enable),
-      .config_data(input_write_config_data) // config IC1 IY0 IX0
-    );
-  
-    double_buffer #(
-      .DATA_WIDTH(IFMAP_WIDTH*ARRAY_WIDTH),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH_VAL)
-    ) input_double_buffer_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .switch_banks(input_switch_banks),
-      .ren(input_read_addr_enable),
-      .radr(input_read_addr),
-      .rdata(input_read_data),
-      .wen(input_write_addr_enable),
-      .wadr(input_write_addr),
-      .wdata(input_write_data)
-    );
-  
-  
-  accum_double_buffer #(
-    .DATA_WIDTH(ACCUM_DATA_WIDTH),
-    .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH), 
-    .NUM_OC(CONFIG_OC)
-  ) accum_double_buffer_U (
-    .clk(clk),
-    .rst_n(rst_n),
-    .switch_banks(accum_switch_banks),
-    .ren_out(accum_out_read_addr_enable),
-    .ren_sys_arr(accum_sys_arr_read_addr_enable),
-    .radr_out(accum_out_read_addr),
-    .radr_sys_arr(accum_sys_arr_read_addr),
-    .rdata_out(accum_out_read_data),
-    .rdata_sys_arr(accum_sys_arr_data),
-    .wen(accum_write_addr_enable),
-    .wadr(accum_write_addr),
-    .wdata(accum_write_data)
-);
-    
-    accum_out_read_addr_gen #(
-      .COUNTER_WIDTH(COUNTER_WIDTH),
-      .NUM_PARAMS(ACCUM_NUM_PARAMS_OUT),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    )accum_out_read_addr_gen_U(
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(accum_out_read_addr_enable),
-      .addr(accum_out_read_addr),
-      .config_enable(accum_out_read_config_enable),
-      .config_data(accum_out_read_config_data)
-    );
-      
-    accum_sys_arr_read_addr_gen #(
-      .COUNTER_WIDTH(COUNTER_WIDTH),
-      .NUM_PARAMS(ACCUM_NUM_PARAMS_SYS),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    ) accum_sys_arr_read_addr_gen_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(accum_sys_arr_read_addr_enable),
-      .addr(accum_sys_arr_read_addr),
-      .config_enable(accum_sys_arr_config_enable),
-      .config_data(accum_sys_arr_config_data)
-    );
-  
-    accum_write_addr_gen #(
-      .CONFIG_WIDTH(CONFIG_WIDTH),
-      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
-    ) accum_write_addr_gen_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .addr_enable(accum_write_addr_enable),
-      .addr(accum_write_addr),
-      .config_enable(accum_write_config_enable),
-      .config_data(accum_write_config_data)
-    );
-    
-    systolic_array #(
-      .IFMAP_WIDTH(IFMAP_WIDTH),
-      .WEIGHT_WIDTH(WEIGHTS_WIDTH),
-      .OFMAP_WIDTH(OFMAP_WIDTH),
-      .ARRAY_HEIGHT(ARRAY_HEIGHT),
-      .ARRAY_WIDTH(ARRAY_WIDTH)
-    ) sys_arr_U (
-      .clk(clk),
-      .rst_n(rst_n),
-      .enable(sys_arr_enable),
-      .weight_write_enable(weight_write_enable_arr),
-      .ifmap_in(input_read_data_skew),
-      .weight_in(weight_in),
-      .ofmap_in(ofmap_in),
-      .ofmap_out(ofmap_out)
-    );
+        t0 = new(); 
+        t0.e0.vif = _if;
+        t0.run();
+    end
+    initial begin
+        $vcdplusfile("dump.vcd");
+        $vcdplusmemon();
+        $vcdpluson(0, conv_tb);
+        #21000000;
+        $finish(2);
+    end
 
-    
 endmodule
