@@ -168,7 +168,6 @@ class driver;
                   end else begin
                         vif.ifmap_vld <= 1;
                   end
-                  $display ("ifmap_idx: %0d, c: %0d, x: %0d, y: %0d, c0: %0d, x0: %0d, y0: %0d", ifmap_idx, c, x, y, c0, x0, y0);
                 end
                 else begin
                     vif.ifmap_vld = 0;
