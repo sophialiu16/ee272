@@ -24,6 +24,10 @@ tb: tests/conv_tb.sv verilog/conv.sv conv_gold.cpp
                 verilog/systolic_array.v \
                 verilog/weight_read_addr_gen.v \
                 verilog/weight_write_addr_gen.v \
+                verilog/accum_double_buffer.v \
+                verilog/accum_out_read_addr_gen.v \
+                verilog/accum_sys_arr_read_addr_gen.v \
+                verilog/accum_write_addr_gen.v \
 		verilog/conv.sv \
 		conv_gold_sv.cpp \
 		| tee output.log
