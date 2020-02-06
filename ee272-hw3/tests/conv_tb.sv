@@ -1,3 +1,4 @@
+`include "layer_params.svh"
 module conv
 #(
     // size of files -> overwritten by testbench param values
