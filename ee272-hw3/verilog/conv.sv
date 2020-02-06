@@ -13,6 +13,8 @@ module conv
     parameter CONFIG_WIDTH = 32,
     parameter WEIGHTS_NUM_PARAMS = 4,
     parameter INPUT_NUM_PARAMS = 8,
+  	parameter ACCUM_NUM_PARAMS_SYS = 2,
+  	parameter ACCUM_NUM_PARAMS_OUT = 3,
 
     parameter CONFIG_OX = 12,//56,
     parameter CONFIG_OY = 12,//56,
@@ -35,9 +37,10 @@ module conv
     parameter ARRAY_HEIGHT = CONFIG_IC0,
     parameter ARRAY_WIDTH = CONFIG_OC0,
  
-
     parameter BANK_ADDR_WIDTH_VAL = CONFIG_IC1 * CONFIG_IX0 * CONFIG_IY0,
-    parameter BANK_ADDR_WIDTH = $clog2(BANK_ADDR_WIDTH_VAL)
+    parameter BANK_ADDR_WIDTH = $clog2(BANK_ADDR_WIDTH_VAL),
+  
+  	parameter ACCUM_DATA_WIDTH = OFMAP_WIDTH * ARRAY_WIDTH
  )
 (
     input clk,
@@ -101,8 +104,24 @@ module conv
 
   reg [IFMAP_WIDTH - 1 : 0] fifo_skew_input [ARRAY_WIDTH - 1][ARRAY_WIDTH - 1];
   logic [IFMAP_WIDTH - 1 : 0] input_read_data_skew [ARRAY_WIDTH - 1 : 0];
+	
+  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_out_read_data;
+  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data; 
+  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data;
+  
+  logic accum_write_addr_enable, accum_write_config_enable;
+  logic [BANK_ADDR_WIDTH - 1 : 0] accum_write_addr;
+  logic [CONFIG_WIDTH - 1 : 0] accum_write_config_data;
+  
+  logic accum_sys_arr_read_addr_enable, accum_sys_arr_config_enable;
+  logic [BANK_ADDR_WIDTH - 1 : 0] accum_sys_arr_read_addr;
+  logic [COUNTER_WIDTH*ACCUM_NUM_PARAMS_SYS] accum_sys_arr_config_data;
+  
+  logic accum_out_read_addr_enable, accum_out_read_config_enable;
+  logic [BANK_ADDR_WIDTH - 1 : 0] accum_out_read_addr;
+  logic [COUNTER_WIDTH*ACCUM_NUM_PARAMS_OUT] accum_out_read_config_data;
 
-
+  
   assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
  
   integer i, j;
@@ -339,7 +358,65 @@ always_ff @(posedge clk, negedge rst_n) begin
       .wadr(input_write_addr),
       .wdata(input_write_data)
     );
-
+  
+  
+  accum_double_buffer #(
+    .DATA_WIDTH(ACCUM_DATA_WIDTH),
+    .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH), 
+    .NUM_OC(CONFIG_OC)
+  ) accum_double_buffer_U (
+    .clk(clk),
+    .rst_n(rst_n),
+    .switch_banks(accum_switch_banks),
+    .ren_out(accum_out_read_addr_enable),
+    .ren_sys_arr(accum_sys_arr_read_addr_enable),
+    .radr_out(accum_out_read_addr),
+    .radr_sys_arr(accum_sys_arr_read_addr),
+    .rdata_out(accum_out_read_data),
+    .rdata_sys_arr(accum_sys_arr_data),
+    .wen(accum_write_addr_enable),
+    .wadr(accum_write_addr),
+    .wdata(accum_write_data)
+);
+    
+    accum_out_read_addr_gen #(
+      .COUNTER_WIDTH(COUNTER_WIDTH),
+      .NUM_PARAMS(ACCUM_NUM_PARAMS_OUT),
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+    )accum_out_read_addr_gen_U(
+      .clk(clk),
+      .rst_n(rst_n),
+      .addr_enable(accum_out_read_addr_enable),
+      .addr(accum_out_read_addr),
+      .config_enable(accum_out_read_config_enable),
+      .config_data(accum_out_read_config_data)
+    );
+      
+    accum_sys_arr_read_addr_gen #(
+      .COUNTER_WIDTH(COUNTER_WIDTH),
+      .NUM_PARAMS(ACCUM_NUM_PARAMS_SYS),
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+    ) accum_sys_arr_read_addr_gen_U (
+      .clk(clk),
+      .rst_n(rst_n),
+      .addr_enable(accum_sys_arr_read_addr_enable),
+      .addr(accum_sys_arr_read_addr),
+      .config_enable(accum_sys_arr_config_enable),
+      .config_data(accum_sys_arr_config_data)
+    );
+  
+    accum_write_addr_gen #(
+      .CONFIG_WIDTH(CONFIG_WIDTH),
+      .BANK_ADDR_WIDTH(BANK_ADDR_WIDTH)
+    ) accum_write_addr_gen_U (
+      .clk(clk),
+      .rst_n(rst_n),
+      .addr_enable(accum_write_addr_enable),
+      .addr(accum_write_addr),
+      .config_enable(accum_write_config_enable),
+      .config_data(accum_write_config_data)
+    );
+    
     systolic_array #(
       .IFMAP_WIDTH(IFMAP_WIDTH),
       .WEIGHT_WIDTH(WEIGHTS_WIDTH),
@@ -356,5 +433,6 @@ always_ff @(posedge clk, negedge rst_n) begin
       .ofmap_in(ofmap_in),
       .ofmap_out(ofmap_out)
     );
-endmodule
 
+    
+endmodule
