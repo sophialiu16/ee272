@@ -198,7 +198,7 @@ module conv
       for (a1 = 0; a1 < ARRAY_WIDTH - 1; a1 = a1 + 1) begin 
         for (b1 = 0; b1 < ARRAY_WIDTH - 1; b1 = b1 + 1) begin 
           if (b1 == 0) begin
-            fifo_skew_accum_sys_arr_data[b1][a1] <= accum_sys_arr_data[(i+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+            fifo_skew_accum_sys_arr_data[b1][a1] <= accum_sys_arr_data[(a1+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
           end else begin 
             fifo_skew_accum_sys_arr_data[b1][a1] <= fifo_skew_accum_sys_arr_data[b1-1][a1];
           end  
