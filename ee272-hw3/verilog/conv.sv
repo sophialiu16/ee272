@@ -107,7 +107,11 @@ module conv
 	
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_out_read_data;
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data; 
+  reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_sys_arr_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
+  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data_skew [ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data;
+  reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_write_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
+  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data_skew [ARRAY_WIDTH - 1 : 0];
   
   logic accum_write_addr_enable, accum_write_config_enable;
   logic [BANK_ADDR_WIDTH - 1 : 0] accum_write_addr;
@@ -121,9 +125,12 @@ module conv
   logic [BANK_ADDR_WIDTH - 1 : 0] accum_out_read_addr;
   logic [COUNTER_WIDTH*ACCUM_NUM_PARAMS_OUT] accum_out_read_config_data;
 
-  
-  assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
+  logic [$clog2(CONFIG_OC1) - 1 : 0] ofmap_cnt; 
+
+   logic [$clog2(CONFIG_OX0 * CONFIG_OY0*CONFIG_IC0*2) - 1 : 0] ic0_ox0_oy0_cnt2;
+
  
+  // skew fifo for inputs 
   integer i, j;
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n) begin 
@@ -143,7 +150,49 @@ module conv
   for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
     assign input_read_data_skew[k+1] = fifo_skew_input[k][k]; 
   end 
-
+  
+  // skew fifo for accumulator buffer write input
+  assign fifo_skew_accum_write_data[0] = accum_write_data[0 +: ACCUM_DATA_WIDTH]; 
+  
+  always_ff @(posedge clk, negedge rst_n) begin 
+    if (rst_n) begin 
+      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
+        for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
+          if (j == 0) begin
+            fifo_skew_accum_write_data[j][i] <= accum_write_data[(i+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+          end else begin 
+            fifo_skew_accum_write_data[j][i] <= fifo_skew_accum_write_data[j-1][i];
+          end  
+        end // for j 
+      end // for i
+    end // rst 
+  end //ff
+  
+  for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
+    assign accum_write_data_skew[k+1] = fifo_skew_accum_write_data[k][k]; 
+  end 
+    
+  // skew fifo for accumulator buffer sys array input
+  assign fifo_skew_accum_sys_arr_data[0] = accum_sys_arr_data[0 +: ACCUM_DATA_WIDTH]; 
+  
+  always_ff @(posedge clk, negedge rst_n) begin 
+    if (rst_n) begin 
+      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
+        for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
+          if (j == 0) begin
+            fifo_skew_accum_sys_arr_data[j][i] <= accum_sys_arr_data[(i+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+          end else begin 
+            fifo_skew_accum_sys_arr_data[j][i] <= fifo_skew_accum_sys_arr_data[j-1][i];
+          end  
+        end // for j 
+      end // for i
+    end // rst 
+  end //ff
+  
+  for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
+    assign accum_sys_arr_data_skew[k+1] = fifo_skew_accum_sys_arr_data[k][k]; 
+  end 
+  
   // input FIFO to input double buffer
   always_ff @(posedge clk, negedge rst_n) begin
       ifmap_rdy <= 1;
@@ -166,8 +215,7 @@ module conv
         end
       end
   end
-
-  // weights FIFO to weight double buffer
+  
   always_ff @(posedge clk, negedge rst_n) begin
       weights_rdy <= 1;
       if (~rst_n) begin
@@ -178,7 +226,11 @@ module conv
           weights_flattened[weights_cnt*WEIGHTS_WIDTH +: WEIGHTS_WIDTH] <= weights_dat;
           if (weights_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
-            weight_writes_cnt <= weight_writes_cnt + 1;
+            if (weight_writes_cnt == BANK_ADDR_WIDTH_VAL - 1) begin
+              weight_writes_cnt <= 0;
+            end else begin
+              weight_writes_cnt <= weight_writes_cnt + 1;
+            end
           end else begin
             weights_cnt = weights_cnt + 1;
           end
@@ -278,7 +330,61 @@ always_ff @(posedge clk, negedge rst_n) begin
         input_read_addr_enable <= 1;
     end
   end
+  
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+      accum_out_read_config_enable <= 1;
+      accum_out_read_config_data <= {CONFIG_OX0, CONFIG_OY0, CONFIG_OC1};
+    end else begin
+      accum_out_read_config_enable <= 0;
+    end
+  end
+  
+  // output
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+      ofmap_vld <= 0;
+      ofmap_cnt <= 0;
+      accum_out_read_addr_enable <= 0;
+    end else begin
+      if ((ofmap_rdy) && (ofmap_cnt == CONFIG_FX*CONFIG_FY*CONFIG_IC1 - 1)) begin
+        accum_out_read_addr_enable <= 1;
+        ofmap_vld <= 1;
+        ofmap_cnt <= 0;
+      end else begin
+        ofmap_vld <= 0;
+      	ofmap_cnt <= ofmap_cnt + 1;
+      	accum_out_read_addr_enable <= 0;
+      end
+    end
+  end
+  
+  assign ofmap_dat = accum_out_read_data;
 
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (~rst_n) begin
+      ic0_ox0_oy0_cnt2 <= 0;
+      accum_write_addr_enable <= 0;
+      accum_sys_arr_read_addr_enable <= 0;
+    end else begin
+      if (ic0_ox0_oy0_cnt2 == CONFIG_OX0 * CONFIG_OY0 * CONFIG_IC0 * 2 - 1) begin 
+        ic0_ox0_oy0_cnt2 <= 0;
+        accum_sys_arr_read_addr_enable <= 1; // start reading out to sys arr
+        accum_write_addr_enable <= 0; // finished writing 
+      end else begin 
+        ic0_ox0_oy0_cnt2 <= ic0_ox0_oy0_cnt2 + 1;
+      end
+      
+      if (ic0_ox0_oy0_cnt2 == CONFIG_IC0 * 2 - 1) begin 
+        accum_write_addr_enable <= 1; // start writing after ic0*2
+      end 
+      
+      if (ic0_ox0_oy0_cnt2 == CONFIG_OX0 * CONFIG_OY0 - 1) begin 
+        accum_sys_arr_read_addr_enable <= 0; // stop reading out to sys arr
+      end 
+    end
+  end
+  
     weight_read_addr_gen #(
       .COUNTER_WIDTH(COUNTER_WIDTH),
       .NUM_PARAMS(WEIGHTS_NUM_PARAMS),
@@ -376,7 +482,7 @@ always_ff @(posedge clk, negedge rst_n) begin
     .rdata_sys_arr(accum_sys_arr_data),
     .wen(accum_write_addr_enable),
     .wadr(accum_write_addr),
-    .wdata(accum_write_data)
+    .wdata(accum_write_data_skew)
 );
     
     accum_out_read_addr_gen #(
@@ -429,9 +535,9 @@ always_ff @(posedge clk, negedge rst_n) begin
       .enable(sys_arr_enable),
       .weight_write_enable(weight_write_enable_arr),
       .ifmap_in(input_read_data_skew),
-      .weight_in(weight_in),
-      .ofmap_in(ofmap_in),
-      .ofmap_out(ofmap_out)
+      .weight_in(weight_write_data),
+      .ofmap_in(accum_sys_arr_data_skew),
+      .ofmap_out(accum_write_data)
     );
 
     
