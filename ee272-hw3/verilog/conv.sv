@@ -105,13 +105,14 @@ module conv
   reg [IFMAP_WIDTH - 1 : 0] fifo_skew_input [ARRAY_WIDTH - 1][ARRAY_WIDTH - 1];
   logic [IFMAP_WIDTH - 1 : 0] input_read_data_skew [ARRAY_WIDTH - 1 : 0];
 	
+  logic accum_switch_banks;
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_out_read_data;
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data; 
   reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_sys_arr_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data_skew [ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data;
   reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_write_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
-  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data_skew [ARRAY_WIDTH - 1 : 0];
+  logic [ACCUM_DATA_WIDTH*ARRAY_WIDTH - 1 : 0] accum_write_data_skew;
   
   logic accum_write_addr_enable, accum_write_config_enable;
   logic [BANK_ADDR_WIDTH - 1 : 0] accum_write_addr;
@@ -130,6 +131,7 @@ module conv
    logic [$clog2(CONFIG_OX0 * CONFIG_OY0*CONFIG_IC0*2) - 1 : 0] ic0_ox0_oy0_cnt2;
 
  
+  assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
   // skew fifo for inputs 
   integer i, j;
   always_ff @(posedge clk, negedge rst_n) begin 
@@ -152,7 +154,7 @@ module conv
   end 
   
   // skew fifo for accumulator buffer write input
-  assign fifo_skew_accum_write_data[0] = accum_write_data[0 +: ACCUM_DATA_WIDTH]; 
+  assign accum_write_data_skew[0 +: ACCUM_DATA_WIDTH ] = accum_write_data[0 +: ACCUM_DATA_WIDTH]; 
   
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n) begin 
@@ -169,11 +171,11 @@ module conv
   end //ff
   
   for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
-    assign accum_write_data_skew[k+1] = fifo_skew_accum_write_data[k][k]; 
+    assign accum_write_data_skew[(k+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH] = fifo_skew_accum_write_data[k][k]; 
   end 
     
   // skew fifo for accumulator buffer sys array input
-  assign fifo_skew_accum_sys_arr_data[0] = accum_sys_arr_data[0 +: ACCUM_DATA_WIDTH]; 
+  assign accum_sys_arr_data_skew[0] = accum_sys_arr_data[0 +: ACCUM_DATA_WIDTH]; 
   
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n) begin 
@@ -346,15 +348,18 @@ always_ff @(posedge clk, negedge rst_n) begin
       ofmap_vld <= 0;
       ofmap_cnt <= 0;
       accum_out_read_addr_enable <= 0;
+      accum_switch_banks <= 0;
     end else begin
       if ((ofmap_rdy) && (ofmap_cnt == CONFIG_FX*CONFIG_FY*CONFIG_IC1 - 1)) begin
         accum_out_read_addr_enable <= 1;
         ofmap_vld <= 1;
         ofmap_cnt <= 0;
+        accum_switch_banks <= 1;
       end else begin
         ofmap_vld <= 0;
       	ofmap_cnt <= ofmap_cnt + 1;
       	accum_out_read_addr_enable <= 0;
+        accum_switch_banks <= 0;
       end
     end
   end
