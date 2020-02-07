@@ -87,6 +87,7 @@ module conv
   logic [BANK_ADDR_WIDTH - 1 : 0] weight_read_addr;
   logic [COUNTER_WIDTH*WEIGHTS_NUM_PARAMS - 1 : 0] weight_read_config_data;
   logic [WEIGHTS_WIDTH*ARRAY_WIDTH - 1 : 0] weight_write_data;
+  logic [WEIGHTS_WIDTH - 1 : 0] weight_write_data_u [ARRAY_WIDTH - 1 : 0];
   logic weight_write_addr_enable, weight_write_config_enable;
   logic [BANK_ADDR_WIDTH - 1 : 0] weight_write_addr;
   logic [CONFIG_WIDTH - 1 : 0] weight_write_config_data; //fx, fy, ic1, oc1
@@ -225,7 +226,7 @@ module conv
         weight_writes_cnt <= 0;
       end else begin
         if (weights_vld) begin
-          weights_flattened[weights_cnt*WEIGHTS_WIDTH +: WEIGHTS_WIDTH] <= weights_dat;
+          weight_write_data_u[weights_cnt] <= weights_dat;
           if (weights_cnt == ARRAY_WIDTH - 1) begin
             weights_cnt <= 0;
             if (weight_writes_cnt == BANK_ADDR_WIDTH_VAL - 1) begin
@@ -240,7 +241,7 @@ module conv
       end
   end
 
-  assign weight_write_data = weights_flattened;
+
   assign input_write_data = input_flattened;
   // sets inputs to weight double buffer after accumulation
   always_comb begin
@@ -540,7 +541,7 @@ always_ff @(posedge clk, negedge rst_n) begin
       .enable(sys_arr_enable),
       .weight_write_enable(weight_write_enable_arr),
       .ifmap_in(input_read_data_skew),
-      .weight_in(weight_write_data),
+      .weight_in(weight_write_data_u),
       .ofmap_in(accum_sys_arr_data_skew),
       .ofmap_out(accum_write_data)
     );
