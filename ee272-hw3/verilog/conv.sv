@@ -135,11 +135,11 @@ module conv
 
 
   
-  integer i, j;
+  integer i, j, a0;
   always_ff @(posedge clk, negedge rst_n) begin
     if (rst_n) begin
-      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin
-        accum_write_data_array[i] <= accum_write_data[i*ARRAY_WIDTH +: ARRAY_WIDTH];  
+      for (a0 = 0; a0 < ARRAY_WIDTH - 1; a0 = a0 + 1) begin
+        accum_write_data[i*ARRAY_WIDTH +: ARRAY_WIDTH]<=accum_write_data_array[i];  
       end // for i
     end // rst
   end //ff
@@ -169,43 +169,47 @@ module conv
   // skew fifo for accumulator buffer write input
   assign accum_write_data_skew[0 +: ACCUM_DATA_WIDTH ] = accum_write_data[0 +: ACCUM_DATA_WIDTH]; 
   
+  integer z, y;
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n) begin 
-      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
-        for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
-          if (j == 0) begin
-            fifo_skew_accum_write_data[j][i] <= accum_write_data[(i+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+      for (z = 0; z < ARRAY_WIDTH - 1; z = z + 1) begin 
+        for (y = 0; y < ARRAY_WIDTH - 1; y = y + 1) begin 
+          if (y == 0) begin
+            fifo_skew_accum_write_data[y][z] <= accum_write_data[(z+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
           end else begin 
-            fifo_skew_accum_write_data[j][i] <= fifo_skew_accum_write_data[j-1][i];
+            fifo_skew_accum_write_data[y][z] <= fifo_skew_accum_write_data[y-1][z];
           end  
         end // for j 
       end // for i
     end // rst 
   end //ff
   
-  for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
-    assign accum_write_data_skew[(k+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH] = fifo_skew_accum_write_data[k][k]; 
+  genvar k1;
+  for (k1 = 0; k1 < ARRAY_WIDTH - 1; k1 = k1 + 1) begin 
+    assign accum_write_data_skew[(k1 + 1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH] = fifo_skew_accum_write_data[k1][k1]; 
   end 
     
   // skew fifo for accumulator buffer sys array input
   assign accum_sys_arr_data_skew[0] = accum_sys_arr_data[0 +: ACCUM_DATA_WIDTH]; 
   
+  integer a1, b1; 
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n) begin 
-      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
-        for (j = 0; j < ARRAY_WIDTH - 1; j = j + 1) begin 
-          if (j == 0) begin
-            fifo_skew_accum_sys_arr_data[j][i] <= accum_sys_arr_data[(i+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+      for (a1 = 0; a1 < ARRAY_WIDTH - 1; a1 = a1 + 1) begin 
+        for (b1 = 0; b1 < ARRAY_WIDTH - 1; b1 = b1 + 1) begin 
+          if (b1 == 0) begin
+            fifo_skew_accum_sys_arr_data[b1][a1] <= accum_sys_arr_data[(i+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
           end else begin 
-            fifo_skew_accum_sys_arr_data[j][i] <= fifo_skew_accum_sys_arr_data[j-1][i];
+            fifo_skew_accum_sys_arr_data[b1][a1] <= fifo_skew_accum_sys_arr_data[b1-1][a1];
           end  
         end // for j 
       end // for i
     end // rst 
   end //ff
   
-  for (k = 0; k < ARRAY_WIDTH - 1; k = k + 1) begin 
-    assign accum_sys_arr_data_skew[k+1] = fifo_skew_accum_sys_arr_data[k][k]; 
+  genvar k2;
+  for (k2 = 0; k2 < ARRAY_WIDTH - 1; k2 = k2 + 1) begin 
+    assign accum_sys_arr_data_skew[k2+1] = fifo_skew_accum_sys_arr_data[k2][k2]; 
   end 
   
   // input FIFO to input double buffer
