@@ -134,7 +134,9 @@ module conv
    logic [$clog2(CONFIG_OX0 * CONFIG_OY0*CONFIG_IC0*2) - 1 : 0] ic0_ox0_oy0_cnt2;
 
 
-  
+ 
+  assign layer_params_rdy = 1;
+ 
   integer i, j, a0;
   always_ff @(posedge clk, negedge rst_n) begin
     if (rst_n) begin
@@ -354,8 +356,14 @@ always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
       accum_out_read_config_enable <= 1;
       accum_out_read_config_data <= {CONFIG_OX0, CONFIG_OY0, CONFIG_OC1};
+      accum_sys_arr_config_enable <= 1;
+      accum_sys_arr_config_data <= {CONFIG_OX0, CONFIG_OY0};
+      accum_write_config_enable <= 1;
+      accum_write_config_data <= {CONFIG_OX0, CONFIG_OY0};
     end else begin
       accum_out_read_config_enable <= 0;
+      accum_sys_arr_config_enable <= 0;
+      accum_write_config_enable <= 0;
     end
   end
   
