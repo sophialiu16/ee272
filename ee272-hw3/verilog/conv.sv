@@ -111,6 +111,8 @@ module conv
   reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_sys_arr_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data_skew [ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data;
+  logic [(OFMAP_WIDTH - 1):0] accum_write_data_array[(ARRAY_WIDTH -1):0];
+  
   reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_write_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH*ARRAY_WIDTH - 1 : 0] accum_write_data_skew;
   
@@ -130,10 +132,20 @@ module conv
 
    logic [$clog2(CONFIG_OX0 * CONFIG_OY0*CONFIG_IC0*2) - 1 : 0] ic0_ox0_oy0_cnt2;
 
+
+  
+  integer i, j;
+  always_ff @(posedge clk, negedge rst_n) begin
+    if (rst_n) begin
+      for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin
+        accum_write_data_array[i] <= accum_write_data[i*ARRAY_WIDTH +: ARRAY_WIDTH];  
+      end // for i
+    end // rst
+  end //ff
+
  
   assign input_read_data_skew[0] = input_read_data[0 +: IFMAP_WIDTH]; 
   // skew fifo for inputs 
-  integer i, j;
   always_ff @(posedge clk, negedge rst_n) begin 
     if (rst_n) begin 
       for (i = 0; i < ARRAY_WIDTH - 1; i = i + 1) begin 
@@ -542,7 +554,7 @@ always_ff @(posedge clk, negedge rst_n) begin
       .ifmap_in(input_read_data_skew),
       .weight_in(weight_write_data),
       .ofmap_in(accum_sys_arr_data_skew),
-      .ofmap_out(accum_write_data)
+      .ofmap_out(accum_write_data_array)
     );
 
     
