@@ -70,7 +70,7 @@ interface conv_if(input bit clk);
 
     task write_ifmap(logic [15:0] ifmap);
         ifmap_dat = ifmap;
-        //ifmap_vld = 1;
+        ifmap_vld = 1;
     endtask
 
     task write_weights(logic [15:0] weights);
