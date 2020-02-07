@@ -388,11 +388,13 @@ always_ff @(posedge clk, negedge rst_n) begin
       ic0_ox0_oy0_cnt2 <= 0;
       accum_write_addr_enable <= 0;
       accum_sys_arr_read_addr_enable <= 0;
-    end else begin
+      weight_write_enable_arr <= 0;
+   end else begin
       if (ic0_ox0_oy0_cnt2 == CONFIG_OX0 * CONFIG_OY0 * CONFIG_IC0 * 2 - 1) begin 
         ic0_ox0_oy0_cnt2 <= 0;
         accum_sys_arr_read_addr_enable <= 1; // start reading out to sys arr
         accum_write_addr_enable <= 0; // finished writing 
+        weight_write_enable_arr <= 1;
       end else begin 
         ic0_ox0_oy0_cnt2 <= ic0_ox0_oy0_cnt2 + 1;
       end
@@ -403,7 +405,14 @@ always_ff @(posedge clk, negedge rst_n) begin
       
       if (ic0_ox0_oy0_cnt2 == CONFIG_OX0 * CONFIG_OY0 - 1) begin 
         accum_sys_arr_read_addr_enable <= 0; // stop reading out to sys arr
+      end
+      
+      if (ic0_ox0_oy0_cnt2 == CONFIG_IC0 - 1) begin 
+          weight_write_enable_arr <= 0;
       end 
+       if (ic0_ox0_oy0_cnt2 == 0) begin
+          weight_write_enable_arr <= 1;
+      end  
     end
   end
   
