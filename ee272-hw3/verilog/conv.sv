@@ -140,8 +140,8 @@ module conv
   integer i, j, a0;
   always_ff @(posedge clk, negedge rst_n) begin
     if (rst_n) begin
-      for (a0 = 0; a0 < ARRAY_WIDTH - 1; a0 = a0 + 1) begin
-        accum_write_data[a0*ARRAY_WIDTH +: ARRAY_WIDTH]<=accum_write_data_array[a0];  
+      for (a0 = 0; a0 < ARRAY_WIDTH; a0 = a0 + 1) begin
+        accum_write_data[a0*OFMAP_WIDTH +: OFMAP_WIDTH]<=accum_write_data_array[a0];  
       end // for i
     end // rst
   end //ff
