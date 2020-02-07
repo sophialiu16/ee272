@@ -129,7 +129,7 @@ module conv
   logic [BANK_ADDR_WIDTH - 1 : 0] accum_out_read_addr;
   logic [COUNTER_WIDTH*ACCUM_NUM_PARAMS_OUT] accum_out_read_config_data;
 
-  logic [$clog2(CONFIG_OC1) - 1 : 0] ofmap_cnt; 
+  logic [$clog2(CONFIG_FX*CONFIG_FY*CONFIG_IC1) - 1 : 0] ofmap_cnt; 
 
    logic [$clog2(CONFIG_OX0 * CONFIG_OY0*CONFIG_IC0*2) - 1 : 0] ic0_ox0_oy0_cnt2;
 
@@ -139,7 +139,7 @@ module conv
   always_ff @(posedge clk, negedge rst_n) begin
     if (rst_n) begin
       for (a0 = 0; a0 < ARRAY_WIDTH - 1; a0 = a0 + 1) begin
-        accum_write_data[i*ARRAY_WIDTH +: ARRAY_WIDTH]<=accum_write_data_array[i];  
+        accum_write_data[a0*ARRAY_WIDTH +: ARRAY_WIDTH]<=accum_write_data_array[a0];  
       end // for i
     end // rst
   end //ff
