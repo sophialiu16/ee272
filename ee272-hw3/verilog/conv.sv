@@ -397,7 +397,9 @@ always_ff @(posedge clk, negedge rst_n) begin
       accum_write_addr_enable <= 0;
       accum_sys_arr_read_addr_enable <= 0;
       weight_write_enable_arr <= 0;
+      sys_arr_enable <= 0;
    end else begin
+      sys_arr_enable <= 1;
       if (ic0_ox0_oy0_cnt2 == CONFIG_OX0 * CONFIG_OY0 * CONFIG_IC0 * 2 - 1) begin 
         ic0_ox0_oy0_cnt2 <= 0;
         accum_sys_arr_read_addr_enable <= 1; // start reading out to sys arr
