@@ -129,7 +129,7 @@ module systolic_array
       
       
   // assign output
-    for (j = 0; j < ARRAY_WIDTH; j = i + 1) begin
+    for (j = 0; j < ARRAY_WIDTH; j = j + 1) begin
     	ofmap_out[j] = mac_ofmap_out[ARRAY_HEIGHT-1][j];
     end
       
