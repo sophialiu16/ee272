@@ -109,13 +109,13 @@ module conv
   logic accum_switch_banks;
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_out_read_data;
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data; 
-  reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_sys_arr_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
-  logic [ACCUM_DATA_WIDTH - 1 : 0] accum_sys_arr_data_skew [ARRAY_WIDTH - 1 : 0];
+  reg [OFMAP_WIDTH - 1 : 0] fifo_skew_accum_sys_arr_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
+  logic [OFMAP_WIDTH - 1 : 0] accum_sys_arr_data_skew [ARRAY_WIDTH - 1 : 0];
   logic [ACCUM_DATA_WIDTH - 1 : 0] accum_write_data;
   logic [(OFMAP_WIDTH - 1):0] accum_write_data_array[(ARRAY_WIDTH -1):0];
   
-  reg [ACCUM_DATA_WIDTH - 1 : 0] fifo_skew_accum_write_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
-  logic [ACCUM_DATA_WIDTH*ARRAY_WIDTH - 1 : 0] accum_write_data_skew;
+  reg [OFMAP_WIDTH - 1 : 0] fifo_skew_accum_write_data [ARRAY_WIDTH - 1 : 0][ARRAY_WIDTH - 1 : 0];
+  logic [OFMAP_WIDTH*ARRAY_WIDTH - 1 : 0] accum_write_data_skew;
   
   logic accum_write_addr_enable, accum_write_config_enable;
   logic [BANK_ADDR_WIDTH - 1 : 0] accum_write_addr;
@@ -167,7 +167,7 @@ module conv
   end 
   
   // skew fifo for accumulator buffer write input
-  assign accum_write_data_skew[0 +: ACCUM_DATA_WIDTH ] = accum_write_data[0 +: ACCUM_DATA_WIDTH]; 
+  assign accum_write_data_skew[0 +:OFMAP_WIDTH ] = accum_write_data[0 +: OFMAP_WIDTH]; 
   
   integer z, y;
   always_ff @(posedge clk, negedge rst_n) begin 
@@ -175,7 +175,7 @@ module conv
       for (z = 0; z < ARRAY_WIDTH - 1; z = z + 1) begin 
         for (y = 0; y < ARRAY_WIDTH - 1; y = y + 1) begin 
           if (y == 0) begin
-            fifo_skew_accum_write_data[y][z] <= accum_write_data[(z+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+            fifo_skew_accum_write_data[y][z] <= accum_write_data[(z+1)*OFMAP_WIDTH +: OFMAP_WIDTH];
           end else begin 
             fifo_skew_accum_write_data[y][z] <= fifo_skew_accum_write_data[y-1][z];
           end  
@@ -186,11 +186,11 @@ module conv
   
   genvar k1;
   for (k1 = 0; k1 < ARRAY_WIDTH - 1; k1 = k1 + 1) begin 
-    assign accum_write_data_skew[(k1 + 1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH] = fifo_skew_accum_write_data[k1][k1]; 
+    assign accum_write_data_skew[(k1 + 1)*OFMAP_WIDTH +: OFMAP_WIDTH] = fifo_skew_accum_write_data[k1][k1]; 
   end 
     
   // skew fifo for accumulator buffer sys array input
-  assign accum_sys_arr_data_skew[0] = accum_sys_arr_data[0 +: ACCUM_DATA_WIDTH]; 
+  assign accum_sys_arr_data_skew[0] = accum_sys_arr_data[0 +: OFMAP_WIDTH]; 
   
   integer a1, b1; 
   always_ff @(posedge clk, negedge rst_n) begin 
@@ -198,7 +198,7 @@ module conv
       for (a1 = 0; a1 < ARRAY_WIDTH - 1; a1 = a1 + 1) begin 
         for (b1 = 0; b1 < ARRAY_WIDTH - 1; b1 = b1 + 1) begin 
           if (b1 == 0) begin
-            fifo_skew_accum_sys_arr_data[b1][a1] <= accum_sys_arr_data[(a1+1)*ACCUM_DATA_WIDTH +: ACCUM_DATA_WIDTH];
+            fifo_skew_accum_sys_arr_data[b1][a1] <= accum_sys_arr_data[(a1+1)*OFMAP_WIDTH +: OFMAP_WIDTH];
           end else begin 
             fifo_skew_accum_sys_arr_data[b1][a1] <= fifo_skew_accum_sys_arr_data[b1-1][a1];
           end  
