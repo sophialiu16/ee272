@@ -96,7 +96,7 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
-                if (step < in_params.ARRAY_DIMENSION * (1 + in_params.ARRAY_DIMENSION)) {
+                if (step < in_params.array_dimension * (1 + in_params.array_dimension)) {
                   in_col = input.read();
                 }
                 // -------------------------------
@@ -147,8 +147,8 @@ public:
                 
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
                 for (int i = 0; i < OC0; i++) {
-                  // to do - some condition on loop index
-                  if (step >= 2*in_params.ARRAY_DIMENSION) { 
+                  // set fifo inputs after array_dimension has passed 
+                  if (step >= in_params.ARRAY_DIMENSION && steps < in_params.array_dimension * (1 + in_params.array_dimension) { 
                     tmp_output_buf[i] = pe_psum_out[IC0 - 1][i]
                   } else {
                     tmp_output_buf[i] = 0;
@@ -184,7 +184,7 @@ public:
                 }
 
                 for (int i = 0; i < OC0; i++) {
-		  pe_psum_in[0][i] = tmp_output_buf[i];
+		  pe_psum_in[0][i] = output_buf[i];
                 }
 
                 // -------------------------------
@@ -227,6 +227,15 @@ public:
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
+                // after 2*array_dimension, there will be output from the skewing fifos
+                if (step >= 2*in_params.ARRAY_DIMENSION){
+                  if (in_loopindices == FX*FY - 1){ 
+                    // write out 
+                  } else {
+                    // write to accumulation buffer
+		  }
+		} 
+
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -236,6 +245,7 @@ public:
                 // Cycle the input/psum registers
                 // That is, the outputs that a PE wrote to should now become the input for the next PE
                 // -------------------------------
+                
                 
                 // -------------------------------
                 // Your code ends here
@@ -263,6 +273,8 @@ private:
     ODTYPE pe_psum_in[IC0][OC0];
     ODTYPE pe_psum_out[IC0][OC0];
     WDTYPE pe_weight_in[IC0][OC0];
+    
+    accum_buffer[OC0][OX0 * OY0]
     
     ProcessingElement pe_array[IC0][OC0];
 
