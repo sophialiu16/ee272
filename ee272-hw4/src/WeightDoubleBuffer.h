@@ -11,7 +11,7 @@ public:
                         ac_channel<WDTYPE> &din,
                         ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
     {
-        chanStruct tmp;
+        chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
         Params in_params = paramsIn.read();
 
         uint_32 index;
@@ -34,7 +34,7 @@ public:
                         ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> > &din, 
                         ac_channel<PackedInt<WEIGHT_PRECISION, OC0> > &dout)
     {
-      chanStruct tmp = din.read();
+      chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
       Params in_params = paramsIn.read();
       uint_32 addr;
       for (int i = 0; i < in_params.OC1; i++){

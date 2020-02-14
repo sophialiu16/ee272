@@ -52,7 +52,8 @@ public:
             // Your code starts here
             // Read in the params and loop indices from the channel
             // -------------------------------
-            
+            Params in_params = paramsIn.read();           
+            LoopIndices in_loopindices = loopIndicesIn.read();
             // -------------------------------
             // Your code ends here
             // -------------------------------
@@ -64,7 +65,7 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            
+            for (int step = 0; step < in_params.ARRAY_DIMENSION * (2 + in_params.ARRAY_DIMENSION); step++) {
             // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
@@ -75,7 +76,9 @@ public:
                 // If you are in the ramp up time, read in weights from the channel
                 // and store it in the weights array
                 // -------------------------------
-                
+                if (step < in_params.ARRAY_DIMENSION) {
+                  PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();         
+                }       
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -88,7 +91,9 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
-                
+                if (step < in_params.ARRAY_DIMENSION * (1 + in_params.ARRAY_DIMENSION)) {
+                  in_col = input.read();
+                }
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------

@@ -11,7 +11,7 @@ public:
                         ac_channel<IDTYPE> &din,
                         ac_channel<chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> > &dout)
     {
-        chanStruct tmp;
+        chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> tmp;
         Params in_params = paramsIn.read();
 
         uint_16 IY0 = in_params.STRIDE * (in_params.OY0 - 1) + in_params.FY;
@@ -34,7 +34,7 @@ public:
                         ac_channel<chanStruct<PackedInt<INPUT_PRECISION, IC0>,size> > &din, 
                         ac_channel<PackedInt<INPUT_PRECISION, IC0> > &dout)
     {
-        chanStruct tmp = din.read();
+        chanStruct<PackedInt<INPUT_PRECISION, IC0>,size> tmp = din.read();
 
         Params in_params = paramsIn.read();
         uint_32 ix0, iy0, addr;
