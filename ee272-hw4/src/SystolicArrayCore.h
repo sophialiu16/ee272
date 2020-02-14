@@ -77,7 +77,12 @@ public:
                 // and store it in the weights array
                 // -------------------------------
                 if (step < in_params.ARRAY_DIMENSION) {
-                  PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();         
+                  PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
+                  for (int i = 0; i < IC0; i++) {
+                    for (int j = 0; j < OC0; j++) {
+                      pe_weight_in[i][j] = weights_arr[j]
+                    }
+                  }
                 }       
                 // -------------------------------
                 // Your code ends here
@@ -119,8 +124,15 @@ public:
                 // Assign values from input_buf into the registers for the first column of PEs
                 // -------------------------------
                 for (int i = 0; i < IC0; i++) {
-                  pe_ifmap_in[i][0] = input_buf[i];             
+                  for (int j = 1; j < OC0; j++) {
+                    pe_ifmap_in[i][j] = pe_ifmap_in[i][j - 1];
+                  }
                 }
+
+                for (int i = 0; i < IC0; i++) {
+                  pe_ifmap_in[i][0] = input_buf[i];
+                }
+
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -165,6 +177,7 @@ public:
                 // -------------------------------
                  
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
+                
                 for (int i = 0; i < OC0; i++) {
                   // to do - some condition on loop index
                   if (step < ) {  
@@ -184,7 +197,13 @@ public:
                 // Run the 16x16 PE array
                 // Make sure that the correct registers are given to the PE
                 // -------------------------------
-                
+               
+                for (int i = 0; i < IC0; i++) {
+                  for (int j = 0; j < OC0; j++) {
+                    (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j])
+                  }
+                }
+   
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
