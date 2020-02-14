@@ -11,14 +11,15 @@ public:
                         ac_channel<WDTYPE> &din,
                         ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
     {
-       chanStruct tmp; 
-        Params in_params = paramsIn.read(); 
-      
-      	uint_32 index;
-      
-      for (int i = 0; i < in_params.OC1 * in_params.IC1 * in_params.FY * in_params.FX; i++) {
-        tmp.data[i] = din.read();
-      }
+        chanStruct tmp;
+        Params in_params = paramsIn.read();
+
+        uint_32 index;
+
+        for (int i = 0; i < in_params.OC1 * in_params.IC1 * in_params.FY * in_params.FX; i++) {
+          tmp.data[i] = din.read();
+        }
+        
         dout.write(tmp);
     }
 };
@@ -34,22 +35,21 @@ public:
                         ac_channel<PackedInt<WEIGHT_PRECISION, OC0> > &dout)
     {
       chanStruct tmp = din.read();
-      Params in_params = paramsIn.read(); 
-      uint_32 addr; 
+      Params in_params = paramsIn.read();
+      uint_32 addr;
       for (int i = 0; i < in_params.OC1; i++){
         for (int j = 0; j < in_params.IC1; j++){
           for (int k = 0; k < in_params.FY; k++){
             for (int l = 0; l < in_params.FX; l++){
-              addr = i * in_params.IC1 * in_params.FY * in_params.FX + 
-              					j * in_params.FY * in_params.FX + 
-                				k * in_params.FX + 
-                				l;
+              addr = i * in_params.IC1 * in_params.FY * in_params.FX +
+                                                j * in_params.FY * in_params.FX +
+                                                k * in_params.FX +
+                                                l;
               int tmp1 = tmp.data[addr];
               dout.write(tmp1);
             }
           }
         }
-        
       }
     }
 };
@@ -90,3 +90,5 @@ private:
 
 
 #endif
+
+
