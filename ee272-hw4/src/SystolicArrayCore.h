@@ -118,7 +118,9 @@ public:
                 // Your code starts here
                 // Assign values from input_buf into the registers for the first column of PEs
                 // -------------------------------
-                
+                for (int i = 0; i < IC0; i++) {
+                  pe_ifmap_in[i][0] = input_buf[i];             
+                }
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -131,6 +133,15 @@ public:
                 // Depending on the loop index, the partial output will be 0 or a value from the accumulation buffer
                 // -------------------------------
                 
+                // just for first row pes, rest of pes in other rows will get partial output from the PE above them
+                for (int i = 0; i < OC0; i++) {
+                  // to do - some condition on loop index
+                  if () {
+                    pe_psum_in[0][i] = tmp_output_buf[i];
+                  } else {
+                    pe_psum_in[0][i] = 0l
+                  }
+                }
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -216,6 +227,27 @@ private:
     //  - input registers (two sets, one at the input of the PE and one at the output) 
     //  - psum registers (two sets, one at the input of the PE and one at the output) 
     // -------------------------------
+
+    // weight registers, two sets of input registers, two sets of psum registers
+    IDTYPE pe_ifmap_in[IC0][OC0];
+    IDTYPE pe_ifmap_out[IC0][OC0];
+    ODTYPE pe_psum_in[IC0][OC0];
+    ODTYPE pe_psum_out[IC0][OC0];
+    WDTYPE pe_weight_in[IC0][OC0];
+    
+    ProcessingElement pe_array[IC0][OC0];
+
+    ProcessingElement pe;
+
+    // to do sounds like we should set pe inputs/outputs in above loop so maybe this is not needed?
+    // to do what does create PE array mean?
+    for (int i = 0; i < IC0; i++) {
+      for (int j = 0; j < OC0; j++) {
+        pe_array[i][j] = pe;               
+      }
+    }
+    
+    // create accumulation buffer - is it not a double buffer in this implementation?
     
     // -------------------------------
     // Your code ends here

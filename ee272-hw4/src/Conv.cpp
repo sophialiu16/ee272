@@ -56,5 +56,4 @@ private:
     SystolicArrayWrapper<IDTYPE,WDTYPE,ODTYPE, ARRAY_DIMENSION, ARRAY_DIMENSION> systolicArray;
     ac_channel<Params> systolicArrayParams;
 };
-
 #endif
