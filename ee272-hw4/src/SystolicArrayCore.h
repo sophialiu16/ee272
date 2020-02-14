@@ -148,10 +148,10 @@ public:
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
                 for (int i = 0; i < OC0; i++) {
                   // to do - some condition on loop index
-                  if (step > 2*in_params.ARRAY_DIMENSION) { 
-                    tmp_output_buff[i] = pe_psum_out //?
+                  if (step >= 2*in_params.ARRAY_DIMENSION) { 
+                    tmp_output_buf[i] = pe_psum_out[IC0 - 1][i]
                   } else {
-                    tmp_output_buff[i] = 0;
+                    tmp_output_buf[i] = 0;
                   }
                 }
                 // -------------------------------
@@ -179,12 +179,7 @@ public:
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
                 
                 for (int i = 0; i < OC0; i++) {
-                  // to do - some condition on loop index
-                  if (step < ) {  
-		    pe_psum_in[0][i] = tmp_output_buf[i];
-                  } else {
-                    pe_psum_in[0][i] = 0;
-                  }
+		  pe_psum_in[0][i] = tmp_output_buf[i];
                 }
 
                 // -------------------------------
