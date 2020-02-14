@@ -125,7 +125,7 @@ public:
                 // -------------------------------
                 for (int i = 0; i < IC0; i++) {
                   for (int j = 1; j < OC0; j++) {
-                    pe_ifmap_in[i][j] = pe_ifmap_in[i][j - 1];
+                    pe_ifmap_in[i][j] = pe_ifmap_out[i][j - 1];
                   }
                 }
 
@@ -177,7 +177,12 @@ public:
                 // -------------------------------
                  
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
-                
+                for (int i = 1; i < IC0; i++) {
+                  for (int j = 0; j < OC0; j++) {
+                    pe_psum_in[i][j] = pe_psum_out[i - 1][j];
+                  }
+                }
+
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = tmp_output_buf[i];
                 }
