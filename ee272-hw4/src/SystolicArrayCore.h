@@ -136,10 +136,10 @@ public:
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
                 for (int i = 0; i < OC0; i++) {
                   // to do - some condition on loop index
-                  if () {
-                    pe_psum_in[0][i] = tmp_output_buf[i];
+                  if (step > 2*in_params.ARRAY_DIMENSION) { 
+                    tmp_output_buff[i] = pe_psum_out //?
                   } else {
-                    pe_psum_in[0][i] = 0l
+                    tmp_output_buff[i] = 0;
                   }
                 }
                 // -------------------------------
@@ -163,7 +163,17 @@ public:
                 // Your code starts here
                 // Assign values from output_buf into the partial sum registers for the first column of PEs
                 // -------------------------------
-                
+                 
+                // just for first row pes, rest of pes in other rows will get partial output from the PE above them
+                for (int i = 0; i < OC0; i++) {
+                  // to do - some condition on loop index
+                  if (step < ) {  
+		    pe_psum_in[0][i] = tmp_output_buf[i];
+                  } else {
+                    pe_psum_in[0][i] = 0;
+                  }
+                }
+
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
