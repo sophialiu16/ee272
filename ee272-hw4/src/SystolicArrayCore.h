@@ -229,10 +229,12 @@ public:
                 
                 // after 2*array_dimension, there will be output from the skewing fifos
                 if (step >= 2*in_params.ARRAY_DIMENSION){
-                  if (in_loopindices == FX*FY - 1){ 
+                  if (in_loopindices.fx_idx == FX - 1 && in_loopindices.fy_idx == FY - 1){ 
                     // write out 
+                    output = output_buf;
                   } else {
                     // write to accumulation buffer
+                     
 		  }
 		} 
 
