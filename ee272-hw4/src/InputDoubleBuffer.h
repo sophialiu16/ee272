@@ -96,4 +96,4 @@ public:
         ac_channel<Params> inputDoubleBufferReaderParams;
 };
 
-
+#endif
