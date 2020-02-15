@@ -17,7 +17,9 @@ public:
         uint_32 index;
 
         for (int i = 0; i < in_params.OC1 * in_params.IC1 * in_params.FY * in_params.FX; i++) {
-          tmp.data[i] = din.read();
+          for (int j=0; j < OC0; j++){
+            tmp.data[i].value[j] = din.read();
+          }
         }
         
         dout.write(tmp);
