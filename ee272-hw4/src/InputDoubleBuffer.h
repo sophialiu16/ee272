@@ -18,7 +18,9 @@ public:
         uint_16 IX0 = in_params.STRIDE * (in_params.OX0 - 1) + in_params.FX;
 
         for (int i = 0; i < in_params.IC1 * IY0 * IX0; i++) {
-          tmp.data[i] = din.read();
+          for (int j = 0; j < IC0; j++){
+            tmp.data[i].value[j] = din.read();
+          }
         }
         dout.write(tmp);
     }
