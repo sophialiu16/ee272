@@ -46,9 +46,9 @@ public:
           for (int k = 0; k < in_params.FY; k++){
             for (int l = 0; l < in_params.FX; l++){
               addr = i * in_params.IC1 * in_params.FY * in_params.FX +
-                                                j * in_params.FY * in_params.FX +
-                                                k * in_params.FX +
-                                                l;
+                     j * in_params.FY * in_params.FX +
+                     k * in_params.FX +
+                     l;
               for (int index = 0; index < OC0; index++) {
                 dout_.value[index] = tmp.data[addr].value[index];
               }
