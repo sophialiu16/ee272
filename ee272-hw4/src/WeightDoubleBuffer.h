@@ -36,6 +36,8 @@ public:
     {
       chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
       Params in_params = paramsIn.read();
+      PackedInt<WEIGHT_PRECISION, OC0> dout_;
+
       uint_32 addr;
       for (int i = 0; i < in_params.OC1; i++){
         for (int j = 0; j < in_params.IC1; j++){
@@ -45,8 +47,10 @@ public:
                                                 j * in_params.FY * in_params.FX +
                                                 k * in_params.FX +
                                                 l;
-              int tmp1 = tmp.data[addr];
-              dout.write(tmp1);
+              for (int index = 0; index < OC0; index++) {
+                dout_.value[index] = tmp.data[addr].value[index];
+              }
+              dout.write(dout_);
             }
           }
         }
