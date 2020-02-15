@@ -66,7 +66,7 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            for (int step = 0; step < in_params.ARRAY_DIMENSION * 2 + in_params.OX0 * in_params.OY0; step++) {
+            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0; step++) {
             // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
@@ -77,7 +77,7 @@ public:
                 // If you are in the ramp up time, read in weights from the channel
                 // and store it in the weights array
                 // -------------------------------
-                if (step < in_params.ARRAY_DIMENSION) {
+                if (step < IC0) {
                   PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
                   for (int i = 0; i < IC0; i++) {
                     for (int j = 0; j < OC0; j++) {
@@ -97,7 +97,7 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
-                if (step < in_params.array_dimension * (1 + in_params.array_dimension)) {
+                if (step < IC0 + in_params.OX0 * in_params.OY0) {
                   in_col = input.read();
                 }
                 // -------------------------------
@@ -145,15 +145,23 @@ public:
                 // Set partial outputs for the array to tmp_output_buf.
                 // Depending on the loop index, the partial output will be 0 or a value from the accumulation buffer
                 // -------------------------------
-                
-                // just for first row pes, rest of pes in other rows will get partial output from the PE above them
-                for (int i = 0; i < OC0; i++) {
-                  // set fifo inputs after array_dimension has passed 
-                  if (step >= in_params.ARRAY_DIMENSION && steps < in_params.array_dimension * (1 + in_params.array_dimension) { 
-                    tmp_output_buf[i] = pe_psum_out[IC0 - 1][i]
-                  } else {
-                    tmp_output_buf[i] = 0;
+ 
+		if (step == 0) {
+                  read_cnt = 0;
+                } else {
+                  read_cnt++;
+                }
+
+                if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                  for (int i = 0; i < OC0; i++) {
+                    tmp_output_buf[0][i] = 0;
                   }
+                } else {
+	          if (step < in_params.OX0 * in_params.OY0){
+        	    for (int i = 0; i < OC0; i++) {
+                      tmp_output_buf[0][i] = accum_buffer[read_cnt][i]
+	            }
+      	          }
                 }
                 // -------------------------------
                 // Your code ends here
@@ -195,7 +203,7 @@ public:
                
                 for (int i = 0; i < IC0; i++) {
                   for (int j = 0; j < OC0; j++) {
-                    (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j])
+                    pe_ifmap_out[i][j], pe_psum_out[i][j] = (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j]);
                   }
                 }
    
@@ -222,34 +230,20 @@ public:
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
-                // how to indicate fx, fy, or ic1 has changed for 1st if statement? 
-                if (step == 0) {
-                  write_cnt = 0;
-                } else if (step >= IC0 + OC0) {
-                  write_cnt++;
-                }
-
-                if (step == 0) {
-                  read_cnt = 0;
-                } else {
-                  read_cnt++;
-                }
-// ic0 + oc0 + ox0*oy0
-                if (step >= IC0 + OC0){
-                    accum_buffer[:][write_cnt] = output_buf;
-                }
-
-                if (not(in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0)){
-		  if (step < in_params.OX0 * in_params.OY0){
+		if (step == 0) {
+                    write_cnt = 0;
+                } else if (step >= IC0 + OC0){
                     for (int i = 0; i < OC0; i++) {
-                      pe_psum_in[0][i] = accum_buffer[i][read_cnt]
-		    } 
-                  }
-		}              
- 
-                if (in_loopindices.fx_idx == in_params.FX - 1 && in_loopindices.fy_idx == FY - 1 && in_loopindices.ic1_idx ){ 
+	              accum_buffer[write_cnt][i] = output_row[i];
+                    }
+                    write_cnt++;
+                }
+
+                if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){ 
                     // write out 
-                    output = output_buf;
+                    for (int i = 0; i < OC0; i++) {
+	              output[i] = output_row[i];
+                    }
                	} 
                 
                 // -------------------------------
@@ -293,14 +287,12 @@ private:
     ODTYPE pe_psum_out[IC0][OC0];
     WDTYPE pe_weight_in[IC0][OC0];
     
-    ODTYPE accum_buffer[OC0][MAX_OX0 * MAX_OY0];
+    ODTYPE accum_buffer[MAX_OX0 * MAX_OY0][OC0];
     int read_cnt, write_cnt;
     ProcessingElement pe_array[IC0][OC0];
 
     ProcessingElement pe;
 
-    // to do sounds like we should set pe inputs/outputs in above loop so maybe this is not needed?
-    // to do what does create PE array mean?
     for (int i = 0; i < IC0; i++) {
       for (int j = 0; j < OC0; j++) {
         pe_array[i][j] = pe;               
