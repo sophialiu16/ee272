@@ -234,18 +234,15 @@ public:
                     write_cnt = 0;
                 } else if (step >= IC0 + OC0){
                     for (int i = 0; i < OC0; i++) {
-	              accum_buffer[write_cnt][i] = output_row[i];
+	              accum_buffer[write_cnt][i] = output_row.value[i];
                     }
                     write_cnt++;
                 }
-
+                 
                 if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){ 
                     // write out 
-                    for (int i = 0; i < OC0; i++) {
-	              output[i] = output_row[i];
-                    }
+                    output.write(output_row);
                	} 
-                
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
