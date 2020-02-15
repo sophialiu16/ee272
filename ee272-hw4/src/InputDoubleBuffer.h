@@ -38,6 +38,8 @@ public:
     {
         chanStruct<PackedInt<INPUT_PRECISION, IC0>,size> tmp = din.read();
 
+	PackedInt<INPUT_PRECISION, IC0> dout_;
+
         Params in_params = paramsIn.read();
         uint_32 ix0, iy0, addr;
 
@@ -52,8 +54,10 @@ public:
                             ix0 = in_params.STRIDE * m + k;
                             iy0 = in_params.STRIDE * l + j;
                             addr = i * IX0 * IY0 + iy0 * IX0 + ix0;
-                            int tmp1 = tmp.data[addr];
-                            dout.write(tmp1);
+                            for (int index = 0; index < IC0; index++) {
+             		      dout_.value[index] = tmp.data[addr].value[index];
+			    }
+                            dout.write(dout_);
                         }
                     }
                 }
