@@ -66,7 +66,7 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            for (int step = 0; step < in_params.ARRAY_DIMENSION * (2 + in_params.ARRAY_DIMENSION); step++) {
+            for (int step = 0; step < in_params.ARRAY_DIMENSION * 2 + in_params.OX0 * in_params.OY0; step++) {
             // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
