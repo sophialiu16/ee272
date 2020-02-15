@@ -177,12 +177,6 @@ public:
                 // -------------------------------
                  
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
-                for (int i = 1; i < IC0; i++) {
-                  for (int j = 0; j < OC0; j++) {
-                    pe_psum_in[i][j] = pe_psum_out[i - 1][j];
-                  }
-                }
-
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = output_buf[i];
                 }
@@ -245,8 +239,11 @@ public:
                 // Cycle the input/psum registers
                 // That is, the outputs that a PE wrote to should now become the input for the next PE
                 // -------------------------------
-                
-                
+                for (int i = 1; i < IC0; i++) {
+                  for (int j = 0; j < OC0; j++) {
+                    pe_psum_in[i][j] = pe_psum_out[i - 1][j];
+                  }
+                }
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
