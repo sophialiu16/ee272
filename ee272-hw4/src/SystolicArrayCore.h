@@ -81,7 +81,7 @@ public:
                   PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
                   for (int i = 0; i < IC0; i++) {
                     for (int j = 0; j < OC0; j++) {
-                      pe_weight_in[i][j] = weights_arr[j]
+                      pe_weight_in[i][j] = weights_arr.value[j];
                     }
                   }
                 }       
@@ -131,7 +131,7 @@ public:
                 }
 
                 for (int i = 0; i < IC0; i++) {
-                  pe_ifmap_in[i][0] = input_buf[i];
+                  pe_ifmap_in[i][0] = input_buf.value[i];
                 }
 
                 // -------------------------------
@@ -154,12 +154,12 @@ public:
 
                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
                   for (int i = 0; i < OC0; i++) {
-                    tmp_output_buf[0][i] = 0;
+                    tmp_output_buf.value[i] = 0;
                   }
                 } else {
 	          if (step < in_params.OX0 * in_params.OY0){
         	    for (int i = 0; i < OC0; i++) {
-                      tmp_output_buf[0][i] = accum_buffer[read_cnt][i]
+                      tmp_output_buf.value[i] = accum_buffer[read_cnt][i];
 	            }
       	          }
                 }
@@ -187,7 +187,7 @@ public:
                  
                 // just for first row pes, rest of pes in other rows will get partial output from the PE above them
                 for (int i = 0; i < OC0; i++) {
-		  pe_psum_in[0][i] = output_buf[i];
+		  pe_psum_in[0][i] = output_buf.value[i];
                 }
 
                 // -------------------------------
@@ -286,17 +286,9 @@ private:
     
     ODTYPE accum_buffer[MAX_OX0 * MAX_OY0][OC0];
     int read_cnt, write_cnt;
-    ProcessingElement pe_array[IC0][OC0];
 
-    ProcessingElement pe;
+    ProcessingElement<IDTYPE,ODTYPE> pe_array[IC0][OC0];
 
-    for (int i = 0; i < IC0; i++) {
-      for (int j = 0; j < OC0; j++) {
-        pe_array[i][j] = pe;               
-      }
-    }
-    
-    
     // -------------------------------
     // Your code ends here
     // -------------------------------
