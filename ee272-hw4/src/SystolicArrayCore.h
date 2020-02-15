@@ -23,7 +23,8 @@ struct LoopIndices{
     uint_16 fy_idx;
 };
 
-
+#define MAX_OX0 16
+#define MAX_OY0 16
 
 template <typename IDTYPE, typename WDTYPE, typename ODTYPE, int OC0, int IC0>
 class SystolicArrayCore
@@ -221,8 +222,19 @@ public:
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
+                // how to indicate fx, fy, or ic1 has changed for 1st if statement? 
+                if (step == 0) {
+                  write_cnt = 0;
+                else if (step >= IC0 + OC0) {
+                  write_cnt ++;
+                }
+     
+                // OX0*OY0 << FX*FY*IC1
+
                 // after 2*array_dimension, there will be output from the skewing fifos
-                if (step >= 2*in_params.ARRAY_DIMENSION){
+                if (step >= IC0 + OC0){
+                                 
+ 
                   if (in_loopindices.fx_idx == FX - 1 && in_loopindices.fy_idx == FY - 1){ 
                     // write out 
                     output = output_buf;
@@ -231,7 +243,7 @@ public:
                      
 		  }
 		} 
-
+                
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -273,8 +285,8 @@ private:
     ODTYPE pe_psum_out[IC0][OC0];
     WDTYPE pe_weight_in[IC0][OC0];
     
-    accum_buffer[OC0][OX0 * OY0]
-    
+    ODTYPE accum_buffer[OC0][MAX_OX0 * MAX_OY0];
+    int read_cnt, write_cnt;
     ProcessingElement pe_array[IC0][OC0];
 
     ProcessingElement pe;
@@ -287,7 +299,6 @@ private:
       }
     }
     
-    // create accumulation buffer - is it not a double buffer in this implementation?
     
     // -------------------------------
     // Your code ends here
