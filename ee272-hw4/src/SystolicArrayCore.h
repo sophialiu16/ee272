@@ -226,29 +226,31 @@ public:
                 if (step == 0) {
                   write_cnt = 0;
                 } else if (step >= IC0 + OC0) {
-                  write_cnt ++;
+                  write_cnt++;
                 }
 
                 if (step == 0) {
                   read_cnt = 0;
                 } else {
-                  read_cnt ++;
+                  read_cnt++;
                 }
-     
-                // OX0*OY0 << FX*FY*IC1
-
-                // after 2*array_dimension, there will be output from the skewing fifos
+// ic0 + oc0 + ox0*oy0
                 if (step >= IC0 + OC0){
-                                 
+                    accum_buffer[:][write_cnt] = output_buf;
+                }
+
+                if (not(in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0)){
+		  if (step < in_params.OX0 * in_params.OY0){
+                    for (int i = 0; i < OC0; i++) {
+                      pe_psum_in[0][i] = accum_buffer[i][read_cnt]
+		    } 
+                  }
+		}              
  
-                  if (in_loopindices.fx_idx == FX - 1 && in_loopindices.fy_idx == FY - 1){ 
+                if (in_loopindices.fx_idx == in_params.FX - 1 && in_loopindices.fy_idx == FY - 1 && in_loopindices.ic1_idx ){ 
                     // write out 
                     output = output_buf;
-                  } else {
-                    // write to accumulation buffer
-                     
-		  }
-		} 
+               	} 
                 
                 // -------------------------------
                 // Your code ends here
