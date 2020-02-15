@@ -225,8 +225,14 @@ public:
                 // how to indicate fx, fy, or ic1 has changed for 1st if statement? 
                 if (step == 0) {
                   write_cnt = 0;
-                else if (step >= IC0 + OC0) {
+                } else if (step >= IC0 + OC0) {
                   write_cnt ++;
+                }
+
+                if (step == 0) {
+                  read_cnt = 0;
+                } else {
+                  read_cnt = 0;
                 }
      
                 // OX0*OY0 << FX*FY*IC1
