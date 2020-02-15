@@ -203,7 +203,7 @@ public:
                
                 for (int i = 0; i < IC0; i++) {
                   for (int j = 0; j < OC0; j++) {
-                    pe_ifmap_out[i][j], pe_psum_out[i][j] = (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j]);
+                    (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j], pe_ifmap_out[i][j], pe_psum_out[i][j]);
                   }
                 }
    
