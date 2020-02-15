@@ -230,6 +230,11 @@ public:
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
+                PackedInt<OUTPUT_PRECISION, OC0> output_; 
+                for (int i = 0; i < OC0; i++){
+                  output_.value[i] = 0;
+	        }
+
 		if (step == 0) {
                     write_cnt = 0;
                 } else if (step >= IC0 + OC0){
@@ -242,7 +247,10 @@ public:
                 if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){ 
                     // write out 
                     output.write(output_row);
-               	} 
+               	} else { 
+                    output.write(output_); 
+                }
+                 
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
