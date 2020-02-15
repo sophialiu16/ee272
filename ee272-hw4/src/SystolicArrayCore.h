@@ -219,7 +219,7 @@ public:
 
                 #define FIFO_WRITE_BODY_NEW(z,i,unused)\
                     ODTYPE BOOST_PP_CAT(output_fifo_output_, i); \
-                    BOOST_PP_CAT(output_fifo_, i).run( psum_reg[IC0][i+1] , BOOST_PP_CAT(output_fifo_output_, i) );\
+                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0][i+1] , BOOST_PP_CAT(output_fifo_output_, i) );\
                     output_row.value[i] = BOOST_PP_CAT(output_fifo_output_,i); \
                 
                 REPEAT(FIFO_WRITE_BODY_NEW)
