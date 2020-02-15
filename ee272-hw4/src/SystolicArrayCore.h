@@ -232,7 +232,7 @@ public:
                 if (step == 0) {
                   read_cnt = 0;
                 } else {
-                  read_cnt = 0;
+                  read_cnt ++;
                 }
      
                 // OX0*OY0 << FX*FY*IC1
