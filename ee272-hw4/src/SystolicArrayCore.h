@@ -224,7 +224,7 @@ public:
                 for (int i = 0; i < OC0; i++) {
                   //std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
                 }
-                if (step >= 2*IC0){
+                if (step >= 2*IC0 - 1){
                     for (int i = 0; i < OC0; i++) {
 	              accum_buffer[step-2*IC0][i] = output_row.value[i];
                     }
