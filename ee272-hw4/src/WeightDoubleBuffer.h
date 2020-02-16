@@ -13,14 +13,21 @@ public:
     {
         Params in_params = paramsIn.read();
         uint_32 index;
+        
+        for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
+          for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
 
-        for (int i = 0; i < in_params.OY1 * in_params.OX1 *  in_params.OC1 * in_params.IC1 * in_params.FY * in_params.FX * in_params.OX0 * in_params.OY0; i++) {
           chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
-          for (int j=0; j < OC0; j++){
-            tmp.data[i].value[j] = din.read();
+          
+          for (int i = 0; i <in_params.FY * in_params.FX * in_params.IC1 * in_params.OC1; i++) {
+            for (int j=0; j < OC0; j++){
+              tmp.data[i].value[j] = din.read();
+            }
           }
+
           dout.write(tmp);
         }
+      }
     }
 };
 
@@ -40,12 +47,15 @@ public:
 
 	for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
     	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
-      	    for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+      	      PackedInt<WEIGHT_PRECISION, OC0> dout_;
+              chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
+
+            for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
 	        for (int fy = 0; fy < in_params.FY; fy++) {
 	          for (int fx = 0; fx < in_params.FX; fx++) {
-                    for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
-                      for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
+                    //for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
+                     // for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
 	
                //addr = i * in_params.IC1 * in_params.FY * in_params.FX +
               //       j * in_params.FY * in_params.FX +
@@ -57,15 +67,13 @@ public:
                      ic1 * in_params.OC1 + 
                      oc1;
                
-              PackedInt<WEIGHT_PRECISION, OC0> dout_;
-              chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
               for (int index = 0; index < OC0; index++) {
                 dout_.value[index] = tmp.data[addr].value[index];
               }
               dout.write(dout_);
       
-                    }
-                  }
+           //         }
+           //       }
                 }
               }
             }

@@ -29,7 +29,6 @@ public:
             //}
                 dout.write(tmp);
           }
-          dout.write(tmp);
         }
    }
 };
@@ -50,7 +49,6 @@ public:
 
         uint_16 IY0 = in_params.STRIDE * (in_params.OY0 - 1) + in_params.FY;
         uint_16 IX0 = in_params.STRIDE * (in_params.OX0 - 1) + in_params.FX;
-int count = 0;
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
  		chanStruct<PackedInt<INPUT_PRECISION, IC0>, size> tmp;
