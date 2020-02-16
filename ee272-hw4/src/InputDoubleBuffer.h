@@ -18,16 +18,16 @@ public:
 
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
 	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
-            for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+            //for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+              chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> tmp;
               
               for (int i = 0; i < in_params.IC1 * IY0 * IX0; i++) {
-                chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> tmp;
                 for (int j = 0; j < IC0; j++){
                   tmp.data[i].value[j] = din.read();
                 }
-                dout.write(tmp);
               }
-            }
+            //}
+                dout.write(tmp);
           }
         }
    }
@@ -52,8 +52,12 @@ public:
 
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
-            for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
-              for (int ic1 = 0; ic1 < in_params.IC1; ic1++) {
+ 		chanStruct<PackedInt<INPUT_PRECISION, IC0>, size> tmp;
+            //    std::cout << "din " << din.available(1) << std::endl;
+                tmp = din.read();
+       
+    	   for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+	     for (int ic1 = 0; ic1 < in_params.IC1; ic1++) {
                 for (int fy = 0; fy < in_params.FY; fy++) {
                   for (int fx = 0; fx < in_params.FX; fx++) {
                     for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
@@ -61,14 +65,11 @@ public:
                         ix0 = in_params.STRIDE * ox0 + fx;
                         iy0 = in_params.STRIDE * oy0 + fy;
                         addr = ic1 * IX0 * IY0 + iy0 * IX0 + ix0;
-                        chanStruct<PackedInt<INPUT_PRECISION, IC0>, size> tmp;
-                        std::cout << "din " << din.available(1) << std::endl;
-                        tmp = din.read();
-			PackedInt<INPUT_PRECISION, IC0> dout_;
+    
+                        PackedInt<INPUT_PRECISION, IC0> dout_;
                         for (int index = 0; index < IC0; index++) {
              		  dout_.value[index] = tmp.data[addr].value[index];
 			}
-
                         dout.write(dout_);
 		      }
                     }
