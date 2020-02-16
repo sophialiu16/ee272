@@ -59,7 +59,6 @@ public:
             // Your code ends here
             // -------------------------------
 
-
             // -------------------------------
             // Your code starts here
             // Create a loop for a "run" of the systolic array.
@@ -71,6 +70,8 @@ public:
             // Your code ends here 
             // You should now be in the body of the loop
             // -------------------------------
+		std::cout << "step " << step << std::endl;
+                std::cout<<std::endl;
 
                 // -------------------------------
                 // Your code starts here
@@ -78,6 +79,7 @@ public:
                 // and store it in the weights array
                 // -------------------------------
                 if (step < IC0) {
+                  std::cout << "weight " << weight.available(1) << std::endl;
                   PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
                   //for (int i = 0; i < IC0; i++) {
                     for (int j = 0; j < OC0; j++) {
@@ -208,7 +210,7 @@ public:
 
                 #define FIFO_WRITE_BODY_NEW(z,i,unused)\
                     ODTYPE BOOST_PP_CAT(output_fifo_output_, i); \
-                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0-1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
+                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0 - 1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
                     output_row.value[i] = BOOST_PP_CAT(output_fifo_output_,i); \
                 
                 REPEAT(FIFO_WRITE_BODY_NEW)
@@ -219,13 +221,17 @@ public:
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
+                for (int i = 0; i < OC0; i++) {
+                  //std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
+                }
                 if (step >= 2*IC0){
                     for (int i = 0; i < OC0; i++) {
 	              accum_buffer[step-2*IC0][i] = output_row.value[i];
                     }
-                }
-                if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){ 
-		  output.write(output_row); 
+
+                    if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){
+                  output.write(output_row);
+                    }
                 }
                  
                 // -------------------------------

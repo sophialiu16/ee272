@@ -46,6 +46,7 @@ public:
         uint_16 IY0 = in_params.STRIDE * (in_params.OY0 - 1) + in_params.FY;
         uint_16 IX0 = in_params.STRIDE * (in_params.OX0 - 1) + in_params.FX;
 
+        for (int oc1 = 0; oc1 < in_params.OC1; oc1 ++) {
         for (int i = 0; i < in_params.IC1; i++) {
             for (int j = 0; j < in_params.FY; j++) {
                 for (int k = 0; k < in_params.FX; k++) {
@@ -62,6 +63,7 @@ public:
                     }
                 }
             }
+        }
         }
     }
 };

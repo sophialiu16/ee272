@@ -8,8 +8,8 @@ public:
 
     #pragma hls_design interface
     void CCS_BLOCK(run)(ac_channel<Params> &paramsIn,
-                        ac_channel<WDTYPE> &din,
-                        ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
+                       ac_channel<WDTYPE> &din,
+                       ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
     {
         chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
         Params in_params = paramsIn.read();
@@ -45,14 +45,22 @@ public:
         for (int j = 0; j < in_params.IC1; j++){
           for (int k = 0; k < in_params.FY; k++){
             for (int l = 0; l < in_params.FX; l++){
+              for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
+                for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
               addr = i * in_params.IC1 * in_params.FY * in_params.FX +
                      j * in_params.FY * in_params.FX +
                      k * in_params.FX +
                      l;
+
+              int ic = j*IC0;
+              int oc = i*OC0;
+              addr = oc + ic*in_params.OC1 + l*in_params.OC1*in_params.IC1 + k*in_params.FX*in_params.OC1*in_params.IC1;
               for (int index = 0; index < OC0; index++) {
                 dout_.value[index] = tmp.data[addr].value[index];
               }
               dout.write(dout_);
+                }
+              }
             }
           }
         }
