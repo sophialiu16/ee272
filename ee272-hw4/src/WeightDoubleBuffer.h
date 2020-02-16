@@ -8,8 +8,8 @@ public:
 
     #pragma hls_design interface
     void CCS_BLOCK(run)(ac_channel<Params> &paramsIn,
-                        ac_channel<WDTYPE> &din,
-                        ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
+                       ac_channel<WDTYPE> &din,
+                       ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
     {
         Params in_params = paramsIn.read();
         uint_32 index;
@@ -57,7 +57,6 @@ public:
                      oc1;
                
               chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
-              
               for (int index = 0; index < OC0; index++) {
                 dout_.value[index] = tmp.data[addr].value[index];
               }
