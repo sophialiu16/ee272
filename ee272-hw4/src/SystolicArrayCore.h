@@ -178,7 +178,7 @@ public:
                 // -------------------------------
                  
                 for (int i = 0; i < OC0; i++) {
-		  pe_psum_in[0][i] = output_buf.value[i];
+		  pe_psum_in[i][0] = output_buf.value[i];
                 }
 
                 // -------------------------------
