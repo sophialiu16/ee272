@@ -11,18 +11,16 @@ public:
                         ac_channel<WDTYPE> &din,
                         ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> > &dout)
     {
-        chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
         Params in_params = paramsIn.read();
-
         uint_32 index;
 
         for (int i = 0; i < in_params.OC1 * in_params.IC1 * in_params.FY * in_params.FX; i++) {
+          chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
           for (int j=0; j < OC0; j++){
             tmp.data[i].value[j] = din.read();
           }
+          dout.write(tmp);
         }
-        
-        dout.write(tmp);
     }
 };
 
@@ -36,27 +34,42 @@ public:
                         ac_channel<chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> > &din, 
                         ac_channel<PackedInt<WEIGHT_PRECISION, OC0> > &dout)
     {
-      chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
       Params in_params = paramsIn.read();
       PackedInt<WEIGHT_PRECISION, OC0> dout_;
 
       uint_32 addr;
-      for (int i = 0; i < in_params.OC1; i++){
-        for (int j = 0; j < in_params.IC1; j++){
-          for (int k = 0; k < in_params.FY; k++){
-            for (int l = 0; l < in_params.FX; l++){
-              addr = i * in_params.IC1 * in_params.FY * in_params.FX +
-                     j * in_params.FY * in_params.FX +
-                     k * in_params.FX +
-                     l;
+
+	for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
+    	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
+      	    for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+              for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
+	        for (int fy = 0; fy < in_params.FY; fy++) {
+	          for (int fx = 0; fx < in_params.FX; fx++) {
+              
+               //addr = i * in_params.IC1 * in_params.FY * in_params.FX +
+              //       j * in_params.FY * in_params.FX +
+              //       k * in_params.FX +
+              //       l;
+             //fy fx ic oc 
+              addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
+                     fx * in_params.IC1 * in_params.OC1 + 
+                     ic1 * in_params.OC1 + 
+                     oc1;
+               
+              chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
+              
               for (int index = 0; index < OC0; index++) {
                 dout_.value[index] = tmp.data[addr].value[index];
               }
               dout.write(dout_);
+      
+                    }
+                  }
+                }
+              }
             }
           }
-        }
-      }
+      
     }
 };
 
