@@ -23,8 +23,8 @@ struct LoopIndices{
     uint_16 fy_idx;
 };
 
-#define MAX_OX0 16
-#define MAX_OY0 16
+#define MAX_OX0 128
+#define MAX_OY0 128
 
 template <typename IDTYPE, typename WDTYPE, typename ODTYPE, int OC0, int IC0>
 class SystolicArrayCore
@@ -54,7 +54,7 @@ public:
             // Read in the params and loop indices from the channel
             // -------------------------------
             Params in_params = paramsIn.read();           
-            LoopIndices in_loopindices = loopIndicesIn.read();
+            LoopIndices in_loopindices = loopIndicesIn.read(); 
             // -------------------------------
             // Your code ends here
             // -------------------------------
@@ -67,7 +67,7 @@ public:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
             for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0; step++) {
-            // -------------------------------
+	    // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
             // -------------------------------
@@ -79,11 +79,11 @@ public:
                 // -------------------------------
                 if (step < IC0) {
                   PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
-                  for (int i = 0; i < IC0; i++) {
+                  //for (int i = 0; i < IC0; i++) {
                     for (int j = 0; j < OC0; j++) {
-                      pe_weight_in[i][j] = weights_arr.value[j];
+                      pe_weight_in[step][j] = weights_arr.value[j]; 
                     }
-                  }
+                  //}
                 }       
                 // -------------------------------
                 // Your code ends here
@@ -98,7 +98,7 @@ public:
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
                 if (step < IC0 + in_params.OX0 * in_params.OY0) {
-                  in_col = input.read();
+                  in_col = input.read(); 
                 }
                 // -------------------------------
                 // Your code ends here
@@ -124,11 +124,6 @@ public:
                 // Your code starts here
                 // Assign values from input_buf into the registers for the first column of PEs
                 // -------------------------------
-                for (int i = 0; i < IC0; i++) {
-                  for (int j = 1; j < OC0; j++) {
-                    pe_ifmap_in[i][j] = pe_ifmap_out[i][j - 1];
-                  }
-                }
 
                 for (int i = 0; i < IC0; i++) {
                   pe_ifmap_in[i][0] = input_buf.value[i];
@@ -146,23 +141,18 @@ public:
                 // Depending on the loop index, the partial output will be 0 or a value from the accumulation buffer
                 // -------------------------------
  
-		if (step == 0) {
-                  read_cnt = 0;
-                } else {
-                  read_cnt++;
-                }
-
                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
                   for (int i = 0; i < OC0; i++) {
                     tmp_output_buf.value[i] = 0;
                   }
                 } else {
-	          if (step < in_params.OX0 * in_params.OY0){
-        	    for (int i = 0; i < OC0; i++) {
-                      tmp_output_buf.value[i] = accum_buffer[read_cnt][i];
-	            }
-      	          }
+                    if (step < in_params.OX0 * in_params.OY0) {
+        	      for (int i = 0; i < OC0; i++) {
+                        tmp_output_buf.value[i] = accum_buffer[step][i];
+	              }
+                    }
                 }
+                
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -185,7 +175,6 @@ public:
                 // Assign values from output_buf into the partial sum registers for the first column of PEs
                 // -------------------------------
                  
-                // just for first row pes, rest of pes in other rows will get partial output from the PE above them
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = output_buf.value[i];
                 }
@@ -219,7 +208,7 @@ public:
 
                 #define FIFO_WRITE_BODY_NEW(z,i,unused)\
                     ODTYPE BOOST_PP_CAT(output_fifo_output_, i); \
-                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0-1][i+1] , BOOST_PP_CAT(output_fifo_output_, i) );\
+                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0-1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
                     output_row.value[i] = BOOST_PP_CAT(output_fifo_output_,i); \
                 
                 REPEAT(FIFO_WRITE_BODY_NEW)
@@ -230,25 +219,13 @@ public:
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
-                PackedInt<OUTPUT_PRECISION, OC0> output_; 
-                for (int i = 0; i < OC0; i++){
-                  output_.value[i] = 0;
-	        }
-
-		if (step == 0) {
-                    write_cnt = 0;
-                } else if (step >= IC0 + OC0){
+                if (step >= 2*IC0){
                     for (int i = 0; i < OC0; i++) {
-	              accum_buffer[write_cnt][i] = output_row.value[i];
+	              accum_buffer[step-2*IC0][i] = output_row.value[i];
                     }
-                    write_cnt++;
                 }
-                 
                 if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){ 
-                    // write out 
-                    output.write(output_row);
-               	} else { 
-                    output.write(output_); 
+		  output.write(output_row); 
                 }
                  
                 // -------------------------------
@@ -263,6 +240,11 @@ public:
                 for (int i = 1; i < IC0; i++) {
                   for (int j = 0; j < OC0; j++) {
                     pe_psum_in[i][j] = pe_psum_out[i - 1][j];
+                  }
+                }
+                for (int i = 0; i < IC0; i++) {
+                  for (int j = 1; j < OC0; j++) {
+                    pe_ifmap_in[i][j] = pe_ifmap_out[i][j - 1];
                   }
                 }
                 // -------------------------------

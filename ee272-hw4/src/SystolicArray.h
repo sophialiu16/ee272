@@ -28,7 +28,6 @@ void run(ac_channel<Params> &paramsIn,
 	Params in_params = paramsIn.read();
 	Params paramsOut_;
         LoopIndices loopIndicesOut_;
-
 	for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
             for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
@@ -38,23 +37,18 @@ void run(ac_channel<Params> &paramsIn,
                     loopIndicesOut_.ic1_idx = ic1;
                     loopIndicesOut_.fx_idx = fx;
                     loopIndicesOut_.fy_idx = fy;
-                    paramsOut_.OY1 = oy1;
-                    paramsOut_.OX1 = ox1;
-                    paramsOut_.OY0 = in_params.OY0;
-                    paramsOut_.OX0 = in_params.OX0;
-                    paramsOut_.OC1 = oc1;
-                    paramsOut_.IC1 = ic1;
-                    paramsOut_.FX = fx;
-                    paramsOut_.FY = fy;
-                    paramsOut_.STRIDE = in_params.STRIDE;
+                    loopIndicesOut.write(loopIndicesOut_);
+	            paramsOut.write(in_params);
+  //                  std::cout << "oy1 " << oy1 << " ox1 " << ox1 << " oc1 " << oc1 << " ic1 " << ic1 << " fy " << fy << " fx " << fx << std::endl;
+
                   }
                 }
               }
             }
           }
         }
-        paramsOut.write(paramsOut_);
-        loopIndicesOut.write(loopIndicesOut_);
+// std::cout << "OY1 " << in_params.OY1 << " OX1 " << in_params.OX1 << " OC1 " << in_params.OC1 << " IC1 " << in_params.IC1 << " FY " << in_params.FY << " FX " << in_params.FX << std::endl;
+
         // -------------------------------
         // Your code ends here
         // -------------------------------
