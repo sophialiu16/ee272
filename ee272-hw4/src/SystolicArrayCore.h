@@ -226,7 +226,7 @@ public:
                 }
                 if (step >= 2*IC0 - 1){
                     for (int i = 0; i < OC0; i++) {
-	              accum_buffer[step-2*IC0][i] = output_row.value[i];
+	              accum_buffer[step-(2*IC0 - 1)][i] = output_row.value[i];
                     }
 
                     if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){
