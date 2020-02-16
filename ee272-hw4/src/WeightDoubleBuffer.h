@@ -54,26 +54,26 @@ public:
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
 	        for (int fy = 0; fy < in_params.FY; fy++) {
 	          for (int fx = 0; fx < in_params.FX; fx++) {
-                    //for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
-                     // for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
+                    for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
+                     for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
 	
-               //addr = i * in_params.IC1 * in_params.FY * in_params.FX +
-              //       j * in_params.FY * in_params.FX +
-              //       k * in_params.FX +
-              //       l;
+              addr = oc1 * in_params.IC1 * in_params.FY * in_params.FX +
+                     ic1 * in_params.FY * in_params.FX +
+                     fy * in_params.FX +
+                     fx;
              //fy fx ic oc 
-              addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
+              /*addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
                      fx * in_params.IC1 * in_params.OC1 + 
                      ic1 * in_params.OC1 + 
-                     oc1;
+                     oc1;*/
                
               for (int index = 0; index < OC0; index++) {
                 dout_.value[index] = tmp.data[addr].value[index];
               }
               dout.write(dout_);
       
-           //         }
-           //       }
+                    }
+                  }
                 }
               }
             }
