@@ -16,14 +16,21 @@ public:
         uint_16 IY0 = in_params.STRIDE * (in_params.OY0 - 1) + in_params.FY;
         uint_16 IX0 = in_params.STRIDE * (in_params.OX0 - 1) + in_params.FX;
 
-        for (int i = 0; i < in_params.IC1 * IY0 * IX0; i++) {
-          chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> tmp;
-          for (int j = 0; j < IC0; j++){
-            tmp.data[i].value[j] = din.read();
+        for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
+	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
+            for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+              
+              for (int i = 0; i < in_params.IC1 * IY0 * IX0; i++) {
+                chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> tmp;
+                for (int j = 0; j < IC0; j++){
+                  tmp.data[i].value[j] = din.read();
+                }
+                dout.write(tmp);
+              }
+            }
           }
-          dout.write(tmp);
         }
-    }
+   }
 };
 
 template <int size, int IC0, int OC0>
@@ -36,7 +43,6 @@ public:
                         ac_channel<chanStruct<PackedInt<INPUT_PRECISION, IC0>,size> > &din, 
                         ac_channel<PackedInt<INPUT_PRECISION, IC0> > &dout)
     {
-	PackedInt<INPUT_PRECISION, IC0> dout_;
 
         Params in_params = paramsIn.read();
         uint_32 ix0, iy0, addr;
@@ -52,11 +58,13 @@ public:
                   for (int fx = 0; fx < in_params.FX; fx++) {
                     for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
                       for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
-                        chanStruct<PackedInt<INPUT_PRECISION, IC0>,size> tmp = din.read();
                         ix0 = in_params.STRIDE * ox0 + fx;
-                        iy0 = in_params.STRIDE * oy0 + fy; 
-
+                        iy0 = in_params.STRIDE * oy0 + fy;
                         addr = ic1 * IX0 * IY0 + iy0 * IX0 + ix0;
+                        chanStruct<PackedInt<INPUT_PRECISION, IC0>, size> tmp;
+                        std::cout << "din " << din.available(1) << std::endl;
+                        tmp = din.read();
+			PackedInt<INPUT_PRECISION, IC0> dout_;
                         for (int index = 0; index < IC0; index++) {
              		  dout_.value[index] = tmp.data[addr].value[index];
 			}
