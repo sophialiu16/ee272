@@ -65,13 +65,11 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0; step++) {
+            for (int step = 0; step < 2*IC0 + in_params.OX0 * in_params.OY0; step++) {
 	    // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
             // -------------------------------
-		std::cout << "step " << step << std::endl;
-                std::cout<<std::endl;
 
                 // -------------------------------
                 // Your code starts here
@@ -79,14 +77,14 @@ public:
                 // and store it in the weights array
                 // -------------------------------
                 if (step < IC0) {
-                  std::cout << "weight " << weight.available(1) << std::endl;
                   PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
                   //for (int i = 0; i < IC0; i++) {
                     for (int j = 0; j < OC0; j++) {
                       pe_weight_in[step][j] = weights_arr.value[j]; 
                     }
                   //}
-                }       
+                }  
+                    
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -99,7 +97,7 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
-                if (step < IC0 + in_params.OX0 * in_params.OY0) {
+                if (step < in_params.OX0 * in_params.OY0) {
                   in_col = input.read(); 
                 }
                 // -------------------------------
@@ -178,7 +176,7 @@ public:
                 // -------------------------------
                  
                 for (int i = 0; i < OC0; i++) {
-		  pe_psum_in[i][0] = output_buf.value[i];
+		  pe_psum_in[0][i] = output_buf.value[i];
                 }
 
                 // -------------------------------
@@ -210,30 +208,34 @@ public:
 
                 #define FIFO_WRITE_BODY_NEW(z,i,unused)\
                     ODTYPE BOOST_PP_CAT(output_fifo_output_, i); \
-                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0 - 1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
+                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0-1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
                     output_row.value[i] = BOOST_PP_CAT(output_fifo_output_,i); \
                 
                 REPEAT(FIFO_WRITE_BODY_NEW)
 
+   //             for (int i = 0; i < OC0; i++)
+ //               {
+//                  std::cout << "pe psum out " << pe_psum_out[IC0 - 1][i] << " output row " << output_row.value[i] << std::endl; }
                 // -------------------------------
                 // Your code starts here
                 // After a certain number of cycles, you will have valid output from the systolic array
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
                 
-                for (int i = 0; i < OC0; i++) {
+              //  for (int i = 0; i < OC0; i++) {
                   //std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
-                }
+               // }
                 if (step >= 2*IC0 - 1){
                     for (int i = 0; i < OC0; i++) {
 	              accum_buffer[step-(2*IC0 - 1)][i] = output_row.value[i];
                     }
-
+                    
                     if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){
                   output.write(output_row);
                     }
                 }
                  
+                
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -281,7 +283,6 @@ private:
     WDTYPE pe_weight_in[IC0][OC0];
     
     ODTYPE accum_buffer[MAX_OX0 * MAX_OY0][OC0];
-    int read_cnt, write_cnt;
 
     ProcessingElement<IDTYPE,ODTYPE> pe_array[IC0][OC0];
 
