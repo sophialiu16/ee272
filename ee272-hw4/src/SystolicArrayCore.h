@@ -99,7 +99,7 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
-                if (step < IC0 + in_params.OX0 * in_params.OY0) {
+                if (step < in_params.OX0 * in_params.OY0) {
                   in_col = input.read(); 
                 }
                 // -------------------------------
