@@ -65,7 +65,7 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0 - 1; step++) {
+            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0 -1; step++) {
 	    // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
@@ -98,7 +98,7 @@ public:
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
                 if (step < in_params.OX0 * in_params.OY0) {
-                 //std::cout<<"read in"<<std::endl;
+//                  std::cout<<"read in"<<std::endl;
                   in_col = input.read(); 
                 }else {
                   for (int i = 0; i < IC0; i++){
@@ -131,7 +131,7 @@ public:
                 // -------------------------------
                 //if (step < in_params.OX0 * in_params.OY0){
                   for (int i = 0; i < IC0; i++) {
- //                   std::cout<<"pe ifmap in "<<i<<" 0 "<<input_buf.value[i]<<std::endl;
+//                    std::cout<<"pe ifmap in "<<i<<" 0 "<<input_buf.value[i]<<std::endl;
                     pe_ifmap_in[i][0] = input_buf.value[i];
                   }
 		/*} else{
@@ -157,10 +157,10 @@ public:
                     tmp_output_buf.value[i] = 0;
                   }
                 } else {
-                    if (step < in_params.OX0 * in_params.OY0) {
+                   if (step < in_params.OX0 * in_params.OY0) {
         	      for (int i = 0; i < OC0; i++) {
                         tmp_output_buf.value[i] = accum_buffer[step][i];
-                        //std::cout<<"tmp output buf "<<i<<" "<<accum_buffer[step][i]<<std::endl;
+//                        std::cout<<"tmp output buf "<<i<<" "<<accum_buffer[step][i]<<std::endl;
 	              }
                     } else {
                       for (int i = 0; i < OC0; i++) {
@@ -190,12 +190,18 @@ public:
                 // Your code starts here
                 // Assign values from output_buf into the partial sum registers for the first column of PEs
                 // -------------------------------
-                
+               
+                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                  
+                for (int i = 0; i < OC0; i++) {
+		  pe_psum_in[0][i] = 0;
+                } 
+} else {
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = output_buf.value[i];
-                  //std::cout<<"pe psum in 0 "<<i<<" " <<output_buf.value[i]<<std::endl;
+//                  std::cout<<"pe psum in 0 "<<i<<" " <<output_buf.value[i]<<std::endl;
                 }
-
+}
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -240,16 +246,16 @@ public:
 //////                  std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
 //                }
 //////std::cout<<"oxo oyo oco ico"<<in_params.OX0<<" "<<in_params.OY0<<" " <<OC0<<" "<<IC0<<std::endl;
-                if (step >= 2*IC0 - 1){
+                if (step >= 2*IC0 - 2){
                     if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){
                       output.write(output_row);
-                     for(int i = 0; i < OC0; i++){ 
-                     accum_buffer[step-(2*IC0 - 1)][i] = 0;
-                     }
+                     //for(int i = 0; i < OC0; i++){ 
+                     //accum_buffer[step-(2*IC0 - 2)][i] = 0;
+                     //}
                     } else {
                       for (int i = 0; i < OC0; i++) {
-	                accum_buffer[step-(2*IC0 - 1)][i] = output_row.value[i];
-                        //std::cout<<"accum buffer "<<step - (2*IC0 - 1)<<" " <<i<<" " <<output_row.value[i]<<std::endl;
+	                accum_buffer[step-(2*IC0 - 2)][i] = output_row.value[i];
+//                        std::cout<<"accum buffer "<<step - (2*IC0 - 2)<<" " <<i<<" " <<output_row.value[i]<<std::endl;
                       }
 		   }
                 }
