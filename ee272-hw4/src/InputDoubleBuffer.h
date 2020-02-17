@@ -18,7 +18,6 @@ public:
 
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
 	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
-            //for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
               chanStruct<PackedInt<INPUT_PRECISION,IC0>,size> tmp;
               
               for (int i = 0; i < in_params.IC1 * IY0 * IX0; i++) {
@@ -26,8 +25,7 @@ public:
                   tmp.data[i].value[j] = din.read();
                 }
               }
-            //}
-                dout.write(tmp);
+              dout.write(tmp);
           }
         }
    }
@@ -52,7 +50,6 @@ public:
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
  		chanStruct<PackedInt<INPUT_PRECISION, IC0>, size> tmp;
-            //    std::cout << "din " << din.available(1) << std::endl;
                 tmp = din.read();
        
     	   for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {

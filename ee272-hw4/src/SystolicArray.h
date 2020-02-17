@@ -39,7 +39,6 @@ void run(ac_channel<Params> &paramsIn,
                     loopIndicesOut_.fy_idx = fy;
                     loopIndicesOut.write(loopIndicesOut_);
 	            paramsOut.write(in_params);
-  //                  std::cout << "oy1 " << oy1 << " ox1 " << ox1 << " oc1 " << oc1 << " ic1 " << ic1 << " fy " << fy << " fx " << fx << std::endl;
                   }
                 }
               }
