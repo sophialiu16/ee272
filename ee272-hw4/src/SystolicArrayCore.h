@@ -65,7 +65,7 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0 -1; step++) {
+            for (int step = 0; step < 2*IC0 + in_params.OX0 * in_params.OY0; step++) {
 	    // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
@@ -83,7 +83,6 @@ public:
                       pe_weight_in[step][j] = weights_arr.value[j]; 
 //                      std::cout<<"weight in "<<step<<" "<<j<<" "<<weights_arr.value[j]<<std::endl;
                     }
-                  //
                 }       
                 // -------------------------------
                 // Your code ends here
@@ -231,17 +230,24 @@ public:
 
                 #define FIFO_WRITE_BODY_NEW(z,i,unused)\
                     ODTYPE BOOST_PP_CAT(output_fifo_output_, i); \
-                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0 - 1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
+                    BOOST_PP_CAT(output_fifo_, i).run( pe_psum_out[IC0-1][i] , BOOST_PP_CAT(output_fifo_output_, i) );\
                     output_row.value[i] = BOOST_PP_CAT(output_fifo_output_,i); \
                 
                 REPEAT(FIFO_WRITE_BODY_NEW)
 
+   //             for (int i = 0; i < OC0; i++)
+ //               {
+//                  std::cout << "pe psum out " << pe_psum_out[IC0 - 1][i] << " output row " << output_row.value[i] << std::endl; }
                 // -------------------------------
                 // Your code starts here
                 // After a certain number of cycles, you will have valid output from the systolic array
                 // Depending on the loop indices, this valid output will either be written into the accumulation buffer or written out
                 // -------------------------------
-//////                std::cout<<"output fifo "<<std::endl;
+                
+              //  for (int i = 0; i < OC0; i++) {
+                  //std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
+               // }
+//                std::cout<<"output fifo "<<std::endl;
 //                for (int i = 0; i < OC0; i++) {
 //////                  std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
 //                }
@@ -260,6 +266,7 @@ public:
 		   }
                 }
                  
+                
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -307,7 +314,6 @@ private:
     WDTYPE pe_weight_in[IC0][OC0];
     
     ODTYPE accum_buffer[MAX_OX0 * MAX_OY0][OC0];
-    int read_cnt, write_cnt;
 
     ProcessingElement<IDTYPE,ODTYPE> pe_array[IC0][OC0];
 

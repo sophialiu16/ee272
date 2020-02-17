@@ -13,26 +13,28 @@ public:
     {
         Params in_params = paramsIn.read();
         uint_32 index;
+        int i;
         
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
             for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
-              for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
-          chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
-	        for (int fy = 0; fy < in_params.FY; fy++) {
-	          for (int fx = 0; fx < in_params.FX; fx++) {
-                    for (int ic0 = 0; ic0 < IC0; ic0++) {
-                     for (int oc0 = 0; oc0 < OC0; oc0++) {
-                        index = ic1 * in_params.FY * in_params.FX * IC0 + fy * in_params.FX * IC0 * fx * IC0 + ic0;
-              	        tmp.data[index].value[oc0] = din.read();
+              for (int ic1 = 0; ic1 < in_params.IC1; ic1++) {
+              
+                chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;          
+		for (int fy = 0; fy < in_params.FY; fy++) {
+		  for (int fx = 0; fx < in_params.FX; fx++) {
+		    for (int ic0 = 0; ic0 < IC0; ic0++) {
+                      index = ic1 * IC0 * in_params.FX * in_params.FY + fy * IC0 * in_params.FX + fx * IC0 + ic0;
+                      for (int j=0; j < OC0; j++){
+                        tmp.data[index].value[j] = din.read();
                       }
-                    }
+                    } 
                   }
                 }
           dout.write(tmp);
-              }
-            }
+         }
         }
+       }
       }
     }
 };
@@ -51,32 +53,43 @@ public:
       uint_32 addr;
 	for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
     	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
+      	      PackedInt<WEIGHT_PRECISION, OC0> dout_;
               chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp;
+
             for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
-	         tmp = din.read();
-                 for (int fy = 0; fy < in_params.FY; fy++) {
+                  tmp = din.read();
+	        for (int fy = 0; fy < in_params.FY; fy++) {
 	          for (int fx = 0; fx < in_params.FX; fx++) {
-                    for (int ic0 = 0; ic0 < IC0; ic0++) {
-                     //for (int oc0 = 0; oc0 < OC0; oc0++) {
-                       //for (int ic0 = 0; ic0 < IC0; ic0++){
-                         addr = ic1 * in_params.FY * in_params.FX * IC0 + fy * in_params.FX * IC0 * fx * IC0 + ic0;
-             		 /*addr = oc1 * in_params.IC1 * in_params.FY * in_params.FX +
-                     		ic1 * in_params.FY * in_params.FX +
-                     		fy * in_params.FX +
-                     		fx;*/
-             
-              		dout.write(tmp.data[addr]);
-                     // }
+	             for (int ic0 = 0; ic0 < IC0; ic0++) {
+             //fy fx ic oc 
+              /*addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
+                     fx * in_params.IC1 * in_params.OC1 + 
+                     ic1 * in_params.OC1 + 
+                     oc1;*/
+               
+                       addr = ic1 * IC0 * in_params.FY * in_params.FX + 
+                       fx * IC0 * in_params.FY + 
+                       fy * IC0 + ic0;
+  //            int ic = ic1*IC0 + ic0;
+/*              addr = oc1 * in_params.IC1 * in_params.FY * in_params.FX +
+                     ic1 * in_params.FY * in_params.FX +
+                     fy * in_params.FX +
+                     fx + ic;
+*/
+//              std::cout << "oc1 " << oc1 << " ic1 " << ic1 << " fy " << fy << " fx " << fx << " oy0 " << oy0 << " ox0 " << ox0 << " addr " << addr << std::endl;
+                       for (int index = 0; index < OC0; index++) {
+                         dout_.value[index] = tmp.data[addr].value[index];
+                       }
+                       dout.write(dout_);
       
-                   // }
+                    } 
                   }
                 }
               }
             }
           }
         }
-      }
     }
 };
 
