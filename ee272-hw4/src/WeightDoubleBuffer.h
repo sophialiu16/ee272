@@ -13,20 +13,28 @@ public:
     {
         Params in_params = paramsIn.read();
         uint_32 index;
+        int i;
         
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
-
-          chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;
-          
-          for (int i = 0; i <in_params.FY * in_params.FX * in_params.IC1 * in_params.OC1; i++) {
-            for (int j=0; j < OC0; j++){
-              tmp.data[i].value[j] = din.read();
-            }
-          }
-
+            for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
+              for (int ic1 = 0; ic1 < in_params.IC1; ic1++) {
+              
+                chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;          
+		for (int fy = 0; fy < in_params.FY; fy++) {
+		  for (int fx = 0; fx < in_params.FX; fx++) {
+		    for (int ic0 = 0; ic0 < IC0; ic0++) {
+                      index = ic1 * IC0 * in_params.FX * in_params.FY + fy * IC0 * in_params.FX + fx * IC0 + ic0;
+                      for (int j=0; j < OC0; j++){
+                        tmp.data[index].value[j] = din.read();
+                      }
+                    } 
+                  }
+                }
           dout.write(tmp);
+         }
         }
+       }
       }
     }
 };
@@ -48,43 +56,42 @@ public:
 	for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
     	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
       	      PackedInt<WEIGHT_PRECISION, OC0> dout_;
-              chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp = din.read();
+              chanStruct<PackedInt<WEIGHT_PRECISION, OC0>,size> tmp;
 
             for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
+                  tmp = din.read();
 	        for (int fy = 0; fy < in_params.FY; fy++) {
 	          for (int fx = 0; fx < in_params.FX; fx++) {
-                    for (int oy0 = 0; oy0 < in_params.OY0; oy0++) {
-                      for (int ox0 = 0; ox0 < in_params.OX0; ox0++) {
-	
-               //addr = i * in_params.IC1 * in_params.FY * in_params.FX +
-              //       j * in_params.FY * in_params.FX +
-              //       k * in_params.FX +
-              //       l;
+	             for (int ic0 = 0; ic0 < IC0; ic0++) {
              //fy fx ic oc 
-/*              addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
+              /*addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
                      fx * in_params.IC1 * in_params.OC1 + 
                      ic1 * in_params.OC1 + 
                      oc1;*/
                
-              addr = oc1 * in_params.IC1 * in_params.FY * in_params.FX + 
-                     ic1 * in_params.FY * in_params.FX + 
-                     fy * in_params.FX + 
-                     fx; 
+                       addr = ic1 * IC0 * in_params.FY * in_params.FX + 
+                       fx * IC0 * in_params.FY + 
+                       fy * IC0 + ic0;
+  //            int ic = ic1*IC0 + ic0;
+/*              addr = oc1 * in_params.IC1 * in_params.FY * in_params.FX +
+                     ic1 * in_params.FY * in_params.FX +
+                     fy * in_params.FX +
+                     fx + ic;
+*/
 //              std::cout << "oc1 " << oc1 << " ic1 " << ic1 << " fy " << fy << " fx " << fx << " oy0 " << oy0 << " ox0 " << ox0 << " addr " << addr << std::endl;
-              for (int index = 0; index < OC0; index++) {
-                dout_.value[index] = tmp.data[addr].value[index];
-              }
-              dout.write(dout_);
+                       for (int index = 0; index < OC0; index++) {
+                         dout_.value[index] = tmp.data[addr].value[index];
+                       }
+                       dout.write(dout_);
       
-                    }
+                    } 
                   }
                 }
               }
             }
           }
         }
-      }
     }
 };
 
