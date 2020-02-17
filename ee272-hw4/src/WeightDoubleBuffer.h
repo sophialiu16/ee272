@@ -64,7 +64,6 @@ public:
                        addr = ic1 * IC0 * in_params.FY * in_params.FX + 
                        fx * IC0 * in_params.FY + 
                        fy * IC0 + ic0;
-//              std::cout << "oc1 " << oc1 << " ic1 " << ic1 << " fy " << fy << " fx " << fx << " oy0 " << oy0 << " ox0 " << ox0 << " addr " << addr << std::endl;
                        for (int index = 0; index < OC0; index++) {
                          dout_.value[index] = tmp.data[addr].value[index];
                        }
