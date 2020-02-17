@@ -50,9 +50,7 @@ public:
                         ac_channel<PackedInt<WEIGHT_PRECISION, OC0> > &dout)
     {
       Params in_params = paramsIn.read();
-
       uint_32 addr;
-
 	for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
     	  for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
       	      PackedInt<WEIGHT_PRECISION, OC0> dout_;
