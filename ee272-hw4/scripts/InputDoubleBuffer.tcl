@@ -20,9 +20,8 @@ go assembly
 # Set the correct word widths and the stage replication
 # -------------------------------
 directive set /InputDoubleBuffer<4096,16,16>/mem:cns -STAGE_REPLICATION 2
-directive set /InputDoubleBuffer<4096,16,16>/InputDoubleBufferWriter<4096,16,16>/dout:rsc -STAGE_REPLICATION 2
-directive set /InputDoubleBuffer<4096,16,16>/InputDoubleBufferReader<4096,16,16>/din:rsc -STAGE_REPLICATION 2
-
+#directive set /InputDoubleBuffer<4096,16,16>/InputDoubleBufferWriter<4096,16,16>/dout:rsc -STAGE_REPLICATION 2
+#directive set /InputDoubleBuffer<4096,16,16>/InputDoubleBufferReader<4096,16,16>/din:rsc -STAGE_REPLICATION 2
 
 directive set /InputDoubleBuffer<4096,16,16>/mem -WORD_WIDTH 16
 

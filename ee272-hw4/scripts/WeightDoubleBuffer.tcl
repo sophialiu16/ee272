@@ -25,8 +25,8 @@ directive set /WeightDoubleBuffer<4096,16,16>/WeightDoubleBufferReader<4096,16,1
 #directive set /WeightDoubleBuffer<4096,16,16>/WeightDoubleBufferReader<4096,16,16>/run/for:for:dout_.value -WORD_WIDTH 16
 
 directive set /WeightDoubleBuffer<4096,16,16>/mem:cns -STAGE_REPLICATION 2
-directive set /WeightDoubleBuffer<4096,16,16>/WeightDoubleBufferWriter<4096,16,16>/dout:rsc -STAGE_REPLICATION 2
-directive set /WeightDoubleBuffer<4096,16,16>/WeightDoubleBufferReader<4096,16,16>/din:rsc -STAGE_REPLICATION 2
+#directive set /WeightDoubleBuffer<4096,16,16>/WeightDoubleBufferWriter<4096,16,16>/dout:rsc -STAGE_REPLICATION 2
+#directive set /WeightDoubleBuffer<4096,16,16>/WeightDoubleBufferReader<4096,16,16>/din:rsc -STAGE_REPLICATION 2
 
 # -------------------------------
 # Your code ends here
