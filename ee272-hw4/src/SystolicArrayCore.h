@@ -98,7 +98,7 @@ public:
                 // -------------------------------
 //                std::cout << "step " << step << " oxo oyo " << in_params.OX0 * in_params.OY0 << " input available " << input.available(1) << std::endl;
                 if (step < in_params.OX0 * in_params.OY0) {
-                 //std::cout<<"read in"<<std::endl;
+//                  std::cout<<"read in"<<std::endl;
                   in_col = input.read(); 
                 }else {
                   for (int i = 0; i < IC0; i++){
@@ -131,6 +131,7 @@ public:
                 // -------------------------------
                 //if (step < in_params.OX0 * in_params.OY0){
                   for (int i = 0; i < IC0; i++) {
+//                    std::cout<<"pe ifmap in "<<i<<" 0 "<<input_buf.value[i]<<std::endl;
                     pe_ifmap_in[i][0] = input_buf.value[i];
                   }
 		/*} else{
@@ -189,12 +190,18 @@ public:
                 // Your code starts here
                 // Assign values from output_buf into the partial sum registers for the first column of PEs
                 // -------------------------------
-                
+               
+                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                  
+                for (int i = 0; i < OC0; i++) {
+		  pe_psum_in[0][i] = 0;
+                } 
+} else {
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = output_buf.value[i];
-                  //std::cout<<"pe psum in 0 "<<i<<" " <<output_buf.value[i]<<std::endl;
+//                  std::cout<<"pe psum in 0 "<<i<<" " <<output_buf.value[i]<<std::endl;
                 }
-
+}
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -245,16 +252,17 @@ public:
 //                for (int i = 0; i < OC0; i++) {
 //////                  std::cout << pe_psum_out[IC0 - 1][i] << " " << output_row.value[i] << std::endl;
 //                }
-                if (step >= 2*IC0 - 1){
+//////std::cout<<"oxo oyo oco ico"<<in_params.OX0<<" "<<in_params.OY0<<" " <<OC0<<" "<<IC0<<std::endl;
+                if (step >= 2*IC0 - 2){
                     if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){
                       output.write(output_row);
-                     for(int i = 0; i < OC0; i++){ 
-                     accum_buffer[step-(2*IC0 - 1)][i] = 0;
-                     }
+                     //for(int i = 0; i < OC0; i++){ 
+                     //accum_buffer[step-(2*IC0 - 2)][i] = 0;
+                     //}
                     } else {
                       for (int i = 0; i < OC0; i++) {
-	                accum_buffer[step-(2*IC0 - 1)][i] = output_row.value[i];
-                        //std::cout<<"accum buffer "<<step - (2*IC0 - 1)<<" " <<i<<" " <<output_row.value[i]<<std::endl;
+	                accum_buffer[step-(2*IC0 - 2)][i] = output_row.value[i];
+//                        std::cout<<"accum buffer "<<step - (2*IC0 - 2)<<" " <<i<<" " <<output_row.value[i]<<std::endl;
                       }
 		   }
                 }
