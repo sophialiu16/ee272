@@ -13,7 +13,6 @@ public:
     {
         Params in_params = paramsIn.read();
         uint_32 index;
-        int i;
         
         for (int oy1 = 0; oy1 < in_params.OY1; oy1++) {
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
@@ -62,21 +61,9 @@ public:
 	        for (int fy = 0; fy < in_params.FY; fy++) {
 	          for (int fx = 0; fx < in_params.FX; fx++) {
 	             for (int ic0 = 0; ic0 < IC0; ic0++) {
-             //fy fx ic oc 
-              /*addr = fy * in_params.FX * in_params.IC1 * in_params.OC1 + 
-                     fx * in_params.IC1 * in_params.OC1 + 
-                     ic1 * in_params.OC1 + 
-                     oc1;*/
-               
                        addr = ic1 * IC0 * in_params.FY * in_params.FX + 
                        fx * IC0 * in_params.FY + 
                        fy * IC0 + ic0;
-  //            int ic = ic1*IC0 + ic0;
-/*              addr = oc1 * in_params.IC1 * in_params.FY * in_params.FX +
-                     ic1 * in_params.FY * in_params.FX +
-                     fy * in_params.FX +
-                     fx + ic;
-*/
 //              std::cout << "oc1 " << oc1 << " ic1 " << ic1 << " fy " << fy << " fx " << fx << " oy0 " << oy0 << " ox0 " << ox0 << " addr " << addr << std::endl;
                        for (int index = 0; index < OC0; index++) {
                          dout_.value[index] = tmp.data[addr].value[index];

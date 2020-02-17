@@ -19,7 +19,13 @@ go assembly
 # Your code starts here
 # Set the correct word widths and the stage replication
 # -------------------------------
-return -code error "Remove this once implemented."
+directive set /InputDoubleBuffer<4096,16,16>/weights_in -WORD_WIDTH 6
+directive set /InputDoubleBuffer<4096,16,16>/weights_in -BASE_ADDR 0
+directive set /InputDoubleBuffer<4096,16,16>/weights_in -BASE_BIT 0
+
+directive set /InputDoubleBuffer<4096,16,16>/weights_out -WORD_WIDTH 144
+directive set /InputDoubleBuffer<4096,16,16>/weights_out -BASE_ADDR 0
+directive set /InputDoubleBuffer<4096,16,16>/weights_out -BASE_BIT 6
 # -------------------------------
 # Your code ends here
 # -------------------------------

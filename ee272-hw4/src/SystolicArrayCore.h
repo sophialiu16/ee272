@@ -96,6 +96,7 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
+//                std::cout << "step " << step << " oxo oyo " << in_params.OX0 * in_params.OY0 << " input available " << input.available(1) << std::endl;
                 if (step < in_params.OX0 * in_params.OY0) {
                  //std::cout<<"read in"<<std::endl;
                   in_col = input.read(); 
@@ -155,16 +156,16 @@ public:
                     tmp_output_buf.value[i] = 0;
                   }
                 } else {
-                    if (step < in_params.OX0 * in_params.OY0) {
+//                    if (step < in_params.OX0 * in_params.OY0) {
         	      for (int i = 0; i < OC0; i++) {
                         tmp_output_buf.value[i] = accum_buffer[step][i];
+                       }
                         //std::cout<<"tmp output buf "<<i<<" "<<accum_buffer[step][i]<<std::endl;
-	              }
-                    } else {
-                      for (int i = 0; i < OC0; i++) {
-                        tmp_output_buf.value[i] = 0;
-                      } 
-                    }
+  //                  } else {
+    //                  for (int i = 0; i < OC0; i++) {
+      //                  tmp_output_buf.value[i] = 0;
+        //              } 
+                 //   }
                 }
                 
                 // -------------------------------
