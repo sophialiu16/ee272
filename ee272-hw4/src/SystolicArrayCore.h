@@ -135,12 +135,6 @@ public:
                   for (int i = 0; i < IC0; i++) {
                     pe_ifmap_in[i][0] = input_buf.value[i];
                   }
-		/*} else{
-                  for (int i = 0; i < IC0; i++) {
-                    pe_ifmap_in[i][0] = 0;
-                  }
-                }*/
-
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -215,47 +209,11 @@ public:
                 // Run the 16x16 PE array
                 // Make sure that the correct registers are given to the PE
                 // -------------------------------
-/*                if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
- std::cout << "step " << step << std::endl;
-              for (int j = 0; j < IC0; j++)  {
-                for (int i = 0; i < OC0; i++)
-                { 
-		 std::cout << "pe_weight_in " << i << " " << j << " " << pe_weight_in[i][j] << " " << std::endl; } }
-} */
-/*
-                 std::cout << "pe_ifmap_in " << pe_ifmap_in[0][i] << " "; 
-                 std::cout << "pe_ifmap_in " << pe_ifmap_in[1][i] << " ";
-                 std::cout << "pe_psum_in " << pe_psum_in[0][i] << " "; 
-                 std::cout << "pe_ifmap_out " << pe_ifmap_out[0][i] << " "; 
-                 std::cout << "pe_psum_out " << pe_psum_out[0][i] << " "; 
-                 std::cout << " " << std::endl; }*/
-/*
-                 std::cout << "col " << std::endl;
-                for (int i = 0; i < OC0; i++) {
-		 std::cout << "pe_weight_in " << pe_weight_in[i][0] << " ";
-                 std::cout << "pe_ifmap_in " << pe_ifmap_in[i][0] << " ";
-                 std::cout << "pe_ifmap_in " << pe_ifmap_in[i][1] << " ";
-                 std::cout << "pe_psum_in " << pe_psum_in[i][0] << " ";
-                 std::cout << "pe_ifmap_out " << pe_ifmap_out[i][0] << " ";
-                 std::cout << "pe_psum_out " << pe_psum_out[i][0] << " ";
-                 std::cout << " " << std::endl;
-}
-}
-*/
-
                 #pragma hls_unroll 16
                 for (int i = 0; i < IC0; i++) {
                   #pragma hls_unroll 16
                   for (int j = 0; j < OC0; j++) {
                     (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j], pe_ifmap_out[i][j], pe_psum_out[i][j]);
-/*                  if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
-                  
-std::cout<<"step "<<step<<std::endl;
-
-std::cout<<"pe psum in "<<pe_psum_in[i][j]<<std::endl;
-
-std::cout << "input " << pe_ifmap_in[i][j] << " weight " << pe_weight_in[i][j] << " output " << pe_psum_out[i][j] << " i " << i << " j " << j << std::endl;
-                  }*/
                   }
                 }
              
@@ -280,6 +238,7 @@ std::cout << "input " << pe_ifmap_in[i][j] << " weight " << pe_weight_in[i][j] <
                     if ((in_loopindices.fx_idx == in_params.FX - 1) && (in_loopindices.fy_idx == in_params.FY - 1) && (in_loopindices.ic1_idx == in_params.IC1 - 1)){
                       output.write(output_row);
                     } else {
+                      #pragma hls_unroll 16
                       for (int i = 0; i < OC0; i++) {
 	                accum_buffer[step-(2*IC0 - 2)][i] = output_row.value[i];
                       }
