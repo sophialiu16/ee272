@@ -115,11 +115,9 @@ void run_layer(Params params){
                 ODTYPE out_value = output_stream.read();
                 
                 if((long long)output_ref[ro*params.OY0+p][co*params.OX0+i][koo*OC0+j] != (long long)out_value) {
-//                  printf("***ERROR***\n");
+                  printf("***ERROR***\n");
                   
                   errCnt++;
-  //                printf("output[%d][%d][%d] = %lld, ref = %lld\n",ro*params.OY0+p, co*params.OX0+i, koo*OC0+j, (long long)out_value, (long long)output_ref[ro*params.OY0+p][co*params.OX0+i][koo*OC0+j]);
-                } else {
                   printf("output[%d][%d][%d] = %lld, ref = %lld\n",ro*params.OY0+p, co*params.OX0+i, koo*OC0+j, (long long)out_value, (long long)output_ref[ro*params.OY0+p][co*params.OX0+i][koo*OC0+j]);
                 }
               }  // for j

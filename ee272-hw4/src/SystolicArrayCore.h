@@ -78,6 +78,7 @@ public:
                 // -------------------------------
                 if (step < IC0) {
                   PackedInt<WEIGHT_PRECISION, OC0> weights_arr = weight.read();
+                    #pragma hls_unroll 16
                     for (int j = 0; j < OC0; j++) {
                       pe_weight_in[step][j] = weights_arr.value[j]; 
                     }
@@ -99,6 +100,7 @@ public:
                if (step < in_params.OX0 * in_params.OY0) {
                   in_col = input.read(); 
                 }else {
+                  #pragma hls_unroll 16
                   for (int i = 0; i < IC0; i++){
                     in_col.value[i] = 0;
                   }
@@ -129,6 +131,7 @@ public:
                 // Assign values from input_buf into the registers for the first column of PEs
                 // -------------------------------
                 //if (step < in_params.OX0 * in_params.OY0){
+                  #pragma hls_unroll 16
                   for (int i = 0; i < IC0; i++) {
                     pe_ifmap_in[i][0] = input_buf.value[i];
                   }
@@ -151,15 +154,18 @@ public:
                 // -------------------------------
  
                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                  #pragma hls_unroll 16
                   for (int i = 0; i < OC0; i++) {
                     tmp_output_buf.value[i] = 0;
                   }
                 } else {
                    if (step < in_params.OX0 * in_params.OY0){ 
+                      #pragma hls_unroll 16
         	      for (int i = 0; i < OC0; i++) {
                         tmp_output_buf.value[i] = accum_buffer[step][i];
                        }
 		   } else {
+                      #pragma hls_unroll 16
                       for (int i = 0; i < OC0; i++) {
                         tmp_output_buf.value[i] = 0;
                        }
@@ -189,11 +195,12 @@ public:
                 // -------------------------------
                
                  if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
-                  
+               #pragma hls_unroll 16   
                for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = 0;
                 } 
 } else {
+                #pragma hls_unroll 16
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = output_buf.value[i];
                 }
@@ -236,7 +243,9 @@ public:
 }
 */
 
+                #pragma hls_unroll 16
                 for (int i = 0; i < IC0; i++) {
+                  #pragma hls_unroll 16
                   for (int j = 0; j < OC0; j++) {
                     (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j], pe_ifmap_out[i][j], pe_psum_out[i][j]);
 /*                  if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
@@ -287,12 +296,16 @@ std::cout << "input " << pe_ifmap_in[i][j] << " weight " << pe_weight_in[i][j] <
                 // Cycle the input/psum registers
                 // That is, the outputs that a PE wrote to should now become the input for the next PE
                 // -------------------------------
+                #pragma hls_unroll 16
                 for (int i = 1; i < IC0; i++) {
+                  #pragma hls_unroll 16
                   for (int j = 0; j < OC0; j++) {
                     pe_psum_in[i][j] = pe_psum_out[i - 1][j];
                   }
                 }
+                #pragma hls_unroll 16
                 for (int i = 0; i < IC0; i++) {
+                  #pragma hls_unroll 16
                   for (int j = 1; j < OC0; j++) {
                     pe_ifmap_in[i][j] = pe_ifmap_out[i][j - 1];
                   }
