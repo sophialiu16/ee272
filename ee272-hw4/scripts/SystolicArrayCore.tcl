@@ -28,7 +28,6 @@ directive set /SystolicArrayCore<IDTYPE,WDTYPE,ODTYPE,16,16>/run -CLOCK_OVERHEAD
 # Make sure that the accumulation buffer has the appropriate word width 
 # -------------------------------
 directive set /SystolicArrayCore<IDTYPE,WDTYPE,ODTYPE,16,16>/run/accum_buffer -WORD_WIDTH 32 
-#TODO 16?
 
 # -------------------------------
 # Your code ends here
