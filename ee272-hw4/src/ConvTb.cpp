@@ -119,6 +119,8 @@ void run_layer(Params params){
                   
                   errCnt++;
   //                printf("output[%d][%d][%d] = %lld, ref = %lld\n",ro*params.OY0+p, co*params.OX0+i, koo*OC0+j, (long long)out_value, (long long)output_ref[ro*params.OY0+p][co*params.OX0+i][koo*OC0+j]);
+                } else {
+                  printf("output[%d][%d][%d] = %lld, ref = %lld\n",ro*params.OY0+p, co*params.OX0+i, koo*OC0+j, (long long)out_value, (long long)output_ref[ro*params.OY0+p][co*params.OX0+i][koo*OC0+j]);
                 }
               }  // for j
             }  // for i

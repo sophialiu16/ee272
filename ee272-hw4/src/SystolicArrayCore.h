@@ -228,13 +228,17 @@ public:
                  std::cout << " " << std::endl;
 }
 }
+*/
 
                 for (int i = 0; i < IC0; i++) {
                   for (int j = 0; j < OC0; j++) {
                     (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j], pe_ifmap_out[i][j], pe_psum_out[i][j]);
+                  if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                  //std::cout << "input " << pe_ifmap_in[i][j] << " weight " << pe_weight_in[i][j] << " output " << pe_psum_out[i][j] << " i " << i << " j " << j << std::endl;
+                  }
                   }
                 }
-   
+             
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------

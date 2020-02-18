@@ -59,8 +59,9 @@ void conv_gold( IDTYPE ifmap[(OFMAP_HEIGHT-1)*STRIDE+FILTER_SIZE][(OFMAP_WIDTH-1
                       int ic = ic1*IC0 + ic0;
                       ofmap[oy][ox][oc] += (int32_t) ifmap[STRIDE*oy+fy][STRIDE*ox+fx][ic] *
                                            (int32_t) weights[fy][fx][ic][oc];
-                      std::cout << "ic0 " << ic0 << " oc0 " << oc0 << " ox0 " << ox0 << " oy0 " << oy0 << " fx " << fx << " fy " << fy << " ic1 " << ic1 << std::endl;
-                      std::cout << "input " << ifmap[STRIDE*oy+fy][STRIDE*ox+fx][ic] << " weight " <<  weights[fy][fx][ic][oc] << " output " << ofmap[oy][ox][oc] << std::endl;
+          //            if ((ox0 == 0) && (oy0 == 0) && (fx == 0) && (fy == 0) && (ic1 == 0) && (oc1 == 0) && (ox1 == 0) && (oy1 == 0)) {
+            //          std::cout << "ic0 " << ic0 << " oc0 " << oc0 << " ox0 " << ox0 << " oy0 " << oy0 << " fx " << fx << " fy " << fy << " ic1 " << ic1 << std::endl;
+              //        std::cout << "input " << ifmap[STRIDE*oy+fy][STRIDE*ox+fx][ic] << " weight " <<  weights[fy][fx][ic][oc] << " output " << ofmap[oy][ox][oc] << std::endl;}
                     }
                   }
                 }
