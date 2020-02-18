@@ -70,7 +70,7 @@ public:
             // Your code ends here 
             // You should now be in the body of the loop
             // -------------------------------
-            std::cout<<"step "<<step<<std::endl;
+//            std::cout<<"step "<<step<<std::endl;
                 // -------------------------------
                 // Your code starts here
                 // If you are in the ramp up time, read in weights from the channel
@@ -203,23 +203,32 @@ public:
                 // Run the 16x16 PE array
                 // Make sure that the correct registers are given to the PE
                 // -------------------------------
-               
-                /*for (int i = 0; i < OC0; i++)
-                { std::cout << "pe_weight_in " << pe_weight_in[0][i] << " "; }
-                std::endl;
+                /*if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+ std::cout << "step " << step << std::endl;
+              for (int j = 0; j < IC0; j++)  {
                 for (int i = 0; i < OC0; i++)
-                { std::cout << "pe_ifmap_in " << pe_ifmap_in[0][i] << " "; }
-                std::endl;
-                for (int i = 0; i < OC0; i++)
-                { std::cout << "pe_psum_in " << pe_psum_in[0][i] << " "; }
-                std::endl;
-                for (int i = 0; i < OC0; i++)
-                { std::cout << "pe_ifmap_out " << pe_ifmap_out[0][i] << " "; }
-                std::endl;
-                for (int i = 0; i < OC0; i++)
-                { std::cout << "pe_psum_out " << pe_psum_out[0][i] << " "; }
-                std::endl;
-*/
+                { 
+		 std::cout << "pe_weight_in " << i << " " << j << " " << pe_weight_in[i][j] << " " << std::endl; } }
+}*/
+                 /*std::cout << "pe_ifmap_in " << pe_ifmap_in[0][i] << " "; 
+                 std::cout << "pe_ifmap_in " << pe_ifmap_in[1][i] << " ";
+                 std::cout << "pe_psum_in " << pe_psum_in[0][i] << " "; 
+                 std::cout << "pe_ifmap_out " << pe_ifmap_out[0][i] << " "; 
+                 std::cout << "pe_psum_out " << pe_psum_out[0][i] << " "; 
+                 std::cout << " " << std::endl; }*/
+/*
+                 std::cout << "col " << std::endl;
+                for (int i = 0; i < OC0; i++) {
+		 std::cout << "pe_weight_in " << pe_weight_in[i][0] << " ";
+                 std::cout << "pe_ifmap_in " << pe_ifmap_in[i][0] << " ";
+                 std::cout << "pe_ifmap_in " << pe_ifmap_in[i][1] << " ";
+                 std::cout << "pe_psum_in " << pe_psum_in[i][0] << " ";
+                 std::cout << "pe_ifmap_out " << pe_ifmap_out[i][0] << " ";
+                 std::cout << "pe_psum_out " << pe_psum_out[i][0] << " ";
+                 std::cout << " " << std::endl;
+}
+}
+
                 for (int i = 0; i < IC0; i++) {
                   for (int j = 0; j < OC0; j++) {
                     (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j], pe_ifmap_out[i][j], pe_psum_out[i][j]);

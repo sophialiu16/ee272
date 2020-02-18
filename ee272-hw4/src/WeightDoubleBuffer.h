@@ -20,17 +20,11 @@ public:
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) {
                  
                 chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;          
-		 //pragma hls_pipeline_init_interval 1
-                 for (int fy = 0; fy < in_params.FY; fy++) {
-		  for (int fx = 0; fx < in_params.FX; fx++) {
-		    for (int ic0 = 0; ic0 < IC0; ic0++) {
-                      #pragma hls_unroll 16
+		 for (int i = 0; i < in_params.FY * in_params.FX * IC0; i++){
                       for (int j=0; j < OC0; j++){
-                        index = ic1 * IC0 * in_params.FX * in_params.FY + fy * IC0 * in_params.FX + fx * IC0 + ic0;
+                        index = ic1 * IC0 * in_params.FX * in_params.FY + i;
                         tmp.data[index].value[j] = din.read();
                       }
-                    } 
-                  }
                 }
           dout.write(tmp);
          }
@@ -60,15 +54,17 @@ public:
             for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) { 
                   tmp = din.read();
-	        for (int fy = 0; fy < in_params.FY; fy++) {
-	          for (int fx = 0; fx < in_params.FX; fx++) {
+	        for (int fx = 0; fx < in_params.FY; fx++) {
+	          for (int fy = 0; fy < in_params.FX; fy++) {
 	             for (int ic0 = 0; ic0 < IC0; ic0++) {
                        addr = ic1 * IC0 * in_params.FY * in_params.FX + 
-                       fy * IC0 * in_params.FX + 
-                       fx * IC0 + ic0;
-                       #pragma hls_unroll yes
+                       fx * IC0 * in_params.FY + 
+                       fy * IC0 + 
+                       ic0;
                        for (int index = 0; index < OC0; index++) {
                          dout_.value[index] = tmp.data[addr].value[index];
+ //                        if (tmp.data[addr].value[index] == -97) {
+//                          std::cout << "addr " << addr << " index " << index << " ic0 " << ic0 << " fx " << fx << " fy " << fy << " ic1 " << ic1 << " oc1 " << oc1 << std::endl; }
                        }
                        dout.write(dout_);
       
