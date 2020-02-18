@@ -18,13 +18,15 @@ public:
           for (int ox1 = 0; ox1 < in_params.OX1; ox1++) {
             for (int oc1 = 0; oc1 < in_params.OC1; oc1++) {
               for (int ic1 = 0; ic1 < in_params.IC1; ic1++) {
-              
+                 
                 chanStruct<PackedInt<WEIGHT_PRECISION, OC0>, size> tmp;          
-		for (int fy = 0; fy < in_params.FY; fy++) {
+		 //pragma hls_pipeline_init_interval 1
+                 for (int fy = 0; fy < in_params.FY; fy++) {
 		  for (int fx = 0; fx < in_params.FX; fx++) {
 		    for (int ic0 = 0; ic0 < IC0; ic0++) {
-                      index = ic1 * IC0 * in_params.FX * in_params.FY + fy * IC0 * in_params.FX + fx * IC0 + ic0;
+                      #pragma hls_unroll 16
                       for (int j=0; j < OC0; j++){
+                        index = ic1 * IC0 * in_params.FX * in_params.FY + fy * IC0 * in_params.FX + fx * IC0 + ic0;
                         tmp.data[index].value[j] = din.read();
                       }
                     } 
@@ -62,8 +64,9 @@ public:
 	          for (int fx = 0; fx < in_params.FX; fx++) {
 	             for (int ic0 = 0; ic0 < IC0; ic0++) {
                        addr = ic1 * IC0 * in_params.FY * in_params.FX + 
-                       fx * IC0 * in_params.FY + 
-                       fy * IC0 + ic0;
+                       fy * IC0 * in_params.FX + 
+                       fx * IC0 + ic0;
+                       #pragma hls_unroll yes
                        for (int index = 0; index < OC0; index++) {
                          dout_.value[index] = tmp.data[addr].value[index];
                        }
