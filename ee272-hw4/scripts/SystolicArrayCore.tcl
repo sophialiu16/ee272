@@ -63,7 +63,7 @@ go architect
 
 ignore_memory_precedences -from for:if#4:else:for:write_mem(accum_buffer:rsc.@) -to for:else#2:if:for:read_mem(accum_buffer:rsc.@)
 
-ignore_memory_precendences -from for:if#4:else:for:write_mem(accum_buffer:rsc.@) -to for:if#4:else:for:read_mem(accum_buffer:rsc.@)
+ignore_memory_precedences -from for:if#4:else:for:write_mem(accum_buffer:rsc.@) -to for:if#4:else:for:read_mem(accum_buffer:rsc.@)
 
 #ignore_memory_precedences -from for:if#4:else:for:write_mem(accum_buffer:rsc.@) -to for:if#4:else:for:read_mem(accum_buffer:rsc.@)
 
