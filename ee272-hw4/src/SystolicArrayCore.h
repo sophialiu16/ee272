@@ -65,12 +65,12 @@ public:
             // The number of steps in a run of the systolic array is equal to:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
-            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0; step++) {
+            for (int step = 0; step < IC0 + in_params.OX0 * in_params.OY0 + OC0 - 2; step++) {
 	    // -------------------------------
             // Your code ends here 
             // You should now be in the body of the loop
             // -------------------------------
-//            std::cout<<"step "<<step<<std::endl;
+            //std::cout<<"step "<<step<<std::endl;
                 // -------------------------------
                 // Your code starts here
                 // If you are in the ramp up time, read in weights from the channel
@@ -95,8 +95,8 @@ public:
                 // Read inputs from the channel and store in the variable in_col
                 // Note: you don't read in any inputs during the flush time
                 // -------------------------------
-//                std::cout << "step " << step << " oxo oyo " << in_params.OX0 * in_params.OY0 << " input available " << input.available(1) << std::endl;
-                if (step < in_params.OX0 * in_params.OY0) {
+ 
+               if (step < in_params.OX0 * in_params.OY0) {
                   in_col = input.read(); 
                 }else {
                   for (int i = 0; i < IC0; i++){
@@ -155,10 +155,15 @@ public:
                     tmp_output_buf.value[i] = 0;
                   }
                 } else {
-                  
+                   if (step < in_params.OX0 * in_params.OY0){ 
         	      for (int i = 0; i < OC0; i++) {
                         tmp_output_buf.value[i] = accum_buffer[step][i];
                        }
+		   } else {
+                      for (int i = 0; i < OC0; i++) {
+                        tmp_output_buf.value[i] = 0;
+                       }
+                   }
                 }
                 
                 // -------------------------------
@@ -183,16 +188,16 @@ public:
                 // Assign values from output_buf into the partial sum registers for the first column of PEs
                 // -------------------------------
                
-//                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                 if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
                   
-  //              for (int i = 0; i < OC0; i++) {
-//		  pe_psum_in[0][i] = 0;
-  //              } 
-//} else {
+               for (int i = 0; i < OC0; i++) {
+		  pe_psum_in[0][i] = 0;
+                } 
+} else {
                 for (int i = 0; i < OC0; i++) {
 		  pe_psum_in[0][i] = output_buf.value[i];
                 }
-//}
+}
                 // -------------------------------
                 // Your code ends here
                 // -------------------------------
@@ -203,14 +208,15 @@ public:
                 // Run the 16x16 PE array
                 // Make sure that the correct registers are given to the PE
                 // -------------------------------
-                /*if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+/*                if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
  std::cout << "step " << step << std::endl;
               for (int j = 0; j < IC0; j++)  {
                 for (int i = 0; i < OC0; i++)
                 { 
 		 std::cout << "pe_weight_in " << i << " " << j << " " << pe_weight_in[i][j] << " " << std::endl; } }
-}*/
-                 /*std::cout << "pe_ifmap_in " << pe_ifmap_in[0][i] << " "; 
+} */
+/*
+                 std::cout << "pe_ifmap_in " << pe_ifmap_in[0][i] << " "; 
                  std::cout << "pe_ifmap_in " << pe_ifmap_in[1][i] << " ";
                  std::cout << "pe_psum_in " << pe_psum_in[0][i] << " "; 
                  std::cout << "pe_ifmap_out " << pe_ifmap_out[0][i] << " "; 
@@ -233,9 +239,14 @@ public:
                 for (int i = 0; i < IC0; i++) {
                   for (int j = 0; j < OC0; j++) {
                     (pe_array[i][j]).run(pe_ifmap_in[i][j], pe_psum_in[i][j], pe_weight_in[i][j], pe_ifmap_out[i][j], pe_psum_out[i][j]);
-                  if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
-                  //std::cout << "input " << pe_ifmap_in[i][j] << " weight " << pe_weight_in[i][j] << " output " << pe_psum_out[i][j] << " i " << i << " j " << j << std::endl;
-                  }
+/*                  if (in_loopindices.fx_idx == 0 && in_loopindices.fy_idx == 0 && in_loopindices.ic1_idx == 0) {
+                  
+std::cout<<"step "<<step<<std::endl;
+
+std::cout<<"pe psum in "<<pe_psum_in[i][j]<<std::endl;
+
+std::cout << "input " << pe_ifmap_in[i][j] << " weight " << pe_weight_in[i][j] << " output " << pe_psum_out[i][j] << " i " << i << " j " << j << std::endl;
+                  }*/
                   }
                 }
              
