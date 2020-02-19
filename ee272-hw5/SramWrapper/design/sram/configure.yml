@@ -1,0 +1,31 @@
+#=========================================================================
+# OpenRAM SRAM Compiler 
+#=========================================================================
+# Author : Kartik Prabhu
+# Date   : February 15, 2020
+#
+
+name: sram
+
+#-------------------------------------------------------------------------
+# Outputs
+#-------------------------------------------------------------------------
+
+outputs:
+  - sram.sp
+  - sram.v
+  - sram.lib
+  - sram.lef
+  - sram_TT_3p3V_25C.lib
+  - sram_TT_3p3V_25C.db
+  - sram.gds
+
+#-------------------------------------------------------------------------
+# Commands
+#-------------------------------------------------------------------------
+
+commands:
+  # Run OpenRAM first to create the outputs
+  - python3 $OPENRAM_HOME/openram.py sramconfig.py
+  # Use Synopsys Library Compiler to create a db file
+  - ./convert_lib_to_db.sh outputs
