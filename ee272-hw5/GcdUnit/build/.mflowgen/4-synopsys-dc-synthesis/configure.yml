@@ -1,0 +1,22 @@
+commands:
+- bash run.sh
+debug:
+- export DC_EXIT_AFTER_SETUP=1
+- ln -sf results/*.mapped.ddc debug.ddc
+- design_vision-xg -topographical -x "source dc.tcl; read_ddc debug.ddc"
+inputs:
+- adk
+- design.v
+- constraints.tcl
+- run.saif
+name: synopsys-dc-synthesis
+outputs:
+- design.v
+- design.sdc
+- design.namemap
+parameters:
+  clock_period: 2.0
+  design_name: GcdUnit
+  flatten_effort: 0
+  nthreads: 16
+  topographical: true

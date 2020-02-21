@@ -1,0 +1,23 @@
+#=========================================================================
+# mflowgen-run.sh
+#=========================================================================
+# Generator : /afs/ir.stanford.edu/class/ee272/mflowgen/mflowgen/BuildOrchestrator.py
+
+# Pre
+
+rm -f .time_end
+date +%Y-%m%d-%H%M-%S > .time_start
+export adk=freepdk-45nm
+export adk_view=view-standard
+
+# Commands
+
+(
+mkdir -p outputs && cd outputs
+ln -sf ../view-standard adk
+)
+
+# Post
+
+date +%Y-%m%d-%H%M-%S > .time_end
+

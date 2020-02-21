@@ -1,0 +1,15 @@
+commands:
+- echo "Design name      -- GcdUnit"
+- echo "Clock period     -- 2.0"
+- echo "ADK              -- freepdk-45nm"
+- echo "ADK view         -- view-standard"
+- echo
+- echo "Constructed from -- /afs/ir.stanford.edu/users/s/k/skavya/ee272/ee272-hw5/GcdUnit/design/construct.py"
+- echo
+name: info
+parameters:
+  adk: freepdk-45nm
+  adk_view: view-standard
+  clock_period: 2.0
+  construct_path: /afs/ir.stanford.edu/users/s/k/skavya/ee272/ee272-hw5/GcdUnit/design/construct.py
+  design_name: GcdUnit

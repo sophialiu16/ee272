@@ -1,0 +1,5 @@
+commands:
+- 'true'
+name: rtl
+outputs:
+- design.v
