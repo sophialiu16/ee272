@@ -4,12 +4,12 @@ commands:
 - echo "ADK              -- freepdk-45nm"
 - echo "ADK view         -- view-standard"
 - echo
-- echo "Constructed from -- /afs/ir.stanford.edu/users/s/k/skavya/ee272/ee272-hw5/GcdUnit/design/construct.py"
+- echo "Constructed from -- /home/users/skavya/ee272/ee272-hw5/GcdUnit/design/construct.py"
 - echo
 name: info
 parameters:
   adk: freepdk-45nm
   adk_view: view-standard
   clock_period: 2.0
-  construct_path: /afs/ir.stanford.edu/users/s/k/skavya/ee272/ee272-hw5/GcdUnit/design/construct.py
+  construct_path: /home/users/skavya/ee272/ee272-hw5/GcdUnit/design/construct.py
   design_name: GcdUnit

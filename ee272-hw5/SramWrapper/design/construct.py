@@ -76,7 +76,7 @@ def construct():
 
   # Dynamically add edges
 
-  dc.extend_inputs(['sram_TT_3p3V_25C.db'])
+  dc.extend_inputs(['sram.db'])
   g.connect_by_name(sram, dc)
 
   #-----------------------------------------------------------------------

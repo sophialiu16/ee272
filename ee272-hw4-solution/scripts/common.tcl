@@ -20,7 +20,7 @@ flow package option set /SCVerify/USE_MSIM false
 flow package require /NCSim
 
 solution options set Flows/NCSim/NC_ROOT /cad/cadence/INCISIVE15.20.022/
-
+solution options set ComponentLibs/SearchPath /home/users/skavya/ee272/ee272-hw5/temp -append
 
 # Delete solution if already exists
 catch {

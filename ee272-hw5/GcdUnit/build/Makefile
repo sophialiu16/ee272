@@ -65,7 +65,7 @@ default: freepdk-45nm info constraints rtl synopsys-dc-synthesis
 # build dir
 
 0-freepdk-45nm/.stamp:
-	$(call cpdir-and-parameterize,0-freepdk-45nm,../../../../../../../../../ir/class/ee272/mflowgen/adks/freepdk-45nm,0-freepdk-45nm/.stamp)
+	$(call cpdir-and-parameterize,0-freepdk-45nm,../../../../../../../afs/ir/class/ee272/mflowgen/adks/freepdk-45nm,0-freepdk-45nm/.stamp)
 
 # collect inputs
 
@@ -103,7 +103,7 @@ freepdk-45nm: 0-freepdk-45nm/outputs/.execstamp.adk 0-freepdk-45nm/outputs/.stam
 # build dir
 
 1-info/.stamp:
-	$(call cpdir-and-parameterize,1-info,../../../../../../../../../ir/class/ee272/mflowgen/steps/info,1-info/.stamp)
+	$(call cpdir-and-parameterize,1-info,../../../../../../../afs/ir/class/ee272/mflowgen/steps/info,1-info/.stamp)
 
 # collect inputs
 
@@ -216,7 +216,7 @@ rtl: 3-rtl/outputs/.execstamp.design.v 3-rtl/outputs/.stamp.design.v
 4-synopsys-dc-synthesis/.stamp: 3-rtl/outputs/.execstamp.design.v 3-rtl/outputs/.stamp.design.v
 4-synopsys-dc-synthesis/.stamp: 0-freepdk-45nm/outputs/.execstamp.adk 0-freepdk-45nm/outputs/.stamp.adk
 4-synopsys-dc-synthesis/.stamp:
-	$(call cpdir-and-parameterize,4-synopsys-dc-synthesis,../../../../../../../../../ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis,4-synopsys-dc-synthesis/.stamp)
+	$(call cpdir-and-parameterize,4-synopsys-dc-synthesis,../../../../../../../afs/ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis,4-synopsys-dc-synthesis/.stamp)
 
 # collect inputs
 
@@ -319,12 +319,12 @@ clean-4:
 .PHONY: diff-0
 
 diff-0:
-	@echo && diff -r -u --minimal --exclude={configure.yml,.time_end,.time_start,mflowgen-run.*,mflowgen-debug.*,.stamp,inputs,outputs} ../../../../../../../../../ir/class/ee272/mflowgen/adks/freepdk-45nm 0-freepdk-45nm | grep --color=always -e '^-.*' -e '$$' -e 'Only in ../../../../../../../../../ir/class/ee272/mflowgen/adks/freepdk-45nm.*' | GREP_COLOR='01;32' grep --color=always -e '^+.*' -e '$$' -e 'Only in 0-freepdk-45nm.*' && echo || true
+	@echo && diff -r -u --minimal --exclude={configure.yml,.time_end,.time_start,mflowgen-run.*,mflowgen-debug.*,.stamp,inputs,outputs} ../../../../../../../afs/ir/class/ee272/mflowgen/adks/freepdk-45nm 0-freepdk-45nm | grep --color=always -e '^-.*' -e '$$' -e 'Only in ../../../../../../../afs/ir/class/ee272/mflowgen/adks/freepdk-45nm.*' | GREP_COLOR='01;32' grep --color=always -e '^+.*' -e '$$' -e 'Only in 0-freepdk-45nm.*' && echo || true
 
 .PHONY: diff-1
 
 diff-1:
-	@echo && diff -r -u --minimal --exclude={configure.yml,.time_end,.time_start,mflowgen-run.*,mflowgen-debug.*,.stamp,inputs,outputs} ../../../../../../../../../ir/class/ee272/mflowgen/steps/info 1-info | grep --color=always -e '^-.*' -e '$$' -e 'Only in ../../../../../../../../../ir/class/ee272/mflowgen/steps/info.*' | GREP_COLOR='01;32' grep --color=always -e '^+.*' -e '$$' -e 'Only in 1-info.*' && echo || true
+	@echo && diff -r -u --minimal --exclude={configure.yml,.time_end,.time_start,mflowgen-run.*,mflowgen-debug.*,.stamp,inputs,outputs} ../../../../../../../afs/ir/class/ee272/mflowgen/steps/info 1-info | grep --color=always -e '^-.*' -e '$$' -e 'Only in ../../../../../../../afs/ir/class/ee272/mflowgen/steps/info.*' | GREP_COLOR='01;32' grep --color=always -e '^+.*' -e '$$' -e 'Only in 1-info.*' && echo || true
 
 .PHONY: diff-2
 
@@ -339,7 +339,7 @@ diff-3:
 .PHONY: diff-4
 
 diff-4:
-	@echo && diff -r -u --minimal --exclude={configure.yml,.time_end,.time_start,mflowgen-run.*,mflowgen-debug.*,.stamp,inputs,outputs} ../../../../../../../../../ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis 4-synopsys-dc-synthesis | grep --color=always -e '^-.*' -e '$$' -e 'Only in ../../../../../../../../../ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis.*' | GREP_COLOR='01;32' grep --color=always -e '^+.*' -e '$$' -e 'Only in 4-synopsys-dc-synthesis.*' && echo || true
+	@echo && diff -r -u --minimal --exclude={configure.yml,.time_end,.time_start,mflowgen-run.*,mflowgen-debug.*,.stamp,inputs,outputs} ../../../../../../../afs/ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis 4-synopsys-dc-synthesis | grep --color=always -e '^-.*' -e '$$' -e 'Only in ../../../../../../../afs/ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis.*' | GREP_COLOR='01;32' grep --color=always -e '^+.*' -e '$$' -e 'Only in 4-synopsys-dc-synthesis.*' && echo || true
 
 # Runtimes
 
