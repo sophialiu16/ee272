@@ -1,0 +1,4 @@
+build/*
+build.ccs
+test/*
+test.ccs
