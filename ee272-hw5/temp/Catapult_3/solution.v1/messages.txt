@@ -1,0 +1,31 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+solution file add ../../ee272-hw4-solution/src/Conv.cpp -exclude true
+Memory generation complete.  Files moved to output directory '/home/users/skavya/ee272/ee272-hw5/temp'.
+/INPUTFILES/1
+Moving session transcript to file "/home/users/skavya/ee272/ee272-hw5/temp/catapult.log"
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Front End called with arguments: -- /home/users/skavya/ee272/ee272-hw4-solution/src/Conv.cpp (CIN-69)
+# Error: Compilation aborted (CIN-5)
+# Error: cannot open source file "gnu/stubs-32.h" (CRD-1696)
+flow run /MemGen/MemoryGenerator_BuildLibWithTempDir {RTLTOOL DesignCompiler VENDOR * TECHNOLOGY * OUTPUT_DIR /home/users/skavya/ee272/ee272-hw5/temp MODULE sram_32_128_freepdk45 LIBRARY sram_32_128_freepdk45_TT_1p1V_25C_lib WIDTH 32.0 DEPTH 128.0 AREA 14579.75895 RDWRRESOLUTION UNKNOWN READLATENCY 1 WRITELATENCY 1 TIMEUNIT 1ns READDELAY 0.0 WRITEDELAY 0.1 INPUTDELAY 0.01 INITDELAY 1 VHDLARRAYPATH {} VERILOGARRAYPATH {} FILES {{FILENAME /home/users/skavya/ee272/ee272-hw5/temp/sram_32_128_freepdk45.v FILETYPE Verilog MODELTYPE generic PARSE 0 PATHTYPE copy STATICFILE 1 VHDL_LIB_MAPS work} {FILENAME /home/users/skavya/ee272/ee272-hw5/temp/sram_32_128_freepdk45_TT_1p1V_25C.lib FILETYPE Liberty MODELTYPE synthesis PARSE 1 PATHTYPE copy STATICFILE 1 VHDL_LIB_MAPS work}} PARAMETERS {} PORTS {{NAME port_0 MODE ReadWrite}} PINMAPS {{PHYPIN din0 LOGPIN DATA_IN DIRECTION in WIDTH 32.0 PHASE {} DEFAULT {} PORTS port_0} {PHYPIN dout0 LOGPIN DATA_OUT DIRECTION out WIDTH 32.0 PHASE {} DEFAULT {} PORTS port_0} {PHYPIN addr0 LOGPIN ADDRESS DIRECTION in WIDTH 7.0 PHASE {} DEFAULT {} PORTS port_0} {PHYPIN csb0 LOGPIN CHIP_SELECT DIRECTION in WIDTH 1.0 PHASE 0 DEFAULT {} PORTS {}} {PHYPIN web0 LOGPIN WRITE_ENABLE DIRECTION in WIDTH 1.0 PHASE 0 DEFAULT {} PORTS port_0} {PHYPIN clk0 LOGPIN CLOCK DIRECTION in WIDTH 1.0 PHASE 1 DEFAULT {} PORTS port_0}}} /home/users/skavya/ee272/ee272-hw5/temp/memgen_sram_32_128_freepdk45_TT_1p1V_25C_lib_DesignCompiler_1582313076
+Loading technology library from Liberty file '/home/users/skavya/ee272/ee272-hw5/temp/sram_32_128_freepdk45_TT_1p1V_25C.lib'... (LIB-138)
+10.0.0
+flow package require MemGen
+# Warning: MemoryGenerator_Seed MAKING BLANK LIB
+# Warning: MemoryGenerator_Seed FILES GIVEN
+# Info: Writing systemC model of 'sram_32_128_freepdk45' to '/home/users/skavya/ee272/ee272-hw5/temp/memgen_sram_32_128_freepdk45_TT_1p1V_25C_lib_DesignCompiler_1582313076/sram_32_128_freepdk45.h' (MGEN-14)
+# Info: Generating SystemC models
+Component library written to '/home/users/skavya/ee272/ee272-hw5/temp/memgen_sram_32_128_freepdk45_TT_1p1V_25C_lib_DesignCompiler_1582313076/sram_32_128_freepdk45_TT_1p1V_25C_lib.lib' (LIB-52)
+Writing component library 'sram_32_128_freepdk45_TT_1p1V_25C_lib' (license: LIBRARY_BUILDER=catapultlbcustom)... (LIB-51)
+# Warning: MemoryGenerator_Seed MAKING BLANK LIB
+# Warning: MemoryGenerator_Seed FILES GIVEN
+Copying file sram_32_128_freepdk45_TT_1p1V_25C.lib...
+Copying file sram_32_128_freepdk45.v...
+go compile
+solution file set /home/users/skavya/ee272/ee272-hw4-solution/src/Conv.cpp -exclude false

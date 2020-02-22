@@ -5,7 +5,7 @@ create_clock -name ${clockname} \
 	     -period ${dc_clock_period} \
 	     [get_ports $clock_net}]
 
-set_load -pin_load $ADK_TYPICAL_ON_CHIP_LOAD [all_output]
+set_load -pin_load $ADK_TYPICAL_ON_CHIP_LOAD [all_outputs]
 
 set_driving_cell -no_design_rule \
 	-lib_cell $ADK_DRIVING_CELL [all_inputs]
