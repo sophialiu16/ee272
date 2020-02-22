@@ -1,4 +1,4 @@
-ta word size
+# Data word size
 word_size = 32
 # Number of words in the memory
 num_words = 128
