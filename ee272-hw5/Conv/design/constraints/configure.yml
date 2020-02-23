@@ -19,5 +19,5 @@ outputs:
 #-------------------------------------------------------------------------
 
 parameters:
-  clock_period: 100000.0
+  clock_period: 100
   design_name: undefined

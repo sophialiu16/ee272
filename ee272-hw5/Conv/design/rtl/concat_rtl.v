@@ -27000,7 +27000,7 @@ endmodule
 // ------------------------------------------------------------------
 //  Design Unit:    unreg_hier
 // ------------------------------------------------------------------
-
+/*
 
 module unreg_hier (
   in_0, out_0
@@ -27013,7 +27013,7 @@ module unreg_hier (
   // Interconnect Declarations for Component Instantiations 
   assign out_0 = in_0;
 endmodule
-
+*/
 // ------------------------------------------------------------------
 //  Design Unit:    InputDoubleBuffer_512_16_16_run_run_run_fsm
 //  FSM Module
