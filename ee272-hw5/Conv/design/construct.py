@@ -70,6 +70,11 @@ def construct():
   g.connect_by_name( rtl,         dc           )
   g.connect_by_name( adk,         dc           )
   g.connect_by_name( constraints, dc           )
+
+
+  # Dynamically add edges
+  #dc.extend_inputs(['sram.db'])
+  dc.extend_inputs(sram.all_outputs())
   g.connect_by_name( sram,        dc           )
 
   #-----------------------------------------------------------------------
