@@ -26017,6 +26017,7 @@ module unreg_hier (
 
   // Interconnect Declarations for Component Instantiations 
   assign out_0 = in_0;
+<<<<<<< HEAD
 endmodule
 */
 // ------------------------------------------------------------------
