@@ -20,7 +20,7 @@ flow package option set /SCVerify/USE_MSIM false
 flow package require /NCSim
 
 solution options set Flows/NCSim/NC_ROOT /cad/cadence/INCISIVE15.20.022/
-solution options set ComponentLibs/SearchPath /home/users/skavya/ee272/ee272-hw5/temp -append
+solution options set ComponentLibs/SearchPath /home/users/sophliu/ee272/ee272-hw5/temp -append
 
 # Delete solution if already exists
 catch {
@@ -28,7 +28,7 @@ catch {
     solution remove -solution $existing_solution -delete
 }
 
-set clk_period 5.0
+set clk_period 100.0
 set clocks "clk \"-CLOCK_PERIOD $clk_period -CLOCK_EDGE rising -CLOCK_HIGH_TIME [expr $clk_period/2] -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND async -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high\" "
 
 go new
