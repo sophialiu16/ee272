@@ -1,0 +1,50 @@
+Warning: Design 'Conv' has '5' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : clock timing
+        -type summary
+Design : Conv
+Version: L-2016.03-SP5-5
+Date   : Sun Feb 23 22:04:00 2020
+****************************************
+
+  Clock: ideal_clock
+----------------------------------------------------------------------------
+  Maximum setup launch latency:
+      inputDoubleBufferParams_cns_pipe/FIFO/FIFO_REG_HS_INIT_REG/z_reg_0_/CK
+                                                             0.00      wr-+
+
+  Minimum setup capture latency:
+      inputDoubleBufferParams_cns_pipe/FIFO/FIFO_REG_GEN_REGS_2__STATREG/z_reg_0_/CK
+                                                             0.00      wr-+
+
+  Minimum hold launch latency:
+      inputDoubleBufferParams_cns_pipe/FIFO/FIFO_REG_HS_INIT_REG/z_reg_0_/CK
+                                                             0.00      br-+
+
+  Maximum hold capture latency:
+      inputDoubleBufferParams_cns_pipe/FIFO/FIFO_REG_GEN_REGS_2__STATREG/z_reg_0_/CK
+                                                             0.00      br-+
+
+  Maximum active transition:
+      inputDoubleBufferParams_cns_pipe/FIFO/FIFO_REG_HS_INIT_REG/z_reg_0_/CK
+                                                             0.00      wr-+
+
+  Minimum active transition:
+      inputDoubleBufferParams_cns_pipe/FIFO/FIFO_REG_HS_INIT_REG/z_reg_0_/CK
+                                                             0.00      wr-+
+
+  Maximum setup skew:
+      inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/InputDoubleBDjtfoem_cns_bctl_inst/mem_cns_ppidx_1_reg/CK
+                                                                       wr-+
+      inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/InputDoubleBDjtfoem_cns_bctl_inst/mem_cns_ppidx_1_reg/CK
+                                                             0.00      wr-+
+
+  Maximum hold skew:
+      inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/InputDoubleBDjtfoem_cns_bctl_inst/mem_cns_ppidx_1_reg/CK
+                                                                       br-+
+      inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/InputDoubleBDjtfoem_cns_bctl_inst/mem_cns_ppidx_1_reg/CK
+                                                             0.00      br-+
+----------------------------------------------------------------------------
+
+1

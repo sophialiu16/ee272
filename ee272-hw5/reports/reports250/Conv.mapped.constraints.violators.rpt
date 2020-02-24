@@ -1,0 +1,4669 @@
+Warning: Design 'Conv' has '5' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : Conv
+Version: L-2016.03-SP5-5
+Date   : Sun Feb 23 22:04:07 2020
+****************************************
+
+
+    Net: inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/n272
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/n12905
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/paramsIn_crt_sva_127_32_19
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/paramsIn_crt_sva_127_32_21
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/paramsIn_crt_sva_127_32_23
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/paramsIn_crt_sva_127_32_25
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/paramsIn_crt_sva_127_32_27
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/reg_paramsIn_crt_sva_127_0_ftd[45]
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_addr[5]
+
+    max_capacitance       24.60
+  - Capacitance           27.51
+  ------------------------------
+    Slack                 -2.91  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_addr[3]
+
+    max_capacitance       24.60
+  - Capacitance           27.43
+  ------------------------------
+    Slack                 -2.83  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_addr[0]
+
+    max_capacitance       24.60
+  - Capacitance           27.28
+  ------------------------------
+    Slack                 -2.68  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_addr[1]
+
+    max_capacitance       24.60
+  - Capacitance           27.11
+  ------------------------------
+    Slack                 -2.51  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_addr[2]
+
+    max_capacitance       24.60
+  - Capacitance           26.93
+  ------------------------------
+    Slack                 -2.32  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_addr[4]
+
+    max_capacitance       24.60
+  - Capacitance           26.92
+  ------------------------------
+    Slack                 -2.31  (VIOLATED)
+
+
+    Net: weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferWriter/WeightDoubleBufferWriter_384_16_16_run_inst/n146
+
+    max_capacitance       31.74
+  - Capacitance           32.68
+  ------------------------------
+    Slack                 -0.95  (VIOLATED)
+
+
+    Net: outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/n216
+
+    max_capacitance       26.70
+  - Capacitance           27.47
+  ------------------------------
+    Slack                 -0.76  (VIOLATED)
+
+
+    Net: outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/n214
+
+    max_capacitance       26.70
+  - Capacitance           27.36
+  ------------------------------
+    Slack                 -0.66  (VIOLATED)
+
+
+    Net: outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/n200
+
+    max_capacitance       26.70
+  - Capacitance           27.29
+  ------------------------------
+    Slack                 -0.59  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/n5579
+
+    max_capacitance       46.31
+  - Capacitance           46.75
+  ------------------------------
+    Slack                 -0.44  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/n7211
+
+    max_capacitance       53.41
+  - Capacitance           53.76
+  ------------------------------
+    Slack                 -0.36  (VIOLATED)
+
+
+    Net: weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferWriter/WeightDoubleBufferWriter_384_16_16_run_inst/n183
+
+    max_capacitance       31.74
+  - Capacitance           32.03
+  ------------------------------
+    Slack                 -0.29  (VIOLATED)
+
+
+    Design: Conv
+
+    max_leakage_power          0.00
+  - Current Leakage Power  3228147.00
+  ----------------------------------
+    Slack                  -3228147.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            5.00
+  ------------------------------
+    Violation             -5.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_0_i_1_accumulation_buffer_rsc_0_0_wait_dp_inst/accumulation_buffer_rsc_0_0_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_1_i_1_accumulation_buffer_rsc_0_1_wait_dp_inst/accumulation_buffer_rsc_0_1_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_2_i_1_accumulation_buffer_rsc_0_2_wait_dp_inst/accumulation_buffer_rsc_0_2_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_3_i_1_accumulation_buffer_rsc_0_3_wait_dp_inst/accumulation_buffer_rsc_0_3_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_4_i_1_accumulation_buffer_rsc_0_4_wait_dp_inst/accumulation_buffer_rsc_0_4_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_5_i_1_accumulation_buffer_rsc_0_5_wait_dp_inst/accumulation_buffer_rsc_0_5_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_6_i_1_accumulation_buffer_rsc_0_6_wait_dp_inst/accumulation_buffer_rsc_0_6_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_7_i_1_accumulation_buffer_rsc_0_7_wait_dp_inst/accumulation_buffer_rsc_0_7_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_8_i_1_accumulation_buffer_rsc_0_8_wait_dp_inst/accumulation_buffer_rsc_0_8_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_9_i_1_accumulation_buffer_rsc_0_9_wait_dp_inst/accumulation_buffer_rsc_0_9_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_10_i_1_accumulation_buffer_rsc_0_10_wait_dp_inst/accumulation_buffer_rsc_0_10_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_11_i_1_accumulation_buffer_rsc_0_11_wait_dp_inst/accumulation_buffer_rsc_0_11_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_12_i_1_accumulation_buffer_rsc_0_12_wait_dp_inst/accumulation_buffer_rsc_0_12_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_13_i_1_accumulation_buffer_rsc_0_13_wait_dp_inst/accumulation_buffer_rsc_0_13_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_14_i_1_accumulation_buffer_rsc_0_14_wait_dp_inst/accumulation_buffer_rsc_0_14_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d_run[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d_run[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d_run[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d_run[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d_run[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_accumulation_buffer_rsc_0_15_i_1_accumulation_buffer_rsc_0_15_wait_dp_inst/accumulation_buffer_rsc_0_15_i_addr_d_run[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_0_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_1_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_2_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_3_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_4_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_5_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_6_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_7_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_8_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_9_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_10_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_11_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_12_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_13_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_14_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/addr_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[0]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[1]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[2]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[3]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[4]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[5]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[6]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[7]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[8]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[9]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[10]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[11]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[12]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[13]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[14]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_0_15_i/din_d[15]
+
+    multiport_net          0.00
+  - actual cost            1.00
+  ------------------------------
+    Violation             -1.00  (VIOLATED)
+
+
+1
