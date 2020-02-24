@@ -32,7 +32,7 @@ public:
     SystolicArrayCore() {}
 
 #pragma hls_design interface
-#pragma hls_pipeline_init_interval 1
+//#pragma hls_pipeline_init_interval 1
     void run(
         ac_channel<PackedInt<INPUT_PRECISION, IC0> > &input, 
         ac_channel<PackedInt<WEIGHT_PRECISION, OC0> > &weight, 
@@ -66,7 +66,7 @@ public:
             // the ramp-up time + number of pixels + flush time
             // -------------------------------
             #pragma hls_unroll no
-            #pragma hls_pipeline_init_interval 1
+  //          #pragma hls_pipeline_init_interval 1
             LABEL(step) for (uint_16 step = 0; step < OC0+IC0+(params.OX0*params.OY0)-1; ++step) { // loop inside each image tile
             // -------------------------------
             // Your code ends here 
