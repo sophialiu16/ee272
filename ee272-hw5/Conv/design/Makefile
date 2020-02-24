@@ -284,6 +284,7 @@ rtl: 4-rtl/outputs/.stamp.design.v 4-rtl/outputs/.execstamp.design.v
 5-synopsys-dc-synthesis/.stamp: 3-constraints/outputs/.stamp.constraints.tcl 3-constraints/outputs/.execstamp.constraints.tcl
 5-synopsys-dc-synthesis/.stamp: 1-freepdk-45nm/outputs/.stamp.adk 1-freepdk-45nm/outputs/.execstamp.adk
 5-synopsys-dc-synthesis/.stamp: 4-rtl/outputs/.stamp.design.v 4-rtl/outputs/.execstamp.design.v
+5-synopsys-dc-synthesis/.stamp: 2-sram/outputs/.stamp.sram.sp 2-sram/outputs/.stamp.sram_TT_3p3V_25C.lib 2-sram/outputs/.stamp.sram.lef 2-sram/outputs/.execstamp.sram_TT_3p3V_25C.lib 2-sram/outputs/.execstamp.sram.gds 2-sram/outputs/.stamp.sram.gds 2-sram/outputs/.execstamp.sram.lib 2-sram/outputs/.execstamp.sram.lef 2-sram/outputs/.stamp.sram.v 2-sram/outputs/.stamp.sram.lib 2-sram/outputs/.execstamp.sram.sp 2-sram/outputs/.execstamp.sram.v 2-sram/outputs/.stamp.sram_TT_3p3V_25C.db 2-sram/outputs/.execstamp.sram_TT_3p3V_25C.db
 5-synopsys-dc-synthesis/.stamp:
 	$(call cpdir-and-parameterize,5-synopsys-dc-synthesis,../../../../../../../afs/ir/class/ee272/mflowgen/steps/synopsys-dc-synthesis,5-synopsys-dc-synthesis/.stamp)
 
@@ -298,13 +299,34 @@ rtl: 4-rtl/outputs/.stamp.design.v 4-rtl/outputs/.execstamp.design.v
 5-synopsys-dc-synthesis/inputs/.stamp.constraints.tcl: 5-synopsys-dc-synthesis/.stamp 3-constraints/outputs/.stamp.constraints.tcl
 	$(call symlink,5-synopsys-dc-synthesis/inputs,constraints.tcl,../../3-constraints/outputs/constraints.tcl,.stamp.constraints.tcl)
 
+5-synopsys-dc-synthesis/inputs/.stamp.sram.v: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram.v
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram.v,../../2-sram/outputs/sram.v,.stamp.sram.v)
+
+5-synopsys-dc-synthesis/inputs/.stamp.sram_TT_3p3V_25C.lib: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram_TT_3p3V_25C.lib
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram_TT_3p3V_25C.lib,../../2-sram/outputs/sram_TT_3p3V_25C.lib,.stamp.sram_TT_3p3V_25C.lib)
+
+5-synopsys-dc-synthesis/inputs/.stamp.sram.gds: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram.gds
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram.gds,../../2-sram/outputs/sram.gds,.stamp.sram.gds)
+
+5-synopsys-dc-synthesis/inputs/.stamp.sram.lef: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram.lef
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram.lef,../../2-sram/outputs/sram.lef,.stamp.sram.lef)
+
+5-synopsys-dc-synthesis/inputs/.stamp.sram.sp: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram.sp
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram.sp,../../2-sram/outputs/sram.sp,.stamp.sram.sp)
+
+5-synopsys-dc-synthesis/inputs/.stamp.sram_TT_3p3V_25C.db: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram_TT_3p3V_25C.db
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram_TT_3p3V_25C.db,../../2-sram/outputs/sram_TT_3p3V_25C.db,.stamp.sram_TT_3p3V_25C.db)
+
+5-synopsys-dc-synthesis/inputs/.stamp.sram.lib: 5-synopsys-dc-synthesis/.stamp 2-sram/outputs/.stamp.sram.lib
+	$(call symlink,5-synopsys-dc-synthesis/inputs,sram.lib,../../2-sram/outputs/sram.lib,.stamp.sram.lib)
+
 # execute
 
 define 5_synopsys_dc_synthesis_commands_rule
 	mkdir -p 5-synopsys-dc-synthesis/outputs && python /afs/ir/class/ee272/mflowgen/utils/letters.py -c -t synopsys-dc-synthesis && cp -f .mflowgen/5-synopsys-dc-synthesis/mflowgen-run.sh 5-synopsys-dc-synthesis && cp -f .mflowgen/5-synopsys-dc-synthesis/mflowgen-debug.sh 5-synopsys-dc-synthesis 2> /dev/null || true && cd 5-synopsys-dc-synthesis && sh mflowgen-run.sh 2>&1 | tee mflowgen-run.log && cd .. && touch -c 5-synopsys-dc-synthesis/outputs/*
 endef
 
-5-synopsys-dc-synthesis/outputs/.execstamp.design.v: 5-synopsys-dc-synthesis/inputs/.stamp.constraints.tcl 5-synopsys-dc-synthesis/inputs/.stamp.adk 5-synopsys-dc-synthesis/inputs/.stamp.design.v 5-synopsys-dc-synthesis/.stamp
+5-synopsys-dc-synthesis/outputs/.execstamp.design.v: 5-synopsys-dc-synthesis/inputs/.stamp.sram.sp 5-synopsys-dc-synthesis/inputs/.stamp.sram_TT_3p3V_25C.lib 5-synopsys-dc-synthesis/inputs/.stamp.sram.lef 5-synopsys-dc-synthesis/inputs/.stamp.adk 5-synopsys-dc-synthesis/inputs/.stamp.design.v 5-synopsys-dc-synthesis/inputs/.stamp.sram.lib 5-synopsys-dc-synthesis/inputs/.stamp.sram.gds 5-synopsys-dc-synthesis/inputs/.stamp.sram.v 5-synopsys-dc-synthesis/.stamp 5-synopsys-dc-synthesis/inputs/.stamp.sram_TT_3p3V_25C.db 5-synopsys-dc-synthesis/inputs/.stamp.constraints.tcl
 	$(call 5_synopsys_dc_synthesis_commands_rule)
 	touch $@
 
