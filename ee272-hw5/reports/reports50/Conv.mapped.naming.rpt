@@ -1,0 +1,8 @@
+Warning: Design 'Conv' has '5' unresolved references. For more detailed information, use the "link" command. (UID-341)
+
+Design          Type    Object                  New Name
+--------------------------------------------------------------------------------
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+Conv            net     *Logic1*                n_Logic1_
+Conv            net     *Logic0*                n_Logic0_
+1
