@@ -1,0 +1,182 @@
+Warning: Duplicate library /home/users/sophliu/ee272/ee272-hw5/Conv/build/5-synopsys-dc-synthesis/inputs/adk/stdcells.db specified.
+
+#BEGIN_XCHECK_LIBRARY
+
+Logic Library #1:
+    Library name              NangateOpenCellLibrary
+    File name                 /home/users/sophliu/ee272/ee272-hw5/Conv/build/5-synopsys-dc-synthesis/inputs/adk/stdcells.db
+    Library type              pg_pin based db
+    Library Version           revision 1.0
+    Tool Created              M-2016.12-SP1
+    Data Created              Thu 10 Feb 2011, 18:11:20
+    Time unit                 1ns
+    Capacitance unit          1ff
+    Leakage power unit        1nW
+    Current unit              1mA
+check_library options         
+Version                       M-2017.06-SP3
+Check date and time           Sun Feb 23 21:13:20 2020
+
+
+#BEGIN_LIBSCREEN_UPF
+
+Library#1 (NangateOpenCellLibrary):
+PG checking passed.
+No power management cells in library#1.
+
+#END_LIBSCREEN_UPF
+
+#BEGIN_XCHECK_LOGICCELLS
+
+
+#END_XCHECK_LOGICCELLS
+
+#BEGIN_XCHECK_LOGICPINS
+
+
+
+#END_XCHECK_LOGICPINS
+
+#BEGIN_XCHECK_LOGICPGPINS
+
+Number of cells missing pg_pins in library 1:   0 (out of 134)
+
+#END_XCHECK_LOGICPGPINS
+
+#BEGIN_XCHECK_ARCS
+
+
+#END_XCHECK_ARCS
+
+
+#END_XCHECK_LIBRARY
+
+Checking library or object sram_TT_3p3V_25C_lib ...
+
+#BEGIN_XCHECK_LIBRARY
+
+Logic Library #1:
+    Library name              sram_TT_3p3V_25C_lib
+    File name                 /home/users/sophliu/ee272/ee272-hw5/Conv/build/5-synopsys-dc-synthesis/inputs/sram_TT_3p3V_25C.db
+    Library type              non-pg_pin based db
+    Library Version           Not Specified
+    Tool Created              M-2017.06-SP3
+    Data Created              Not Specified
+    Time unit                 1ns
+    Capacitance unit          1000ff
+    Leakage power unit        1mW
+    Current unit              1mA
+check_library options         
+Version                       M-2017.06-SP3
+Check date and time           Sun Feb 23 21:13:21 2020
+
+
+#BEGIN_LIBSCREEN_UPF
+
+Library#1 (sram_TT_3p3V_25C_lib):
+No power management cells in library#1.
+
+#END_LIBSCREEN_UPF
+
+
+Information: List of cell classification (LIBCHK-312)
+------------------------------------------------------------------------------
+Library name                sram_TT_3p3V_25C_lib(lib#1)
+------------------------------------------------------------------------------
+Total number                  1
+Inverter                      0
+Buffer                        0
+Level shifter                 0
+Differential level shifter    0
+Isolation cell                0
+Clock Isolation cell          0
+Retention cell                0
+Switch cell                   0
+Always on cell                0
+------------------------------------------------------------------------------
+#BEGIN_XCHECK_LOGICCELLS
+
+
+#END_XCHECK_LOGICCELLS
+
+#BEGIN_XCHECK_LOGICPINS
+
+
+
+#END_XCHECK_LOGICPINS
+
+#BEGIN_XCHECK_LOGICPGPINS
+
+Library 1 is non-pg_pin library.
+
+#END_XCHECK_LOGICPGPINS
+
+#BEGIN_XCHECK_ARCS
+
+
+#END_XCHECK_ARCS
+
+
+#END_XCHECK_LIBRARY
+
+Memory usage for this session 18 Mbytes.
+CPU usage for this session 0 seconds ( 0.00 hours ).
+
+Thank you...
+Warning: Duplicate library /home/users/sophliu/ee272/ee272-hw5/Conv/build/5-synopsys-dc-synthesis/inputs/adk/stdcells.db specified.
+
+#BEGIN_XCHECK_LIBRARY
+
+Logic Library:    NangateOpenCellLibrary 
+                  sram_TT_3p3V_25C_lib 
+Physical Library: /home/users/sophliu/ee272/ee272-hw5/Conv/build/1-freepdk-45nm/view-standard/stdcells.mwlib 
+check_library options: 	
+Version: 				L-2016.03-SP5-5
+Check date and time:	Sun Feb 23 21:13:22 2020
+
+          List of logic library and file names
+------------------------------------------------------------------------------
+Logic library name           Logic library file name
+------------------------------------------------------------------------------
+NangateOpenCellLibrary       /home/users/sophliu/ee272/ee272-hw5/Conv/build/5-synopsys-dc-synthesis/inputs/adk/stdcells.db
+sram_TT_3p3V_25C_lib         /home/users/sophliu/ee272/ee272-hw5/Conv/build/5-synopsys-dc-synthesis/inputs/sram_TT_3p3V_25C.db
+------------------------------------------------------------------------------
+
+#BEGIN_XCHECK_LOGICCELLS
+
+Number of cells missing in logic library:	0 (out of 135)
+
+#END_XCHECK_LOGICCELLS
+
+#BEGIN_XCHECK_PHYSICALCELLS
+
+Number of cells missing in physical library:	1 (out of 134)
+
+Warning: List of cells missing in physical library (LIBCHK-211)
+-------------------------------------------------------------------------
+Cell name                  Cell type             Logic library
+-------------------------------------------------------------------------
+sram                       non pad_cell          sram_TT_3p3V_25C_lib
+-------------------------------------------------------------------------
+
+#END_XCHECK_PHYSICALCELLS
+
+#BEGIN_XCHECK_PINS
+
+Number of cells with missing or mismatched pins in libraries:	0
+
+#END_XCHECK_PINS
+
+#BEGIN_XCHECK_CELLANTENNADIODETYPE
+
+Number of cells with inconsistent antenna_diode_type:	0
+
+#END_XCHECK_CELLANTENNADIODETYPE
+
+Logic vs. physical library check summary:
+Number of cells missing in physical library:	1 
+Information: Logic library is INCONSISTENT with physical library (LIBCHK-220)
+
+#END_XCHECK_LIBRARY
+
+0
