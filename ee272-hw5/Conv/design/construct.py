@@ -23,7 +23,7 @@ def construct():
   parameters = {
     'construct_path' : __file__,
     'design_name'    : 'Conv',
-    'clock_period'   : 100.0,
+    'clock_period'   : 5.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
