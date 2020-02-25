@@ -17,7 +17,7 @@
 (x <= 16384) ? 14 : 0
 
 // Wrapper module to create larger memories from smaller generated memories
-module sram_512_128(
+module sram_384_128(
     clk, csb, web, addr, din, dout
 );
     // set these values 

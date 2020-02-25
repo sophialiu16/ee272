@@ -17,12 +17,12 @@
 (x <= 16384) ? 14 : 0
 
 // Wrapper module to create larger memories from smaller generated memories
-module sram_256_64(
+module sram_256_128(
     clk, csb, web, addr, din, dout
 );
     // set these values 
     parameter WRAPPER_DEPTH = 256;
-    parameter WRAPPER_WIDTH = 64;
+    parameter WRAPPER_WIDTH = 128;
     parameter WRAPPER_ADDR_BITS = 9;
 
     input clk;
@@ -34,8 +34,8 @@ module sram_256_64(
 
 
     // Change these SRAM values:
-    parameter SRAM_DEPTH = 256;
-    parameter SRAM_WIDTH = 32;
+    parameter SRAM_DEPTH = 128;
+    parameter SRAM_WIDTH = 128;
     parameter SRAM_ADDR_BITS = 7;
     parameter num_inst_depth = WRAPPER_DEPTH / SRAM_DEPTH;
     parameter num_inst_width = WRAPPER_WIDTH / SRAM_WIDTH;
@@ -86,5 +86,5 @@ endmodule
 
 
 // synopsys translate_off
-`include "/afs/ir.stanford.edu/class/ee272/OpenRAM/generated_memories/1RW/sram_256_32/sram_256_32.v"
+`include "/afs/ir.stanford.edu/class/ee272/OpenRAM/generated_memories/1RW/sram_128_128/sram_128_128.v"
 // synopsys translate_on
