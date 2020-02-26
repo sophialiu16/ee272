@@ -87,4 +87,5 @@ endmodule
 
 // synopsys translate_off
 `include "/afs/ir.stanford.edu/class/ee272/OpenRAM/generated_memories/1RW/sram_128_128/sram_128_128.v"
+//`include "temp/sram_32_128_freepdk45.v"
 // synopsys translate_on
