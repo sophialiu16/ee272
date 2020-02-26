@@ -1,0 +1,114 @@
+ 
+****************************************
+Report : qor
+Design : Conv
+Version: L-2016.03-SP5-5
+Date   : Tue Feb 25 21:15:32 2020
+****************************************
+
+
+  Timing Path Group 'REGIN'
+  -----------------------------------
+  Levels of Logic:              10.00
+  Critical Path Length:          0.35
+  Critical Path Slack:           2.08
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:               3.00
+  Critical Path Length:          0.30
+  Critical Path Slack:           4.70
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'ideal_clock'
+  -----------------------------------
+  Levels of Logic:              71.00
+  Critical Path Length:          4.96
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      5.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:       1194
+  Hierarchical Port Count:      67007
+  Leaf Cell Count:              70284
+  Buf/Inv Cell Count:           17391
+  Buf Cell Count:                9308
+  Inv Cell Count:                8083
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     47397
+  Sequential Cell Count:        22887
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    61120.682348
+  Noncombinational Area:
+                        125642.177583
+  Buf/Inv Area:          11744.963839
+  Total Buffer Area:          7444.81
+  Total Inverter Area:        4300.16
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  Net XLength        :     1045442.56
+  Net YLength        :      842513.06
+  -----------------------------------
+  Cell Area:            186762.859931
+  Design Area:          186762.859931
+  Net Length        :      1887955.62
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         80587
+  Nets With Violations:            11
+  Max Trans Violations:             0
+  Max Cap Violations:               8
+  Max Fanout Violations:            3
+  -----------------------------------
+
+
+  Hostname: caddy02
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                   45.87
+  Logic Optimization:                215.52
+  Mapping Optimization:             2406.96
+  -----------------------------------------
+  Overall Compile Time:             3255.47
+  Overall Compile Wall Clock Time:   697.21
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
