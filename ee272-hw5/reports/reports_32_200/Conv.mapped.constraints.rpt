@@ -1,0 +1,302 @@
+ 
+****************************************
+Report : constraint
+        -verbose
+Design : Conv
+Version: L-2016.03-SP5-5
+Date   : Tue Feb 25 19:44:27 2020
+****************************************
+
+
+  Startpoint: input_serial_rsc_vld
+              (input port clocked by ideal_clock)
+  Endpoint: inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/clk_gate_total_blocks_lpi_3_reg/latch
+            (gating element for clock ideal_clock)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.50       2.50 f
+  input_serial_rsc_vld (in)                               0.00       2.50 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/din_rsci/U2/Z (CLKBUF_X1)     0.03 *     2.53 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_ctrl_inst/U3/ZN (AND2_X1)     0.04 *     2.57 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_dp_inst/U3/ZN (NOR2_X1)     0.04 *     2.60 r
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_dp_inst/U4/ZN (NAND2_X1)     0.02 *     2.62 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_staller_inst/U3/ZN (NAND3_X1)     0.02 *     2.64 r
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_staller_inst/U4/ZN (INV_X1)     0.02 *     2.67 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/U203/ZN (INV_X1)     0.07 *     2.73 r
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/U101/ZN (NOR2_X1)     0.02 *     2.75 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/U102/ZN (AOI221_X1)     0.07 *     2.83 r
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/U103/ZN (INV_X1)     0.01 *     2.83 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/clk_gate_total_blocks_lpi_3_reg/latch/E (CLKGATETST_X1)     0.00 *     2.83 f
+  data arrival time                                                  2.83
+
+  clock ideal_clock (rise edge)                           5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/clk_gate_total_blocks_lpi_3_reg/latch/CK (CLKGATETST_X1)     0.00     5.00 r
+  clock gating setup time                                -0.06       4.94
+  data required time                                                 4.94
+  --------------------------------------------------------------------------
+  data required time                                                 4.94
+  data arrival time                                                 -2.83
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.10
+
+
+  Startpoint: inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_dp_inst/din_rsci_bcwt_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: input_serial_rsc_rdy
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_dp_inst/din_rsci_bcwt_reg/CK (DFFR_X1)     0.00     0.00 r
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_dp_inst/din_rsci_bcwt_reg/Q (DFFR_X1)     0.19     0.19 r
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_din_wait_ctrl_inst/U2/ZN (NOR2_X1)     0.03 *     0.22 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/inputDoubleBufferWriter/InputDoubleBufferWriter_512_16_16_run_inst/InputDoubleBufferWriter_512_16_16_run_din_rsci_inst/din_rsci/U1/Z (CLKBUF_X1)     0.04 *     0.26 f
+  inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/InputDoubleBDjtfoem_cns_bctl_inst/U149/Z (CLKBUF_X1)     0.04 *     0.30 f
+  input_serial_rsc_rdy (out)                              0.00 *     0.30 f
+  data arrival time                                                  0.30
+
+  clock ideal_clock (rise edge)                           5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  output external delay                                   0.00       5.00
+  data required time                                                 5.00
+  --------------------------------------------------------------------------
+  data required time                                                 5.00
+  data arrival time                                                 -0.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.70
+
+
+  Startpoint: weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/reg_paramsIn_crt_sva_127_0_ftd_reg_2_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/total_blocks_lpi_3_reg_63_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/reg_paramsIn_crt_sva_127_0_ftd_reg_2_/CK (DFFR_X1)     0.00     0.00 r
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/reg_paramsIn_crt_sva_127_0_ftd_reg_2_/Q (DFFR_X1)     0.12     0.12 r
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U1478/Z (BUF_X2)     0.06 *     0.18 r
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U1479/ZN (INV_X2)     0.03 *     0.21 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2190/Z (XOR2_X1)     0.06 *     0.27 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2191/ZN (NOR2_X1)     0.07 *     0.34 r
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U1783/Z (BUF_X1)     0.07 *     0.40 r
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2688/ZN (AOI222_X1)     0.04 *     0.44 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2689/Z (XOR2_X1)     0.06 *     0.50 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2948/S (HA_X1)     0.06 *     0.57 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2969/CO (FA_X1)     0.08 *     0.65 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2970/CO (FA_X1)     0.07 *     0.72 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2971/CO (FA_X1)     0.07 *     0.79 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2972/CO (FA_X1)     0.07 *     0.86 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2973/CO (FA_X1)     0.07 *     0.93 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2974/CO (FA_X1)     0.07 *     1.00 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2975/CO (FA_X1)     0.07 *     1.07 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2976/CO (FA_X1)     0.07 *     1.15 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2977/CO (FA_X1)     0.07 *     1.22 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2978/CO (FA_X1)     0.07 *     1.29 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2979/CO (FA_X1)     0.07 *     1.36 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2980/CO (FA_X1)     0.07 *     1.44 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2981/CO (FA_X1)     0.07 *     1.51 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2982/CO (FA_X1)     0.07 *     1.58 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2983/CO (FA_X1)     0.07 *     1.65 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2984/CO (FA_X1)     0.07 *     1.72 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2985/CO (FA_X1)     0.07 *     1.79 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2986/CO (FA_X1)     0.07 *     1.87 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2987/CO (FA_X1)     0.07 *     1.94 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2988/CO (FA_X1)     0.07 *     2.01 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2989/CO (FA_X1)     0.07 *     2.08 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2990/CO (FA_X1)     0.07 *     2.15 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2991/CO (FA_X1)     0.07 *     2.22 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2992/CO (FA_X1)     0.07 *     2.30 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2993/CO (FA_X1)     0.07 *     2.37 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2994/CO (FA_X1)     0.07 *     2.44 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2995/CO (FA_X1)     0.07 *     2.51 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2996/CO (FA_X1)     0.07 *     2.58 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2997/CO (FA_X1)     0.07 *     2.66 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2998/CO (FA_X1)     0.07 *     2.73 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2999/CO (FA_X1)     0.07 *     2.80 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3000/CO (FA_X1)     0.07 *     2.87 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3001/CO (FA_X1)     0.07 *     2.94 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3002/CO (FA_X1)     0.07 *     3.01 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3003/CO (FA_X1)     0.07 *     3.09 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3004/CO (FA_X1)     0.07 *     3.16 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3005/CO (FA_X1)     0.07 *     3.23 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3006/CO (FA_X1)     0.07 *     3.30 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3007/CO (FA_X1)     0.07 *     3.38 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3008/CO (FA_X1)     0.07 *     3.45 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3009/CO (FA_X1)     0.07 *     3.52 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3010/CO (FA_X1)     0.07 *     3.59 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3011/CO (FA_X1)     0.07 *     3.66 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3012/CO (FA_X1)     0.07 *     3.73 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3013/CO (FA_X1)     0.07 *     3.81 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3014/CO (FA_X1)     0.07 *     3.88 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3015/CO (FA_X1)     0.07 *     3.95 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3016/CO (FA_X1)     0.07 *     4.02 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3017/CO (FA_X1)     0.07 *     4.09 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3018/CO (FA_X1)     0.07 *     4.16 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3019/CO (FA_X1)     0.07 *     4.24 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3020/CO (FA_X1)     0.07 *     4.31 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3021/CO (FA_X1)     0.07 *     4.38 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3022/CO (FA_X1)     0.07 *     4.45 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3023/CO (FA_X1)     0.07 *     4.52 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3024/CO (FA_X1)     0.07 *     4.59 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3025/CO (FA_X1)     0.07 *     4.66 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3026/CO (FA_X1)     0.07 *     4.74 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U3027/CO (FA_X1)     0.07 *     4.81 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2963/Z (XOR2_X1)     0.05 *     4.86 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/mult_x_14/U2964/ZN (XNOR2_X1)     0.04 *     4.90 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/U162/Z (MUX2_X2)     0.05 *     4.95 f
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/total_blocks_lpi_3_reg_63_/D (DFFR_X1)     0.00 *     4.95 f
+  data arrival time                                                  4.95
+
+  clock ideal_clock (rise edge)                           5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferReader/WeightDoubleBufferReader_384_16_16_run_inst/total_blocks_lpi_3_reg_63_/CK (DFFR_X1)     0.00     5.00 r
+  library setup time                                     -0.04       4.96
+  data required time                                                 4.96
+  --------------------------------------------------------------------------
+  data required time                                                 4.96
+  data arrival time                                                 -4.95
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: paramsIn_rsc_dat[15]
+              (input port clocked by ideal_clock)
+  Endpoint: paramsDeserializer_1/ParamsDeserializer_run_inst/ParamsDeserializer_run_inputChannel_rsci_inst/ParamsDeserializer_run_inputChannel_rsci_inputChannel_wait_dp_inst/inputChannel_rsci_idat_bfwt_reg_15_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.50       2.50 r
+  paramsIn_rsc_dat[15] (in)                               0.00       2.50 r
+  paramsDeserializer_1/ParamsDeserializer_run_inst/ParamsDeserializer_run_inputChannel_rsci_inst/inputChannel_rsci/U18/Z (CLKBUF_X1)     0.03 *     2.53 r
+  paramsDeserializer_1/ParamsDeserializer_run_inst/ParamsDeserializer_run_inputChannel_rsci_inst/ParamsDeserializer_run_inputChannel_rsci_inputChannel_wait_dp_inst/U23/Z (MUX2_X1)     0.07 *     2.59 r
+  paramsDeserializer_1/ParamsDeserializer_run_inst/ParamsDeserializer_run_inputChannel_rsci_inst/ParamsDeserializer_run_inputChannel_rsci_inputChannel_wait_dp_inst/inputChannel_rsci_idat_bfwt_reg_15_/D (DFFR_X1)     0.00 *     2.59 r
+  data arrival time                                                  2.59
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  paramsDeserializer_1/ParamsDeserializer_run_inst/ParamsDeserializer_run_inputChannel_rsci_inst/ParamsDeserializer_run_inputChannel_rsci_inputChannel_wait_dp_inst/inputChannel_rsci_idat_bfwt_reg_15_/CK (DFFR_X1)     0.00     0.00 r
+  library hold time                                       0.01       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -2.59
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.58
+
+
+  Startpoint: outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/serialOutChannel_rsci_idat_reg_1_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: output_serial_rsc_dat[1]
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/serialOutChannel_rsci_idat_reg_1_/CK (DFFR_X1)     0.00     0.00 r
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/serialOutChannel_rsci_idat_reg_1_/Q (DFFR_X1)     0.08     0.08 f
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_serialOutChannel_rsci_inst/serialOutChannel_rsci/U4/Z (CLKBUF_X1)     0.05 *     0.13 f
+  output_serial_rsc_dat[1] (out)                          0.00 *     0.13 f
+  data arrival time                                                  0.13
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  output external delay                                   0.00       0.00
+  data required time                                                 0.00
+  --------------------------------------------------------------------------
+  data required time                                                 0.00
+  data arrival time                                                 -0.13
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_run_fsm_inst/state_var_reg_0_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/reg_serialOutChannel_rsci_ivld_run_psct_cse_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_run_fsm_inst/state_var_reg_0_/CK (SDFFR_X1)     0.00     0.00 r
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_run_fsm_inst/state_var_reg_0_/Q (SDFFR_X1)     0.08     0.08 r
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/reg_serialOutChannel_rsci_ivld_run_psct_cse_reg/D (DFFR_X1)     0.00 *     0.08 r
+  data arrival time                                                  0.08
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  outputSerializer/Serializer_PackedInt_16UL_16UL_ODTYPE_16_run_inst/reg_serialOutChannel_rsci_ivld_run_psct_cse_reg/CK (DFFR_X1)     0.00     0.00 r
+  library hold time                                       0.01       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.07
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/n12834
+
+    max_transition         0.20
+  - Transition Time        0.14
+  ------------------------------
+    Slack                  0.06  (MET)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/n11473
+
+    max_fanout            20.00
+  - Fanout                21.00
+  ------------------------------
+    Slack                 -1.00  (VIOLATED)
+
+
+    Net: systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_run_inst/n1117
+
+    max_capacitance       53.41
+  - Capacitance           53.35
+  ------------------------------
+    Slack                  0.05  (MET)
+
+
+    Design: Conv
+
+    max_leakage_power          0.00
+  - Current Leakage Power  2973660.50
+  ----------------------------------
+    Slack                  -2973660.50  (VIOLATED)
+
+
+Min pulse width constraints
+
+                       Required      Actual
+  Pin                pulse width   pulse width   Slack           Scenario
+--------------------------------------------------------------------------------
+  weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/weightDoubleBufferWriter/WeightDoubleBufferWriter_384_16_16_run_inst/total_blocks_mul_1_itm_reg_1_/CK(high)  0.09  2.50  2.41 (MET)
+
+1
