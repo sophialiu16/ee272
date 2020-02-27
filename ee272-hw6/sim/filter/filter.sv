@@ -6,20 +6,18 @@ module filter #(
     input real in
 );
     // ADD VARIABLE DECLARATIONS HERE AS NECESSARY
-   real prev_out, delta_t, prev_t;
+   real prev_out, prev_t, temp;
     function real out();
          // FILL IN FUNCTION IMPLEMENTATION
-         out = $exp(-delta_t/tau) * prev_out + (1 - $exp(-delta_t/tau)) * in;
+         out = $exp(-($realtime - prev_t)/tau) * prev_out + (1 - $exp(-($realtime - prev_t)/tau)) * in;
     endfunction
 
     initial begin
-          delta_t = 0;
           prev_t = $realtime;
           prev_out = 0;
     end
 
     always @(in) begin
-          delta_t = $realtime - prev_t;
           prev_t = $realtime;
           prev_out = out();
         // UPDATE INTERNAL STATE VARIABLES AS NECESSARY
