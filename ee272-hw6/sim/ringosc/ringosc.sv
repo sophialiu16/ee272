@@ -19,7 +19,7 @@ module ringosc (
 	if (freq < 1.6 * 10 **9) begin 
     		freq = 1.6 * 10 **9;
     	end else if (freq > 4.0 * 10 **9) begin
-        	freq = 4.00 **9 * 10 **9;
+        	freq = 4.00 * 10 **9;
     	end
     end
     assign period = 1/freq;
