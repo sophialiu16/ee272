@@ -9,7 +9,7 @@ module filter #(
    real prev_out, prev_t, prev_in;
     function real out();
          // FILL IN FUNCTION IMPLEMENTATION
-         out = $exp(-($realtime - prev_t)/tau) * prev_out + (1 - $exp(-($realtime - prev_t)/tau)) * prev_in;
+         out = $exp(-1 * ($realtime - prev_t)/tau) * prev_out + (1 - $exp(-1 * ($realtime - prev_t)/tau)) * prev_in;
     endfunction
 
     initial begin
