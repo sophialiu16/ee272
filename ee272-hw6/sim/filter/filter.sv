@@ -9,17 +9,17 @@ module filter #(
    real prev_out, prev_t, temp;
     function real out();
          // FILL IN FUNCTION IMPLEMENTATION
-         out = $exp(-($realtime - prev_t)/tau) * prev_out + (1 - $exp(-($realtime - prev_t)/tau)) * in;
+         out = $exp(-1 * ($realtime - prev_t)/tau) * prev_out + (1 - $exp(-1 * ($realtime - prev_t)/tau)) * in;
     endfunction
 
     initial begin
-          prev_t = $realtime;
-          prev_out = 0;
+	prev_out = 0;
     end
 
     always @(in) begin
-          prev_t = $realtime;
-          prev_out = out();
+	  prev_t = $realtime;
+          temp = out();
+	  prev_out = temp;
         // UPDATE INTERNAL STATE VARIABLES AS NECESSARY
     end
 endmodule
