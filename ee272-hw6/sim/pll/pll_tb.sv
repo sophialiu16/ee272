@@ -1,7 +1,7 @@
 // UPDATE THESE VARIABLES
-`define KI_CTRL 0
-`define KP_CTRL 0
-`define INIT_CTRL 0
+`define KI_CTRL 1350
+`define KP_CTRL 0.0025
+`define INIT_CTRL 0.65
 
 // NO NEED TO MODIFY THE REST OF THIS FILE
 `timescale 1s/1fs

@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR PARAMETERS HERE
 Kvco = 2*pi*6.6e9; % in rad/s/V, not Hz/V!
-Ki = 0;
-Kp = 0;
+Ki = 1350;
+Kp = 0.0025;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % fixed parameters
