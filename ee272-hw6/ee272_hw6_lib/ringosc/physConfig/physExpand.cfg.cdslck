@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      skavya
+HostName                       caddy15.stanford.edu
+ProcessIdentifier              30264
+ProcessCreationTime_UTC        1583096654
+ProcessCreationTime_Readable   Sun Mar  1 13:04:14 2020 PST
+AppIdentifier                  /cad/cadence/IC_06.18.020_lnx86/tools/dfII/bin/64bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       
+FilePathUsedToEditLock         /home/users/skavya/ee272/ee272-hw6/ee272_hw6_lib/ringosc/physConfig/physExpand.cfg
+TimeEditLocked                 Sun Mar  1 13:05:16 2020 PST

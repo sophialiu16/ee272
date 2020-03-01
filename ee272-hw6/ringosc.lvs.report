@@ -12,10 +12,10 @@
 
 
 REPORT FILE NAME:         ringosc.lvs.report
-LAYOUT NAME:              /home/users/skavya/ee272/ee272-hw6/ringosc.sp ('ringosc')
+LAYOUT NAME:              /home/users/skavya/ee272/ee272-hw6/svdb/ringosc.sp ('ringosc')
 SOURCE NAME:              /home/users/skavya/ee272/ee272-hw6/ringosc.src.net ('ringosc')
-RULE FILE:                /home/users/skavya/ee272/ee272-hw6/_calibreLVS.rul_
-CREATION TIME:            Sat Feb 29 17:10:36 2020
+RULE FILE:                /home/users/skavya/ee272/ee272-hw6/_calibrePEX.rul_
+CREATION TIME:            Sun Mar  1 13:13:58 2020
 CURRENT DIRECTORY:        /home/users/skavya/ee272/ee272-hw6
 USER NAME:                skavya
 CALIBRE VERSION:          v2019.1_18.11    Thu Jan 10 13:52:51 PST 2019
@@ -66,7 +66,7 @@ o LVS Setup:
    LVS ALL CAPACITOR PINS SWAPPABLE       NO
    LVS DISCARD PINS BY DEVICE             NO
    LVS SOFT SUBSTRATE PINS                NO
-   LVS INJECT LOGIC                       YES
+   LVS INJECT LOGIC                       NO
    LVS EXPAND UNBALANCED CELLS            YES
    LVS FLATTEN INSIDE CELL                NO
    LVS EXPAND SEED PROMOTIONS             NO
@@ -92,8 +92,8 @@ o LVS Setup:
    // LVS SPICE OPTION
    LVS STRICT SUBTYPES                    NO
    LVS EXACT SUBTYPES                     NO
-   LAYOUT CASE                            NO
-   SOURCE CASE                            NO
+   LAYOUT CASE                            YES
+   SOURCE CASE                            YES
    LVS COMPARE CASE                       NO
    LVS DOWNCASE DEVICE                    NO
    LVS REPORT MAXIMUM                     50
@@ -144,8 +144,8 @@ SOURCE CELL NAME:         ringosc
 
 --------------------------------------------------------------------------------------------------------------
 
-INITIAL NUMBERS OF OBJECTS
---------------------------
+NUMBERS OF OBJECTS
+------------------
 
                 Layout    Source         Component Type
                 ------    ------         --------------
@@ -159,20 +159,6 @@ INITIAL NUMBERS OF OBJECTS
  Total Inst:        86        86
 
 
-NUMBERS OF OBJECTS AFTER TRANSFORMATION
----------------------------------------
-
-                Layout    Source         Component Type
-                ------    ------         --------------
- Ports:              3         3
-
- Nets:               3         3
-
- Instances:          1         1         _invx43v (4 pins)
-                ------    ------
- Total Inst:         1         1
-
-
 
 **************************************************************************************************************
                                INFORMATION AND WARNINGS
@@ -184,21 +170,22 @@ NUMBERS OF OBJECTS AFTER TRANSFORMATION
                   -------    -------    ---------    ---------    ---------
    Ports:               3          3            0            0
 
-   Nets:                3          3            0            0
+   Nets:               45         45            0            0
 
-   Instances:           1          1            0            0    _invx43v
+   Instances:          43         43            0            0    MN(NFET)
+                       43         43            0            0    MP(PFET)
                   -------    -------    ---------    ---------
-   Total Inst:          1          1            0            0
+   Total Inst:         86         86            0            0
 
 
 o Initial Correspondence Points:
 
-   Ports:        VDD GND OUT
+   Ports:        VDD gnd out
 
 
 **************************************************************************************************************
                                          SUMMARY
 **************************************************************************************************************
 
-Total CPU Time:      0 sec
-Total Elapsed Time:  0 sec
+Total CPU Time:      21 sec
+Total Elapsed Time:  24 sec
