@@ -1,0 +1,3542 @@
+ringosc 5000
+RULE_NW001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW001
+Minimum spacing of NW (or) PW at different potential is 180nm
+RULE_NW002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW002
+Minimum spacing of NW (or) PW at same potential is 110nm
+RULE_NW003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW003
+Minimum width of NW is 160nm
+RULE_NW004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW004A
+Minimum area of NW is 0.140 um2
+RULE_NW004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW004B
+Minimum enclosed area of NW is 0.140 um2
+RULE_NW005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW005
+NW Must be orthogonal
+RULE_NW006A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW006A
+Minimum extension of NW past CHANNEL_A is 80nm
+RULE_NW006B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW006B
+Minimum extension of NW past CHANNEL_B is 80nm
+RULE_NW006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NW006AB
+Minimum extension of NW past CHANNEL_AB is 80nm
+RULE_ACT001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT001
+Minimum vertical width of ACT layer is 48nm
+RULE_ACT002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT002
+Minimum Incremental vertical width of ACT layer is 40nm
+RULE_ACT003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT003
+Minimum vertical spacing of ACT is 62nm
+RULE_ACT004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT004
+Minimum horizontal width of ACT is 96nm
+RULE_ACT005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT005
+Horizontal spacing of ACT  must be 32nm, 96nm or >= 160nm
+RULE_ACT006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT006
+Minimum notch of ACT is 112nm
+RULE_ACT007A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT007A
+Minimum spacing of NW to ACT is 31nm
+RULE_ACT007B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT007B
+Minimum enclosure of NW to ACT is 31nm
+RULE_ACT008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT008A
+Minimum area of ACT is 0.004608 um2
+RULE_ACT008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT008B
+Minimum enclosed area of ACT is 0.004608 um2
+RULE_ACT009
+0 0 4 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_ACT009
+Maximum distance between ACT forming a MOS device and ACT forming a bulk/substrate
+contact within the same well/substrate is 30um, to prevent latch up
+RULE_GATE001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE001A
+Exact horizontal width of GATE [A] is 20, 16 or 14 nm
+RULE_GATE001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE001B
+Exact horizontal width of GATE [B] is 20, 16 or 14 nm
+RULE_GATE002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE002A
+Min horizontal pitch of GATE [A] is 128 nm 
+RULE_GATE002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE002B
+Min horizontal pitch of GATE [B] is 128 nm 
+RULE_GATE003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE003
+Minimum horizontal spacing of GATE[A] and GATE[B] is 44 nm
+RULE_GATE004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE004A
+GATE[A] may not bend
+RULE_GATE004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE004B
+GATE[B] may not bend
+RULE_GATE005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE005A
+Minimum extension of ACT past GATE [A] is 38nm
+RULE_GATE005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE005B
+Minimum extension of ACT past GATE [B] is 38nm
+RULE_GATE006A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE006A
+Minimum extension of GATE [A] past ACT is 62nm
+RULE_GATE006B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE006B
+Minimum extension of GATE [B] past ACT is 62nm
+RULE_GATE007A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE007A
+Minimum length of Gate A (vertical edge, gate C ignored) 200nm
+RULE_GATE007B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE007B
+Minimum length of Gate B (vertical edge, gate C ignored) 200nm
+RULE_GATE008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE008A  
+(gatea not gatec) maximum distance to neighbor shape on same design mask is 236nm
+RULE_GATE008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE008B  
+(gateb not gatec) maximum distance to neighbor shape 236nm
+RULE_GATE001AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE001AB
+Exact horizontal width of GATE [AB] is 20, 16 or 14 nm
+RULE_GATE002AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE002AB
+Min horizontal pitch of GATE [AB] is 64nm 
+RULE_GATE003AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE003AB
+Minimum horizontal spacing of GATE[AB] is 44 nm
+RULE_GATE004AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE004AB
+GATE[AB] may not bend
+RULE_GATE005AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE005AB
+Minimum extension of ACT past GATE [AB] is 38nm
+RULE_GATE006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE006AB
+Minimum extension of GATE [AB] past ACT is 62nm
+RULE_GATE007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE007AB
+Minimum length of Gate AB (vertical edge, gate C ignored) 200nm
+RULE_GATE008AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE008AB  
+(gateAB not gatec) maximum distance to neighbor shape 236nm
+RULE_GATE001Ca
+0 0 4 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE001Ca
+Exact vertical width of GATEC is 32nm (1 is arbitrary large value)
+shape is oriented horizonally
+RULE_GATE002Ca
+0 0 4 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE002Ca
+Minimum horizontal length of GATEC is 128nm
+shape is oriented horizonatally
+RULE_GATE003C
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE003C
+Minimum space of GATEC is 128nm
+RULE_GATE004Ca
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE004Ca
+Minimum extension of GATEC past GATEA (horizontal direction) is 22nm
+RULE_GATE004Cb
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE004Cb
+Minimum extension of GATEC past GATEB (horizontal direction) is 22nm
+RULE_GATE005C
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE005C
+GATEC minimum space to ACT is 15nm
+RULE_GATE006C
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE006C
+GATEC may not bend
+RULE_GATE007C
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GATE007C
+GATEC shape bottom or top must be aligned if distance < 192nm
+RULE_VT001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VT001
+Minimum width of VTL/VTH/(not (VTL or VTH)) is 144nm
+RULE_VT002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VT002
+Minimum spacing of VTL/VTH/(not (VTL or VTH)) is 144nm
+RULE_VTL003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTL003A
+Minimum enclosure of GATEA by VTL is 64nm
+RULE_VTL003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTL003B
+Minimum enclosure of GATEB by VTL is 64nm
+RULE_VTH003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTH003A
+Minimum enclosure of GATEA by VTH is 64nm
+RULE_VTH003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTH003B
+Minimum enclosure of GATEB by VTH is 64nm
+RULE_VTL004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTL004A
+Minimum spacing of GATEA to VTL is 44nm
+RULE_VTL004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTL004B
+Minimum spacing of GATEB to VTL is 44nm
+RULE_VTH004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTH004A
+Minimum spacing of GATEA to VTH is 44nm
+RULE_VTH004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VTH004B
+Minimum spacing of GATEB to VTH is 44nm
+RULE_NIM001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM001A
+Minimum width of NIM is 128nm
+RULE_NIM001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM001B
+Minimum Spacing of NIM is 128nm
+RULE_NIM001C
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM001C
+Minimum Spacing of NIM is 128nm
+RULE_PIM001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM001A
+Minimum width of PIM is 128nm
+RULE_PIM001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM001B
+Minimum Spacing of PIM is 128nm
+RULE_PIM001C
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM001C
+Minimum Spacing of PIM is 128nm
+RULE_NIM002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM002A
+Minimum spacing of NIM to channel: width of SD at GATE[A] is 32nm
+RULE_NIM002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM002B
+Minimum spacing of NIM to channel: width of SD at GATE[B] is 32nm
+RULE_NIM002AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM002AB
+Minimum spacing of NIM to channel: width of SD at GATE[AB] is 32nm
+RULE_PIM002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM002A
+Minimum spacing of PIM to channel: width of SD at GATE[A] is 32nm
+RULE_PIM002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM002B
+Minimum spacing of PIM to channel: width of SD at GATE[B] is 32nm
+RULE_PIM002AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM002AB
+Minimum spacing of PIM to channel: width of SD at GATE[AB] is 32nm
+RULE_NIM003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM003A
+Minimum Extension of NIM past channel (Horizontal Direction): Overlap between Gate[A] and NIM  is 32nm
+RULE_NIM003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM003B
+Minimum Extension of NIM past channel (Horizontal Direction): Overlap between Gate[B] and NIM  is 32nm
+RULE_PIM003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM003A
+Minimum Extension of NIM past channel (Horizontal Direction): Overlap between Gate[A] and NIM  is 32nm
+RULE_PIM003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM003B
+Minimum Extension of NIM past channel (Horizontal Direction): Overlap between Gate[B] and NIM  is 32nm
+RULE_NIM004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM004A
+Minimum Extension of NIM past channel (Vertical Direction): Overlap between Gate[A] and NIM  is 30nm
+RULE_NIM004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM004B
+Minimum Extension of NIM past channel (Vertical Direction): Overlap between Gate[B] and NIM  is 30nm
+RULE_PIM004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM004A
+Minimum Extension of NIM past channel (Vertical Direction): Overlap between Gate[A] and NIM  is 30nm
+RULE_PIM004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM004B
+Minimum Extension of NIM past channel (Vertical Direction): Overlap between Gate[B] and NIM  is 30nm
+RULE_NIM005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM005
+Minimum spacing of NIM to (ACT enclosed by PIM) is 0.030 um
+RULE_PIM005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM005
+Minimum spacing of PIM to (ACT enclosed by NIM) is 0.030 um
+RULE_NIM006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM006
+Minimum enclosure of ACT by NIM is 0.030 um
+RULE_PIM006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM006
+Minimum enclosure of ACT by PIM is 0.030 um
+RULE_NIM007A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM007A
+Minimum area of NIM is 0.049 um2
+RULE_NIM007B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_NIM007B
+Minimum enclosed area of NIM is 0.049 um2
+RULE_PIM007A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM007A
+Minimum area of PIM is 0.049 um2
+RULE_PIM007B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_PIM007B
+Minimum enclosed area of PIM is 0.049 um2
+RULE_AIL1001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1001
+Horizontal Width of AIL1 is 28nm
+RULE_AIL1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1002
+Horizontal spacing of AIL1 is 36nm
+RULE_AIL1003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1003A
+Minimum spacing of AIL1 to GATE[A] is 8nm
+RULE_AIL1003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1003B
+Minimum spacing of AIL1 to GATE[B] is 8nm
+RULE_AIL1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1004
+Minimum extenxion of ACT past AIL1 in horizontal direction is 2nm
+RULE_AIL1005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1005
+Minimum Vertical length of AIL1 is 58nm
+RULE_AIL1006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1006
+Minimum Vertical spacing of AIL1 is 62nm
+RULE_AIL1007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1007
+Minimum Vertical extension of AIL1 past ACT is 0nm
+RULE_AIL1008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL1008
+AIL1 layer may not bend
+RULE_AIL2001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2001
+Horizontal width of AIL2 is 24nm
+RULE_AIL2002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2002
+Horizontal spacing of AIL2 is 40nm
+RULE_AIL2003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2003A
+Minimum spacing between AIL2 and GATE[A] is 2nm
+RULE_AIL2003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2003B
+Minimum spacing between AIL2 and GATE[B] is 2nm
+RULE_AIL2004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2004
+Minimum horizontal enclosure of AIL1 around AIL2 is 2 nm
+RULE_AIL2005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2005
+Minimum Vertical overlap of AIL1 and AIL2 is 6nm
+RULE_AIL2006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2006
+Vertical length of AIL2 is 68nm
+RULE_AIL2007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2007
+Vertical spacing of AIL2 is 62nm
+RULE_AIL2008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2008
+AIL2 may not bend
+RULE_AIL2009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2009
+Minimum horizontal spacing of AIL1 and AIL2 is 16nm
+RULE_AIL2010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_AIL2010
+Minimum vertical spacing of AIL1 and AIL2 is 16nm
+RULE_GIL001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL001A
+Minimum vertical width of GIL is 44nm
+RULE_GIL002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL001B
+Minimum horizontal length of GIL is 56nm
+RULE_GIL003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL003
+Minimum vertical spacing of GIL is 32nm
+RULE_GIL004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL004
+Minimum horizontal spacing of GIL is 40nm
+RULE_GIL005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL005
+Minimum vertical spacing of GIL to ACT is 6nm
+RULE_GIL006A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL006A
+Minimum horizontal extension of GIL past GATE[A] is 2nm
+RULE_GIL006B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL006B
+Minimum horizontal extension of GIL past GATE[B] is 2nm
+RULE_GIL007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL007
+Minimum horizontal space of GIL to AIL2 is 8nm
+RULE_GIL008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL008
+Minimum vertical space of GIL to AIL2 is 5nm
+RULE_GIL009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL009A
+Minimum horizontal space of GIL to GATE[A] is 10nm
+RULE_GIL009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL009B
+Minimum horizontal space of GIL to GATE[B] is 10nm
+RULE_GIL010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL010
+Minimum horizontal overlap of GIL and AIL2 is 2nm
+RULE_GIL011
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL011
+Minimum vertical extension of AIL2 past GIL is 4nm
+RULE_GIL012
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_GIL012
+GIL may not bend
+RULE_V0001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0001a
+V0 is a square with 28nm edge length
+RULE_V0001bA
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0001bA
+V0 is a rectangle 28nm x 56nm when enclosed in M1A with width >= 60nm
+RULE_V0001bB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0001bB
+V0 is a rectangle 28nm x 56nm when enclosed in M1B with width >= 60nm
+RULE_V0002GA
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0002GA
+Minimum spacing of V0 if runlength exactly = 28nm is 36nm
+RULE_V0002AA
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0002AA
+Minimum spacing of V0 if runlength exactly = 28nm is 36nm
+RULE_V0002GB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0002GB
+Minimum spacing of V0 if runlength exactly = 28nm is 36nm
+RULE_V0002AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0002AB
+Minimum spacing of V0 if runlength exactly = 28nm is 36nm
+RULE_V0003GA
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0003GA
+Minimum spacing of V0 if runlength < 28nm is 50nm
+RULE_V0003AA
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0003AA
+Minimum spacing of V0 if runlength < 28nm is 50nm
+RULE_V0003GB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0003GB
+Minimum spacing of V0 if runlength < 28nm is 50nm
+RULE_V0003AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0003AB
+Minimum spacing of V0 if runlength < 28nm is 50nm
+RULE_V0004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0004
+V0 must be inside [AIL2|GIL] and M1[A|B]
+RULE_V0005a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0005a
+V0 enclosure by AIL2 in 2 opposite sides, horizontal direction 2nm
+RULE_V0005b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0005b
+V0 enclosure by AIL2 in 2 opposite sides, vertical direction 20nm
+RULE_V0006a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0006a
+V0 enclosure by (GIL AND AIL2) on 2 opposite sides, horizontal direction 2nm
+RULE_V0006b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0006b
+V0 enclosure by (GIL AND AIL2) on 2 opposite sides, vertical direction 8nm
+RULE_V0007a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0007a
+V0 enclosure by (GIL NOT AIL2) on 2 opposite sides, horizontal direction 14nm
+RULE_V0007b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0006b
+V0 enclosure by (GIL NOT AIL2) on 2 opposite sides, vertical direction 8nm
+RULE_V0008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0008
+Min spacing of V0 and AIL2 on different net is 38nm
+RULE_V0009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0009
+Min spacing of V0 and GIL on different net is 38nm
+RULE_V0010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V0010
+V0 enclosed by GIL may not overlap with (GATE[A|B] over ACT)
+RULE_M1001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1001A
+M1A width 28nm, 32nm, 40nm, 2.4um (10um is arbitrary)
+RULE_M1001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1001B
+M1B width 28nm, 32nm, 40nm, 2.4um (10um is arbitrary)
+RULE_M1001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1001
+M1 minimum width 28nm
+RULE_M1002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1002A
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_M1002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1002B
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_M1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1002
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_M1003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1003A
+maximum length of M1A for wires with min width 28nm is 1.8um
+RULE_M1003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1003B
+maximum length of M1B for wires with min width 28nm is 1.8um
+RULE_M1003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1003
+maximum length of M1 for wires with min width 28nm is 1.8um
+RULE_M1004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1004A
+M1A end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_M1004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1004B
+M1B end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_M1005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1005A
+M1A min space and notch 54nm
+RULE_M1005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1005B
+M1B min space and notch 54nm
+RULE_M1006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1006AB
+min spacing of M1A to M1B 36nm
+RULE_M1006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1006
+min spacing of M1 to M1 36nm
+RULE_M1007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1007AB
+End-of-line spacing of M1A to M1B (EOL edge defined as edge < 32nm) is 44nm
+RULE_M1007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1007
+End-of-line spacing of M1 to M1 (EOL edge defined as edge < 32nm) is 44nm
+RULE_M1008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1008A
+Minimum spacing of M1A when M1A is wider than 32nm and longer than 240nm is 68nm
+RULE_M1008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1008B
+Minimum spacing of M1B when M1B is wider than 32nm and longer than 240nm is 68nm
+RULE_M1009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1009A
+Minimum spacing of M1A when M1A is wider than 40nm and longer than 240nm is 76nm
+RULE_M1009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1009B
+Minimum spacing of M1B when M1B is wider than 40nm and longer than 240nm is 76nm
+RULE_M1010A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1010A
+Minimum spacing of M1A when M1A is wider than 64nm and longer than 480nm is 92nm
+RULE_M1010B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1010B
+Minimum spacing of M1B when M1B is wider than 64nm and longer than 480nm is 92nm
+RULE_M1011A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1011A
+Minimum spacing of M1A when M1A is wider than 120nm and longer than 1200nm is 120nm
+RULE_M1011B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1011B
+Minimum spacing of M1B when M1B is wider than 120nm and longer than 1200nm is 120nm
+RULE_M1012A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1012A
+Minimum spacing of M1A when M1A is wider than 240nm and longer than 1800nm is 240nm
+RULE_M1012B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1012B
+Minimum spacing of M1B when M1B is wider than 240nm and longer than 1800nm is 240nm
+RULE_M1013A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1013A
+Minimum spacing of M1A when M1A is wider than 320nm and longer than 2400nm is 320nm
+RULE_M1013B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1013B
+Minimum spacing of M1B when M1B is wider than 320nm and longer than 2400nm is 320nm
+RULE_M1014A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1014A
+Minimum spacing of M1A when M1A is wider than 600nm and longer than 2400nm is 600nm
+RULE_M1014B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1014B
+Minimum spacing of M1B when M1B is wider than 600nm and longer than 2400nm is 600nm
+RULE_M1015A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1015A
+Minimum spacing of M1A to M1B when M1B is wider than 32nm and longer than 240nm is 44nm
+RULE_M1015B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1015B
+Minimum spacing of M1B to M1A when M1A is wider than 32nm and longer than 240nm is 44nm
+RULE_M1016A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1016A
+Minimum spacing of M1A to M1B when M1B is wider than 40nm and longer than 240nm is 50nm
+RULE_M1016B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1016B
+Minimum spacing of M1B to M1A when M1A is wider than 40nm and longer than 240nm is 50nm
+RULE_M1017A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1017A
+Minimum spacing of M1A to M1B when M1B is wider than 64nm and longer than 480nm is 60nm
+RULE_M1017B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1017B
+Minimum spacing of M1B to M1A when M1A is wider than 64nm and longer than 480nm is 60nm
+RULE_M1018A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1018A
+Minimum spacing of M1A to M1B when M1B is wider than 120nm and longer than 1200nm is 78nm
+RULE_M1018B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1018B
+Minimum spacing of M1B to M1A when M1A is wider than 120nm and longer than 1200nm is 78nm
+RULE_M1019A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1019A
+Minimum spacing of M1A to M1B when M1B is wider than 240nm and longer than 1800nm is 156nm
+RULE_M1019B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1019B
+Minimum spacing of M1B to M1A when M1A is wider than 240nm and longer than 1800nm is 156nm
+RULE_M1020A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1020A
+Minimum spacing of M1A to M1B when M1B is wider than 320nm and longer than 2400nm is 200nm
+RULE_M1020B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1020B
+Minimum spacing of M1B to M1A when M1A is wider than 320nm and longer than 2400nm is 200nm
+RULE_M1021A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1021A
+Minimum spacing of M1A to M1B when M1B is wider than 600nm and longer than 2400nm is 400nm
+RULE_M1021B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1021B
+Minimum spacing of M1B to M1A when M1A is wider than 600nm and longer than 2400nm is 400nm
+RULE_M1022
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1022
+Minimum overlap of M1A and M1B (stitch region length)
+RULE_M1023A
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1023A
+Allowed enclosures of V0 by M1A are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_M1023B
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1023B
+Allowed enclosures of V0 by M1B are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_M1023
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1023
+Allowed enclosures of V0 by M1 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_M1024
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1024
+Allowed enclosures of V0 by M1A-M1B stitches are
+[0.032,0.002], [0.04,0], or [0.014,0.014]
+on opposite sides
+RULE_M1026A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1026A
+V0 shape must be rectangular if enclosing M1A wire width >= 60nm
+RULE_M1026B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1026B
+V0 shape must be rectangular if enclosing M1B wire width >= 60nm
+RULE_M1027A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1027A
+M1A minimum area for rectangular shape is 0.0024um2
+RULE_M1027B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1027B
+M1B minimum area for rectangular shape is 0.0024um2
+RULE_M1027
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1027
+M1 minimum area for rectangular shape is 0.0024um2
+RULE_M1028A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1028A
+M1A min area for non-rectangular shape is 0.0036um2
+RULE_M1028B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_M1028B
+M1B min area for non-rectangular shape is 0.0036um2
+RULE_V1001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1001a
+V1 is a square with 28nm edge length
+RULE_V1001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1001b
+V1 is a rectangle 28nm x 56nm when enclosed in M1A with width >= 60nm
+RULE_V1001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1001c
+V1 is a rectangle 28nm x 56nm when enclosed in M1B with width >= 60nm
+RULE_V1001d
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1001d
+V1 is a rectangle 28nm x 56nm when enclosed in MINT1A with width >= 60nm
+RULE_V1001e
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1001e
+V1 is a rectangle 28nm x 56nm when enclosed in MINT1B with width >= 60nm
+RULE_V1002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1002A
+Minimum spacing of V1 if runlength exactly = 28nm is 36nm
+RULE_V1002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1002B
+Minimum spacing of V1 if runlength exactly = 28nm is 36nm
+RULE_V1003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1003A
+Minimum spacing of V1 if runlength < 28nm is 50nm
+RULE_V1003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1003B
+Minimum spacing of V1 if runlength < 28nm is 50nm
+RULE_V1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1004
+V1 must be inside (M1A and MINT1A) or (M1B and MINT1B) or (M1A and MINT1B) or (M1B and MINT1A) or (M1 and MINT1)
+RULE_V1005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1005A
+V1 shape must be rectangular if enclosing M1A wire width >= 60nm
+RULE_V1005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_V1005B
+V1 shape must be rectangular if enclosing M1B wire width >= 60nm
+RULE_VINT1001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1001a
+VINT1 is a square with 28nm edge length
+RULE_VINT1001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1001b
+VINT1 is a rectangle 28nm x 56nm when enclosed in MINT1A with width >= 60nm
+RULE_VINT1001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1001c
+VINT1 is a rectangle 28nm x 56nm when enclosed in MINT1B with width >= 60nm
+RULE_VINT1001d
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1001d
+VINT1 is a rectangle 28nm x 56nm when enclosed in MINT2A with width >= 60nm
+RULE_VINT1001e
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1001e
+VINT1 is a rectangle 28nm x 56nm when enclosed in MINT2B with width >= 60nm
+RULE_VINT1002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1002A
+Minimum spacing of VINT1 if runlength exactly = 28nm is 36nm
+RULE_VINT1002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1002B
+Minimum spacing of VINT1 if runlength exactly = 28nm is 36nm
+RULE_VINT1003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1003A
+Minimum spacing of VINT1 if runlength < 28nm is 50nm
+RULE_VINT1003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1003B
+Minimum spacing of VINT1 if runlength < 28nm is 50nm
+RULE_VINT1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1004
+VINT1 must be inside (MINT1A and MINT2A) or (MINT1B and MINT2B) or (MINT1A and MINT2B) or (MINT1B and MINT2A) or (MINT1 and MINT2)
+RULE_VINT1005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1005A
+VINT1 shape must be rectangular if enclosing MINT1A wire width >= 60nm
+RULE_VINT1005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT1005B
+VINT1 shape must be rectangular if enclosing MINT1B wire width >= 60nm
+RULE_VINT2001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2001a
+VINT2 is a square with 28nm edge length
+RULE_VINT2001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2001b
+VINT2 is a rectangle 28nm x 56nm when enclosed in MINT2A with width >= 60nm
+RULE_VINT2001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2001c
+VINT2 is a rectangle 28nm x 56nm when enclosed in MINT2B with width >= 60nm
+RULE_VINT2001d
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2001d
+VINT2 is a rectangle 28nm x 56nm when enclosed in MINT3A with width >= 60nm
+RULE_VINT2001e
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2001e
+VINT2 is a rectangle 28nm x 56nm when enclosed in MINT3B with width >= 60nm
+RULE_VINT2002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2002A
+Minimum spacing of VINT2 if runlength exactly = 28nm is 36nm
+RULE_VINT2002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2002B
+Minimum spacing of VINT2 if runlength exactly = 28nm is 36nm
+RULE_VINT2003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2003A
+Minimum spacing of VINT2 if runlength < 28nm is 50nm
+RULE_VINT2003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2003B
+Minimum spacing of VINT2 if runlength < 28nm is 50nm
+RULE_VINT2004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2004
+VINT2 must be inside (MINT2A and MINT3A) or (MINT2B and MINT3B) or (MINT2A and MINT3B) or (MINT2B and MINT3A) or (MINT2 and MINT3)
+RULE_VINT2005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2005A
+VINT2 shape must be rectangular if enclosing MINT2A wire width >= 60nm
+RULE_VINT2005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT2005B
+VINT2 shape must be rectangular if enclosing MINT2B wire width >= 40nm
+RULE_VINT3001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3001a
+VINT3 is a square with 28nm edge length
+RULE_VINT3001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3001b
+VINT3 is a rectangle 28nm x 56nm when enclosed in MINT3A with width >= 60nm
+RULE_VINT3001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3001c
+VINT3 is a rectangle 28nm x 56nm when enclosed in MINT3B with width >= 60nm
+RULE_VINT3001d
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3001d
+VINT3 is a rectangle 28nm x 56nm when enclosed in MINT4A with width >= 60nm
+RULE_VINT3001e
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3001e
+VINT3 is a rectangle 28nm x 56nm when enclosed in MINT4B with width >= 60nm
+RULE_VINT3002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3002A
+Minimum spacing of VINT3 if runlength exactly = 28nm is 36nm
+RULE_VINT3002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3002B
+Minimum spacing of VINT3 if runlength exactly = 28nm is 36nm
+RULE_VINT3003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3003A
+Minimum spacing of VINT3 if runlength < 28nm is 50nm
+RULE_VINT3003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3003B
+Minimum spacing of VINT3 if runlength < 28nm is 50nm
+RULE_VINT3004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3004
+VINT3 must be inside (MINT3A and MINT4A) or (MINT3B and MINT4B) or (MINT3A and MINT4B) or (MINT3B and MINT4A) or (MINT3 and MINT4)
+RULE_VINT3005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3005A
+VINT3 shape must be rectangular if enclosing MINT3A wire width >= 60nm
+RULE_VINT3005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT3005B
+VINT3 shape must be rectangular if enclosing MINT3B wire width >= 60nm
+RULE_VINT4001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4001a
+VINT4 is a square with 28nm edge length
+RULE_VINT4001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4001b
+VINT4 is a rectangle 28nm x 56nm when enclosed in MINT4A with width >= 60nm
+RULE_VINT4001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4001c
+VINT4 is a rectangle 28nm x 56nm when enclosed in MINT4B with width >= 60nm
+RULE_VINT4001d
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4001d
+VINT4 is a rectangle 28nm x 56nm when enclosed in MINT5A with width >= 60nm
+RULE_VINT4001e
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4001e
+VINT4 is a rectangle 28nm x 56nm when enclosed in MINT5B with width >= 60nm
+RULE_VINT4002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4002A
+Minimum spacing of VINT4 if runlength exactly = 28nm is 36nm
+RULE_VINT4002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4002B
+Minimum spacing of VINT4 if runlength exactly = 28nm is 36nm
+RULE_VINT4003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4003A
+Minimum spacing of VINT4 if runlength < 28nm is 50nm
+RULE_VINT4003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4003B
+Minimum spacing of VINT4 if runlength < 28nm is 50nm
+RULE_VINT4004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4004
+VINT4 must be inside (MINT4A and MINT5A) or (MINT4B and MINT5B) or (MINT4A and MINT5B) or (MINT4B and MINT5A) or (MINT4 and MINT5)
+RULE_VINT4005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4005A
+VINT4 shape must be rectangular if enclosing MINT4A wire width >= 60nm
+RULE_VINT4005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT4005B
+VINT4 shape must be rectangular if enclosing MINT4B wire width >= 60nm
+RULE_VINT5001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5001a
+VINT5 is a square with 28nm edge length
+RULE_VINT5001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5001b
+VINT5 is a rectangle 28nm x 56nm when enclosed in MINT5A with width >= 60nm
+RULE_VINT5001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5001c
+VINT5 is a rectangle 28nm x 56nm when enclosed in MINT5B with width >= 60nm
+RULE_VINT5001d
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5001d
+VINT5 is a rectangle 28nm x 56nm when enclosed in MSMG1 with width >= 60nm
+RULE_VINT5002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5002A
+Minimum spacing of VINT5 if runlength exactly = 28nm is 36nm
+RULE_VINT5002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5002B
+Minimum spacing of VINT5 if runlength exactly = 28nm is 36nm
+RULE_VINT5003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5003A
+Minimum spacing of VINT5 if runlength < 28nm is 50nm
+RULE_VINT5003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5003B
+Minimum spacing of VINT5 if runlength < 28nm is 50nm
+RULE_VINT5004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5004
+VINT5 must be inside (MINT5A and MSMG1) or (MINT5B and MSMG1) or (MINT5 and MSMG1)
+RULE_VINT5005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5005A
+VINT5 shape must be rectangular if enclosing MINT5A wire width >= 60nm
+RULE_VINT5005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VINT5005B
+VINT5 shape must be rectangular if enclosing MINT5B wire width >= 60nm
+RULE_MINT1001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1001A
+MINT1A width > 28nm
+RULE_MINT1001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1001B
+MINT1B width > 28nm
+RULE_MINT1001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1001
+MINT1 width > 28nm
+RULE_MINT1002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1002A
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT1002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1002B
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1002
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT1003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1003A
+maximum length of MINT1A for wires with min width 28nm is 1.8um
+RULE_MINT1003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1003B
+maximum length of MINT1B for wires with min width 28nm is 1.8um
+RULE_MINT1003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1003
+maximum length of MINT1 for wires with min width 28nm is 1.8um
+RULE_MINT1004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1004A
+MINT1A end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT1004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1004B
+MINT1B end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT1005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1005A
+MINT1A min space and notch 54nm
+RULE_MINT1005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1005B
+MINT1B min space and notch 54nm
+RULE_MINT1006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1006AB
+min spacing of MINT1A to MINT1B 36nm
+RULE_MINT1006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1006
+min spacing of MINT1 to MINT1 36nm
+RULE_MINT1007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1007AB
+End-of-line spacing of MINT1A to MINT1B (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT1007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1007
+End-of-line spacing of MINT1 to MINT1 (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT1008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1008A
+Minimum spacing of MINT1A when MINT1A is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT1008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1008B
+Minimum spacing of MINT1B when MINT1B is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT1009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1009A
+Minimum spacing of MINT1A when MINT1A is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT1009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1009B
+Minimum spacing of MINT1B when MINT1B is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT1010A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1010A
+Minimum spacing of MINT1A when MINT1A is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT1010B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1010B
+Minimum spacing of MINT1B when MINT1B is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT1011A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1011A
+Minimum spacing of MINT1A when MINT1A is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT1011B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1011B
+Minimum spacing of MINT1B when MINT1B is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT1012A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1012A
+Minimum spacing of MINT1A when MINT1A is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT1012B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1012B
+Minimum spacing of MINT1B when MINT1B is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT1013A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1013A
+Minimum spacing of MINT1A when MINT1A is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT1013B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1013B
+Minimum spacing of MINT1B when MINT1B is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT1014A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1014A
+Minimum spacing of MINT1A when MINT1A is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT1014B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1014B
+Minimum spacing of MINT1B when MINT1B is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT1015A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1015A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT1015B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1015B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT1016A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1016A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT1016B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1016B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT1017A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1017A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT1017B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1017B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT1018A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1018A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT1018B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1018B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT1019A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1019A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT1019B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1019B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT1020A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1020A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT1020B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1020B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT1021A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1021A
+Minimum spacing of MINT1A to MINT1B when MINT1B is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT1021B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1021B
+Minimum spacing of MINT1B to MINT1A when MINT1A is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT1022
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1022
+Minimum overlap of MINT1A and MINT1B (stitch region length)
+RULE_MINT1023A
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1023A
+Allowed enclosures of V1 by MINT1A
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT1023B
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1023B
+Allowed enclosures of V1 by MINT1B
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT1023
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1023
+Allowed enclosures of V1 by MINT1 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT1024
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1024
+Allowed enclosures of V1 by MINT1A-MINT1B stitches
+RULE_MINT1026A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1026A
+V1 shape must be rectangular if enclosing MINT1A wire width >= 60nm
+RULE_MINT1026B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1026B
+V1 shape must be rectangular if enclosing MINT1B wire width >= 60nm
+RULE_MINT1027A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1027A
+MINT1A minimum area for rectangular shape is 0.0024um2
+RULE_MINT1027B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1027B
+MINT1B minimum area for rectangular shape is 0.0024um2
+RULE_MINT1027
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1027
+MINT1 minimum area for rectangular shape is 0.0024um2
+RULE_MINT1028A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1028A
+MINT1A min area for non-rectangular shape is 0.0036um2
+RULE_MINT1028B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT1028B
+MINT1B min area for non-rectangular shape is 0.0036um2
+RULE_MINT2001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2001A
+MINT2A width > 28nm 
+RULE_MINT2001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2001B
+MINT2B width > 28nm
+RULE_MINT2001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2001
+MINT2 width > 28nm
+RULE_MINT2002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2002A
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT2002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2002B
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT2002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2002
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT2003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2003A
+maximum length of MINT2A for wires with min width 28nm is 1.8um
+RULE_MINT2003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2003B
+maximum length of MINT2B for wires with min width 28nm is 1.8um
+RULE_MINT2003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2003
+maximum length of MINT2 for wires with min width 28nm is 1.8um
+RULE_MINT2004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2004A
+MINT2A end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT2004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2004B
+MINT2B end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT2005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2005A
+MINT2A min space and notch 54nm
+RULE_MINT2005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2005B
+MINT2B min space and notch 54nm
+RULE_MINT2006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2006AB
+min spacing of MINT2A to MINT2B 36nm
+RULE_MINT2006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2006
+min spacing of MINT2 to MINT2 36nm
+RULE_MINT2007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2007AB
+End-of-line spacing of MINT2A to MINT2B (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT2007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2007
+End-of-line spacing of MINT2 to MINT2 (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT2008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2008A
+Minimum spacing of MINT2A when MINT2A is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT2008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2008B
+Minimum spacing of MINT2B when MINT2B is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT2009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2009A
+Minimum spacing of MINT2A when MINT2A is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT2009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2009B
+Minimum spacing of MINT2B when MINT2B is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT2010A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2010A
+Minimum spacing of MINT2A when MINT2A is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT2010B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2010B
+Minimum spacing of MINT2B when MINT2B is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT2011A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2011A
+Minimum spacing of MINT2A when MINT2A is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT2011B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2011B
+Minimum spacing of MINT2B when MINT2B is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT2012A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2012A
+Minimum spacing of MINT2A when MINT2A is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT2012B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2012B
+Minimum spacing of MINT2B when MINT2B is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT2013A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2013A
+Minimum spacing of MINT2A when MINT2A is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT2013B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2013B
+Minimum spacing of MINT2B when MINT2B is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT2014A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2014A
+Minimum spacing of MINT2A when MINT2A is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT2014B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2014B
+Minimum spacing of MINT2B when MINT2B is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT2015A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2015A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT2015B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2015B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT2016A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2016A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT2016B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2016B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT2017A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2017A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT2017B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2017B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT2018A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2018A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT2018B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2018B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT2019A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2019A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT2019B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2019B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT2020A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2020A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT2020B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2020B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT2021A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2021A
+Minimum spacing of MINT2A to MINT2B when MINT2B is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT2021B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2021B
+Minimum spacing of MINT2B to MINT2A when MINT2A is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT2022
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2022
+Minimum overlap of MINT2A and MINT2B (stitch region length)
+RULE_MINT2023A
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2023A
+Allowed enclosures of VINT1 by MINT2A are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT2023B
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2023B
+Allowed enclosures of VINT1 by MINT2B are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT2023
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2023
+Allowed enclosures of VINT1 by MINT2 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT2024
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2024
+Allowed enclosures of VINT1 by MINT2A-MINT2B stitches
+RULE_MINT2026A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2026A
+VINT1 shape must be rectangular if enclosing MINT2A wire width >= 60nm
+RULE_MINT2026B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2026B
+VINT1 shape must be rectangular if enclosing MINT2B wire width >= 60nm
+RULE_MINT2027A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2027A
+MINT2A minimum area for rectangular shape is 0.0024um2
+RULE_MINT2027B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2027B
+MINT2B minimum area for rectangular shape is 0.0024um2
+RULE_MINT2027
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2027
+MINT2 minimum area for rectangular shape is 0.0024um2
+RULE_MINT2028A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2028A
+MINT2A min area for non-rectangular shape is 0.0036um2
+RULE_MINT2028B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT2028B
+MINT2B min area for non-rectangular shape is 0.0036um2
+RULE_MINT3001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3001A
+MINT3A width > 28nm
+RULE_MINT3001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3001B
+MINT3B width > 28nm
+RULE_MINT3001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3001
+MINT3 width > 28nm
+RULE_MINT3002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3002A
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT3002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3002B
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT3002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3002
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT3003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3003A
+maximum length of MINT3A for wires with min width 28nm is 1.8um
+RULE_MINT3003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3003B
+maximum length of MINT3B for wires with min width 28nm is 1.8um
+RULE_MINT3003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3003
+maximum length of MINT3 for wires with min width 28nm is 1.8um
+RULE_MINT3004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3004A
+MINT3A end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT3004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3004B
+MINT3B end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT3005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3005A
+MINT3A min space and notch 54nm
+RULE_MINT3005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3005B
+MINT3B min space and notch 54nm
+RULE_MINT3006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3006AB
+min spacing of MINT3A to MINT3B 36nm
+RULE_MINT3006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3006
+min spacing of MINT3 to MINT3 36nm
+RULE_MINT3007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3007AB
+End-of-line spacing of MINT3A to MINT3B (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT3007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3007
+End-of-line spacing of MINT3 to MINT3 (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT3008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3008A
+Minimum spacing of MINT3A when MINT3A is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT3008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3008B
+Minimum spacing of MINT3B when MINT3B is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT3009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3009A
+Minimum spacing of MINT3A when MINT3A is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT3009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3009B
+Minimum spacing of MINT3B when MINT3B is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT3010A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3010A
+Minimum spacing of MINT3A when MINT3A is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT3010B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3010B
+Minimum spacing of MINT3B when MINT3B is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT3011A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3011A
+Minimum spacing of MINT3A when MINT3A is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT3011B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3011B
+Minimum spacing of MINT3B when MINT3B is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT3012A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3012A
+Minimum spacing of MINT3A when MINT3A is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT3012B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3012B
+Minimum spacing of MINT3B when MINT3B is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT3013A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3013A
+Minimum spacing of MINT3A when MINT3A is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT3013B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3013B
+Minimum spacing of MINT3B when MINT3B is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT3014A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3014A
+Minimum spacing of MINT3A when MINT3A is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT3014B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3014B
+Minimum spacing of MINT3B when MINT3B is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT3015A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3015A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT3015B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3015B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT3016A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3016A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT3016B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3016B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT3017A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3017A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT3017B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3017B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT3018A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3018A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT3018B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3018B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT3019A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3019A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT3019B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3019B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT3020A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3020A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT3020B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3020B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT3021A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3021A
+Minimum spacing of MINT3A to MINT3B when MINT3B is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT3021B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3021B
+Minimum spacing of MINT3B to MINT3A when MINT3A is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT3022
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3022
+Minimum overlap of MINT3A and MINT3B (stitch region length)
+RULE_MINT3023A
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3023A
+Allowed enclosures of VINT2 by MINT3A are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT3023B
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3023B
+Allowed enclosures of VINT2 by MINT3B are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT3023
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3023
+Allowed enclosures of VINT2 by MINT3 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT3024
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3024
+Allowed enclosures of VINT2 by MINT3A-MINT3B stitches
+RULE_MINT3026A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3026A
+VINT2 shape must be rectangular if enclosing MINT3A wire width >= 60nm
+RULE_MINT3026B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3026B
+VINT2 shape must be rectangular if enclosing MINT3B wire width >= 60nm
+RULE_MINT3027A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3027A
+MINT3A minimum area for rectangular shape is 0.0024um2
+RULE_MINT3027B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3027B
+MINT3B minimum area for rectangular shape is 0.0024um2
+RULE_MINT3027
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3027
+MINT3 minimum area for rectangular shape is 0.0024um2
+RULE_MINT3028A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3028A
+MINT3A min area for non-rectangular shape is 0.0036um2
+RULE_MINT3028B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT3028B
+MINT3B min area for non-rectangular shape is 0.0036um2
+RULE_MINT4001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4001A
+MINT4A width > 28nm
+RULE_MINT4001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4001B
+MINT4B width > 28nm
+RULE_MINT4001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4001
+MINT4 width > 28nm
+RULE_MINT4002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4002A
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT4002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4002B
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT4002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4002
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT4003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4003A
+maximum length of MINT4A for wires with min width 28nm is 1.8um
+RULE_MINT4003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4003B
+maximum length of MINT4B for wires with min width 28nm is 1.8um
+RULE_MINT4003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4003
+maximum length of MINT4 for wires with min width 28nm is 1.8um
+RULE_MINT4004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4004A
+MINT4A end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT4004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4004B
+MINT4B end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT4005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4005A
+MINT4A min space and notch 54nm
+RULE_MINT4005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4005B
+MINT4B min space and notch 54nm
+RULE_MINT4006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4006AB
+min spacing of MINT4A to MINT4B 36nm
+RULE_MINT4006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4006
+min spacing of MINT4 to MINT4 36nm
+RULE_MINT4007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4007AB
+End-of-line spacing of MINT4A to MINT4B (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT4007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4007
+End-of-line spacing of MINT4 to MINT4 (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT4008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4008A
+Minimum spacing of MINT4A when MINT4A is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT4008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4008B
+Minimum spacing of MINT4B when MINT4B is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT4009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4009A
+Minimum spacing of MINT4A when MINT4A is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT4009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4009B
+Minimum spacing of MINT4B when MINT4B is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT4010A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4010A
+Minimum spacing of MINT4A when MINT4A is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT4010B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4010B
+Minimum spacing of MINT4B when MINT4B is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT4011A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4011A
+Minimum spacing of MINT4A when MINT4A is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT4011B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4011B
+Minimum spacing of MINT4B when MINT4B is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT4012A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4012A
+Minimum spacing of MINT4A when MINT4A is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT4012B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4012B
+Minimum spacing of MINT4B when MINT4B is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT4013A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4013A
+Minimum spacing of MINT4A when MINT4A is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT4013B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4013B
+Minimum spacing of MINT4B when MINT4B is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT4014A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4014A
+Minimum spacing of MINT4A when MINT4A is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT4014B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4014B
+Minimum spacing of MINT4B when MINT4B is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT4015A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4015A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT4015B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4015B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT4016A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4016A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT4016B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4016B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT4017A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4017A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT4017B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4017B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT4018A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4018A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT4018B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4018B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT4019A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4019A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT4019B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4019B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT4020A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4020A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT4020B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4020B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT4021A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4021A
+Minimum spacing of MINT4A to MINT4B when MINT4B is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT4021B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4021B
+Minimum spacing of MINT4B to MINT4A when MINT4A is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT4022
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4022
+Minimum overlap of MINT4A and MINT4B (stitch region length)
+RULE_MINT4023A
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4023A
+Allowed enclosures of VINT3 by MINT4A are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT4023B
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4023B
+Allowed enclosures of VINT3 by MINT4B are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT4023
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4023
+Allowed enclosures of VINT3 by MINT4 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT4024
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4024
+Allowed enclosures of VINT3 by MINT4A-MINT4B stitches
+RULE_MINT4026A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4026A
+VINT3 shape must be rectangular if enclosing MINT4A wire width >= 60nm
+RULE_MINT4026B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4026B
+VINT3 shape must be rectangular if enclosing MINT4B wire width >= 60nm
+RULE_MINT4027A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4027A
+MINT4A minimum area for rectangular shape is 0.0024um2
+RULE_MINT4027B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4027B
+MINT4B minimum area for rectangular shape is 0.0024um2
+RULE_MINT4027
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4027
+MINT4 minimum area for rectangular shape is 0.0024um2
+RULE_MINT4028A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4028A
+MINT4A min area for non-rectangular shape is 0.0036um2
+RULE_MINT4028B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT4028B
+MINT4B min area for non-rectangular shape is 0.0036um2
+RULE_MINT5001A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5001A
+MINT5A width > 28nm
+RULE_MINT5001B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5001B
+MINT5B width > 28nm
+RULE_MINT5001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5001
+MINT5 width > 28nm
+RULE_MINT5002A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5002A
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT5002B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5002B
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT5002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5002
+One of two edges connected to the same vertex must have at least one of 56nm
+RULE_MINT5003A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5003A
+maximum length of MINT5A for wires with min width 28nm is 1.8um
+RULE_MINT5003B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5003B
+maximum length of MINT5B for wires with min width 28nm is 1.8um
+RULE_MINT5003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5003
+maximum length of MINT5 for wires with min width 28nm is 1.8um
+RULE_MINT5004A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5004A
+MINT5A end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT5004B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5004B
+MINT5B end-of-line spacing (end-of-line edge defined as edge < 32nm) is 68nm
+RULE_MINT5005A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5005A
+MINT5A min space and notch 54nm
+RULE_MINT5005B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5005B
+MINT5B min space and notch 54nm
+RULE_MINT5006AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5006AB
+min spacing of MINT5A to MINT5B 36nm
+RULE_MINT5006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5006
+min spacing of MINT5 to MINT5 36nm
+RULE_MINT5007AB
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5007AB
+End-of-line spacing of MINT5A to MINT5B (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT5007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5007
+End-of-line spacing of MINT5 to MINT5 (EOL edge defined as edge < 32nm) is 44nm
+RULE_MINT5008A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5008A
+Minimum spacing of MINT5A when MINT5A is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT5008B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5008B
+Minimum spacing of MINT5B when MINT5B is wider than 32nm and longer than 240nm is 68nm
+RULE_MINT5009A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5009A
+Minimum spacing of MINT5A when MINT5A is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT5009B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5009B
+Minimum spacing of MINT5B when MINT5B is wider than 40nm and longer than 240nm is 76nm
+RULE_MINT5010A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5010A
+Minimum spacing of MINT5A when MINT5A is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT5010B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5010B
+Minimum spacing of MINT5B when MINT5B is wider than 64nm and longer than 480nm is 92nm
+RULE_MINT5011A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5011A
+Minimum spacing of MINT5A when MINT5A is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT5011B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5011B
+Minimum spacing of MINT5B when MINT5B is wider than 120nm and longer than 1200nm is 120nm
+RULE_MINT5012A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5012A
+Minimum spacing of MINT5A when MINT5A is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT5012B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5012B
+Minimum spacing of MINT5B when MINT5B is wider than 240nm and longer than 1800nm is 240nm
+RULE_MINT5013A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5013A
+Minimum spacing of MINT5A when MINT5A is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT5013B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5013B
+Minimum spacing of MINT5B when MINT5B is wider than 320nm and longer than 2400nm is 320nm
+RULE_MINT5014A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5014A
+Minimum spacing of MINT5A when MINT5A is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT5014B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5014B
+Minimum spacing of MINT5B when MINT5B is wider than 600nm and longer than 2400nm is 600nm
+RULE_MINT5015A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5015A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT5015B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5015B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 32nm and longer than 240nm is 44nm
+RULE_MINT5016A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5016A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT5016B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5016B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 40nm and longer than 240nm is 50nm
+RULE_MINT5017A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5017A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT5017B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5017B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 64nm and longer than 480nm is 60nm
+RULE_MINT5018A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5018A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT5018B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5018B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 120nm and longer than 1200nm is 78nm
+RULE_MINT5019A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5019A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT5019B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5019B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 240nm and longer than 1800nm is 156nm
+RULE_MINT5020A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5020A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT5020B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5020B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 320nm and longer than 2400nm is 200nm
+RULE_MINT5021A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5021A
+Minimum spacing of MINT5A to MINT5B when MINT5B is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT5021B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5021B
+Minimum spacing of MINT5B to MINT5A when MINT5A is wider than 600nm and longer than 2400nm is 400nm
+RULE_MINT5022
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5022
+Minimum overlap of MINT5A and MINT5B (stitch region length)
+RULE_MINT5023A
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5023A
+Allowed enclosures of VINT4 by MINT5A are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT5023B
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5023B
+Allowed enclosures of VINT4 by MINT5B are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT5023
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5023
+Allowed enclosures of VINT4 by MINT5 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MINT5024
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5024
+Allowed enclosures of VINT4 by MINT5A-MINT5B stitches
+RULE_MINT5026A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5026A
+VINT4 shape must be rectangular if enclosing MINT5A wire width >= 60nm
+RULE_MINT5026B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5026B
+VINT4 shape must be rectangular if enclosing MINT5B wire width >= 60nm
+RULE_MINT5027A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5027A
+MINT5A minimum area for rectangular shape is 0.0024um2
+RULE_MINT5027B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5027B
+MINT5B minimum area for rectangular shape is 0.0024um2
+RULE_MINT5027
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5027
+MINT5 minimum area for rectangular shape is 0.0024um2
+RULE_MINT5028A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5028A
+MINT5A min area for non-rectangular shape is 0.0036um2
+RULE_MINT5028B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MINT5028B
+MINT5B min area for non-rectangular shape is 0.0036um2
+RULE_VSMG1001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1001a
+VSMG1 is a square with 56nm edge length
+RULE_VSMG1001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1001b
+VSMG1 is a rectangle 56nm x 112nm when enclosed in MSMG1 with width >= 120nm
+RULE_VSMG1001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1001c
+VSMG1 is a rectangle 56nm x 112nm when enclosed in MSMG2 with width >= 120nm
+RULE_VSMG1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1002
+Minimum spacing of VSMG1 if runlength exactly = 56nm is 72nm
+RULE_VSMG1003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1003
+Minimum spacing of VSMG1 if runlength < 56nm is 100nm
+RULE_VSMG1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1004
+VSMG1 must be inside (MSMG1 and MSMG2)
+RULE_VSMG1005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG1005
+VSMG1 shape must be rectangular if enclosing MSMG1 wire width >= 120nm
+RULE_VSMG2001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2001a
+VSMG2 is a square with 56nm edge length
+RULE_VSMG2001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2001b
+VSMG2 is a rectangle 56nm x 112nm when enclosed in MSMG2 with width >= 120nm
+RULE_VSMG2001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2001c
+VSMG2 is a rectangle 56nm x 112nm when enclosed in MSMG2 with width >= 120nm
+RULE_VSMG2002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2002
+Minimum spacing of VSMG2 if runlength exactly = 56nm is 72nm
+RULE_VSMG2003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2003
+Minimum spacing of VSMG2 if runlength < 56nm is 100nm
+RULE_VSMG2004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2004
+VSMG2 must be inside (MSMG2 and MSMG3)
+RULE_VSMG2005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG2005
+VSMG2 shape must be rectangular if enclosing MSMG2 wire width >= 120nm
+RULE_VSMG3001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3001a
+VSMG3 is a square with 56nm edge length
+RULE_VSMG3001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3001b
+VSMG3 is a rectangle 56nm x 112nm when enclosed in MSMG3 with width >= 120nm
+RULE_VSMG3001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3001c
+VSMG3 is a rectangle 56nm x 112nm when enclosed in MSMG3 with width >= 120nm
+RULE_VSMG3002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3002
+Minimum spacing of VSMG3 if runlength exactly = 56nm is 72nm
+RULE_VSMG3003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3003
+Minimum spacing of VSMG3 if runlength < 56nm is 100nm
+RULE_VSMG3004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3004
+VSMG3 must be inside (MSMG3 and MSMG4)
+RULE_VSMG3005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG3005
+VSMG3 shape must be rectangular if enclosing MSMG3 wire width >= 120nm
+RULE_VSMG4001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4001a
+VSMG4 is a square with 56nm edge length
+RULE_VSMG4001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4001b
+VSMG4 is a rectangle 56nm x 112nm when enclosed in MSMG4 with width >= 120nm
+RULE_VSMG4001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4001c
+VSMG4 is a rectangle 56nm x 112nm when enclosed in MSMG4 with width >= 120nm
+RULE_VSMG4002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4002
+Minimum spacing of VSMG4 if runlength exactly = 56nm is 72nm
+RULE_VSMG4003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4003
+Minimum spacing of VSMG4 if runlength < 56nm is 100nm
+RULE_VSMG4004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4004
+VSMG4 must be inside (MSMG4 and MSMG5)
+RULE_VSMG4005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG4005
+VSMG4 shape must be rectangular if enclosing MSMG4 wire width >= 120nm
+RULE_VSMG5001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5001a
+VSMG5 is a square with 56nm edge length
+RULE_VSMG5001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5001b
+VSMG5 is a rectangle 56nm x 112nm when enclosed in MSMG5 with width >= 120nm
+RULE_VSMG5001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5001c
+VSMG5 is a rectangle 56nm x 112nm when enclosed in MSMG5 with width >= 120nm
+RULE_VSMG5002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5002
+Minimum spacing of VSMG5 if runlength exactly = 56nm is 72nm
+RULE_VSMG5003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5003
+Minimum spacing of VSMG5 if runlength < 56nm is 100nm
+RULE_VSMG5004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5004
+VSMG5 must be inside (MSMG5 and MG1)
+RULE_VSMG5005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VSMG5005
+VSMG5 shape must be rectangular if enclosing MSMG5 wire width >= 120nm
+RULE_MSMG1001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1001
+MSMG1 width > 56nm
+RULE_MSMG1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1002
+One of two edges connected to the same vertex must have at least one of 112nm
+RULE_MSMG1003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1003
+maximum length of MSMG1 for wires with min width 56nm is 1.92um
+RULE_MSMG1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1004
+MSMG1 end-of-line spacing (end-of-line edge defined as edge < 64nm) is 136nm
+RULE_MSMG1005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1005
+MSMG1 min space and notch 56nm
+RULE_MSMG1006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1006
+Minimum spacing of MSMG1 when MSMG1 is wider than 64nm and longer than 480nm is 92nm
+RULE_MSMG1007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1007
+Minimum spacing of MSMG1 when MSMG1 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MSMG1008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1008
+Minimum spacing of MSMG1 when MSMG1 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MSMG1009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1009
+Minimum spacing of MSMG1 when MSMG1 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MSMG1010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1010
+Minimum spacing of MSMG1 when MSMG1 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MSMG1011
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1011
+Allowed enclosures of VINT5 by MSMG1 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MSMG1013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1013
+VINT5 shape must be rectangular if enclosing MSMG1 wire width >= 120nm
+RULE_MSMG1014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1014
+MSMG1 minimum area for rectangular shape is 0.0024um2
+RULE_MSMG1015
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG1015
+MSMG1 min area for non-rectangular shape is 0.0036um2
+RULE_MSMG2001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2001
+MSMG2 width > 56nm
+RULE_MSMG2002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2002
+One of two edges connected to the same vertex must have at least one of 112nm
+RULE_MSMG2003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2003
+maximum length of MSMG2 for wires with min width 56nm is 1.92um
+RULE_MSMG2004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2004
+MSMG2 end-of-line spacing (end-of-line edge defined as edge < 64nm) is 136nm
+RULE_MSMG2005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2005
+MSMG2 min space and notch 56nm
+RULE_MSMG2006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2006
+Minimum spacing of MSMG2 when MSMG2 is wider than 64nm and longer than 480nm is 92nm
+RULE_MSMG2007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2007
+Minimum spacing of MSMG2 when MSMG2 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MSMG2008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2008
+Minimum spacing of MSMG2 when MSMG2 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MSMG2009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2009
+Minimum spacing of MSMG2 when MSMG2 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MSMG2010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2010
+Minimum spacing of MSMG2 when MSMG2 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MSMG2011
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2011
+Allowed enclosures of VSMG1 by MSMG2 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MSMG2013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2013
+VSMG1 shape must be rectangular if enclosing MSMG2 wire width >= 120nm
+RULE_MSMG2014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2014
+MSMG2 minimum area for rectangular shape is 0.0024um2
+RULE_MSMG2015
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG2015
+MSMG2 min area for non-rectangular shape is 0.0036um2
+RULE_MSMG3001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3001
+MSMG3 width > 56nm
+RULE_MSMG3002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3002
+One of two edges connected to the same vertex must have at least one of 112nm
+RULE_MSMG3003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3003
+maximum length of MSMG3 for wires with min width 56nm is 1.92um
+RULE_MSMG3004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3004
+MSMG3 end-of-line spacing (end-of-line edge defined as edge < 64nm) is 136nm
+RULE_MSMG3005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3005
+MSMG3 min space and notch 56nm
+RULE_MSMG3006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3006
+Minimum spacing of MSMG3 when MSMG3 is wider than 64nm and longer than 480nm is 92nm
+RULE_MSMG3007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3007
+Minimum spacing of MSMG3 when MSMG3 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MSMG3008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3008
+Minimum spacing of MSMG3 when MSMG3 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MSMG3009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3009
+Minimum spacing of MSMG3 when MSMG3 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MSMG3010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3010
+Minimum spacing of MSMG3 when MSMG3 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MSMG3011
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3011
+Allowed enclosures of VSMG2 by MSMG3 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MSMG3013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3013
+VSMG2 shape must be rectangular if enclosing MSMG3 wire width >= 120nm
+RULE_MSMG3014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3014
+MSMG3 minimum area for rectangular shape is 0.0024um2
+RULE_MSMG3015
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG3015
+MSMG3 min area for non-rectangular shape is 0.0036um2
+RULE_MSMG4001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4001
+MSMG4 width > 56nm
+RULE_MSMG4002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4002
+One of two edges connected to the same vertex must have at least one of 112nm
+RULE_MSMG4003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4003
+maximum length of MSMG4 for wires with min width 56nm is 1.92um
+RULE_MSMG4004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4004
+MSMG4 end-of-line spacing (end-of-line edge defined as edge < 64nm) is 136nm
+RULE_MSMG4005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4005
+MSMG4 min space and notch 56nm
+RULE_MSMG4006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4006
+Minimum spacing of MSMG4 when MSMG4 is wider than 64nm and longer than 480nm is 92nm
+RULE_MSMG4007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4007
+Minimum spacing of MSMG4 when MSMG4 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MSMG4008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4008
+Minimum spacing of MSMG4 when MSMG4 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MSMG4009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4009
+Minimum spacing of MSMG4 when MSMG4 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MSMG4010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4010
+Minimum spacing of MSMG4 when MSMG4 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MSMG4011
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4011
+Allowed enclosures of VSMG3 by MSMG4 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MSMG4013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4013
+VSMG3 shape must be rectangular if enclosing MSMG4 wire width >= 120nm
+RULE_MSMG4014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4014
+MSMG4 minimum area for rectangular shape is 0.0024um2
+RULE_MSMG4015
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG4015
+MSMG4 min area for non-rectangular shape is 0.0036um2
+RULE_MSMG5001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5001
+MSMG5 width > 56nm
+RULE_MSMG5002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5002
+One of two edges connected to the same vertex must have at least one of 112nm
+RULE_MSMG5003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5003
+maximum length of MSMG5 for wires with min width 56nm is 1.92um
+RULE_MSMG5004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5004
+MSMG5 end-of-line spacing (end-of-line edge defined as edge < 64nm) is 136nm
+RULE_MSMG5005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5005
+MSMG5 min space and notch 56nm
+RULE_MSMG5006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5006
+Minimum spacing of MSMG5 when MSMG5 is wider than 64nm and longer than 480nm is 92nm
+RULE_MSMG5007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5007
+Minimum spacing of MSMG5 when MSMG5 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MSMG5008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5008
+Minimum spacing of MSMG5 when MSMG5 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MSMG5009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5009
+Minimum spacing of MSMG5 when MSMG5 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MSMG5010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5010
+Minimum spacing of MSMG5 when MSMG5 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MSMG5011
+0 0 5 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5011
+Allowed enclosures of VSMG4 by MSMG5 are
+[0.028,0.002], [0.032,0], or [0.01,0.01]
+on opposite sides
+RULE_MSMG5013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5013
+VSMG4 shape must be rectangular if enclosing MSMG5 wire width >= 120nm
+RULE_MSMG5014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5014
+MSMG5 minimum area for rectangular shape is 0.0024um2
+RULE_MSMG5015
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MSMG5015
+MSMG5 min area for non-rectangular shape is 0.0036um2
+RULE_VG1001a
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1001a
+VG1 is a square with 112nm edge length
+RULE_VG1001b
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1001b
+VG1 is a rectangle 112nm x 224nm when enclosed in MG1 with width >= 240nm
+RULE_VG1001c
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1001c
+VG1 is a rectangle 112nm x 224nm when enclosed in MG2 with width >= 240nm
+RULE_VG1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1002
+Minimum spacing of VG1 if runlength exactly = 112nm is 144nm
+RULE_VG1003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1003
+Minimum spacing of VG1 if runlength < 112nm is 200nm
+RULE_VG1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1004
+VG1 must be inside (MG1 and MG2)
+RULE_VG1005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_VG1005
+VG1 shape must be rectangular if enclosing MG1 wire width >= 240nm
+RULE_MG1001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1001
+MG1 width > 112nm
+RULE_MG1002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1002
+One of two edges connected to the same vertex must have at least one of 224nm
+RULE_MG1003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1003
+maximum length of MG1 for wires with min width 112nm is 3.84um
+RULE_MG1004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1004
+MG1 end-of-line spacing (end-of-line edge defined as edge < 128nm) is 272nm
+RULE_MG1005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1005
+MG1 min space and notch 112nm
+RULE_MG1006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1006
+Minimum spacing of MG1 when MG1 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MG1007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1007
+Minimum spacing of MG1 when MG1 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MG1008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1008
+Minimum spacing of MG1 when MG1 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MG1009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1009
+Minimum spacing of MG1 when MG1 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MG1010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1010
+Allowed enclosures of VSMG5 by MG1
+RULE_MG1012
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1012
+VSMG5 shape must be rectangular if enclosing MG1 wire width >= 240nm
+RULE_MG1013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1013
+MG1 minimum area for rectangular shape is 0.0024um2
+RULE_MG1014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG1014
+MG1 min area for non-rectangular shape is 0.0036um2
+RULE_MG2001
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2001
+MG2 width > 112nm
+RULE_MG2002
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2002
+One of two edges connected to the same vertex must have at least one of 224nm
+RULE_MG2003
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2003
+maximum length of MG2 for wires with min width 112nm is 3.84um
+RULE_MG2004
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2004
+MG2 end-of-line spacing (end-of-line edge defined as edge < 128nm) is 272nm
+RULE_MG2005
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2005
+MG2 min space and notch 112nm
+RULE_MG2006
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2006
+Minimum spacing of MG2 when MG2 is wider than 120nm and longer than 1200nm is 120nm
+RULE_MG2007
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2007
+Minimum spacing of MG2 when MG2 is wider than 240nm and longer than 1800nm is 240nm
+RULE_MG2008
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2008
+Minimum spacing of MG2 when MG2 is wider than 320nm and longer than 2400nm is 320nm
+RULE_MG2009
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2009
+Minimum spacing of MG2 when MG2 is wider than 600nm and longer than 2400nm is 600nm
+RULE_MG2010
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2010
+Allowed enclosures of VG1 by MG2
+RULE_MG2012
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2012
+VG1 shape must be rectangular if enclosing MG2 wire width >= 240nm
+RULE_MG2013
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2013
+MG2 minimum area for rectangular shape is 0.0024um2
+RULE_MG2014
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MG2014
+MG2 min area for non-rectangular shape is 0.0036um2
+RULE_MIS01
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MIS01
+Shapes on all layers must be on a 0.5 nm grid
+RULE_MIS02A
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MIS02A
+[ANTENNA] Ratio of Maximum Allowed GATE[A] Area to transistor Gate Area is 100:1
+RULE_MIS02B
+0 0 3 Feb 29 17:27:09 2020                     
+Rule File Pathname: /home/users/skavya/ee272/ee272-hw6/_calibreDRC.rul_
+RULE_MIS02B
+[ANTENNA] Ratio of Maximum Allowed GATE[B] Area to transistor Gate Area is 100:1
