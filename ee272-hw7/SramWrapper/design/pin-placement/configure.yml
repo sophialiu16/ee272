@@ -1,0 +1,4 @@
+name: pin-placement
+
+outputs:
+  - pin-assignments.tcl
