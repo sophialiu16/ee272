@@ -1,8 +1,0 @@
-commands:
-- 'true'
-name: constraints
-outputs:
-- constraints.tcl
-parameters:
-  clock_period: 2.0
-  design_name: GcdUnit

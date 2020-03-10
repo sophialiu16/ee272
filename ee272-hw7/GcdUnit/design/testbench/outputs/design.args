@@ -1,1 +1,0 @@
--debug_access+pp +lint=TFIPC-L -debug_access+all -sverilog -sdf GcdUnit:inputs/design.sdf +vcs+initreg+random

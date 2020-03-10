@@ -1,3 +1,0 @@
-# EE272 HW6
-
-This lab assignment will introduce the basics of working with analog and mixed-signal blocks, using a phase-locked loop (PLL) as an example. A PLL is a system that produces an output clock that is "locked" in a certain phase relationship to an input clock. They have many applications in modern integrated circuit design, such as clock multiplication, clock distribution, and jitter filtering.  First you’ll learn about how PLLs work from an system-level perspective, using event- driven analog models that are compatible with Verilog simulation. Then you’ll dive to a lower level and explore analog implementation in Virtuoso, using the PLL’s voltage-controlled oscillator (VCO) as an example.
