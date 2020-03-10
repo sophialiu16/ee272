@@ -1,0 +1,58 @@
+|==============================================================================|
+|=========                       OpenRAM v1.1.3                       =========|
+|=========                                                            =========|
+|=========               VLSI Design and Automation Lab               =========|
+|=========        Computer Science and Engineering Department         =========|
+|=========            University of California Santa Cruz             =========|
+|=========                                                            =========|
+|=========          Usage help: openram-user-group@ucsc.edu           =========|
+|=========        Development help: openram-dev-group@ucsc.edu        =========|
+|=========         Temp dir: /tmp/openram_kprabhu7_7131_temp/         =========|
+|=========                See LICENSE for license info                =========|
+|==============================================================================|
+** Start: 02/25/2020 23:40:40
+Technology: freepdk45
+Total size: 16384 bits
+WARNING: file globals.py: line 562: Requesting such a large memory size (16384) will have a large run-time. Consider using multiple smaller banks.
+
+Word size: 256
+Words: 64
+Banks: 1
+Write size: None
+RW ports: 1
+R-only ports: 0
+W-only ports: 0
+Design supply routing skipped. Supplies will have multiple must-connect pins. (route_supplies=True to enable supply routing).
+DRC/LVS/PEX is only run on the top-level design to save run-time (inline_lvsdrc=True to do inline checking).
+DRC/LVS/PEX is disabled (check_lvsdrc=True to enable).
+Characterization is disabled (using analytical delay models) (analytical_delay=False to simulate).
+Words per row: 1
+Output files are: 
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.sp
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.v
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.lib
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.py
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.html
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.log
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.lef
+/home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.gds
+** Submodules: 38.1 seconds
+** Placement: 0.0 seconds
+** Routing: 8.0 seconds
+** Verification: 0.0 seconds
+** SRAM creation: 46.8 seconds
+LEF: Writing to /home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.lef
+** LEF: 162.4 seconds
+GDS: Writing to /home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.gds
+** GDS: 13.8 seconds
+SP: Writing to /home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.sp
+** Spice writing: 0.2 seconds
+LIB: Characterizing... 
+** Characterization: 11.2 seconds
+Config: Writing to /home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.py
+** Config: 0.0 seconds
+Datasheet: Writing to /home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.html
+** Datasheet: 0.0 seconds
+Verilog: Writing to /home/users/kprabhu7/EE272/OpenRAM/sram_64_256/sram_64_256.v
+** Verilog: 0.0 seconds
+** End: 234.8 seconds

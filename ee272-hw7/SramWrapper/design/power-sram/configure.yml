@@ -1,0 +1,5 @@
+name: power-sram
+
+outputs:
+  - globalnetconnect.tcl
+  - power-strategy-singlemesh.tcl
