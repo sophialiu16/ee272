@@ -50,6 +50,3 @@ setFlipping s
 
 planDesign
 
-placeInstance sram 24 13
-
-addHaloToBlock 0.8 0.8 0.8 0.8 sram

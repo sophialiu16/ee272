@@ -37,5 +37,6 @@ for {set i 1} {$i >= 0} {incr i -1} {
 set ports_layer M4
 
 editPin -layer $ports_layer -pin $pins_left  -side LEFT  -spreadType SIDE
-editPin -layer $ports_layer -pin $pins_bottom -side BOTTOM -spreadType SIDE
-editPin -layer $ports_layer -pin $pins_top -side TOP -spreadType SIDE
+#editPin -layer $ports_layer -pin $pins_right -side RIGHT -spreadType SIDE
+#editPin -layer $ports_layer -pin $pins_bottom -side BOTTOM -spreadType SIDE
+#editPin -layer $ports_layer -pin $pins_top -side TOP -spreadType SIDE
