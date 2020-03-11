@@ -17,26 +17,44 @@
 # If you update pin assignments below you should rerun the pin-placement step 
 # before re-running init step
 
+set pins_left {input_serial_rsc_dat input_serial_rsc_vld weight_serial_rsc_dat weight_serial_rsc_vld output_serial_rsc_rdy paramsIn_rsc_dat paramsIn_rsc_vld}
+
+set pins_right {input_serial_rsc_rdy weight_serial_rsc_rdy output_serial_rsc_dat output_serial_rsc_vld paramsIn_rsc_rdy}
+#set pins_right = []
+
+#lappend pins_left "input_serial_rsc_dat"
+#lappend pins_left "input_serial_rsc_vld"
+#lappend pins_right "input_serial_rsc_rdy"
+#lappend pins_left "weight_serial_rsc_dat"
+#lappend pins_left "weight_serial_rsc_vld"
+#lappend pins_right "weight_serial_rsc_rdy"
+#lappend pins_right "output_serial_rsc_dat"
+#lappend pins_right "output_serial_rsc_vld"
+#lappend pins_left "output_serial_rsc_rdy"
+#lappend pins_left "paramsIn_rsc_dat"
+#lappend pins_left "paramsIn_rsc_vld"
+#lappend pins_right "paramsIn_rsc_rdy"
+
 # addr[0] is lower left, addr[6] is upper left
-set pins_left {{addr[0]} clk csb web {addr[1]} {addr[2]} {addr[3]} }
+#set pins_left {{addr[0]} clk csb web {addr[1]} {addr[2]} {addr[3]} }
 
 # dout[0] is upper left, dout[31] is upper right
-set pins_top []
-for {set i 0} {$i < 2} {incr i} {
-  lappend pins_top "dout[$i]"
-}
+#set pins_top []
+#for {set i 0} {$i < 2} {incr i} {
+#  lappend pins_top "dout[$i]"
+#}
 
 # din[31] is lower right, din[0] is lower left
-set pins_bottom []
-for {set i 1} {$i >= 0} {incr i -1} {
-  lappend pins_bottom "din[$i]"
-}
+#set pins_bottom []
+#for {set i 1} {$i >= 0} {incr i -1} {
+#  lappend pins_bottom "din[$i]"
+#}
 
 # Spread the pins evenly across the left and right sides of the block
 
 set ports_layer M4
 
 editPin -layer $ports_layer -pin $pins_left  -side LEFT  -spreadType SIDE
-#editPin -layer $ports_layer -pin $pins_right -side RIGHT -spreadType SIDE
+editPin -layer $ports_layer -pin $pins_right -side RIGHT -spreadType SIDE
 #editPin -layer $ports_layer -pin $pins_bottom -side BOTTOM -spreadType SIDE
 #editPin -layer $ports_layer -pin $pins_top -side TOP -spreadType SIDE
