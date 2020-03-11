@@ -39,7 +39,7 @@ commands:
   # - printf %s\\n 43m27 w q | ed -s sram_64_256.v
   # - printf %s\\n 43m27 w q | ed -s sram_512_128.v
   # Use Synopsys Library Compiler to create a db file
-  - ./convert_lib_to_db.sh outputsa
+  - ./convert_lib_to_db.sh outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.sp outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.v outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.lef outputs
