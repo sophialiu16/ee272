@@ -113,7 +113,7 @@ def construct():
   power.extend_inputs(['globalnetconnect.tcl', 'power-strategy-singlemesh.tcl'])
 
   for step in [iflow, init, power, place, cts, postcts_hold, route, postroute, signoff]:
-    step.extend_inputs(['sram_512_128_tt_1p1V_25C.lib', 'sram_64_256_tt_1p1V_25C.lef', 'sram_512_128.lef', 'sram_64_256.lef'])
+    step.extend_inputs(['sram_512_128_tt_1p1V_25C.lib', 'sram_64_256_tt_1p1V_25C.lib', 'sram_512_128.lef', 'sram_64_256.lef'])
 
   gdsmerge.extend_inputs(['sram_512_128.gds', 'sram_64_256.gds'])
   lvs.extend_inputs(['sram_512_128.sp', 'sram_64_256.gds'])
