@@ -13,9 +13,9 @@ name: hls
 
 inputs:
   - sram_64_256.v
-  - sram_64_256_TT_1p1V_25C.lib
+  - sram_64_256_tt_1p1V_25C.lib
   - sram_512_128.v
-  - sram_512_128_TT_1p1V_25C.lib
+  - sram_512_128_tt_1p1V_25C.lib
 
 #-------------------------------------------------------------------------
 # Outputs

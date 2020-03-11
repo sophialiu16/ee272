@@ -130,8 +130,8 @@ def construct():
 
   g.connect_by_name( sram,        hls          )
   
-  dc.extend_inputs(['sram_64_256_TT_1p1V_25C.db'])
-  dc.extend_inputs(['sram_512_128_TT_1p1V_25C.db'])
+  dc.extend_inputs(['sram_64_256_tt_1p1V_25C.db'])
+  dc.extend_inputs(['sram_512_128_tt_1p1V_25C.db'])
   g.connect_by_name( sram,        dc           )
   g.connect_by_name( hls,         dc           )
   g.connect_by_name( adk,         dc           )
