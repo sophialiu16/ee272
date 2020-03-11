@@ -16,15 +16,15 @@ outputs:
   - sram_512_128.v
   - sram_512_128.lib
   - sram_512_128.lef
-  - sram_512_128_TT_1p1V_25C.lib
-  - sram_512_128_TT_1p1V_25C.db
+  - sram_512_128_tt_1p1V_25C.lib
+  - sram_512_128_tt_1p1V_25C.db
   - sram_512_128.gds
   - sram_64_256.sp
   - sram_64_256.v
   - sram_64_256.lib
   - sram_64_256.lef
-  - sram_64_256_TT_1p1V_25C.lib
-  - sram_64_256_TT_1p1V_25C.db
+  - sram_64_256_tt_1p1V_25C.lib
+  - sram_64_256_tt_1p1V_25C.db
   - sram_64_256.gds
 
 #-------------------------------------------------------------------------
@@ -39,4 +39,10 @@ commands:
   # - printf %s\\n 43m27 w q | ed -s sram_64_256.v
   # - printf %s\\n 43m27 w q | ed -s sram_512_128.v
   # Use Synopsys Library Compiler to create a db file
-  - ./convert_lib_to_db.sh outputs
+  - ./convert_lib_to_db.sh outputsa
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.sp outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.v outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.lef outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram_tt_1p1V_25C.lib outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram_tt_1p1V_25C.db outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_16_width_2/sram.gds outputs
