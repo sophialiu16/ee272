@@ -149,6 +149,7 @@ def construct():
   g.connect_by_name( adk,      postcts_hold )
   g.connect_by_name( adk,      route        )
   g.connect_by_name( adk,      postroute    )
+  g.connect_by_name( adk,      postroute_hold)
   g.connect_by_name( adk,      signoff      )
   g.connect_by_name( adk,      genlibdb     )
   g.connect_by_name( adk,      gdsmerge     )
@@ -164,6 +165,7 @@ def construct():
   g.connect_by_name( sram,        postcts_hold )
   g.connect_by_name( sram,        route     )
   g.connect_by_name( sram,        postroute )
+  g.connect_by_name( sram,        postroute_hold)
   g.connect_by_name( sram,        signoff   )
   g.connect_by_name( sram,        gdsmerge  )
   g.connect_by_name( sram,        lvs       )
@@ -183,6 +185,7 @@ def construct():
   g.connect_by_name( iflow,    postcts_hold )
   g.connect_by_name( iflow,    route        )
   g.connect_by_name( iflow,    postroute    )
+  g.connect_by_name( iflow,    postroute_hold)
   g.connect_by_name( iflow,    signoff      )
 
   g.connect_by_name( holdTarget,   postroute_hold)
