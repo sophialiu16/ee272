@@ -1,4 +1,4 @@
 name: holdTarget
 
 outputs:
-  - holdTarget.tcl
+  - main.tcl
