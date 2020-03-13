@@ -18,14 +18,14 @@ outputs:
   - sram_512_128.lef
   - sram_512_128_tt_1p1V_25C.lib
   - sram_512_128_tt_1p1V_25C.db
-  - sram_512_128.gds
+  - sram_512_128_flat.gds
   - sram_64_256.sp
   - sram_64_256.v
   - sram_64_256.lib
   - sram_64_256.lef
   - sram_64_256_tt_1p1V_25C.lib
   - sram_64_256_tt_1p1V_25C.db
-  - sram_64_256.gds
+  - sram_64_256_flat.gds
 
 #-------------------------------------------------------------------------
 # Commands
@@ -45,10 +45,10 @@ commands:
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_512_width_128/sram_512_128.lef outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_512_width_128/sram_512_128_tt_1p1V_25C.lib outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_512_width_128/sram_512_128_tt_1p1V_25C.db outputs
-  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_512_width_128/sram_512_128.gds outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_512_width_128/sram_512_128_flat.gds outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256.sp outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256.v outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256.lef outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256_tt_1p1V_25C.lib outputs
   - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256_tt_1p1V_25C.db outputs
-  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256.gds outputs
+  - cp /afs/ir/class/ee272/OpenRAM/generated_memories/sram_depth_64_width_256/sram_64_256_flat.gds outputs
