@@ -27,7 +27,7 @@ def construct():
   parameters = {
     'construct_path' : __file__,
     'design_name'    : 'Conv',
-    'clock_period'   : 5.0,
+    'clock_period'   : 10.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
@@ -52,6 +52,7 @@ def construct():
   constraints   = Step( this_dir + '/constraints'       )
   pin_placement = Step( this_dir + '/pin-placement'     )
   floorplan     = Step( this_dir + '/floorplan'         )
+  holdTarget	= Step( this_dir + '/holdTarget'	)
   power_sram    = Step( this_dir + '/power-sram'        )
   lvs           = Step( this_dir + '/mentor-calibre-lvs')
 
@@ -87,6 +88,7 @@ def construct():
   g.add_step( iflow        )
   g.add_step( pin_placement)
   g.add_step( floorplan    )
+  g.add_step( holdTarget   )
   g.add_step( init         )
   g.add_step( power_sram   )
   g.add_step( power        )
@@ -115,7 +117,7 @@ def construct():
   for step in [iflow, init, power, place, cts, postcts_hold, route, postroute, signoff]:
     step.extend_inputs(['sram_512_128_tt_1p1V_25C.lib', 'sram_64_256_tt_1p1V_25C.lib', 'sram_512_128.lef', 'sram_64_256.lef'])
 
-  gdsmerge.extend_inputs(['sram_512_128.gds', 'sram_64_256.gds'])
+  gdsmerge.extend_inputs(['sram_512_128_flat.gds', 'sram_64_256_flat.gds'])
   lvs.extend_inputs(['sram_512_128.sp', 'sram_64_256.gds'])
 
   # Add a set units command to init as a temporary fix for conflicting
