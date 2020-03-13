@@ -66,16 +66,12 @@ flipOrRotateObject -rotate R90
 deselectAll
 selectInst weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1
 setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1 22.8125 937.5525 416.9625 1378.63
-flipOrRotateObject -rotate R90
-flipOrRotateObject -rotate R90
-flipOrRotateObject -rotate R90
+
 setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1 51.8215 995.571 492.899 1389.721
 deselectAll
 selectInst weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp
 setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp 83.0625 378.079 477.2125 819.1565
-flipOrRotateObject -rotate R90
-flipOrRotateObject -rotate R90
-flipOrRotateObject -rotate R90
+
 setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp 60.7475 436.0985 501.825 830.2485
 deselectAll
 selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp
