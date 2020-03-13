@@ -50,3 +50,37 @@ setFlipping s
 
 planDesign
 
+# not sure where this goes
+selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp 659.681 310.593 1053.831 751.6705
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp 1043.4945 20.5005 1437.6445 461.578
+deselectAll
+selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1 1043.4965 475.0955 1437.6465 916.173
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1 1036.803 470.632 1430.953 911.7095
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1 1032.3395 484.0215 1426.4895 925.099
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+deselectAll
+selectInst weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1
+setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1 22.8125 937.5525 416.9625 1378.63
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1 51.8215 995.571 492.899 1389.721
+deselectAll
+selectInst weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp
+setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp 83.0625 378.079 477.2125 819.1565
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp 60.7475 436.0985 501.825 830.2485
+deselectAll
+selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp 1025.643 29.426 1419.793 470.5035
+deselectAll
+selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1 1027.877 499.6425 1422.027 940.72
+

@@ -52,6 +52,7 @@ def construct():
   constraints   = Step( this_dir + '/constraints'       )
   pin_placement = Step( this_dir + '/pin-placement'     )
   floorplan     = Step( this_dir + '/floorplan'         )
+  holdTarget	= Step( this_dir + '/holdTarget'	)
   power_sram    = Step( this_dir + '/power-sram'        )
   lvs           = Step( this_dir + '/mentor-calibre-lvs')
 
@@ -68,6 +69,7 @@ def construct():
   postcts_hold = Step( 'cadence-innovus-postcts_hold',  default=True )
   route        = Step( 'cadence-innovus-route',         default=True )
   postroute    = Step( 'cadence-innovus-postroute',     default=True )
+  postroute_hold = Step ('cadence-innovus-postroute_hold', default=True)
   signoff      = Step( 'cadence-innovus-signoff',       default=True )
   gdsmerge     = Step( 'mentor-calibre-gdsmerge',       default=True )
   drc          = Step( 'mentor-calibre-drc',            default=True )
@@ -87,6 +89,7 @@ def construct():
   g.add_step( iflow        )
   g.add_step( pin_placement)
   g.add_step( floorplan    )
+  g.add_step( holdTarget   )
   g.add_step( init         )
   g.add_step( power_sram   )
   g.add_step( power        )
@@ -95,6 +98,7 @@ def construct():
   g.add_step( postcts_hold )
   g.add_step( route        )
   g.add_step( postroute    )
+  g.add_step( postroute_hold )
   g.add_step( signoff      )
   g.add_step( genlibdb     )
   g.add_step( gdsmerge     )
@@ -111,7 +115,7 @@ def construct():
   genlibdb.extend_inputs(['sram_512_128_tt_1p1V_25C.db', 'sram_64_256_tt_1p1V_25C.db'])
   init.extend_inputs(['floorplan.tcl', 'pin-assignments.tcl'])
   power.extend_inputs(['globalnetconnect.tcl', 'power-strategy-singlemesh.tcl'])
-
+  postroute_hold.extend_inputs('holdTarget.tcl')
   for step in [iflow, init, power, place, cts, postcts_hold, route, postroute, signoff]:
     step.extend_inputs(['sram_512_128_tt_1p1V_25C.lib', 'sram_64_256_tt_1p1V_25C.lib', 'sram_512_128.lef', 'sram_64_256.lef'])
 
@@ -181,6 +185,7 @@ def construct():
   g.connect_by_name( iflow,    postroute    )
   g.connect_by_name( iflow,    signoff      )
 
+  g.connect_by_name( holdTarget,   postroute_hold)
   g.connect_by_name( floorplan,    init         )
   g.connect_by_name( pin_placement,init         )
   g.connect_by_name( init,         power        )
@@ -190,7 +195,8 @@ def construct():
   g.connect_by_name( cts,          postcts_hold )
   g.connect_by_name( postcts_hold, route        )
   g.connect_by_name( route,        postroute    )
-  g.connect_by_name( postroute,    signoff      )
+  g.connect_by_name( postroute,    postroute_hold)
+  g.connect_by_name( postroute_hold,    signoff )
   g.connect_by_name( signoff,      genlibdb     )
   g.connect_by_name( signoff,      gdsmerge     )
   g.connect_by_name( signoff,      drc          )
