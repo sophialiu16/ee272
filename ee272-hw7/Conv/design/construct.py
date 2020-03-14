@@ -115,7 +115,7 @@ def construct():
   genlibdb.extend_inputs(['sram_512_128_tt_1p1V_25C.db', 'sram_64_256_tt_1p1V_25C.db'])
   init.extend_inputs(['floorplan.tcl', 'pin-assignments.tcl'])
   power.extend_inputs(['globalnetconnect.tcl', 'power-strategy-singlemesh.tcl'])
-  postroute_hold.extend_inputs('main.tcl')
+  postroute_hold.extend_inputs(['main.tcl'])
   for step in [iflow, init, power, place, cts, postcts_hold, route, postroute, signoff]:
     step.extend_inputs(['sram_512_128_tt_1p1V_25C.lib', 'sram_64_256_tt_1p1V_25C.lib', 'sram_512_128.lef', 'sram_64_256.lef'])
 
