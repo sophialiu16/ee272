@@ -27,7 +27,7 @@ def construct():
   parameters = {
     'construct_path' : __file__,
     'design_name'    : 'Conv',
-    'clock_period'   : 20.0,
+    'clock_period'   : 10.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
@@ -120,7 +120,7 @@ def construct():
     step.extend_inputs(['sram_512_128_tt_1p1V_25C.lib', 'sram_64_256_tt_1p1V_25C.lib', 'sram_512_128.lef', 'sram_64_256.lef'])
 
   gdsmerge.extend_inputs(['sram_512_128_flat.gds', 'sram_64_256_flat.gds'])
-  lvs.extend_inputs(['sram_512_128.sp', 'sram_64_256.gds'])
+  lvs.extend_inputs(['sram_512_128.sp', 'sram_64_256.sp'])
 
   # Add a set units command to init as a temporary fix for conflicting
   # units between SRAM lib and stdcells.lib
