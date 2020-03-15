@@ -107,3 +107,10 @@ deselectAll
 selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1
 setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1 970.9005 557.013 1365.0505 998.0905
 
+
+selectInst systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_comp
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+flipOrRotateObject -rotate R90
+setObjFPlanBox Instance systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_comp 584.7505 1230.25 1409.288 1389.06
+

@@ -1,0 +1,1539 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.10-p002_1, built Fri Apr 19 15:18:11 PDT 2019
+Options:	-overwrite -nowin -init START.tcl -log logs/run.log 
+Date:		Fri Mar 13 19:29:02 2020
+Host:		caddy12 (x86_64 w/Linux 3.10.0-1062.9.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.7.1908 (Core)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "START.tcl" ...
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat Conv
+#% Begin load design ... (date=03/13 19:29:36, mem=436.5M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'Conv' saved by 'Innovus' '19.10-p002_1' on 'Fri Mar 13 19:28:58 2020'.
+% Begin Load MMMC data ... (date=03/13 19:29:37, mem=437.8M)
+% End Load MMMC data ... (date=03/13 19:29:37, total cpu=0:00:00.0, real=0:00:00.0, peak res=437.9M, current mem=437.9M)
+typical
+
+Loading LEF file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/libs/lef/rtk-tech.lef ...
+
+Loading LEF file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef ...
+Set DBUPerIGU to M2 pitch 380.
+
+Loading LEF file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/libs/lef/sram_64_256.lef ...
+
+Loading LEF file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/libs/lef/sram_512_128.lef ...
+
+viaInitial starts at Fri Mar 13 19:29:38 2020
+viaInitial ends at Fri Mar 13 19:29:38 2020
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/viewDefinition.tcl
+Reading libs_typical timing library '/home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib' ...
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND2_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND2_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND2_X4' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND3_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND3_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND3_X4' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND4_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND4_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AND4_X4' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI21_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI21_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI21_X4' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI22_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI22_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI22_X4' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI211_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI211_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI211_X4' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI221_X1' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'ZN' of cell 'AOI221_X2' is not defined in the library. (File /home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells.lib)
+Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 135 cells in library 'NangateOpenCellLibrary' 
+Reading libs_typical timing library '/home/users/sophliu/ee272/ee272-hw7/Conv/build/6-sram/outputs/sram_64_256_tt_1p1V_25C.lib' ...
+Read 1 cells in library 'sram_64_256_tt_1p1V_25C_lib' 
+Reading libs_typical timing library '/home/users/sophliu/ee272/ee272-hw7/Conv/build/6-sram/outputs/sram_512_128_tt_1p1V_25C.lib' ...
+Read 1 cells in library 'sram_512_128_tt_1p1V_25C_lib' 
+Reading libs_bc timing library '/home/users/sophliu/ee272/ee272-hw7/Conv/build/2-freepdk-45nm/view-standard/stdcells-bc.lib' ...
+Read 135 cells in library 'NangateOpenCellLibrary' 
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.03min, real=0.02min, mem=19.9M, fe_cpu=0.43min, fe_real=0.62min, fe_mem=530.7M) ***
+% Begin Load netlist data ... (date=03/13 19:29:39, mem=455.7M)
+*** Begin netlist parsing (mem=530.7M) ***
+**WARN: (IMPVL-160):	Pin 'din0[0]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[1]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[2]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[3]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[4]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[5]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[6]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[7]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[8]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[9]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[10]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[11]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[12]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[13]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[14]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[15]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[16]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[17]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[18]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (IMPVL-160):	Pin 'din0[19]' is a bus bit in timing library cell 'sram_64_256' but a scalar pin in LEF. Treat it as bus bit pin.
+**WARN: (EMS-27):	Message (IMPVL-160) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'sram_64_256' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'sram_64_256' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'sram_512_128' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'sram_512_128' is defined in LEF but not in the timing library.
+Created 137 new cells from 4 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/vbin/Conv.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#1 (Current mem = 571.730M, initial mem = 231.703M) ***
+*** End netlist parsing (cpu=0:00:00.6, real=0:00:01.0, mem=571.7M) ***
+% End Load netlist data ... (date=03/13 19:29:40, total cpu=0:00:00.6, real=0:00:01.0, peak res=496.2M, current mem=496.2M)
+Set top cell to Conv.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Hooked 272 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell Conv ...
+*** Netlist is unique.
+** info: there are 1358 modules.
+** info: there are 74881 stdCell insts.
+** info: there are 5 macros.
+
+*** Memory Usage v#1 (Current mem = 659.203M, initial mem = 231.703M) ***
+*info: set bottom ioPad orient R0
+Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+**WARN: (IMPOPT-7155):	Option usefulSkewCTS in 'setOptMode' will be obsolete. 'setOptMode -usefulSkewCTS true'will mapped to 'setOptMode -usefulSkewCCOpt medium' internally when flowEffort is not set to extreme and 'usefulSkewCCOpt' has not been explict set by user.
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Reg2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2ClkGate is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2ClkGate path_group
+**WARN: (IMPOPT-3602):	The specified path group name Macro2All is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Macro2All path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name All2Macro is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for All2Macro path_group
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '/home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/mmmc/modes/constraints_default/constraints_default.sdc' ...
+Current (total cpu=0:00:29.0, real=0:00:40.0, peak res=744.8M, current mem=744.8M)
+Conv
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.7, real=0:00:01.0, peak res=792.7M, current mem=764.1M)
+Current (total cpu=0:00:29.8, real=0:00:41.0, peak res=792.7M, current mem=764.1M)
+Reading latency file '/home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/mmmc/views/analysis_default/latency.sdc' ...
+**WARN: (TA-976):	Path groups asserted by the group_path constraint are considered by the software to be global in nature - they cannot be restricted to specific constraint modes. Due to this restriction, the group_path constraint is not supported directly in the constraint files which are configured in mode-specific commands such as create_constraint_mode. The current group_path entry will be ignored. You can enter the group_path constraint interactively or as part of a general command script -  where it will be interpreted as global and will be in effect for all modes.
+Total number of combinational cells: 100
+Total number of sequential cells: 29
+Total number of tristate cells: 6
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF_X1 BUF_X2 BUF_X4 BUF_X8 BUF_X16 BUF_X32 CLKBUF_X1 CLKBUF_X2 CLKBUF_X3
+Total number of usable buffers: 9
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+Total number of usable inverters: 6
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+Reading floorplan file - /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.fp.gz (mem = 872.5M).
+% Begin Load floorplan data ... (date=03/13 19:29:43, mem=785.8M)
+*info: reset 95716 existing net BottomPreferredLayer and AvoidDetour
+net ignore based on current view = 0
+Deleting old partition specification.
+Set FPlanBox to (0 0 2900920 2896320)
+Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+ ... processed partition successfully.
+Reading binary special route file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.fp.spr.gz (Created by Innovus v19.10-p002_1 on Fri Mar 13 19:28:50 2020, version: 1)
+There are 836 nets with weight being set
+There are 836 nets with bottomPreferredRoutingLayer being set
+There are 836 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=03/13 19:29:44, total cpu=0:00:00.6, real=0:00:01.0, peak res=821.8M, current mem=821.8M)
+Reading congestion map file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=03/13 19:29:44, mem=822.0M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=03/13 19:29:45, total cpu=0:00:00.9, real=0:00:01.0, peak res=876.4M, current mem=876.4M)
+Loading place ...
+% Begin Load placement data ... (date=03/13 19:29:45, mem=876.4M)
+Reading placement file - /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v19.10-p002_1 on Fri Mar 13 19:28:49 2020, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 4 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:02.4 real=0:00:03.0 mem=1027.7M) ***
+Total net length = 1.757e+06 (7.750e+05 9.824e+05) (ext = 7.536e+03)
+% End Load placement data ... (date=03/13 19:29:48, total cpu=0:00:02.4, real=0:00:03.0, peak res=947.5M, current mem=945.1M)
+Reading PG file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.pg.gz
+*** Completed restorePGFile (cpu=0:00:00.2 real=0:00:01.0 mem=1028.7M) ***
+% Begin Load routing data ... (date=03/13 19:29:49, mem=950.4M)
+Reading routing file - /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.route.gz.
+Reading Innovus routing data (Created by Innovus v19.10-p002_1 on Fri Mar 13 19:28:49 2020 Format: 19.1) ...
+*** Total 78537 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:01.6 real=0:00:02.0 mem=1145.2M) ***
+% End Load routing data ... (date=03/13 19:29:51, total cpu=0:00:01.6, real=0:00:02.0, peak res=1067.7M, current mem=1066.4M)
+Loading Drc markers ...
+... 5815 markers are loaded ...
+... 5815 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+Reading property file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/Conv.prop
+*** Completed restoreProperty (cpu=0:00:00.3 real=0:00:00.0 mem=1154.2M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable ...
+Cap table was created using Encounter 08.10-p004_1.
+Process name: master_techFreePDK45.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: analysis_default
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Loading path group file /home/users/sophliu/ee272/ee272-hw7/Conv/build/17-cadence-innovus-postroute_hold/checkpoints/design.checkpoint/save.enc.dat/mmmc/pathgroup.sdc ...
+Current (total cpu=0:00:38.3, real=0:00:52.0, peak res=1118.7M, current mem=1118.7M)
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:02.2, real=0:00:02.0, peak res=1247.9M, current mem=1150.1M)
+Current (total cpu=0:00:40.5, real=0:00:54.0, peak res=1247.9M, current mem=1150.1M)
+Start generating vias ...
+#Skip building auto via since it is not turned on.
+Via generation completed.
+% Begin Load power constraints ... (date=03/13 19:29:56, mem=1153.2M)
+'set_default_switching_activity' finished successfully.
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+% End Load power constraints ... (date=03/13 19:29:57, total cpu=0:00:00.3, real=0:00:01.0, peak res=1153.5M, current mem=1153.5M)
+% Begin load AAE data ... (date=03/13 19:29:57, mem=1153.5M)
+AAE DB initialization (MEM=1259.43 CPU=0:00:00.4 REAL=0:00:01.0) 
+% End load AAE data ... (date=03/13 19:29:58, total cpu=0:00:01.1, real=0:00:01.0, peak res=1164.9M, current mem=1164.9M)
+Restoring CCOpt config...
+  Extracting original clock gating for ideal_clock...
+    clock_tree ideal_clock contains 22741 sinks and 603 clock gates.
+    Extraction for ideal_clock complete.
+  Extracting original clock gating for ideal_clock done.
+  The skew group ideal_clock/constraints_default was created. It contains 22741 sinks and 1 sources.
+**WARN: (IMPCCOPT-2332):	The property adjacent_rows_legal is deprecated. It still works, but it may be removed in a future release.
+Restoring CCOpt config done.
+Total number of combinational cells: 100
+Total number of sequential cells: 29
+Total number of tristate cells: 6
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUF_X1 BUF_X2 BUF_X4 BUF_X8 BUF_X16 BUF_X32 CLKBUF_X1 CLKBUF_X2 CLKBUF_X3
+Total number of usable buffers: 9
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+Total number of usable inverters: 6
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.10-p002_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=03/13 19:30:03, total cpu=0:00:23.6, real=0:00:27.0, peak res=1247.9M, current mem=1189.4M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPVL-159            4  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   IMPVL-160          783  Pin '%s' is a bus bit in timing library ...
+WARNING   IMPOPT-3602          7  The specified path group name %s is not ...
+WARNING   IMPOPT-7155          1  Option %s in 'setOptMode' will be obsole...
+WARNING   IMPCCOPT-2332        1  The property %s is deprecated. It still ...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   TA-976               1  Path groups asserted by the group_path c...
+WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+*** Message Summary: 819 warning(s), 0 error(s)
+
+<CMD> setDistributeHost -local
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<CMD> setMultiCpuUsage -localCpu 16
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+### Start verbose source output (echo mode) for 'scripts/main.tcl' ...
+# source -verbose innovus-foundation-flow/INNOVUS/run_signoff.tcl
+### Start verbose source output (echo mode) for 'innovus-foundation-flow/INNOVUS/run_signoff.tcl' ...
+# if {[file exists innovus-foundation-flow/vars.tcl]} {
+   source innovus-foundation-flow/vars.tcl
+}
+# foreach file $vars(config_files) {
+   source $file
+}
+# source innovus-foundation-flow/procs.tcl
+# ff_procs::system_info
+# setDistributeHost -local
+<CMD> setDistributeHost -local
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+# setMultiCpuUsage -localCpu 16
+<CMD> setMultiCpuUsage -localCpu 16
+# if {$vars(restore_design)} { # <BEGIN TAG> signoff,restore_design
+
+# <begin tag signoff,restore_design,skip>
+#
+# restoreDesign checkpoints/postroute.enc.dat Conv
+#
+# <end tag signoff,restore_design,skip> }
+# um::enable_metrics -on
+# puts "<FF> Plugin -> always_source_tcl"
+# ff_procs::source_plug always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+# set vars(step) signoff
+# set vars(signoff,start_time) [clock seconds]
+# um::push_snapshot_stack
+<CMD> um::push_snapshot_stack
+# setDesignMode -process 45
+<CMD> setDesignMode -process 45
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+# setExtractRCMode -coupled true -effortLevel low
+<CMD> setExtractRCMode -coupled true -effortLevel low
+# setAnalysisMode -analysisType onChipVariation -cppr both
+<CMD> setAnalysisMode -analysisType onChipVariation -cppr both
+# set vars(active_rc_corners) [list]
+# foreach view [concat [all_setup_analysis_views] [all_hold_analysis_views]] {
+   set corner [get_delay_corner [get_analysis_view $view -delay_corner] \
+      -rc_corner]
+   if {[lsearch $vars(active_rc_corners) $corner] == -1 } {
+      lappend vars(active_rc_corners) $corner
+   }
+}
+<CMD> all_setup_analysis_views
+<CMD> all_hold_analysis_views
+<CMD> get_analysis_view $view -delay_corner
+<CMD> get_delay_corner [get_analysis_view $view -delay_corner]  -rc_corner
+<CMD> get_analysis_view $view -delay_corner
+<CMD> get_delay_corner [get_analysis_view $view -delay_corner]  -rc_corner
+# Puts "<FF> ACTIVE RC CORNER LIST: $vars(active_rc_corners)"
+<FF> ACTIVE RC CORNER LIST: typical
+# set empty_corners [list]
+# foreach corner $vars(active_rc_corners) {
+   if {![file exists [get_rc_corner $corner -qx_tech_file]]} {
+      lappend empty_corners $corner
+   }
+}
+<CMD> get_rc_corner $corner -qx_tech_file
+# if {[llength $empty_corners] == 0} {
+   # <BEGIN TAG> signoff,set_extract_rc_mode
+   setExtractRCMode -engine postRoute -effortLevel low -coupled true
+
+   # <END TAG> signoff,set_extract_rc_mode
+} else {
+   Puts "<FF> CAN'T RUN SIGNOFF EXTRACTION BECAUSE qx_tech_file IS NOT DEFINED FOR these corners: $empty_corners"
+   # <BEGIN TAG> signoff,set_extract_rc_mode
+   setExtractRCMode -engine postRoute -effortLevel low -coupled true
+
+   # <END TAG> signoff,set_extract_rc_mode
+}
+<FF> CAN'T RUN SIGNOFF EXTRACTION BECAUSE qx_tech_file IS NOT DEFINED FOR these corners: typical
+<CMD> setExtractRCMode -engine postRoute -effortLevel low -coupled true
+# puts "<FF> Plugin -> pre_signoff_tcl"
+# Puts "<FF> RUNNING FINAL SIGNOFF ..."
+<FF> RUNNING FINAL SIGNOFF ...
+# extractRC
+<CMD> extractRC
+Extraction called for design 'Conv' of instances=344073 and nets=95716 using extraction engine 'postRoute' at effort level 'low' .
+PostRoute (effortLevel low) RC Extraction called for design Conv.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical
+extractDetailRC Option : -outfile /tmp/innovus_temp_27524_caddy12_sophliu_ZONUss/Conv_27524_1zo0rZ.rcdb.d  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Checking LVS Completed (CPU Time= 0:00:00.4  MEM= 1289.1M)
+Extracted 10.0002% (CPU Time= 0:00:05.2  MEM= 1698.7M)
+Extracted 20.0002% (CPU Time= 0:00:06.7  MEM= 1716.7M)
+Extracted 30.0002% (CPU Time= 0:00:08.8  MEM= 1748.7M)
+Extracted 40.0002% (CPU Time= 0:00:11.3  MEM= 1775.7M)
+Extracted 50.0002% (CPU Time= 0:00:15.6  MEM= 1787.7M)
+Extracted 60.0002% (CPU Time= 0:00:16.6  MEM= 1789.7M)
+Extracted 70.0002% (CPU Time= 0:00:19.1  MEM= 1792.7M)
+Extracted 80.0002% (CPU Time= 0:00:21.7  MEM= 1821.7M)
+Extracted 90.0002% (CPU Time= 0:00:24.9  MEM= 1835.7M)
+Extracted 100% (CPU Time= 0:00:33.6  MEM= 1888.1M)
+Number of Extracted Resistors     : 1630310
+Number of Extracted Ground Cap.   : 1700356
+Number of Extracted Coupling Cap. : 7329566
+Filtering XCap in 'relativeAndCoupling' mode using values coupling_c_threshold=0.1fF, relative_c_threshold=1, and total_c_threshold=0fF.
+ Corner: typical
+Checking LVS Completed (CPU Time= 0:00:00.4  MEM= 1856.1M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:40.5  Real Time: 0:00:38.0  MEM: 1409.230M)
+# foreach corner $vars(active_rc_corners) {
+   rcOut -rc_corner $corner -spef $corner.spef.gz
+}
+<CMD> rcOut -rc_corner typical -spef typical.spef.gz
+RC Out has the following PVT Info:
+   RC:typical, Operating temperature 25 C
+Dumping Spef file.....
+Printing D_NET...
+RC Out from RCDB Completed (CPU Time= 0:00:21.3  MEM= 1457.2M)
+# timeDesign -prefix signoff -signoff -reportOnly -outDir reports -expandedViews
+<CMD> timeDesign -prefix signoff -signoff -reportOnly -outDir reports -expandedViews
+The setDelayCalMode -SIAware true is set. Running Signoff AAE-SI Analysis.
+Total CPU(s) requested: 16
+Total CPU(s) enabled with current License(s): 8
+Current free CPU(s): 8
+Additional license(s) checked out: 1 Innovus_CPU_Opt license(s) for 8 CPU(s)
+Total CPU(s) now enabled: 16
+Multithreaded Timing Analysis is initialized with 16 threads
+
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+Deleting AAE DB and timing data for delay calculations...
+AAE DB initialization (MEM=1459.23 CPU=0:00:00.4 REAL=0:00:00.0) 
+This command "timeDesign -prefix signoff -signoff -reportOnly ..." required an extra checkout of license tpsxl.
+Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+Starting delay calculation for Setup views
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: Conv
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB
+# Signoff Settings: SI On 
+#################################################################################
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (16 T). (MEM=1833.92)
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+ Report inititialization with DMWrite ... (0, Worst)
+AAE_INFO: 16 threads acquired from CTE.
+Total number of fetched objects 101876
+AAE_INFO-618: Total number of nets in the design is 95716,  100.0 percent of the nets selected for SI analysis
+Total number of fetched objects 101876
+AAE_INFO-618: Total number of nets in the design is 95716,  100.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2706.28 CPU=0:02:48 REAL=0:00:14.0)
+End delay calculation (fullDC). (MEM=2586.28 CPU=0:02:57 REAL=0:00:18.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/innovus_temp_27524_caddy12_sophliu_ZONUss/.AAE_7XJ93L/.AAE_27524/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2562.3M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:02.7, REAL = 0:00:00.0, MEM = 2594.3M)
+Starting SI iteration 2
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (16 T). (MEM=2311.4)
+ Report inititialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View analysis_default -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View analysis_default -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 101876
+AAE_INFO-618: Total number of nets in the design is 95716,  0.8 percent of the nets selected for SI analysis
+Total number of fetched objects 101876
+AAE_INFO-618: Total number of nets in the design is 95716,  1.2 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2941.21 CPU=0:00:20.3 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=2941.21 CPU=0:00:20.7 REAL=0:00:03.0)
+*** Done Building Timing Graph (cpu=0:04:31 real=0:00:33.0 totSessionCpu=0:06:22 mem=2909.2M)
+ Report inititialization with DMUpdate ... (1, Worst)
+** Profile ** Start :  cpu=0:00:00.0, mem=2909.2M
+** Profile ** Other data :  cpu=0:00:07.2, mem=2941.2M
+** Profile ** Overall slacks :  cpu=0:00:09.6, mem=2785.2M
+** Profile ** analysis_default slacks :  cpu=0:00:09.7, mem=2479.2M
+** Profile ** Total reports :  cpu=0:00:02.2, mem=2384.2M
+** Profile ** analysis_default reports :  cpu=0:00:01.7, mem=2384.2M
+** Profile ** DRVs :  cpu=0:00:10.6, mem=2378.7M
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ analysis_default 
+
++--------------------+--------------------------------------------------+
+|     ID Number      |                 Path Group Name                  |
++--------------------+--------------------------------------------------+
+|         1          |Reg2ClkGate                                       |
++--------------------+--------------------------------------------------+
+
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|     Setup mode     |   all   | default |All2Macro| In2Out  | In2Reg  |Macro2All|1:Reg..te| Reg2Out | Reg2Reg |
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):| -43.369 |  0.000  |  6.378  |   N/A   | -43.369 |   N/A   |  5.666  |  8.950  |  4.659  |
+|           TNS (ns):|-9.85e+05|  0.000  |  0.000  |   N/A   |-9.85e+05|   N/A   |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|  22736  |    0    |    0    |   N/A   |  22736  |   N/A   |    0    |    0    |    0    |
+|          All Paths:|  46649  |    0    |   820   |   N/A   |  23241  |   N/A   |   603   |   20    |  22470  |
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|analysis_default    | -43.369 |  0.000  |  6.378  |   N/A   | -43.369 |   N/A   |  5.666  |  8.950  |  4.659  |
+|                    |-9.85e+05|  0.000  |  0.000  |   N/A   |-9.85e+05|   N/A   |  0.000  |  0.000  |  0.000  |
+|                    |  22736  |    0    |    0    |   N/A   |  22736  |   N/A   |    0    |    0    |    0    |
+|                    |  46649  |    0    |   820   |   N/A   |  23241  |   N/A   |   603   |   20    |  22470  |
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |    784 (784)     |   -0.071   |    784 (784)     |
+|   max_tran     |     48 (48)      |   -0.165   |     48 (48)      |
+|   max_fanout   |      1 (1)       |   -22716   |    463 (463)     |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 16.153%
+       (100.000% with Fillers)
+Total number of glitch violations: 0
+------------------------------------------------------------
+** Profile ** Report data :  cpu=0:00:00.1, mem=2378.7M
+Reported timing to dir reports
+Total CPU time: 314.46 sec
+Total Real time: 48.0 sec
+Total Memory Usage: 2378.730469 Mbytes
+Reset AAE Options
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+# timeDesign -prefix signoff \
+   -signoff \
+   -reportOnly \
+   -hold \
+   -outDir reports \
+   -expandedViews
+<CMD> timeDesign -prefix signoff -signoff -reportOnly -hold -outDir reports -expandedViews
+The setDelayCalMode -SIAware true is set. Running Signoff AAE-SI Analysis.
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+** Profile ** Start :  cpu=0:00:00.0, mem=2355.1M
+** Profile ** Other data :  cpu=0:00:06.6, mem=2356.6M
+ Report inititialization with DMUpdate ... (1, Worst)
+**INFO: Starting Blocking QThread with 16 CPU
+   ____________________________________________________________________
+__/ message from Blocking QThread
+Multi-CPU acceleration using 16 CPU(s).
+*** QThread HoldRpt [begin] : cpu/real = 0:00:00.0/0:00:00.0 (0.0), mem = 0.6M
+Multithreaded Timing Analysis is initialized with 16 threads
+
+Starting delay calculation for Hold views
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: Conv
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB
+# Signoff Settings: SI On 
+#################################################################################
+Calculate late delays in OCV mode...
+Calculate early delays in OCV mode...
+Start delay calculation (fullDC) (16 T). (MEM=0)
+*** Calculating scaling factor for libs_bc libraries using the default operating condition of each library.
+AAE_INFO-618: Total number of nets in the design is 95716,  100.0 percent of the nets selected for SI analysis
+AAE_INFO-618: Total number of nets in the design is 95716,  100.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=337.41 CPU=0:02:36 REAL=0:00:13.0)
+End delay calculation (fullDC). (MEM=337.41 CPU=0:02:44 REAL=0:00:15.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/innovus_temp_27524_caddy12_sophliu_ZONUss/.AAE_7XJ93L/.AAE_27524/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 313.4M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:02.8, REAL = 0:00:01.0, MEM = 345.4M)
+Starting SI iteration 2
+Calculate late delays in OCV mode...
+Calculate early delays in OCV mode...
+Start delay calculation (fullDC) (16 T). (MEM=40.5312)
+AAE_INFO-618: Total number of nets in the design is 95716,  0.1 percent of the nets selected for SI analysis
+AAE_INFO-618: Total number of nets in the design is 95716,  0.1 percent of the nets selected for SI analysis
+End delay calculation. (MEM=632.102 CPU=0:00:10.3 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=632.102 CPU=0:00:10.6 REAL=0:00:01.0)
+*** Done Building Timing Graph (cpu=0:04:24 real=0:00:30.0 totSessionCpu=0:04:25 mem=600.1M)
+** Profile ** Overall slacks :  cpu=0:04:34, mem=602.1M
+** Profile ** analysis_default slacks :  cpu=0:00:09.9, mem=439.1M
+** Profile ** Total reports :  cpu=0:00:01.5, mem=26.1M
+** Profile ** analysis_default reports :  cpu=0:00:01.3, mem=26.1M
+*** QThread HoldRpt [finish] : cpu/real = 0:04:47.5/0:00:35.2 (8.2), mem = 26.1M
+
+_______________________________________________________________________
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
+Hold  views included:
+ analysis_default
+
++--------------------+--------------------------------------------------+
+|     ID Number      |                 Path Group Name                  |
++--------------------+--------------------------------------------------+
+|         1          |Reg2ClkGate                                       |
++--------------------+--------------------------------------------------+
+
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|     Hold mode      |   all   | default |All2Macro| In2Out  | In2Reg  |Macro2All|1:Reg..te| Reg2Out | Reg2Reg |
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.005  |  0.000  |  0.012  |   N/A   |  4.883  |  5.186  |  0.044  |  0.104  |  0.005  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |    0    |
+|          All Paths:|  46905  |    0    |   820   |   N/A   |  23241  |  1536   |   603   |   20    |  22470  |
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|analysis_default    |  0.005  |  0.000  |  0.012  |   N/A   |  4.883  |  5.186  |  0.044  |  0.104  |  0.005  |
+|                    |  0.000  |  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |  0.000  |
+|                    |    0    |    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |    0    |
+|                    |  46905  |    0    |   820   |   N/A   |  23241  |  1536   |   603   |   20    |  22470  |
++--------------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+Density: 16.153%
+       (100.000% with Fillers)
+------------------------------------------------------------
+** Profile ** Report data :  cpu=0:04:25, mem=2356.6M
+Reported timing to dir reports
+Total CPU time: 271.65 sec
+Total Real time: 38.0 sec
+Total Memory Usage: 2143.597656 Mbytes
+Reset AAE Options
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+# streamOut $vars(results_dir)/$vars(design).gds.gz -units 1000 \
+   -mapFile $vars(gds_layer_map)
+<CMD> streamOut results/Conv.gds.gz -units 1000 -mapFile inputs/adk/rtk-stream-out.map
+** NOTE: Created directory path 'results' for file 'results/Conv.gds.gz'.
+Parse map file...
+Writing GDSII file ...
+	****** db unit per micron = 2000 ******
+	****** output gds2 file unit per micron = 1000 ******
+	****** unit scaling factor = 0.5 ******
+**WARN: (IMPOGDS-250):	Specified unit is smaller than the one in db. You may have rounding problems
+Output for instance
+Output for bump
+Output for physical terminals
+Output for logical terminals
+Output for regular nets
+Output for special nets and metal fills
+Output for via structure generation
+Statistics for GDS generated (version 3)
+----------------------------------------
+Stream Out Layer Mapping Information:
+GDS Layer Number          GDS Layer Name
+----------------------------------------
+    11                            metal1
+    13                            metal2
+    15                            metal3
+    17                            metal4
+    19                            metal5
+    21                            metal6
+    23                            metal7
+    25                            metal8
+    27                            metal9
+    29                           metal10
+    12                              via1
+    14                              via2
+    16                              via3
+    18                              via4
+    20                              via5
+    22                              via6
+    24                              via7
+    26                              via8
+    28                              via9
+    23                            metal4
+    25                            metal5
+    27                            metal6
+    29                            metal6
+
+
+Stream Out Information Processed for GDS version 3:
+Units: 1000 DBU
+
+Object                             Count
+----------------------------------------
+Instances                         344073
+
+Ports/Pins                            25
+    metal layer metal4                 9
+    metal layer metal8                 8
+    metal layer metal9                 8
+
+Nets                             1062805
+    metal layer metal1             79113
+    metal layer metal2            497480
+    metal layer metal3            336738
+    metal layer metal4             73453
+    metal layer metal5             50880
+    metal layer metal6             22486
+    metal layer metal7              2655
+
+    Via Instances                 564729
+
+Special Nets                        2696
+    metal layer metal1              2280
+    metal layer metal8               208
+    metal layer metal9               208
+
+    Via Instances                 453665
+
+Metal Fills                            0
+
+    Via Instances                      0
+
+Metal FillOPCs                         0
+
+    Via Instances                      0
+
+Metal FillDRCs                         0
+
+    Via Instances                      0
+
+Text                                  85
+    metal layer metal1                67
+    metal layer metal4                18
+
+
+Blockages                              0
+
+
+Custom Text                            0
+
+
+Custom Box                             0
+
+Trim Metal                             0
+
+######Streamout is finished!
+# summaryReport -noHtml -outfile $vars(rpt_dir)/$vars(step).summaryReport.rpt
+<CMD> summaryReport -noHtml -outfile reports/signoff.summaryReport.rpt
+Start to collect the design information.
+Build netlist information for Cell Conv.
+Finished collecting the design information.
+Generating macro cells used in the design report.
+Generating standard cells used in the design report.
+Analyze library ... 
+Analyze netlist ... 
+Generating HFO information report.
+Generate no-driven nets information report.
+Analyze timing ... 
+Analyze floorplan/placement ... 
+Analysis Routing ...
+Report saved in file reports/signoff.summaryReport.rpt.
+# verifyConnectivity -noAntenna
+<CMD> verifyConnectivity -noAntenna
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Fri Mar 13 19:32:32 2020
+
+Design Name: Conv
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (1450.4600, 1448.1600)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+Use 16 pthreads
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[1] of net input_serial_rsc_dat[1] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[3] of net weight_serial_rsc_dat[3] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin arst_n of net arst_n has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[5] of net output_serial_rsc_dat[5] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[7] of net paramsIn_rsc_dat[7] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[15] of net input_serial_rsc_dat[15] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[1] of net weight_serial_rsc_dat[1] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[3] of net output_serial_rsc_dat[3] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[14] of net input_serial_rsc_dat[14] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[5] of net paramsIn_rsc_dat[5] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[0] of net weight_serial_rsc_dat[0] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[13] of net input_serial_rsc_dat[13] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[2] of net output_serial_rsc_dat[2] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[4] of net paramsIn_rsc_dat[4] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[12] of net input_serial_rsc_dat[12] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[15] of net weight_serial_rsc_dat[15] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[14] of net weight_serial_rsc_dat[14] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[1] of net output_serial_rsc_dat[1] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[11] of net input_serial_rsc_dat[11] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[0] of net output_serial_rsc_dat[0] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[3] of net paramsIn_rsc_dat[3] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[13] of net weight_serial_rsc_dat[13] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[2] of net paramsIn_rsc_dat[2] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[15] of net output_serial_rsc_dat[15] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[10] of net input_serial_rsc_dat[10] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[1] of net paramsIn_rsc_dat[1] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[12] of net weight_serial_rsc_dat[12] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[14] of net output_serial_rsc_dat[14] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[9] of net input_serial_rsc_dat[9] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[0] of net paramsIn_rsc_dat[0] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[11] of net weight_serial_rsc_dat[11] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[13] of net output_serial_rsc_dat[13] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[8] of net input_serial_rsc_dat[8] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[15] of net paramsIn_rsc_dat[15] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[10] of net weight_serial_rsc_dat[10] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[12] of net output_serial_rsc_dat[12] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[14] of net paramsIn_rsc_dat[14] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[7] of net input_serial_rsc_dat[7] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[9] of net weight_serial_rsc_dat[9] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[11] of net output_serial_rsc_dat[11] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[13] of net paramsIn_rsc_dat[13] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[6] of net input_serial_rsc_dat[6] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[8] of net weight_serial_rsc_dat[8] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[10] of net output_serial_rsc_dat[10] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[12] of net paramsIn_rsc_dat[12] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[5] of net input_serial_rsc_dat[5] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[3] of net input_serial_rsc_dat[3] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[5] of net weight_serial_rsc_dat[5] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[7] of net output_serial_rsc_dat[7] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[9] of net paramsIn_rsc_dat[9] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[7] of net weight_serial_rsc_dat[7] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[9] of net output_serial_rsc_dat[9] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[2] of net input_serial_rsc_dat[2] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[4] of net weight_serial_rsc_dat[4] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[6] of net output_serial_rsc_dat[6] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[8] of net paramsIn_rsc_dat[8] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[4] of net input_serial_rsc_dat[4] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[6] of net weight_serial_rsc_dat[6] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[8] of net output_serial_rsc_dat[8] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[10] of net paramsIn_rsc_dat[10] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[11] of net paramsIn_rsc_dat[11] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin input_serial_rsc_dat[0] of net input_serial_rsc_dat[0] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin weight_serial_rsc_dat[2] of net weight_serial_rsc_dat[2] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin output_serial_rsc_dat[4] of net output_serial_rsc_dat[4] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin paramsIn_rsc_dat[6] of net paramsIn_rsc_dat[6] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+Net VDD: has an unconnected terminal.
+Net VSS: has an unconnected terminal, has special routes with opens.
+**WARN: (IMPVFC-3):	Verify Connectivity stopped: Number of errors exceeds the limit 1000
+Type 'man IMPVFC-3' for more detail.
+
+Begin Summary 
+    1000 Problem(s) (IMPVFC-96): Terminal(s) are not connected.
+    1000 total info(s) created.
+End Summary
+
+End Time: Fri Mar 13 19:33:14 2020
+Time Elapsed: 0:00:42.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 1000 Viols.  0 Wrngs.
+  (CPU Time: 0:01:18  MEM: 383.055M)
+
+# verify_drc
+<CMD> verify_drc
+ *** Starting Verify DRC (MEM: 2592.7) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+ VERIFY DRC ...... Sub-Area: {1296.000 0.000 1377.000 81.000} 17 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1134.000 0.000 1215.000 81.000} 15 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1377.000 0.000 1450.460 81.000} 18 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1215.000 0.000 1296.000 81.000} 16 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {972.000 0.000 1053.000 81.000} 13 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1134.000 81.000 1215.000 162.000} 33 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1134.000 243.000 1215.000 324.000} 69 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {324.000 0.000 405.000 81.000} 5 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {648.000 0.000 729.000 81.000} 9 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {0.000 162.000 81.000 243.000} 37 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {486.000 0.000 567.000 81.000} 7 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1215.000 81.000 1296.000 162.000} 34 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1215.000 243.000 1296.000 324.000} 70 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1053.000 0.000 1134.000 81.000} 14 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {324.000 162.000 405.000 243.000} 41 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1134.000 162.000 1215.000 243.000} 51 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1377.000 81.000 1450.460 162.000} 36 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1215.000 162.000 1296.000 243.000} 52 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {162.000 162.000 243.000 243.000} 39 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1296.000 81.000 1377.000 162.000} 35 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {972.000 162.000 1053.000 243.000} 49 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {810.000 0.000 891.000 81.000} 11 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {810.000 162.000 891.000 243.000} 47 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {162.000 0.000 243.000 81.000} 3 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1377.000 243.000 1450.460 324.000} 72 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {648.000 162.000 729.000 243.000} 45 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1296.000 162.000 1377.000 243.000} 53 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {405.000 0.000 486.000 81.000} 6 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {567.000 0.000 648.000 81.000} 8 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1134.000 324.000 1215.000 405.000} 87 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {0.000 0.000 81.000 81.000} 1 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {486.000 162.000 567.000 243.000} 43 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {0.000 243.000 81.000 324.000} 55 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1215.000 324.000 1296.000 405.000} 88 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1377.000 162.000 1450.460 243.000} 54 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {972.000 81.000 1053.000 162.000} 31 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {324.000 243.000 405.000 324.000} 59 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1053.000 81.000 1134.000 162.000} 32 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1377.000 324.000 1450.460 405.000} 90 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {648.000 324.000 729.000 405.000} 81 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1296.000 243.000 1377.000 324.000} 71 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {729.000 0.000 810.000 81.000} 10 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {162.000 324.000 243.000 405.000} 75 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {243.000 0.000 324.000 81.000} 4 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {810.000 324.000 891.000 405.000} 83 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {729.000 162.000 810.000 243.000} 46 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {81.000 0.000 162.000 81.000} 2 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {0.000 324.000 81.000 405.000} 73 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {972.000 243.000 1053.000 324.000} 67 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {405.000 81.000 486.000 162.000} 24 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {891.000 0.000 972.000 81.000} 12 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {486.000 324.000 567.000 405.000} 79 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1053.000 162.000 1134.000 243.000} 50 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {81.000 162.000 162.000 243.000} 38 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {324.000 324.000 405.000 405.000} 77 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {162.000 405.000 243.000 486.000} 93 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {567.000 81.000 648.000 162.000} 26 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1053.000 243.000 1134.000 324.000} 68 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1134.000 405.000 1215.000 486.000} 105 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {243.000 162.000 324.000 243.000} 40 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1296.000 405.000 1377.000 486.000} 107 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {162.000 486.000 243.000 567.000} 111 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {648.000 405.000 729.000 486.000} 99 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {648.000 243.000 729.000 324.000} 63 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {810.000 405.000 891.000 486.000} 101 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1215.000 405.000 1296.000 486.000} 106 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {810.000 243.000 891.000 324.000} 65 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {729.000 81.000 810.000 162.000} 28 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {405.000 162.000 486.000 243.000} 42 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {243.000 486.000 324.000 567.000} 112 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {0.000 81.000 81.000 162.000} 19 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {324.000 486.000 405.000 567.000} 113 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {891.000 81.000 972.000 162.000} 30 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {81.000 243.000 162.000 324.000} 56 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {405.000 324.000 486.000 405.000} 78 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {243.000 324.000 324.000 405.000} 76 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {162.000 81.000 243.000 162.000} 21 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {0.000 405.000 81.000 486.000} 91 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1134.000 486.000 1215.000 567.000} 123 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1377.000 405.000 1450.460 486.000} 108 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {567.000 162.000 648.000 243.000} 44 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {0.000 567.000 81.000 648.000} 127 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {81.000 405.000 162.000 486.000} 92 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {729.000 243.000 810.000 324.000} 64 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {324.000 81.000 405.000 162.000} 23 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {891.000 243.000 972.000 324.000} 66 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1215.000 486.000 1296.000 567.000} 124 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {162.000 567.000 243.000 648.000} 129 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {405.000 486.000 486.000 567.000} 114 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {567.000 405.000 648.000 486.000} 98 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {729.000 405.000 810.000 486.000} 100 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {243.000 567.000 324.000 648.000} 130 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {243.000 405.000 324.000 486.000} 94 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {324.000 567.000 405.000 648.000} 131 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {405.000 243.000 486.000 324.000} 60 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1377.000 486.000 1450.460 567.000} 126 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {810.000 81.000 891.000 162.000} 29 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {81.000 81.000 162.000 162.000} 20 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1296.000 486.000 1377.000 567.000} 125 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {0.000 486.000 81.000 567.000} 109 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {81.000 486.000 162.000 567.000} 110 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {486.000 81.000 567.000 162.000} 25 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {567.000 243.000 648.000 324.000} 62 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1053.000 567.000 1134.000 648.000} 140 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {162.000 243.000 243.000 324.000} 57 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {648.000 81.000 729.000 162.000} 27 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1215.000 567.000 1296.000 648.000} 142 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {243.000 81.000 324.000 162.000} 22 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {243.000 648.000 324.000 729.000} 148 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {81.000 648.000 162.000 729.000} 146 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {405.000 405.000 486.000 486.000} 96 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {162.000 648.000 243.000 729.000} 147 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {1377.000 567.000 1450.460 648.000} 144 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1296.000 567.000 1377.000 648.000} 143 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {972.000 405.000 1053.000 486.000} 103 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1134.000 567.000 1215.000 648.000} 141 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1296.000 648.000 1377.000 729.000} 161 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {324.000 405.000 405.000 486.000} 95 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {567.000 486.000 648.000 567.000} 116 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {891.000 162.000 972.000 243.000} 48 of 324  Thread : 4
+ VERIFY DRC ...... Thread : 4 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 3 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 8 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 2 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 9 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 14 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete:  VERIFY DRC ...... Thread : 7 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 15 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 0 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 11 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 5 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 1 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 10 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 6 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 12 finished.
+**WARN: (IMPVFG-1103):	VERIFY DRC did not complete: Number of violations exceeds the Error Limit [1000]
+ VERIFY DRC ...... Thread : 13 finished.
+
+  Verification Complete : 1000 Viols.
+
+ *** End Verify DRC (CPU: 0:00:09.1  ELAPSED TIME: 1.00  MEM: 55.0M) ***
+
+# verifyProcessAntenna
+<CMD> verifyProcessAntenna
+
+******* START VERIFY ANTENNA ********
+Report File: Conv.antenna.rpt
+LEF Macro File: Conv.antenna.lef
+5000 nets processed: 0 violations
+10000 nets processed: 0 violations
+15000 nets processed: 0 violations
+20000 nets processed: 0 violations
+25000 nets processed: 0 violations
+30000 nets processed: 0 violations
+35000 nets processed: 0 violations
+40000 nets processed: 0 violations
+45000 nets processed: 0 violations
+50000 nets processed: 0 violations
+55000 nets processed: 0 violations
+60000 nets processed: 0 violations
+65000 nets processed: 0 violations
+70000 nets processed: 0 violations
+75000 nets processed: 0 violations
+80000 nets processed: 0 violations
+85000 nets processed: 0 violations
+90000 nets processed: 0 violations
+95000 nets processed: 0 violations
+Verification Complete: 0 Violations
+******* DONE VERIFY ANTENNA ********
+(CPU Time: 0:00:12.6  MEM: 109.906M)
+
+# puts "<FF> Plugin -> post_signoff_tcl"
+# um::pop_snapshot_stack
+<CMD> um::pop_snapshot_stack
+# create_snapshot -name signoff -categories design
+<CMD> getOptMode -multiBitFlopOpt -quiet
+UM:   timing.setup.tns  timing.setup.wns  snapshot
+UM:     -985363.346 ns        -43.369 ns  signoff
+# report_metric -file reports/metrics.html -format html
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 370c8925-2d07-4219-880f-0d9dd9d26b62 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 6dfc155d-7c06-4acb-8308-9c10b4b4403b clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 6958850f-294c-48e5-a787-dcc1b0a3ab1a clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 22a4fcb8-d261-4aca-8ead-77f41ca2f011 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 55e23d4e-aae5-45ad-a95c-a1c0f26fd6e8 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid c9a7d7e0-10e8-4593-a148-b762a6d6f18b clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 8202babf-9fdd-42ab-8bac-891213da4ba5 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 3f519b26-5961-4c12-a1e0-cf046e151d7c clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 5ea651d5-b72b-4960-ae8d-96319a207284 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid bfb6bacf-4c8d-4ccb-8a11-7bc5c1539a3d clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 5263ebaf-1b0d-4cb7-994c-43151f6c8e3d clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid b662aea6-791d-40bd-838b-31829ed0d8ca clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid e6a2c8cb-0f19-46a8-a490-ee97346e4db6 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 717a6d6d-123e-408a-b8f5-0670eb8cedcb clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 7be84df9-39d3-4170-9f4d-69ee7613f2a3 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid c63f16b7-37fd-4736-97e3-754cc5324f0f clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid ac338fe8-9835-4e3c-a201-6c0eae92eb77 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 74c2c55a-06ed-449a-a3b4-d5ea6e6c0ca9 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid cf3ebded-4960-4eb7-8e2a-2da590942fe3 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid ee05eed0-9f20-4135-af53-d3bd97f867f1 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 720b803b-4c1f-4926-9087-9d323e70a841 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 8ed4d931-713f-488f-ad0d-3519640c0617 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 32df3c5a-ccff-4c1a-a3bc-59b559fc938a clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 1c61d19c-5657-4c5e-b402-993c605da81b clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 26c9f519-1080-4124-a3ce-52d4a565b000 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid a0ea779c-759f-433a-b1eb-bd688ad89c08 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 38c1d34b-6726-4d2e-be93-5d22c5607255 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid d3c78776-db64-4162-ab3c-becd86a5bd9a clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid b37ade29-8c72-4ffb-a70d-dc19182e5fd5 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid a5c295bd-36e7-4a6c-a389-bf27201e6438 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid cf3c2607-f50b-4d69-9d11-419fddc9bc05 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 2d1cb1f0-56c0-46d2-9e2f-45e3225805f3 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid 315347be-2eb9-4f94-8daa-24cbaa4f2a9c clock.Implementation.area.total
+# return
+### End verbose source output for 'innovus-foundation-flow/INNOVUS/run_signoff.tcl'.
+### End verbose source output for 'scripts/main.tcl'.
+### Start verbose source output (echo mode) for 'scripts/generate-results.tcl' ...
+# write_sdf $vars(results_dir)/$vars(design).sdf
+<CMD> write_sdf $vars(results_dir)/$vars(design).sdf
+**WARN: (SDF-808):	The software is currently operating in a high performance mode which optimizes the handling of multiple timing arcs between input and output pin pairs. With the current settings, the SDF file generated will contain the same delay information for all of these arcs. To have the SDF recalculated with explicit pin pair data, you should use the option '-recompute_delay_calc'. This setting is recommended for generating SDF for functional  simulation applications.
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: Conv
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (16 T). (MEM=2449.68)
+AAE_INFO-618: Total number of nets in the design is 95716,  100.0 percent of the nets selected for SI analysis
+AAE_INFO-618: Total number of nets in the design is 95716,  100.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3047.1 CPU=0:02:31 REAL=0:00:12.0)
+End delay calculation (fullDC). (MEM=3047.1 CPU=0:02:39 REAL=0:00:13.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/innovus_temp_27524_caddy12_sophliu_ZONUss/.AAE_7XJ93L/.AAE_27524/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3023.1M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:02.6, REAL = 0:00:00.0, MEM = 3055.1M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (16 T). (MEM=2499.11)
+AAE_INFO-618: Total number of nets in the design is 95716,  0.9 percent of the nets selected for SI analysis
+AAE_INFO-618: Total number of nets in the design is 95716,  0.8 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3128.75 CPU=0:00:20.1 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=3128.75 CPU=0:00:20.5 REAL=0:00:02.0)
+# writeTimingCon $vars(results_dir)/$vars(design).pt.sdc
+<CMD> writeTimingCon results/Conv.pt.sdc
+# sed -i "s/^current_design/\#current_design/" $vars(results_dir)/$vars(design).pt.sdc
+# sed -i "s/get_design.*$/current_design\]/" $vars(results_dir)/$vars(design).pt.sdc
+# foreach x $ADK_LVS_EXCLUDE_CELL_LIST {
+  append lvs_exclude_list [dbGet -u -e top.physInsts.cell.name $x] " "
+}
+# saveNetlist -excludeLeafCell                   \
+            -phys                              \
+            -excludeCellInst $lvs_exclude_list \
+            $vars(results_dir)/$vars(design).lvs.v
+<CMD> saveNetlist -excludeLeafCell -phys -excludeCellInst {FILLCELL_X32 FILLCELL_X16 FILLCELL_X8 FILLCELL_X4 FILLCELL_X2 FILLCELL_X1 WELLTAP_X1 } results/Conv.lvs.v
+Writing Netlist "results/Conv.lvs.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# foreach x $ADK_VIRTUOSO_EXCLUDE_CELL_LIST {
+  append virtuoso_exclude_list [dbGet -u -e top.physInsts.cell.name $x] " "
+}
+# saveNetlist -excludeLeafCell                        \
+            -phys                                   \
+            -excludeCellInst $virtuoso_exclude_list \
+            $vars(results_dir)/$vars(design).virtuoso.v
+<CMD> saveNetlist -excludeLeafCell -phys -excludeCellInst {FILLCELL_X32 FILLCELL_X16 FILLCELL_X8 FILLCELL_X4 FILLCELL_X2 FILLCELL_X1 WELLTAP_X1 } results/Conv.virtuoso.v
+Writing Netlist "results/Conv.virtuoso.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# saveNetlist -excludeLeafCell $vars(results_dir)/$vars(design).vcs.v
+<CMD> saveNetlist -excludeLeafCell results/Conv.vcs.v
+Writing Netlist "results/Conv.vcs.v" ...
+# write_lef_abstract                                                       \
+  -specifyTopLayer $vars(max_route_layer)                                \
+  -PGPinLayers [list $ADK_POWER_MESH_BOT_LAYER $ADK_POWER_MESH_TOP_LAYER] \
+  -noCutObs                                                              \
+  -stripePin                                                             \
+  $vars(results_dir)/$vars(design).lef
+<CMD> write_lef_abstract -specifyTopLayer 7 -PGPinLayers {8 9} -noCutObs -stripePin results/Conv.lef
+# defOut $vars(results_dir)/$vars(design).def.gz
+<CMD> defOut results/Conv.def.gz
+Writing DEF file 'results/Conv.def.gz', current time is Fri Mar 13 19:34:31 2020 ...
+unitPerMicron=2000, dbgMicronPerDBU=0.000500, unitPerDBU=1.000000
+DEF file 'results/Conv.def.gz' is written, current time is Fri Mar 13 19:34:33 2020 ...
+### End verbose source output for 'scripts/generate-results.tcl'.
+### Start verbose source output (echo mode) for 'scripts/reporting.tcl' ...
+# report_area -verbose > $vars(rpt_dir)/$vars(step).area.rpt
+<CMD> report_area -verbose > reports/signoff.area.rpt
+### End verbose source output for 'scripts/reporting.tcl'.
+<CMD> getVersion
+<CMD> saveDesign checkpoints/design.checkpoint/save.enc -user_path
+The in-memory database contained RC information but was not saved. To save 
+the RC information, use saveDesign's -rc option. Note: Saving RC information can be quite large, 
+so it should only be saved when it is really desired.
+#% Begin save design ... (date=03/13 19:34:34, mem=2123.9M)
+% Begin Save ccopt configuration ... (date=03/13 19:34:34, mem=2125.9M)
+% End Save ccopt configuration ... (date=03/13 19:34:36, total cpu=0:00:02.1, real=0:00:02.0, peak res=2125.9M, current mem=2123.9M)
+% Begin Save netlist data ... (date=03/13 19:34:36, mem=2123.9M)
+Writing Binary DB to checkpoints/design.checkpoint/save.enc.dat/vbin/Conv.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=03/13 19:34:36, total cpu=0:00:00.5, real=0:00:00.0, peak res=2131.0M, current mem=2131.0M)
+Saving symbol-table file in separate thread ...
+Saving congestion map file in separate thread ...
+Saving congestion map file checkpoints/design.checkpoint/save.enc.dat/Conv.route.congmap.gz ...
+% Begin Save AAE data ... (date=03/13 19:34:37, mem=2134.9M)
+Saving AAE Data ...
+% End Save AAE data ... (date=03/13 19:34:37, total cpu=0:00:00.1, real=0:00:00.0, peak res=2135.0M, current mem=2135.0M)
+% Begin Save clock tree data ... (date=03/13 19:34:41, mem=2136.9M)
+% End Save clock tree data ... (date=03/13 19:34:41, total cpu=0:00:00.1, real=0:00:00.0, peak res=2136.9M, current mem=2136.9M)
+Saving preference file checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+Saving Drc markers ...
+... 7816 markers are saved ...
+... 6815 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+Saving floorplan file in separate thread ...
+Saving PG file in separate thread ...
+Saving placement file in separate thread ...
+Saving route file in separate thread ...
+Saving property file in separate thread ...
+Saving property file checkpoints/design.checkpoint/save.enc.dat/Conv.prop
+** Saving stdCellPlacement_binary (version# 2) ...
+Saving PG file checkpoints/design.checkpoint/save.enc.dat/Conv.pg.gz
+*** Completed saveProperty (cpu=0:00:00.4 real=0:00:00.0 mem=2460.9M) ***
+Save Adaptive View Pruing View Names to Binary file
+*** Completed savePGFile (cpu=0:00:01.2 real=0:00:00.0 mem=2460.9M) ***
+TAT_INFO: ::saveFPlan REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePGFile REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+*** Completed saveRoute (cpu=0:00:03.0 real=0:00:02.0 mem=2474.9M) ***
+TAT_INFO: ::saveRoute REAL = 2 : CPU = 1 : MEM = 0.
+TAT_INFO: ::db::saveAnnotationAndProp REAL = 0 : CPU = 0 : MEM = 0.
+#Saving pin access data to file checkpoints/design.checkpoint/save.enc.dat/Conv.apa ...
+TAT_INFO: ::db::saveSymbolTable REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: ::saveCongMap REAL = 0 : CPU = 0 : MEM = 0.
+% Begin Save power constraints data ... (date=03/13 19:34:46, mem=2142.5M)
+% End Save power constraints data ... (date=03/13 19:34:46, total cpu=0:00:00.1, real=0:00:00.0, peak res=2142.5M, current mem=2142.5M)
+typical
+Generated self-contained design save.enc.dat
+#% End save design ... (date=03/13 19:34:51, total cpu=0:00:15.0, real=0:00:17.0, peak res=2144.0M, current mem=2144.0M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+
+*** Memory Usage v#1 (Current mem = 2466.039M, initial mem = 231.703M) ***
+*** Message Summary: 912 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:18:48, real=0:05:49, mem=2466.0M) ---
