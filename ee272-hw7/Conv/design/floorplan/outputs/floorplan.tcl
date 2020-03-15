@@ -95,3 +95,15 @@ flipOrRotateObject -rotate R270
 setObjFPlanBox Instance systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_comp 578.1855 1252.4385 1402.723 1411.2485
 setObjFPlanBox Instance systolicArray/systolicArrayCore/SystolicArrayCore_IDTYPE_WDTYPE_ODTYPE_16_16_struct_inst/accumulation_buffer_rsc_comp 607.0665 1268.191 1431.604 1427.001
 
+
+selectInst weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1
+flipOrRotateObject -rotate R90
+setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp_1 49.1975 906.2975 443.3475 1347.375
+deselectAll
+selectInst weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp
+setObjFPlanBox Instance weightDoubleBuffer/WeightDoubleBuffer_384_16_16_struct_inst/mem_cns_comp 63.3735 312.6935 504.451 706.8435
+flipOrRotateObject -rotate R90
+deselectAll
+selectInst inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1
+setObjFPlanBox Instance inputDoubleBuffer/InputDoubleBuffer_512_16_16_struct_inst/mem_cns_comp_1 970.9005 557.013 1365.0505 998.0905
+
