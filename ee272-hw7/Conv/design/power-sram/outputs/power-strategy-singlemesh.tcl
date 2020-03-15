@@ -122,6 +122,29 @@ addStripe -nets {VSS VDD} -layer $pmesh_top -direction horizontal \
     -padcore_ring_top_layer_limit $pmesh_top                      \
     -start [expr $pmesh_top_str_pitch]
 
+set all_macros [dbGet [dbGet -p2 top.insts.cell.baseClass block].name]
+foreach macro $all_macros {
+    selectInst $macro
+    addRing -nets {VDD VSS} -type block_rings \
+        -around selected \
+        -layer {top metal7 bottom metal7 left metal6 right metal6} \
+        -width 1 -spacing 1 -offset 0.5
+    deselectAll
+
+    sroute -connect blockPin \
+       -allowJogging 1 \
+       -allowLayerChange 1 \
+       -blockPin useLef \
+       -blockPinTarget nearestTarget \
+       -crossoverViaLayerRange "metal4 metal7" \
+       -inst $macro \
+       -layerChangeRange "metal4 metal7" \
+       -nets {VDD VSS} \
+       -noBlockPinOneAmongOverlappedPins \
+       -targetViaLayerRange "metal4 metal7" \
+       -verbose
+}
+
 deselectAll
 selectVia 46.7600 19.8400 48.4400 21.6700 8 VDD
 deleteSelectedFromFPlan
